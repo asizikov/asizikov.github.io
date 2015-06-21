@@ -115,7 +115,7 @@ public static class ClientFetchPaths
     {
         Orders = new FetchPaths<Client>(client => client.Orders);
         Adresses = new FetchPaths<Client>(client => client.Adresses);
-        OrdersAndAddresses = Adresses.Concat(Orders.Concat(Orders));
+        OrdersAndAddresses = Adresses.Concat(Orders);
     }
 
     public static FetchPaths<Client> Orders { get; private set; }
