@@ -22,21 +22,21 @@ We don't want to load our database with unnecessary joins and [Entity Framework 
 When we need to retrieve only client's orders we can include it into the query:
 
 {% highlight csharp %}
-dbSet.Where(client => client.Id == id)
+context.Clients.Where(client => client.Id == id)
 	 .Include(client => client.Orders);
 {% endhighlight %}
 
 When we need just addresses:
 
 {% highlight csharp %}
-dbSet.Where(client => client.Id == id)
+context.Clients.Where(client => client.Id == id)
 	 .Include(client => client.Addresses);
 {% endhighlight %}
 
 And the combination:
 
 {% highlight csharp %}
-dbSet.Where(client => client.Id == id)
+context.Clients.Where(client => client.Id == id)
 	 .Include(client => client.Orders)
 	 .Include(client => client.Addresses);
 {% endhighlight %}
@@ -135,7 +135,7 @@ A want to mention that so far we don't have any EntityFramework dependency here.
 Now the repository implementation will be clean as well:
 
 {% highlight csharp %}
-dbSet.Where(client => client.Id == id)
+context.Clients.Where(client => client.Id == id)
      .Fetch(fetchPaths));
 {% endhighlight %}
 
