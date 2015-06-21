@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Anton Sizikov
+url:              http://hyde.getpoole.com
+tagline:          'Anton Sizikov'
+description:      'Software developer.'
+baseurl:          /
+
+author:
+  name:           'Anton Sizikov'
+  url:            https://twitter.com/return_true
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/asizikov
