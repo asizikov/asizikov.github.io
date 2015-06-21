@@ -4,7 +4,7 @@ title: Hello world
 ---
 
 
-I'm not sure if I can be more hipster, but now I have a blog whichs hosted by GitHub pages and served by jekyll.
+I'm not sure if I can be more hipster, but now I have a blog which is hosted by GitHub pages and served by jekyll.
 Yeah, I had to install python and ruby to run it.
 
 
