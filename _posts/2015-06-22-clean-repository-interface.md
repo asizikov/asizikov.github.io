@@ -3,7 +3,7 @@ layout: post
 title: Keeping the repository interface clean
 ---
 
-The repository pattern is beeing blamed quite often. The most popular reason to blame it is an uncontrolled growth of the interface.
+The repository pattern is beeing blamed quite often. The most popular reason for that it is an uncontrolled growth of the interface.
 
 In the simple scenario we have an interface like this one:
 
@@ -58,7 +58,7 @@ It's not a nice solution for sure: lot's of code duplication and very unclear in
 
 A typical way to avoid it is to use [CQRS](http://martinfowler.com/bliki/CQRS.html) pattern and encapsulate the logic into the Query object.
 
-At my current project we're building microservices, and a CQRS looks like an overkill. But it doesn't stop us from borrowing some ideas. 
+At my current project we're building microservices, and a CQRS looks like an overkill. It doesn't stop us from borrowing some ideas, though. 
 Let's remove all these GetXXXX methods and add one more parameter to the Get method.
 
 {% highlight csharp %}
@@ -124,7 +124,7 @@ public static class ClientFetchPaths
 }
 {% endhighlight %}
 
-So that we can get the clients including all the nesessary child objects.
+So that we can get the clients including all the necessary child objects.
 
 {% highlight csharp %}
    var clients = ClientRepository.Get(id, ClientFetchPaths.OrdersAndAddresses);
