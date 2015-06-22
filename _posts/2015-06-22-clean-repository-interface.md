@@ -130,7 +130,7 @@ So that we can get the clients including all the nesessary child objects.
    var clients = ClientRepository.Get(id, ClientFetchPaths.OrdersAndAddresses);
 {% endhighlight %}
 
-A want to mention that so far we don't have any EntityFramework dependency here. Than means that we can keep this code (interface, models and FetchPathes) in the same assembly and reference it from the unit test project.
+I want to mention that so far we don't have any EntityFramework dependency here. Than means that we can keep this code (interface, models and FetchPathes) in the same assembly and reference it from the unit test project.
 
 Now the repository implementation will be clean as well:
 
