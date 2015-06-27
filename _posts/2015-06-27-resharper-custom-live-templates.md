@@ -43,4 +43,4 @@ I've declared the shortcat 'am' for the template.
 
 Let's type 'am' in the code and here we go: our brand new template is activated.
 
-![Template in action](/images/resharper-custom-live-templates/in-action.png)
+![Template in action](/images/resharper-custom-live-templates/in-action.PNG)
