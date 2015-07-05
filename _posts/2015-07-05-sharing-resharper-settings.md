@@ -6,7 +6,7 @@ tags: resharper howto
 
 In my [previous post](../../../06/27/resharper-custom-live-templates) I've described how to create your own Live Templates for ReSharper. Today I'm going to tell how to share your ReSharper settings and Live Templates with your team.
 
-All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper [NuGet feed](https://resharper-plugins.jetbrains.com/packages) or to your own company's private feed.
+All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper [NuGet feed](https://resharper-plugins.jetbrains.com/packages) or to your own company's private feed (in case you want to keep it away from the rest of the world).
 
 Exporting settings
 ==================
@@ -78,7 +78,7 @@ Where "YourCompany.Settings" is a NuGet package id.
 
 To build the package we need the command line tool [NuGet.exe](http://docs.nuget.org/consume/installing-nuget)
 
-Ok, no we're ready to execute the command:
+Ok, now we're ready to execute the command:
 {% highlight bash %}
 nuget.exe pack nuspec-file-name.nuspec
 {% endhighlight %}
