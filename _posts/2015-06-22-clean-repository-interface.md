@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Keeping the repository interface clean
+tags: repository, design pattern, entity framework
 ---
 
 The repository pattern is beeing blamed quite often. The most popular reason for that it is an uncontrolled growth of the interface.
