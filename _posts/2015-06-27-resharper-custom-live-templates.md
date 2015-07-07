@@ -28,7 +28,7 @@ public async System.Threading.Tasks.Task<$RETURN_TYPE$> $METHOD_NAME$Async(){$EN
 
 RETURN\_TYPE and METHOD\_NAME are placeholders for the return type and for the method name.
 
-$END$ - is the caret position. 
+$END$ - marks the point where the text caret is placed when the template is inserted. 
 
 The async keyword is available only in C# 5.0, thats why this template doesn't make any sense when you're developing .NET 4.0 code. So go and click Availability link on the right side and select the option "In C# where type member declaration is allowed". This will prevent the template to be activated in unexpected places (like inside the method). After that set the minimum C# version to 5.0.
 
