@@ -8,7 +8,7 @@ Hi,
 
 Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and  the approach in question was taken in a several applications with different modifications.
 
-<font color="gray">Note: In this article I assume that the reader is familiar with the concept of [FRP](https://en.wikipedia.org/wiki/Functional_reactive_programming) and [Reactive Extensions](https://msdn.microsoft.com/en-us/data/gg577609.aspx).</font>
+<font color="gray">Note: In this article I assume that the reader is familiar with the concept of [Reactive Programming](https://en.wikipedia.org/wiki/Reactive_programming) and [Reactive Extensions](https://msdn.microsoft.com/en-us/data/gg577609.aspx).</font>
 
 Let’s say that we have an url like that
 
