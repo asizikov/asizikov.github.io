@@ -3,8 +3,9 @@ layout: page
 title: About
 ---
 
-Hi, my name is Anton Sizikov, I'm a software engineer. Mostly I'm doing .net related jobs.
-Currently I live in Amsterdam.
+Hi, my name is Anton Sizikov.
+
+I'm an Amsterdam based software engineer, building cool things on the .NET platform.
 
 #Links
 
