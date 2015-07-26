@@ -22,7 +22,6 @@ which returns the following json response:
      "lastModified" : "2015-07-20"
 }
 {% endhighlight %}
-
 Calling the api, deserializing the response and displaying the result to the user is a trivial task.  
 {% highlight csharp %}
 public async Task<RatingModel> GetRatingForUser(string userName)
@@ -36,9 +35,7 @@ public async Task<RatingModel> GetRatingForUser(string userName)
 }
 {% endhighlight %}
 <center><font color="gray">the naive implementation</font></center>
-
 ##Let’s add caching
-
 Assuming that we’re building the mobile app, and taking into account that our data is not business critical we can consider following requirements:
 
 1. The app has to start quickly;
@@ -47,8 +44,8 @@ Assuming that we’re building the mobile app, and taking into account that our 
 4. If succeeded it should put fresh data to its cache;
 5. Render the new data or report the error;
 
-Let me illustrate it with a  sequence diagram. I hope I still remember how to draw them :)
-
+Let me illustrate it with a sequence diagram. I hope I still remember how to draw them :)
+![sequence diagram](/images/rx-api-with-cache-one/diagram.png)
 There are different local cache strategies. The one I’m going to follow is a 
 [Cache-Aside](https://msdn.microsoft.com/en-us/library/dn589799.aspx) one.
 
@@ -79,7 +76,6 @@ public interface IRatingCache : ICache<string, RatingModel>
 {% endhighlight %}
 
 The http-client abstraction:
-
 {% highlight csharp %}
 public interface IHttpClient
 {
@@ -108,7 +104,7 @@ Let’s keep the actual http-request, parsing, deserialization and error handlin
 
 The api client interface will look like that
 
- {% highlight csharp %}
+{% highlight csharp %}
 public interface IRatingClient
 {
     IObservable<RatingModel> GetRatingForUser(string userName);
@@ -143,10 +139,9 @@ public static IObservable<T> WithCache<T>(
 
 Note that there is neither dependency on cache type, nor any other information about the cache. 
 
-Generally it’s not a great idea to re-render the UI with no reason. To avoid an unnecessary invocation of OnNext delegate we’re going to use DistinctUntilChanged operator https://msdn.microsoft.com/en-us/library/system.reactive.linq.observable.distinctuntilchanged(v=vs.103).aspx
+Generally it’s not a great idea to re-render the UI with no reason. To avoid an unnecessary invocation of OnNext delegate we’re going to use [DistinctUntilChanged](https://msdn.microsoft.com/en-us/library/system.reactive.linq.observable.distinctuntilchanged(v=vs.103).aspx) operator.
 
 To do that we should define the custom comparer:
-
 {% highlight csharp %}
 public class RatingComparer : IEqualityComparer<RatingModel>
 {
@@ -168,15 +163,17 @@ Now we have all the blocks required to get the desired behavior:
 * Rx caching operator
 * Duplicates filter 
 
-That means we’re ready to chain them together and build the RxGitHubClient implementation:
-
+That means we are ready to chain them together and build the RxGitHubClient implementation:
 {% highlight csharp %}
 public sealed class RxGitHubClient : IRatingClient
 {
     private IRatingCache Cache { get; set; }
     private IHttpClient HttpClient { get; set; }
     private IScheduler Scheduler { get; set; }
-    public RxGitHubClient(IRatingCache cache, IHttpClient httpClient, IScheduler scheduler)
+
+    public RxGitHubClient(IRatingCache cache, 
+    	IHttpClient httpClient, 
+    	IScheduler scheduler)
     {
         Cache = cache;
         HttpClient = httpClient;
@@ -185,41 +182,47 @@ public sealed class RxGitHubClient : IRatingClient
 
     public IObservable<RatingModel> GetRatingForUser(string userName)
     {
-        return GetRatingInternal(userName)
-            .WithCache(() => Cache.GetCachedItem(userName), 
-						model => Cache.Put(model))
+        return GetRatingIntrn(userName)
+            .WithCache(
+            	() => Cache.GetCachedItem(userName), 
+				model => Cache.Put(model))
             .DistinctUntilChanged(new RatingModelComparer());
        }
-    private IObservable<RatingModel> GetRatingInternal(string userName)
+    private IObservable<RatingModel> GetRatingIntrn(string userName)
     {
         return Observable.Create<RatingModel>(observer =>
         Scheduler.Schedule(async () =>
-             {
-                    var ratingResponse = 
-await HttpClient.Get(userName);
-                    if (!ratingResponse.IsSuccessful)
-                    {
-                        observer.OnError(ratingResponse.Exception);
-                    }
-                    else
-                    {
-                        observer.OnNext(ratingResponse.Data);
-                        observer.OnCompleted();
-                    }
-                }));
-        }
+        {
+            var ratingResponse = 
+				await HttpClient.Get(userName);
+            if (!ratingResponse.IsSuccessful)
+            {
+                observer.OnError(ratingResponse.Exception);
+            }
+            else
+            {
+                observer.OnNext(ratingResponse.Data);
+                observer.OnCompleted();
+            }
+        }));
+    }
 }
 {% endhighlight %}
 
+Now the usage of the client becomes as simple as the client from the first example.
+{% highlight csharp %}
+Client.GetRatingForUser(userName)
+	  .Subscribe(RenderRating);
+{% endhighlight %}
 In the next blog post I’m going to write unit tests for this api client. Stay tuned.
 ##Links and sources
 
-* http://reactivex.io/
-* http://www.introtorx.com/content/v1.0.10621.0/05_Filtering.html 
-* The Reactive Extensions (Rx) EN
-* Read-Through, Write-Through, Write-Behind, and Refresh-Ahead Caching EN
-* Cache-Aside Pattern EN
-* https://www.websequencediagrams.com/
+* [ReactveX home](http://reactivex.io/)
+* [Introduction to Rx](http://www.introtorx.com/content/v1.0.10621.0/05_Filtering.html)
+* [The Reactive Extensions (Rx)](https://msdn.microsoft.com/en-us/data/gg577609.aspx)
+* [Read-Through, Write-Through, Write-Behind, and Refresh-Ahead Caching](http://docs.oracle.com/cd/E15357_01/coh.360/e15723/cache_rtwtwbra.htm#COHDG5177)
+* [Cache-Aside Pattern](https://msdn.microsoft.com/en-us/library/dn589799.aspx)
+* [www.websequencediagrams.com](https://www.websequencediagrams.com/)
 
 
 
