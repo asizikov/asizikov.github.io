@@ -29,7 +29,7 @@ Also it's not easy to skip override methods from analysis.
 
 So I’ve build an extension for ReSharper and named it AsyncSuffix. You can grab it from the [official NuGet feed](https://resharper-plugins.jetbrains.com/packages/Sizikov.AsyncSuffix/).
 
-This extension analyses the task returning method declarations, and suggests the Rename refactoring when it detects the ‘Async’ suffix if missing. It also has an option to exclude test methods from the analysis. By test methods I mean the method with the ```[Test]```, ```[Fact]``` or ```[TestMethod]``` annotation. So as you see it supports only NUnit, MSTest, and xUnit.Net frameworks. This feature is turned on by default, but you can turn it off if you'd like.
+This extension analyses the task returning method declarations, and suggests the Rename refactoring when it detects the ‘Async’ suffix is missing. It also has an option to exclude test methods from the analysis. By test methods I mean the method with the ```[Test]```, ```[Fact]``` or ```[TestMethod]``` annotation. So as you see it supports only NUnit, MSTest, and xUnit.Net frameworks. This feature is turned on by default, but you can turn it off if you'd like.
 
 ![extension is action](/images/async-suffix-plugin/in-action.gif)
 
