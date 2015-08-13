@@ -105,7 +105,7 @@ You can find the source code on [GitHub](https://github.com/asizikov/rx-github-c
 I mentioned Windows Phone development in my article, however the code is built for .NET 4.5. I did that on purpose, to let everybody checkout and build the solution even if one has no WP SDK installed locally. It’s easy to convert the project to PCL or WP8/8.1 assembly. All of them are supported by Rx.
 
 ##Links and sources
-*[Testing Rx](http://www.introtorx.com/content/v1.0.10621.0/16_TestingRx.html)
-*[Testing Rx Queries using Virtual Time Scheduling](http://blogs.msdn.com/b/rxteam/archive/2012/06/14/testing-rx-queries-using-virtual-time-scheduling.aspx)
-*[Testing and Debugging Observable Sequences](https://msdn.microsoft.com/en-us/library/hh242967(v=vs.103).aspx)
+* [Testing Rx](http://www.introtorx.com/content/v1.0.10621.0/16_TestingRx.html)
+* [Testing Rx Queries using Virtual Time Scheduling](http://blogs.msdn.com/b/rxteam/archive/2012/06/14/testing-rx-queries-using-virtual-time-scheduling.aspx)
+* [Testing and Debugging Observable Sequences](https://msdn.microsoft.com/en-us/library/hh242967(v=vs.103).aspx)
 
