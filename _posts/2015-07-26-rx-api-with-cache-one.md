@@ -214,7 +214,7 @@ Now the usage of the client becomes as simple as the client from the first examp
 Client.GetRatingForUser(userName)
 	  .Subscribe(RenderRating);
 {% endhighlight %}
-In the next blog post I’m going to write unit tests for this api client. Stay tuned.
+In the [next blog post](http://asizikov.github.io/2015/08/14/rx-api-with-cache-two/) I’m going to write unit tests for this api client. Stay tuned.
 ##Links and sources
 
 * [ReactveX home](http://reactivex.io/)
