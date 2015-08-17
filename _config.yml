@@ -8,7 +8,7 @@ relative_permalinks: true
 
 # Setup
 title:            Anton Sizikov
-url:              http://hyde.getpoole.com
+url:              http://asizikov.github.io/
 tagline:          'Anton Sizikov'
 description:      'Software developer.'
 baseurl:          /
