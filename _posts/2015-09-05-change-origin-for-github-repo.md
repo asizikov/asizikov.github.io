@@ -4,8 +4,6 @@ title: Avoid typing user name when committing to GitHub repository
 tags: github origin repository tip
 ---
 
-Hi,
-
 I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don't have my SSH key generated for the current environment.
 
 I can still work with my command line tool, however I have to type credentials every time I want to pull or push to the remote.
@@ -22,17 +20,17 @@ git config remote.origin.url
 We'll get something like that:
 
 {% highlight bash %}
-https://github.com/OWNER/repository.git
+https://github.com/OWNER/repo.git
 {% endhighlight %}
 
 Now we can update the origin url.
 
 {% highlight bash %}
-git config remote.origin.url https://USER_NAME@github.com/OWNER/repository.git
+git config remote.origin.url https://USER@github.com/OWNER/repo.git
 {% endhighlight %}
 
 Your user name, repository owner and repository name will be different.
 
-Now the user name is not needed.
+And the user name is not needed any more.
 
 ![credentials not required](/images/github-origin/no-password.png)
