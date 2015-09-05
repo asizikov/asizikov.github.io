@@ -10,9 +10,9 @@ I can still work with my command line tool, however I have to type credentials e
 
 ![credentials required](/images/github-origin/password-required.png)
 
-Actually I'm OK about typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remove to have my user name in it. 
+Actually I'm fine with typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remote to have my user name in it. 
 
-First of all let's check what is the value of our origin url.
+First of all let's check what is the value of origin url.
 {% highlight bash %}
 git config remote.origin.url
 {% endhighlight %}
