@@ -6,9 +6,9 @@ tags: github origin repository tip
 
 Hi,
 
-I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don't have my SSH key generated for current environment.
+I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don't have my SSH key generated for the current environment.
 
-I can still work with my command line tool, however I have to type my credentials every time I want to push or pull to the remote.
+I can still work with my command line tool, however I have to type credentials every time I want to pull or push to the remote.
 
 [screen-shot1]
 
