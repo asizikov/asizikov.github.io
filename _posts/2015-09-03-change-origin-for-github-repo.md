@@ -10,7 +10,7 @@ I use different accounts and different computers to work with GitHub repositorie
 
 I can still work with my command line tool, however I have to type credentials every time I want to pull or push to the remote.
 
-![credentials required]()
+![credentials required](/images/github-origin/password-required.png)
 
 Actually I'm OK about typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remove to have my user name in it. 
 
@@ -28,7 +28,7 @@ https://github.com/COMPANY/repository.git
 Now we can update the origin url.
 
 {% highlight bash %}
-git config remote.origin.url https://USER_NAME@github.com/COMPANY/repository/
+git config remote.origin.url https://USER_NAME@github.com/COMPANY/repository.git
 {% endhighlight %}
 
 Your user name, company/organization repository name will be different.
