@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Avoid typing user name when committing to GitHub repository
+title: Avoid typing user name when commit to GitHub repository
 tags: github origin repository tip
 ---
 
