@@ -10,7 +10,7 @@ I use different accounts and different computers to work with GitHub repositorie
 
 I can still work with my command line tool, however I have to type credentials every time I want to pull or push to the remote.
 
-[screen-shot1]
+![credentials required]()
 
 Actually I'm OK about typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remove to have my user name in it. 
 
