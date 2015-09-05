@@ -22,16 +22,17 @@ git config remote.origin.url
 We'll get something like that:
 
 {% highlight bash %}
-https://github.com/COMPANY/repository.git
+https://github.com/OWNER/repository.git
 {% endhighlight %}
 
 Now we can update the origin url.
 
 {% highlight bash %}
-git config remote.origin.url https://USER_NAME@github.com/COMPANY/repository.git
+git config remote.origin.url https://USER_NAME@github.com/OWNER/repository.git
 {% endhighlight %}
 
-Your user name, company/organization repository name will be different.
+Your user name, repository owner and repository name will be different.
 
 Now the user name is not needed.
-[screen-shot2]
+
+![credentials not required](/images/github-origin/no-password.png)
