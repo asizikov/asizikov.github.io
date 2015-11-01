@@ -1,0 +1,50 @@
+---
+layout: post
+title: GitHub Deployment statuses
+tags: github deployment status 
+---
+
+
+It’s very important to collect and track as much information as you can about your system. We have logging, we have monitoring, we have reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code. 
+
+The actual process of programming is tracked by VCS. The majority of teams can easily tell you where did this line of code come from. Author, branch name, and often the issue identifier are stored against the commit. If you don’t modify the history then you’ll be able to track down the way developer was building the feature. 
+
+GitHub provides you with extra level of storing information about your code. It’s definitely not just the web UI for your repository. The Pull Request collects all the commits related to the feature, it tracks the discussion and as long as it’s a part of your history you can not delete the PR. That makes it a great place to aggregate other events.
+
+The feature, which is well known is the GitHub Statuses API
+
+[]
+
+Statuses are most often sent by CI server. However CI is not the only possible source of this information. Anyway statuses are linked to the commit and you can use them in your process. For example with the combination of protected branches and statuses you can prevent yourself from merging code that can not be build into master branch.
+
+The other feature of GitHub, which I discovered not so long ago is Deployment Statuses. It’s quite simple at the moment. The only thing it does it links the branch/commit or tag with the event of deployment.
+
+[]
+
+Successful deployment on the test environment is just another confirmation for your teammates that your changes are fine and it’s time to merge your code.
+
+[]
+
+That’s how it looks like. Well, except the fact that I don’t usually talk to myself.
+
+Requesting the new deployment using Octokit.net is relatively simple:
+
+
+{code}
+
+Updating the status is not difficult as well:
+
+{code}
+
+More detailed api documentation can be found here:
+https://developer.github.com/v3/repos/deployments/
+
+As I mentioned earlier the deployment can be requested for the particular commit, for the branch or for the tag. 
+
+#Links
+
+* https://developer.github.com/v3/repos/statuses/
+* https://developer.github.com/v3/repos/deployments/
+* http://githubengineering.com/deploying-branches-to-github-com/
+
+
