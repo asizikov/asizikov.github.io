@@ -4,7 +4,7 @@ title: How to convince Linus Torvalds to contribute to your project
 tags: github git commit abuse linus 
 ---
 
-Look at all those famous people committing to some random developer’s boring repository. 
+Look at all those famous people committing to some random developer’s [boring repository](https://github.com/asizikov/gang/graphs/contributors). 
 
 ![gang](/images/github-author/gang.png)
 
@@ -14,7 +14,7 @@ In general, git is just a tool that allows you to create [patches](https://git-s
 
 When you create a commit, it will be signed with your name and email. Look at the author part here:
 
-![commiter](/images/github-author/commiter.png)
+![commiter](/images/github-author/committer.png)
 
 You have your name listed twice for every commit. You are both author and committer. Technically, the author is the one who created the patch and the committer is the person who applied the patch.
 
@@ -26,11 +26,11 @@ However, there is a way to override them:
 
 This command will write any name and email into both, the committer and the author fields.
 
-Why would you do that?
+#Why would you do that?
 
 The real life use case scenario: imagine you have to work with a repository on someone else's computer? Or you work from you personal computer, but you want to commit your changes to your work repository. You might want to use the proper user name to keep the history clean and correct.
 
-Disclaimer
+#Disclaimer
 
 First of all, this is not a security issue. You don't have access to the person’s git account and repositories. 
 The only thing that GitHub is doing here is linking the fake committer to their account based on their e-mail address. This activity will not be shown on their profile page.
