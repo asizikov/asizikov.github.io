@@ -46,7 +46,12 @@ First option is good for testing, but committing configuration file to the repos
 
 ## The goal
 
+As I already mentioned, I work in a feature branch and I want to make sure that build is not broken. 
+That means that build server constantly compiles and packs code. 
+However code in a feature branch is most likely unstable and it's better not to publish it to the official feed.
 
+On the other hand when the feature is complete, tested, and merged to `develop` branch I'm more than happy to publish prerelease package.
+I'm dogfooding anyway.
 
 
 [ProtectedBranches]: https://help.github.com/articles/about-protected-branches/
