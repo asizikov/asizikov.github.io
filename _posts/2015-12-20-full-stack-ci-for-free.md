@@ -10,9 +10,9 @@ I want to show how you can build the CI pipeline using free services and tools.
 
 * [GitHub](https://github.com) 
 * [GitVersion](https://github.com/GitTools/GitVersion)
-* [Appveyor](http://www.appveyor.com/) 
+* [AppVeyor](http://www.appveyor.com/) 
 
-As an example I'm going to use my pet project: plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package. I actually faced some limitations of NuGet.exe and Appveyor.
+As an example I'm going to use my pet project: [AsyncSuffix][AsyncSuffixGitHub] plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package. I actually faced some limitations of NuGet.exe and AppVeyor.
 
 ## GitHub 
 Git and GitHub both are kind of industry standard for open source software development nowadays.  
@@ -25,16 +25,18 @@ The actual development is taking place in feature branches. The build started fr
 
 ##GitVersion
 
-I like the approach suggested by GitVersion. You can define package versions based on your branching model. 
+I like the approach suggested by GitVersion. You can define package version based on your branching model. 
 
 The basic idea is simple: 
 
-The build triggered by commit to Feature branch produces alpha package, beta packages come from develop branch, release candidates come from master. 
-The tag produces stable version. 
+* The build triggered by commit to Feature branch produces alpha package, beta packages come from develop branch, release candidates come from master. 
+* The tag produces stable version. 
+
 If you want to get more backgrounds I recommend you a nice [couple][GVSemVer] of [posts][GVSemVer2] written by [my colleague](https://twitter.com/gusztavvargadr). 
 
-##Appveyor 
+##AppVeyor 
 I'm using AppVeyor as a CI server.
+
 AppVeyor is a free cloud build server which is [easy to integrate][AppVeyorGitHub] with your GitHub repository.
 Creating the account is simple, you can log in using your GitHub and you’re done. 
 
@@ -53,9 +55,65 @@ However code in a feature branch is most likely unstable and it's better not to 
 On the other hand when the feature is complete, tested, and merged to `develop` branch I'm more than happy to publish prerelease package.
 I'm dogfooding anyway.
 
+External pull requests are different story. The build process must me triggered (how else can I be sure that it's safe to accept it?). But I don't want to have any packages created.
+
+Let's summarise it:
+
+* Build process is triggered by any commit, merge or tag action
+* Build process depends on the branch name
+
+## Configuration
+
+First of all we need to agree on the branch naming. Typically it depends on the branching model you use.
+For GitFlow I'm using the following naming convention: 
+
+* `master` and `develop` - for stable code
+* `feature/*` - for unfinished features
+
+My `AppVeyor.yml` will look like: 
+
+{% gist 0498fdbd14888bea9b17 %}
+
+Unfortunately there is no way to have common sections in the config file (well, at least at the moment), 
+so we have no other option but having very similar configurations. However AppVeyor evolves very quickly and we can expect some improvements.
+
+Once we have templates defined we can start with actual build steps.
+
+Install GitVersion from [Chocolatey][ChocolateyOrg]
+
+```
+install:
+    - choco install gitversion.portable -y
+```
+
+Define environment variables (different for each branch configuration)
+
+```
+environment:
+    resharper_nuget_api_key:
+      secure: RjiHK3Oxp74LUrI1/vmc2S36zOSRLxFM1Eq0Qn4hixWiou11jFqUbW2ukMNXrazP
+```
+
+Important note: the api key is [encrypted](https://ci.appveyor.com/tools/encrypt) and can be published to the public repository.
+
+Restore NuGet packages and set the build version.
+
+```
+before_build:
+    - ps: nuget restore
+    - ps: gitversion /l console /output buildserver /updateassemblyinfo /b (get-item env:APPVEYOR_REPO_BRANCH).Value
+```
+
+Nuspec for appveyor
+Then the tricky part is coming. Usually the `nuget pack` command will set the package version based on the assembly annotations. 
+
+
 
 [ProtectedBranches]: https://help.github.com/articles/about-protected-branches/
 [ProtectedMerge]: https://github.com/blog/2051-protected-branches-and-required-status-checks
 [GVSemVer]: http://gusztavvargadr.github.io/2015/09/20/1-everyday-gitflow-and-semantic-versioning/
 [GVSemVer2]: http://gusztavvargadr.github.io/2015/10/30/2-gitversion-to-the-rescue/
 [AppVeyorGitHub]: http://www.appveyor.com/docs
+[AsyncSuffixGitHub]: https://github.com/asizikov/AsyncSuffix
+[ChocolateyOrg]: https://chocolatey.org/
+[ReSharperDev]: https://www.jetbrains.com/resharper/devguide/Extensions/Packaging.html
