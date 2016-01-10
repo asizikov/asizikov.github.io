@@ -149,6 +149,9 @@ The `ApiKey` will be transparently decrypted and the package will be published:
 
 ![Success](/images/ci-for-free/pushing-package.png)
 
+
+P.S. You can definitely do more than publishing packages. You can [execute tests](https://www.appveyor.com/docs/running-tests), custom build scripts (PowerShell, [FAKE](http://fsharp.github.io/FAKE/)) or even [deploy](https://www.appveyor.com/docs/deployment) your application.
+
 [ProtectedBranches]: https://help.github.com/articles/about-protected-branches/
 [ProtectedMerge]: https://github.com/blog/2051-protected-branches-and-required-status-checks
 [GVSemVer]: http://gusztavvargadr.github.io/2015/09/20/1-everyday-gitflow-and-semantic-versioning/
