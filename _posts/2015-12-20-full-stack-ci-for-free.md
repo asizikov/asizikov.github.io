@@ -6,7 +6,7 @@ tags: github appveyor free
 
 This is a long title. Well, the post is going to be long as well.
 
-I want to show how you can build the CI pipeline using free services and tools.
+I want to show how you can set up the CI pipeline using free services and tools.
 
 * [GitHub](https://github.com) 
 * [GitVersion](https://github.com/GitTools/GitVersion)
@@ -21,9 +21,9 @@ I'm using slightly modified version of git flow for my project. I have two manda
 `Master` branch contains released code marked with tags. `Develop` branch is for stable pre-release code. 
 These two branches are configured [as protected][ProtectedBranches], so code can never be merged unless [CI server reports the successful build][ProtectedMerge]. This allows me to publish stable and pre release packages automatically.
 
-The actual development is taking place in feature branches. The build started from feature branch will create an alpha package and publish it to separate NuGet feed provided by AppVeyor.
+A development is taking place in feature branches. The build triggered from feature branch will create an alpha package and publish it to separate NuGet feed provided by AppVeyor.
 
-##GitVersion
+## GitVersion
 
 I like the approach suggested by GitVersion. You can define package version based on your branching model. 
 
@@ -104,10 +104,57 @@ before_build:
     - ps: gitversion /l console /output buildserver /updateassemblyinfo /b (get-item env:APPVEYOR_REPO_BRANCH).Value
 ```
 
-Nuspec for appveyor
-Then the tricky part is coming. Usually the `nuget pack` command will set the package version based on the assembly annotations. 
+The build itself:
 
+```
+build:
+    project: AsyncSuffix.sln
+```
 
+Now it's time to create NuGet package. 
+AppVeyor has a feature to create packages automatically: 
+
+![CreatePackage](/images/ci-for-free/package-projects.png)
+
+Doesn't work for me though. At the moment it [ignores the content](http://help.appveyor.com/discussions/problems/2698-when-using-publish_nuget-true-my-nuspec-is-ignored-and-it-is-packaging-the-csproj-instead) of `.nuspec` file, 
+and performs `nuget pack` command on the `csproj` file. 
+
+That's why I have to define an `after_build` step:
+
+```
+after_build:
+    - ps: nuget pack AsyncSuffix/AsyncSuffix.nuspec -Version (get-item env:GitVersion_InformationalVersion).Value
+```    
+
+I have to specify the version, because the `nuget pack` command reads package version from assembly annotations. 
+Unfortunately I have this annotation:
+
+```csharp
+[assembly: RegisterConfigurableSeverity(ConsiderUsingAsyncSuffixHighlighting.SeverityId,
+  null,
+  HighlightingGroupIds.BestPractice,
+  "Consider adding Async suffix",
+  "According to Microsoft gudlines a method which is Task-returning and is asynchronous in nature should have an 'Async' suffix. ",
+  Severity.SUGGESTION,
+  false)]
+
+```
+As you can guess `RegisterConfigurableSeverityAnnotation` is declared in one of R# SDK's assemblies. NuGet fails to load it and falls back to `1.0.0` version.
+
+The final step is different for every branch configuration:
+
+```
+- ps: if(-not $env:APPVEYOR_PULL_REQUEST_NUMBER){ 
+        nuget push *.nupkg 
+            -ApiKey (get-item env:resharper_nuget_api_key).Value 
+            -Source https://resharper-plugins.jetbrains.com 
+      }
+```
+
+If `APPVEYOR_PULL_REQUEST_NUMBER` environment variable is defined that means that we're currently performing a synthetic build of merge commit from Pull Request.
+The `ApiKey` will be transparently decrypted and the package will be published:
+
+![Success](/images/ci-for-free/pushing-package.png)
 
 [ProtectedBranches]: https://help.github.com/articles/about-protected-branches/
 [ProtectedMerge]: https://github.com/blog/2051-protected-branches-and-required-status-checks
