@@ -4,6 +4,7 @@ title: Fully automated Continuous Integration for your Open Source library for f
 tags: github appveyor free
 ---
 
+![open source is commumism](/images/ci-for-free/communism.png)
 This is a long title. Well, the post is going to be long as well.
 
 I want to show how you can set up the CI pipeline using free services and tools.
@@ -21,7 +22,7 @@ I'm using slightly modified version of git flow for my project. I have two manda
 `Master` branch contains released code marked with tags. `Develop` branch is for stable pre-release code. 
 These two branches are configured [as protected][ProtectedBranches], so code can never be merged unless [CI server reports the successful build][ProtectedMerge]. This allows me to publish stable and pre release packages automatically.
 
-A development is taking place in feature branches. The build triggered from feature branch will create an alpha package and publish it to separate NuGet feed provided by AppVeyor.
+The development is taking place in feature branches. The build triggered from the feature branch will create an alpha package and publish it to separate NuGet feed provided by AppVeyor.
 
 ## GitVersion
 
@@ -55,7 +56,7 @@ However code in a feature branch is most likely unstable and it's better not to 
 On the other hand when the feature is complete, tested, and merged to `develop` branch I'm more than happy to publish prerelease package.
 I'm dogfooding anyway.
 
-External pull requests are different story. The build process must me triggered (how else can I be sure that it's safe to accept it?). But I don't want to have any packages created.
+External pull requests are different story. The build process must be triggered (how else can I be sure that it's safe to accept it?). But I don't want to have any packages created.
 
 Let's summarise it:
 
@@ -129,16 +130,8 @@ after_build:
 I have to specify the version, because the `nuget pack` command reads package version from assembly annotations. 
 Unfortunately I have this annotation:
 
-```csharp
-[assembly: RegisterConfigurableSeverity(ConsiderUsingAsyncSuffixHighlighting.SeverityId,
-  null,
-  HighlightingGroupIds.BestPractice,
-  "Consider adding Async suffix",
-  "According to Microsoft gudlines a method which is Task-returning and is asynchronous in nature should have an 'Async' suffix. ",
-  Severity.SUGGESTION,
-  false)]
+{% gist 4f9eb8f0375e3ce81de0 %}
 
-```
 As you can guess `RegisterConfigurableSeverityAnnotation` is declared in one of R# SDK's assemblies. NuGet fails to load it and falls back to `1.0.0` version.
 
 The final step is different for every branch configuration:
