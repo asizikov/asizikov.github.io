@@ -240,26 +240,16 @@ Every expression matches the wildcard pattern.
 ### Recursive Pattern
 
 {% highlight csharp %}
-public void Foo(object item)
+public int Sum(LinkedListNode<int> root)
 {
-    switch (item)
+    switch (root)
     {
-        case string x:
-            switch (x){
-                case "":
-                    WriteLine("Empty string");
-                    break;
-                default:
-                    WriteLine("Not empty string");
-                    break;
-            }
-            break;
-        case *:
-            WriteLine("Not a string");
-            break;
+        case null: return 0;
+        case LinkedListNode<int> { Value is var head, Next is var tail }:
+            return head + Sum(tail);
+        case *: return 0;
     }
 }
-
 {% endhighlight %}   
 ###Others
 
