@@ -1,2 +1,6 @@
 source 'https://rubygems.org'
-gem 'github-pages'
+gem 'jekyll-gist'
+gem 'jekyll-paginate'
+gem 'rouge'
+gem 'kramdown'
+gem 'jekyll-watch'
