@@ -138,7 +138,7 @@ Also might be handy for iterators:
  }
 {% endhighlight %}
 
-##Ref returns and locals
+## Ref returns and locals
 
 Sort of a low-level feature in my opinion. You can return reference from method.
 Erric Lippert [thought that](https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/ref-returns-and-ref-locals/) 
@@ -167,7 +167,7 @@ Will print:
 10
 ```
 
-##Pattern matching
+## Pattern matching
 
 >Patterns are used in the `is` operator and in a `switch`-statement to express the shape of data against which incoming data is to be compared. Patterns may be recursive so that subparts of the data may be matched against subpatterns.
 
@@ -176,7 +176,7 @@ Unfortunately the syntax is not final now.
 
 There are several types of patterns supported for now.
 
-###Type pattern
+### Type pattern
 
 The type pattern is useful for performing runtime type tests of reference types.
 
@@ -190,7 +190,7 @@ public void Foo(object item)
 }
 {% endhighlight %}
 
-###Constant Pattern
+### Constant Pattern
 
 A constant pattern tests the runtime value of an expression against a constant value.
 
@@ -209,7 +209,7 @@ public void Foo(object item)
 }
 {% endhighlight %}
 
-###Var Pattern
+### Var Pattern
 
 A match to a var pattern always succeeds. At runtime the value of expression bounds to a newly introduced local variable.
 
@@ -223,7 +223,7 @@ A match to a var pattern always succeeds. At runtime the value of expression bou
  }
 {% endhighlight %}
 
-###Wildcard Pattern
+### Wildcard Pattern
 
 Every expression matches the wildcard pattern.
 
@@ -251,7 +251,7 @@ public int Sum(LinkedListNode<int> root)
     }
 }
 {% endhighlight %}   
-###Others
+### Others
 
 `switch` based patterns could contain so-called guard close:
 
@@ -294,7 +294,7 @@ Pattern matching is really neat. I spent some time with it and I like it.
 
 ![console installer output](/images/csharp-7-preview/console-installer.png)
 
-##Links
+## Links
  
 * [GitHub Discussion: Local Functions](https://github.com/dotnet/roslyn/issues/2930)
 * [GitHub Proposal: Ref Returns and Locals](https://github.com/dotnet/roslyn/issues/118)
