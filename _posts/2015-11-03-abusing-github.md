@@ -26,11 +26,11 @@ However, there is a way to override them:
 
 This command will write any name and email to both, the committer and the author fields.
 
-#Why would you do that?
+# Why would you do that?
 
 The real life use case scenario: imagine you have to work with a repository on someone else's computer. Or you work from you personal computer, but you want to commit your changes to your work repository. You might want to use the proper user name to keep the history clean and correct.
 
-#Disclaimer
+# Disclaimer
 
 First of all, this is not a security issue. You don't actually gain access to the person’s git account and repositories. 
 The only thing that GitHub is doing here is linking the fake commit to their account based on their e-mail address. This activity will not be shown on their profile page.
