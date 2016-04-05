@@ -8,7 +8,7 @@ In my [previous post](http://asizikov.github.io/2015/06/27/resharper-custom-live
 
 All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper [NuGet feed](https://resharper-plugins.jetbrains.com/packages) or to your own company's private feed (in case you want to keep it away from the rest of the world).
 
-##Exporting settings
+## Exporting settings
 
 Go to RESHARPER->Manage Options menu.
 
@@ -22,7 +22,7 @@ Click Import/Export settings
 
 In the Export To File dialog window select Code Style and Live templates tree nodes. Then choose the directory and file name for your DotSettings file.
 
-##Creating NuGet package
+## Creating NuGet package
 
 Once the settings file is exported to the Settings folder we might want to create a NuGet package. 
 The .nuspec file for ReSharper 8.2 looks like the following:
@@ -83,7 +83,7 @@ nuget.exe pack nuspec-file-name.nuspec
 
 If everything is set up correctly you will get the "YourCompany.Settings.1.0.0.nupkg" file as an output.
 
-##Publishing NuGet package
+## Publishing NuGet package
 
 As I mentioned before ReSharper can consume four different NuGet feeds.
 
@@ -98,7 +98,7 @@ NB. ReSharper is not so good when it comes to NuGet feed with authentication.
 
 For the demo purpose I'll use the file system. Just place the .nupkg to the folder which is accessible from every team member's computer.
 
-##Using custom NuGet feed
+## Using custom NuGet feed
 
 Once the package is published go to RESHARPER -> Options...->Environment -> Extension Manager.
 
@@ -108,7 +108,7 @@ Click Add and enter any name you want for the Name and the path of the Artifacts
 
 ![Set up new feed](/images/resharper-settings-plugin/gallery-save.png)
 
-##Installing the extension
+## Installing the extension
 
 In Visual Studio go to RESHARPER -> Extension Manager
 
