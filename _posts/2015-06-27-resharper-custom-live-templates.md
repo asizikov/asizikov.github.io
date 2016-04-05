@@ -11,7 +11,7 @@ It saves me time, provides me a static analysis and generates code for me.
 
 In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 [Live Templates](https://www.jetbrains.com/resharper/features/code_templates.html). The good fact is that it's easy to customize, and you can introduce your own templates.
 
-##Creating the Live Template
+## Creating the Live Template
 
 Go to RESHARPER -> Templates Explorer 
 
@@ -32,7 +32,7 @@ RETURN\_TYPE and METHOD\_NAME are placeholders for the return type and for the m
 $END$ - marks the point where the text caret is placed when the template is inserted. 
 
 
-##Availability
+## Availability
 
 Live templates allows us to define the scope where the template will be available. In our case async keyword is valid in the context of C# 5.0 and higher versions.
 
@@ -47,7 +47,7 @@ Now the template should look like the following:
 
 I've declared the shortcat 'am' for the template.
 
-##In action
+## In action
 
 Let's type 'am' in the code and here we go: our brand new template is activated.
 
