@@ -35,7 +35,7 @@ The basic idea is simple:
 
 If you want to get more backgrounds I recommend you a nice [couple][GVSemVer] of [posts][GVSemVer2] written by [my colleague](https://twitter.com/gusztavvargadr). 
 
-##AppVeyor 
+## AppVeyor 
 I'm using AppVeyor as a CI server.
 
 AppVeyor is a free cloud build server which is [easy to integrate][AppVeyorGitHub] with your GitHub repository.
