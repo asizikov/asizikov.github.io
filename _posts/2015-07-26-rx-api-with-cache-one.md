@@ -35,7 +35,7 @@ public async Task<RatingModel> GetRatingForUser(string userName)
 }
 {% endhighlight %}
 <center><font color="gray">the naive implementation</font></center>
-##Let’s add caching
+## Let’s add caching
 Assuming that we’re building the mobile app, and taking into account that our data is not business critical we can consider following requirements:
 
 1. The app has to start quickly;
@@ -53,7 +53,7 @@ The basic idea is to treat the cache as a passive data storage so that the respo
 
 The points 2,3 and 4 are somewhat the realization of the [Refresh-Ahead](http://www.google.com/url?q=http%3A%2F%2Fdocs.oracle.com%2Fcd%2FE15357_01%2Fcoh.360%2Fe15723%2Fcache_rtwtwbra.htm&sa=D&sntz=1&usg=AFQjCNEinVNWh8WsT-SxfW1ZIlgv40SlEA) caching pattern. Not the classical version though, but that’s what we need patterns for.
 
-##Implementaton
+## Implementaton
 
 Let’s create a new Class Library (.NET 4.5) project in visual studio and add the Rx-Main NuGet package to it.
 
@@ -215,7 +215,7 @@ Client.GetRatingForUser(userName)
 	  .Subscribe(RenderRating);
 {% endhighlight %}
 In the [next blog post](http://asizikov.github.io/2015/08/14/rx-api-with-cache-two/) I’m going to write unit tests for this api client. Stay tuned.
-##Links and sources
+## Links and sources
 
 * [ReactveX home](http://reactivex.io/)
 * [Introduction to Rx](http://www.introtorx.com/content/v1.0.10621.0/05_Filtering.html)
