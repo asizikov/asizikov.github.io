@@ -63,7 +63,7 @@ _<font color="gray">ItemCanBeNull applied to Lazy</font>_
 
 Happy annotating!
 
-##Links
+## Links
 
 * [How to use JetBrains Annotations to improve ReSharper inspections](https://blog.jetbrains.com/dotnet/2015/08/12/how-to-use-jetbrains-annotations-to-improve-resharper-inspections/)
 * [Using Annotations to Refine Code Inspection](https://www.jetbrains.com/resharper/help/Code_Analysis__Code_Annotations.html)
