@@ -38,7 +38,7 @@ Updating the status is not complicated as well:
 
 As I mentioned earlier the deployment can be requested for the particular commit, for the branch or for the tag. 
 
-#Links
+# Links
 
 * [Statuses API](https://developer.github.com/v3/repos/statuses/)
 * [Deployments API](https://developer.github.com/v3/repos/deployments/)
