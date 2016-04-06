@@ -1,11 +1,7 @@
 language: ruby
 rvm:
   - 2.1
-install: gem install jekyll html-proofer
+install: gem install jekyll
 script:
   - bundle install
   - jekyll build
-  - htmlproofer ./_site --only-4xx --check-favicon --check-html
-env:
-  global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
