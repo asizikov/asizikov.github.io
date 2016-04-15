@@ -148,5 +148,8 @@ Same as for lambdas, though.
 
 ## Links
 
-* GitHub
+* [GitHub. Proposal: Nested local functions and type declarations](https://github.com/dotnet/roslyn/issues/259)
 * [Bill Wagner. C# 7 Feature Proposal: Local Functions](http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions)
+* [GitHub. Discussion: Local Functions](https://github.com/dotnet/roslyn/issues/2930)
+* [MSDN blogs. Know Thine Implicit Allocations](http://blogs.msdn.com/b/pfxteam/archive/2012/02/03/10263921.aspx).
+* [MSDN. Caller Information (C# and Visual Basic)](https://msdn.microsoft.com/en-us/library/hh534540.aspx)
