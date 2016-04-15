@@ -5,4 +5,4 @@ gem 'jekyll-paginate'
 gem 'rouge'
 gem 'kramdown'
 gem 'jekyll-watch'
-gem 'html-proofer' # testing
+#gem 'html-proofer' # testing
