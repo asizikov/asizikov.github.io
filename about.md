@@ -5,9 +5,9 @@ title: About
 
 Hi, my name is Anton Sizikov.
 
-Amsterdam based software engineer, building cool things on the .NET platform.
+Amsterdam-based software engineer, building cool things on the .NET platform.
 
-I wrote my first line of code in Pascal when I was 15. Or 14? In 2003 I got my first copy of Visual Studio .NET and a book about C++. Well, you know it's hard to build a C++ Hello World program with C# compiler. It took me a while to realise that I'm using the wrong language. Anyway for now C# is the main and most powerful tool in my toolset.
+I wrote my first line of code in Pascal when I was 15. Or 14? In 2003, I got my first copy of Visual Studio .NET and a book about C++. Well, you know it's hard to build a C++ Hello World program with C# compiler. It took me a while to realize that I'm using the wrong language. Anyway, for now, C# is the main and most powerful tool in my toolset.
 
 Since that time I've been working with various technologies: mobile, desktop, web (backend and frontend). I have personal projects such as plugins for ReSharper (yeah, I do care about code quality), mobile apps (Windows Phone didn't get a huge success, but I still love this platform), and a bunch of small programs. Check it out on my [GitHub](https://github.com/asizikov?tab=repositories).
 
