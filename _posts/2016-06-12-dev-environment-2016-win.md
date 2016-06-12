@@ -7,7 +7,7 @@ title: Dev environment 2016. Windows.
 
 I've changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it. 
 
-I guess it might be interesting to look at it some time after and compare how does it evolve.
+I guess it might be interesting to look back at some point and see how does it evolve.
 
 ## Background
 
