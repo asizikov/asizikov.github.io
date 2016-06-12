@@ -9,12 +9,15 @@ permalink:        pretty
 title:            Anton Sizikov
 url:              http://asizikov.github.io/
 tagline:          'Anton Sizikov'
-description:      'Software developer.'
+description:      ".NET Software Engineer's blog."
 baseurl:          /
 
 author:
   name:           'Anton Sizikov'
   url:            https://twitter.com/return_true
+
+twitter:
+   username: return_true
 
 paginate:         5
 
@@ -27,4 +30,4 @@ version:          2.1.0
 
 github:
   repo:           https://github.com/asizikov
-gems:             [jekyll-paginate, jekyll-gist, rouge]
+gems:             [jekyll-paginate, jekyll-gist, rouge, jekyll-seo-tag]

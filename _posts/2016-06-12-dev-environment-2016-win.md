@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Dev environment 2016. Windows. 
+image: /images/dev-tools-2016-win/old-tools-8.png
 ---
 
 ![tool](/images/dev-tools-2016-win/old-tools-8.png)
