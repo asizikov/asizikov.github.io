@@ -28,7 +28,7 @@ You remember those dialogs:
 >
 >--- Yeah, I think you need so put these lines into your `hosts` file.
 
-Well, not it's all gone.
+Well, now it's all gone.
 
 It's not only limited to this scenario. You want to experiment with a new unstable version of the framework (yes, [.NET Core RC-final-almost-stable](https://twitter.com/NETCoreReadyYet/status/735972346436161536), I'm talking about you) and you don't want to mess up with your dev machine?
 
