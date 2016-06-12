@@ -153,3 +153,9 @@ I prefer to have all the tools grouped into `.config` files:
 and they could be installed all together.
 
 ![choco-install](/images/dev-tools-2016-win/choco-install-config.png)
+
+## A call to action
+
+Are there any tools around which are worth to try? 
+
+Please share in comments. I'm allways keen on trying new things.
