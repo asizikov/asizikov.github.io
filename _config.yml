@@ -7,17 +7,23 @@ permalink:        pretty
 
 # Setup
 title:            Anton Sizikov
-url:              http://asizikov.github.io/
+url:              https://asizikov.github.io
 tagline:          'Anton Sizikov'
 description:      ".NET Software Engineer's blog."
-baseurl:          /
-
-author:
-  name:           'Anton Sizikov'
-  url:            https://twitter.com/return_true
+baseurl:          ""
 
 twitter:
-   username: return_true
+  username: return_true
+github:
+  username: asizikov
+  repo: https://github.com/asizikov
+social:
+  type: person
+  name: Anton Sizikov
+  links:
+    twitter: https://www.twitter.com/return_true
+    github: https://github.com/asizikov
+
 
 paginate:         5
 
@@ -28,6 +34,4 @@ kramdown:
 # Custom vars
 version:          2.1.0
 
-github:
-  repo:           https://github.com/asizikov
 gems:             [jekyll-paginate, jekyll-gist, rouge, jekyll-seo-tag]
