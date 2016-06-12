@@ -1,6 +1,9 @@
 ---
 layout: page
 title: About
+permalink: about
+seo: 
+  type: Person
 ---
 
 Hi, my name is Anton Sizikov.
