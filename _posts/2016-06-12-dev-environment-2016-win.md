@@ -158,4 +158,4 @@ and they could be installed all together.
 
 Are there any tools around which are worth to try? 
 
-Please share in comments. I'm allways keen on trying new things.
+Please share in comments. I'm always keen on trying new things.
