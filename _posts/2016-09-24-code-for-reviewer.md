@@ -136,11 +136,13 @@ When you read this code as a plain text you can only tell that the method `Foo` 
 
 And this is just fine. You can focus on what the code does, not on how it does. The "how" part is checked by the compiler.
 
+It requires some courage, but I'm going to remove all `this.` prefixes.
+
 ## Final look 
 
 ![Code in IDE, no redundant code](/images/code-for-reviewer/no-redundant.png)
 
-So, what to we have here? As we learned, as a reviewer we need to focus on the logic, and we shouldn't try to chase any errors which can be caught by the compiler.
+So, what do we have here? As we learned, as a reviewer we need to focus on the logic, and we shouldn't try to chase any errors which can be caught by the compiler.
 
 Let's read it one more time: 
 
@@ -149,13 +151,13 @@ Let's read it one more time:
 
 Now scroll up and compare with the first attempt. Much shorter, right?
 
-Now the reviewer has no information about types, about the nature of methods and properties. They do not know what `DayUtils` is. That might be an `enum`, or a static class or anything else. 
+Ok, the reviewer has no information about types, about the nature of methods and properties. They do not know what `DayUtils` is. It might be an `enum`, or a static class or anything else. 
 
 The only information that reviewer has is the logic of the method. And now they can focus on it because that's what is important here after all. The logic, not the AST structure.
 
 ![Review ](/images/code-for-reviewer/review.png)
 
 
-Please, let the compiler to its job, and focus on what **does** matter here.
+Please, let the compiler to its job, and help the reviewer focus on what **does** matter here.
 
 Feel free to comment on this if you agree or disagree. 
