@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Write code for the reviewer, not for the compiler 
-image: /images/dev-tools-2016-win/old-tools-8.png
+image: /images/code-for-reviewer/matrix.png
 ---
 
+![Code](/images/code-for-reviewer/matrix.png)
 
 I've been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.
 
@@ -81,7 +82,7 @@ This is a current class instance field.
 
 Hm, looks like we didn't lose much information, right? 
 
-## Explicit variable type
+### Explicit variable type
 
 When reviewing this snippet we don't know much about `AccountBalance` type. Is it a `struct` or a `class`? What kind of data does it contain? 
 
@@ -91,7 +92,7 @@ In fact, we can just omit the type declaration here.
 
 So far so good. We don't know the type, but we do know that the type is correct. We were able to pass it to `CalculateFees` method, and our code compiles. 
 
-## Generic parameter
+### Generic parameter type
 
 What kind of information could the reviewer gather from the explicit generic parameter type specification? 
 
@@ -101,7 +102,7 @@ After all the reviewer is not trying to catch compilation errors, eh?
 
 ![Code in IDE, implicit generic parameter type](/images/code-for-reviewer/redundant-code-no-generic-type.png)
 
-## this qualifier
+### this qualifier
 
 This is a very painful moment. 
 
