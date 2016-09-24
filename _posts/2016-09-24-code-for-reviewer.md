@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Write code for the reviewer, not for the compiler 
-image: /images/dev-tools-2016-win/old-tools-8.png
+image: /images/code-for-reviewer/matrix.png
 ---
 
+![Code](/images/code-for-reviewer/matrix.png)
 
 I've been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.
 
