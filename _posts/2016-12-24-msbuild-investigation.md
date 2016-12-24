@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Investigating unexpected
-image: /images/code-for-reviewer/matrix.png
+title: Investigating unexpected MSBuild behavior
+image: /images/2016-12-msbuild-investigation/msbuild-log-dll-resolved-overview.png
 ---
 
 Recently I took latest changes from git, merged `dev` to my current branch and decided to run few integration tests. You know, just to be sure.
