@@ -1,10 +1,13 @@
 ---
 layout: post
 title: You are mocking it wrong.
-image: /images/2016-12-msbuild-investigation/msbuild-log-dll-resolved-overview.png
+image: /images/2017-12-mocking/mockingbird.jpg
 ---
 
 Well, probably *you* are not, but let me grumble a little bit anyway.
+
+![Mockingbird picture](/images/2017-12-mocking/mockingbird.jpg)
+_Mockingbird knows how to mock._
 
 I've been working with various code bases throughout of my career, and there is one pattern which I see rather often. As you may have already guessed it's the unit-tests and mocking I'm going to talk about here. To give it a nice catchy start, I'd claim here, that mocks should be used when you *have to*, but not when you *can*. 
 
@@ -88,8 +91,7 @@ How is that different to the attempt to [test a private method](https://stackove
 
 That little convenience wrapper for the standard library class is nothing more than an implementation detail. 
 
-But integration tests are slow...
-==
+### But integration tests are slow...
 
 That would be an expected note. If we come back to our `ClientTest`. What performs better, the test with mock, or the test with the concrete Greeter implementation? I guess the answer is obvious. We shouldn't forget that that test doesn't prove anything. It is slower, it allocates more, and it's wrong. I'd say it's harmful. 
 
@@ -100,8 +102,7 @@ Ok, that is a good question. Remember I said that we should mock when we *have t
 
 You don't want to make HTTP calls while running your unit tests suite, you don't want to send out emails, neither do I. 
 
-Hey, I tried not to mock, and I got sick of initing all the dependencies
-==
+### Hey, I tried not to mock, and I got sick of initing all the dependencies
 
 This is where it gets painful. I saw systems like that, it's a nightmare to maintain. Manually setting up the dependency of the dependency is really not the way to go. It's hard, and everyone would avoid writing a new test. But that's an easy task to solve. 
 
@@ -119,8 +120,7 @@ Once you've got all the clusters well tested, all the interfaces established you
 
 Imagine you want to extract some logic into the separate class. Now your system has a new dependency, but that logic has already been tested. You don't need to set up a new mock, you don't need to repeat the logic of the extracted class in your test set up, you don't need to update the test to instantiate the tested class. It's just there, and your safety net still works. If you extract and modify the logic, you would break the test.  Do you see the beauty? Extracting the class and introducing a new dependency is as easy as moving the logic into a private method.
 
-Summary
-==
+### Summary
 
 The approach above would give you the following benefits: 
 
@@ -128,6 +128,7 @@ The approach above would give you the following benefits:
 * No need to maintain duplicated implementation (mock set ups)
 * Feature driven tests, tests that verify that the cluster does the job
 * An easy to refactor code base
+* You can improve module level access (no need to make the class public just for the testing)
 
 From my experience tests, based on that cluster approach, are much more reliable. When they break, they actually mean that the system is dysfunctional, when they pass you can be sure that you did not break the logic. 
 
