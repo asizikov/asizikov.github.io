@@ -53,7 +53,7 @@ And now it's somewhat clear what's going on. On the screenshot below we can see 
 ![MSbuild log. Overview](/images/2016-12-msbuild-investigation/msbuild-log-build-order.png)
 
 It seems that MSBuild failed to resolve a path to `Microsoft.Data.Edm` while preparing project 2, and that's why an old version was used for project 1. However, project 2 has all the references configured correctly. 
-Once the incorrect DLL version was resolved it's beeing used for all remain projects.
+Once the incorrect DLL version was resolved it's being used for all remain projects.
 
 I'm not sure if that's an expected behavior. To be honest I'm a bit confused here. At least as a temporary solution I can add `Edm` package to project 1. That will fix my problem for now.
  
