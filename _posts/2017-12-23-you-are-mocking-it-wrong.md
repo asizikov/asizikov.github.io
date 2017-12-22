@@ -75,7 +75,7 @@ Not really, remember the `Client` class? Now it's incorrect, we still pass the t
 
 ![This is fine](/images/2017-12-mocking/fine.jpg)
 
-Here is the paradox, we introduced mocking so that we can test our class in isolation, but we had to put some code to make that mock return something. It's still the logic, isn't it? Now `IGreeter` has at least two implementations. Most probably in your codebase, you have tens of implementations for the mocked class. Just because it's a very much reused dependency, and you have to mock all over again. 
+Here is the paradox, we introduced mocking so that we can test our class in isolation, but we had to put some code to make that mock return something. It's still the logic, isn't it? Now `IGreeter` has at least two implementations. Most probably in your codebase, you have tens of implementations for the mocked class. Just because it's a very much reused dependency, and you have to mock it all over again. 
 
 We can improve that test, tune it, but the only way we can make it fail is to repeat the `Greeter` logic in our mock set up. But wait a minute, if we have the same implementation, why don't we reuse the existing code? 
 
@@ -95,8 +95,7 @@ That little convenience wrapper for the standard library class is nothing more t
 
 That would be an expected note. If we come back to our `ClientTest`. What performs better, the test with mock, or the test with the concrete Greeter implementation? I guess the answer is obvious. We shouldn't forget that that test doesn't prove anything. It is slower, it allocates more, and it's wrong. I'd say it's harmful. 
 
-So you're going to send out those emails every time you test?
-==
+### So you're going to send out those emails every time you test?
 
 Ok, that is a good question. Remember I said that we should mock when we *have to*, not when we *can*? That's exactly the right situation for the test isolation.
 
