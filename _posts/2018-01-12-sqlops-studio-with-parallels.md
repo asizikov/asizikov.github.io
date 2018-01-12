@@ -1,20 +1,20 @@
 ---
 layout: post
-title: You are mocking it wrong.
-image: /images/2017-12-mocking/mockingbird.jpg
+title: Connecting SQL Operations Studio to SQL Express server in Parallels VM
+image: /images/2018-01-sqlops/connected.png
 ---
 
-In this post I'm going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.
+In this post, I'm going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.
 
 Even though SQL Ops Studio is not a fully mature project it's already sufficient enough to perform simple and quick actions. 
 
 ### Motivation
 
-Since I'm running most of the apps on a host macOS and I'm trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks. I still have to keep MS SQL Management Studio installed, because I'm using RedGate tools such as SQL Source Control, but that's a different story.
+Since I'm running most of the apps on a host macOS and I'm trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks. I still have to keep MS SQL Management Studio installed because I'm using RedGate tools such as SQL Source Control, but that's a different story.
 
 ### My system overview
 
-First of all let's check what I've got installed here: 
+First of all, let's check what I've got installed here: 
 
 * MacOS host system. Running macOS High Sierra 10.13.2
 * Parallels Desktop 13 Pro
@@ -31,22 +31,25 @@ To set up SQL Express we need SQL Server Configuration Manager.
 
 I'm running SQL Express 2014 so need to type `SQLServerManager12.msc`.
 
-![Mockingbird picture](/images/2018-01-sqlops/sql-manager.png)
+![Starting SQL Server Network Configuration Manager](/images/2018-01-sqlops/sql-manager.png)
 
 Go to SQL Server Network Configuration -> Protocols for SQLEXPRESS -> TCP/IP
 
-![Mockingbird picture](/images/2018-01-sqlops/sql-manager-protocols.png)
+![SQL Server Network Configuration screenshot](/images/2018-01-sqlops/sql-manager-protocols.png)
 
 Right click and select *Enable*: 
 
-![Mockingbird picture](/images/2018-01-sqlops/sql-manager-tcp-enable.png)
+![Enable TCP/IP protocol](/images/2018-01-sqlops/sql-manager-tcp-enable.png)
 
-Set up Port, 
-Enable Browser
+Set up port number as on the picture (you're free to use any value, I'm using 5171 here)
+
+![Set up tcp/ip port](/images/2018-01-sqlops/tcp-ip-port.png)
 
 ### Configure Windows Firewall
 
-![Mockingbird picture](/images/2018-01-sqlops/windows-firewall-rule.png)
+We must allow `sqlserver.exe` to accept inbound connections: 
+
+![Windows Firewall, create new rule](/images/2018-01-sqlops/windows-firewall-rule.png)
 
 ### Kerberos
 
@@ -60,8 +63,11 @@ In case your SQL EXPRESS instance is set up to use Windows Authentication most p
 
 ![Kerberos Error message](/images/2018-01-sqlops/kerberos-error.png)
 
-
 There is a good article with step-by-step instructions. [Please refer to it](https://docs.microsoft.com/en-us/sql/sql-operations-studio/enable-kerberos).
 
+You can always [switch to Mixed Authentication Mode](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/change-server-authentication-mode#SSMSProcedure) :) 
 
 
+That's all folks!
+
+![Connected](/images/2018-01-sqlops/connected.png)
