@@ -1,32 +1,35 @@
 ---
 layout: page
-title: About
+title: Hi, I'm Anton.
 permalink: about
+header: 
+  image: /images/about/header.jpeg
 seo: 
   type: Person
 ---
 
-Hi, my name is Anton Sizikov.
+![img](/images/about/header.jpeg)
 
-Amsterdam-based software engineer, building cool things on the .NET platform.
+
+I'm an Amsterdam-based software engineer, building cool things on the .NET platform and Azure.
 
 I wrote my first line of code in Pascal when I was 15. Or 14? In 2003, I got my first copy of Visual Studio .NET and a book about C++. Well, you know it's hard to build a C++ Hello World program with C# compiler. It took me a while to realize that I'm using the wrong language. Anyway, for now, C# is the main and most powerful tool in my toolset.
 
-Since that time I've been working with various technologies: mobile, desktop, web (backend and frontend). I have personal projects such as plugins for ReSharper (yeah, I do care about code quality), mobile apps (Windows Phone didn't get a huge success, but I still love this platform), and a bunch of small programs. Check it out on my [GitHub](https://github.com/asizikov?tab=repositories).
+Since that time I've been working with various technologies: mobile, desktop, web (backend and frontend). 
+
+## What am I up to these days?
+
+I currently work as a Cloud Engineering Lead at Xccelerated. 
+
+In this role am responsible for hiring, training, and mentoring a group of young career-switchers in their journey towards the cloud engineer role. This includes building training materials, giving lectures, weekly mentoring sessions, design reviews, and consulting. However, I still keep my hands dirty and work as an external Cloud Solutions Architect.
 
 ## Social links
 
-[!["View Anton Sizikov's profile on LinkedIn"][2]][1] 
+* [Anton @ LinkedIn](https://www.linkedin.com/in/sizikov/)
+* [return-true @ Twitter](https://twitter.com/return_true)
+* [asizikov @ GitHub](https://github.com/asizikov)
  
-[!["profile for Anton Sizikov at Stack Overflow, Q&amp;A for professional and enthusiast programmers"][4]][3]
-         
-<a href="https://twitter.com/return_true" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @return_true</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+[!["Anton Sizikov at Stack Overflow"][2]][1]
 
-  [1]: https://nl.linkedin.com/pub/anton-sizikov/31/823/9bb
-  [2]: https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png
-  [3]: http://stackoverflow.com/users/555014/anton-sizikov
-  [4]: http://stackoverflow.com/users/flair/555014.png
-
-
-
+  [1]: http://stackoverflow.com/users/555014/anton-sizikov
+  [2]: http://stackoverflow.com/users/flair/555014.png
