@@ -26,7 +26,6 @@ social:
 
 
 paginate:         5
-
 kramdown:
   input: GFM
   syntax_highlighter: rouge
@@ -34,4 +33,4 @@ kramdown:
 # Custom vars
 version:          2.1.0
 
-gems:             [jekyll-paginate, jekyll-gist, rouge, jekyll-seo-tag]
+plugins: [jekyll-paginate, jekyll-seo-tag,jekyll-gist,rouge]
