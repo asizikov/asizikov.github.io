@@ -7,5 +7,4 @@ gem 'kramdown', '>= 2.3.0'
 gem 'jekyll-watch'
 gem "jekyll-seo-tag"
 gem "ffi", ">= 1.9.24"
-gem "jekyll-paginate"
 #gem 'html-proofer' # testing
