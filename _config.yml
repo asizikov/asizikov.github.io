@@ -35,4 +35,4 @@ version:          2.1.0
 
 plugins: [jekyll-paginate, jekyll-seo-tag,jekyll-gist,rouge]
 
-exclude: [docker-compose.yaml, Dockerfile]
+exclude: [docker-compose.yaml]
