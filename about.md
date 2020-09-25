@@ -3,12 +3,12 @@ layout: page
 title: Hi, I'm Anton.
 permalink: about
 header: 
-  image: /images/about/header.jpeg
+  image: /images/01-about/hdr.jpeg
 seo: 
   type: Person
 ---
 
-![img](/images/about/header.jpeg)
+![img](/images/01-about/hdr.jpeg)
 
 
 I'm an Amsterdam-based software engineer, building cool things on the .NET platform and Azure.
