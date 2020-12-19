@@ -6,7 +6,7 @@ tags: reactive-extensions howto rx cache unit-test
 
 Hi,
 
-In the [previous post](http://asizikov.github.io/2015/07/26/rx-api-with-cache-one/) I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests. 
+In the [previous post](/2015/07/26/rx-api-with-cache-one/) I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests. 
 
 To do so let's create a new project (Class Library), add a reference to the main project, and install few NuGet packages.
 

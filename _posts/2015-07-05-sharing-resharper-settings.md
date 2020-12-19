@@ -4,7 +4,7 @@ title: Sharing ReSharper settings and Live Templates
 tags: resharper howto
 ---
 
-In my [previous post](http://asizikov.github.io/2015/06/27/resharper-custom-live-templates) I've described how to create your own Live Templates for ReSharper. Today I'm going to tell how to share your ReSharper settings and Live Templates with your team.
+In my [previous post](/2015/06/27/resharper-custom-live-templates) I've described how to create your own Live Templates for ReSharper. Today I'm going to tell how to share your ReSharper settings and Live Templates with your team.
 
 All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper [NuGet feed](https://resharper-plugins.jetbrains.com/packages) or to your own company's private feed (in case you want to keep it away from the rest of the world).
 

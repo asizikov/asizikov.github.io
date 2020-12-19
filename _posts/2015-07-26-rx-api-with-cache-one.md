@@ -51,7 +51,7 @@ There are different local cache strategies. The one I’m going to follow is a
 
 The basic idea is to treat the cache as a passive data storage so that the responsibility to update the cached data is delegated to the cache client. 
 
-The points 2,3 and 4 are somewhat the realization of the [Refresh-Ahead](http://www.google.com/url?q=http%3A%2F%2Fdocs.oracle.com%2Fcd%2FE15357_01%2Fcoh.360%2Fe15723%2Fcache_rtwtwbra.htm&sa=D&sntz=1&usg=AFQjCNEinVNWh8WsT-SxfW1ZIlgv40SlEA) caching pattern. Not the classical version though, but that’s what we need patterns for.
+The points 2,3 and 4 are somewhat the realization of the [Refresh-Ahead](https://docs.oracle.com/cd/E15357_01/coh.360/e15723/cache_rtwtwbra.htm#COHDG5177) caching pattern. Not the classical version though, but that’s what we need patterns for.
 
 ## Implementaton
 

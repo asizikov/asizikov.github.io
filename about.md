@@ -31,5 +31,5 @@ In this role am responsible for hiring, training, and mentoring a group of young
  
 [!["Anton Sizikov at Stack Overflow"][2]][1]
 
-  [1]: http://stackoverflow.com/users/555014/anton-sizikov
-  [2]: http://stackoverflow.com/users/flair/555014.png
+  [1]: https://stackoverflow.com/users/555014/anton-sizikov
+  [2]: https://stackoverflow.com/users/flair/555014.png

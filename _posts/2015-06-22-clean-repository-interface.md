@@ -57,7 +57,7 @@ However the IClientRepository grows exponentially and quickly becomes an ugly mo
 
 It's not a nice solution for sure: lot's of code duplication and very unclear interface.
 
-A typical way to avoid it is to use [CQRS](http://martinfowler.com/bliki/CQRS.html) pattern and encapsulate the logic into the Query object.
+A typical way to avoid it is to use [CQRS](https://martinfowler.com/bliki/CQRS.html) pattern and encapsulate the logic into the Query object.
 
 At my current project we're building microservices, and a CQRS looks like an overkill. It doesn't stop us from borrowing some ideas, though. 
 Let's remove all these GetXXXX methods and add one more parameter to the Get method.
