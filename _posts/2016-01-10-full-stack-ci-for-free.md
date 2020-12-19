@@ -11,7 +11,7 @@ I want to show how you can set up the CI pipeline using free services and tools.
 
 * [GitHub](https://github.com) 
 * [GitVersion](https://github.com/GitTools/GitVersion)
-* [AppVeyor](http://www.appveyor.com/) 
+* [AppVeyor](https://www.appveyor.com/) 
 
 As an example I'm going to use my pet project: [AsyncSuffix][AsyncSuffixGitHub] plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package. I actually faced some limitations of NuGet.exe and AppVeyor.
 
@@ -43,7 +43,7 @@ Creating the account is simple, you can log in using your GitHub and you’re do
 
 There are two ways to configure build for the project. 
 * Using UI 
-* By placing [AppVeyor.yml](http://www.appveyor.com/docs/appveyor-yml) file to the root of the repository. 
+* By placing [AppVeyor.yml](https://www.appveyor.com/docs/appveyor-yml) file to the root of the repository. 
 
 First option is good for testing, but committing configuration file to the repository gives you ability to track versions. 
 

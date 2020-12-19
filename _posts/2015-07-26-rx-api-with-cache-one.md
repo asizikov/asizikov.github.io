@@ -113,7 +113,7 @@ public interface IRatingClient
 
 The key part here is the [IObservable&lt;T&gt;](http://www.google.com/url?q=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Flibrary%2Fdd990377(v%3Dvs.110).aspx&sa=D&sntz=1&usg=AFQjCNEndHmJ-ZVw1iN6PqzCDcW8PUcNAQ) i.e. the stream of events which you can subscribe to.
 
-The Rx power is in the ability to build the [pipeline](http://martinfowler.com/articles/collection-pipeline/) using the basic blocks, which are quite simple. We can wrap the cache usage into the reusable component/rx-operator:
+The Rx power is in the ability to build the [pipeline](https://martinfowler.com/articles/collection-pipeline/) using the basic blocks, which are quite simple. We can wrap the cache usage into the reusable component/rx-operator:
 {% highlight csharp %}
 public static IObservable<T> WithCache<T>(
         this IObservable<T> source, 
@@ -214,10 +214,10 @@ Now the usage of the client becomes as simple as the client from the first examp
 Client.GetRatingForUser(userName)
 	  .Subscribe(RenderRating);
 {% endhighlight %}
-In the [next blog post](http://asizikov.github.io/2015/08/14/rx-api-with-cache-two/) I’m going to write unit tests for this api client. Stay tuned.
+In the [next blog post](/2015/08/14/rx-api-with-cache-two/) I’m going to write unit tests for this api client. Stay tuned.
 ## Links and sources
 
-* [ReactveX home](http://reactivex.io/)
+* [ReactveX home](https://reactivex.io/)
 * [Introduction to Rx](http://www.introtorx.com/content/v1.0.10621.0/05_Filtering.html)
 * [The Reactive Extensions (Rx)](https://msdn.microsoft.com/en-us/data/gg577609.aspx)
 * [Read-Through, Write-Through, Write-Behind, and Refresh-Ahead Caching](http://docs.oracle.com/cd/E15357_01/coh.360/e15723/cache_rtwtwbra.htm#COHDG5177)

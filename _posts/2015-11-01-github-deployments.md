@@ -9,9 +9,9 @@ It’s very important to collect and track as much information as you can about 
 
 The actual process of programming is tracked by VCS. The majority of teams can easily tell you where did this line of code come from. Author, branch name, and often the issue identifier are stored in association with the commit. If you don’t modify the history then you’ll be able to track down the way developer was building the feature. 
 
-GitHub provides you with extra level of storing information about your code. It’s definitely not just the web UI for your repository. The Pull Request collects all the commits related to the feature, it tracks the discussion and as long as it’s a part of your history you can not [delete the PR](http://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github). That makes it a great place to aggregate other events.
+GitHub provides you with extra level of storing information about your code. It’s definitely not just the web UI for your repository. The Pull Request collects all the commits related to the feature, it tracks the discussion and as long as it’s a part of your history you can not [delete the PR](https://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github). That makes it a great place to aggregate other events.
 
-The feature, which is well known is the [GitHub Statuses API](http://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github)
+The feature, which is well known is the [GitHub Statuses API](https://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github)
 
 ![Statuses in action](/images/github-deployments/statuses.png)
 
