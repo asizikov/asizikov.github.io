@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Fix console logs for Azure Functions running in a Docker container | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Local development of C# Azure Functions on macOS is still a bit painful. Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one TimerTrigger function created.
+With the default Run/Debug configuration
+We can compile and run our function
+Our function will start and log to console as expected.
+I wish all the functions were that simple, right?'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Fix console logs for Azure Functions running in a Docker container" />
+<meta property="og:description" content="Local development of C# Azure Functions on macOS is still a bit painful. Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one TimerTrigger function created.
+With the default Run/Debug configuration
+We can compile and run our function
+Our function will start and log to console as expected.
+I wish all the functions were that simple, right?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/" />
+<meta property="article:published_time" content="2020-07-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-10T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fix console logs for Azure Functions running in a Docker container"/>
+<meta name="twitter:description" content="Local development of C# Azure Functions on macOS is still a bit painful. Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one TimerTrigger function created.
+With the default Run/Debug configuration
+We can compile and run our function
+Our function will start and log to console as expected.
+I wish all the functions were that simple, right?"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Fix console logs for Azure Functions running in a Docker container</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2020-07-10
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/azure/">#azure</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/docker/">#docker</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/serverless/">#serverless</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>Local development of C# Azure Functions on macOS is still a bit painful.
+Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one <code>TimerTrigger</code> function created.</p>
+<p><img src="/images/2020-07-func-logs/initial-state.png" alt="Azure Functions app in Rider"></p>
+<p>With the default Run/Debug configuration</p>
+<p><img src="/images/2020-07-func-logs/default-config.png" alt="Run configuration"></p>
+<p>We can compile and run our function</p>
+<p><img src="/images/2020-07-func-logs/log-console.png" alt="Azure Functions Log"></p>
+<p>Our function will start and log to console as expected.</p>
+<p>I wish all the functions were that simple, right? Unfortunately, sometimes we need more, sometimes we even have to use some shared libraries. So let&rsquo;s create one:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/1f09de4906a61d768c2ef85b980b1a0c.js"></script>
+
+<p>Nothing fancy there, one class, one interface accepting the <code>ILogger&lt;T&gt;</code> as a dependency.</p>
+<p>Let&rsquo;s update function code accordingly: will make is non-static, and use construction injection to get the <code>IAsyncGreeter</code> injected:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/3528207d6fba89f70257278c68fe6ade.js"></script>
+
+<p>In order to register this external dependency and use a propper .NET Core-style DI we need to install <code>Microsoft.Azure.Functions.Extensions</code> NuGet package and create a <code>Startup</code> class like this one:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/4ca721ce2e96ba1663f2c63fcbc50e0a.js"></script>
+
+<p>You would expect it to work, right?</p>
+<p>I wish&hellip;</p>
+<p><img src="/images/2020-07-func-logs/func-logs.png" alt="Just the main app is logging"></p>
+<p>As you can see it still just logs from the function.</p>
+<p>Why would one logger print it&rsquo;s output to console while another one just flushes our logs to void?</p>
+<p>Because they are two different loggers with different settings. One logger is instantiated and configured in our <code>Startup.cs</code> class and another one is built and configured by function host and injected into the method instead. Oh, well.</p>
+<p>I want to run this function in docker, so let&rsquo;s create a <code>Dockerfile</code>.</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/7bbd14242e0a7ea198979746aa24d129.js"></script>
+
+<p>Note that I&rsquo;m setting <code>AzureFunctionsJobHost__Logging__Console__IsEnabled</code> environment variable here.</p>
+<p><img src="/images/2020-07-func-logs/docker-log.png" alt="Just the main app is logging"></p>
+<p>The missing link here is the <code>hosts.json</code> logging configuration.</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json">    <span class="s2">&#34;logLevel&#34;</span><span class="err">:</span> <span class="p">{</span>
+        <span class="nt">&#34;default&#34;</span><span class="p">:</span> <span class="s2">&#34;Information&#34;</span>
+    <span class="p">}</span>
+</code></pre></div><script type="application/javascript" src="https://gist.github.com/asizikov/8ec81eac670f989ab10fc4fbcaa977d9.js"></script>
+
+<p>And voilà, we&rsquo;ve got logs in our container:</p>
+<p><img src="/images/2020-07-func-logs/docker-fixed.png" alt="Logs in a docker container"></p>
+<p>I hope that would save you some time. Happy logging!</p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Provision your Azure environment with Terraform and Octopus Deploy
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2020/09/29/container-tests/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Docker image tests
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+baseURL = "https://blog.cloud-eng.nl/"
+languageCode = "en-us"
+title = "Anton Sizikov"
+
+theme = "hugo-theme-okayish-blog"
+
+# Geekblog required configuration
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+
+publishDir = "docs"
+
+googleAnalytics = "UA-64347270-1"
+
+[permalinks]
+  blog = "/:year/:month/:day/:slug/"
+uglyurls = true
+
+# Needed for mermaid shortcodes
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 9
+
+[taxonomies]
+  tag = "tags"
+
+[mediaTypes]
+  [mediaTypes."application/atom+xml"]
+    suffixes = ["xml"]
+
+[outputFormats]
+  [outputFormats.Atom]
+    name = "Atom"
+    mediaType = "application/atom+xml"
+    baseName = "atom"
+    isPlainText = false
+    rel = "alternate"
+    isHTML = false
+    noUgly = true
+    permalinkable = false
+
+[outputFormats.outputs]
+  home = ["HTML", "ATOM"]
+  page = ["HTML"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML", "ATOM"]
+
+[params]
+  description = "Paying your technical debt."
+  keywords = ["azure", "cloud engineering", "software development"]
+  images = []
+
+  logo = "me.jpg"
+  termsPaginate = 15
+  shareLinksEnabled = false
+  gaLocalEnabled = false
+
+[menu]
+
+[[menu.main]]
+  identifier = "tags"
+  name = "tags"
+  url = "/tags"
+
+
+[[menu.main]]
+  identifier = "about"
+  name = "about"
+  url = "/about"

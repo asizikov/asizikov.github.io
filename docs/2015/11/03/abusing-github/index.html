@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>How to convince Linus Torvalds to contribute to your project | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Look at all those famous people committing to some random developer’s boring repository.
+Why would they do that? In fact, they don’t.
+In general, git is just a tool that allows you to create patches and distribute them around by email.
+When you create a commit, it will be signed with your name and email. Look at the author part here:
+You have your name listed twice for every commit. You are both the author and the committer.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2015/11/03/abusing-github/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="How to convince Linus Torvalds to contribute to your project" />
+<meta property="og:description" content="Look at all those famous people committing to some random developer’s boring repository.
+Why would they do that? In fact, they don’t.
+In general, git is just a tool that allows you to create patches and distribute them around by email.
+When you create a commit, it will be signed with your name and email. Look at the author part here:
+You have your name listed twice for every commit. You are both the author and the committer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/11/03/abusing-github/" />
+<meta property="article:published_time" content="2015-11-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-11-03T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to convince Linus Torvalds to contribute to your project"/>
+<meta name="twitter:description" content="Look at all those famous people committing to some random developer’s boring repository.
+Why would they do that? In fact, they don’t.
+In general, git is just a tool that allows you to create patches and distribute them around by email.
+When you create a commit, it will be signed with your name and email. Look at the author part here:
+You have your name listed twice for every commit. You are both the author and the committer."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>How to convince Linus Torvalds to contribute to your project</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2015-11-03
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/github/">#github</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/tools/">#tools</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>Look at all those famous people committing to some random developer’s <a href="https://github.com/asizikov/gang/graphs/contributors">boring repository</a>.</p>
+<p><img src="/images/github-author/gang.png" alt="gang"></p>
+<p>Why would they do that? In fact, they don’t.</p>
+<p>In general, git is just a tool that allows you to create <a href="https://git-scm.com/docs/git-format-patch">patches</a> and distribute them around <a href="https://git-scm.com/docs/git-send-email">by email</a>.</p>
+<p>When you create a commit, it will be signed with your name and email. Look at the author part here:</p>
+<p><img src="/images/github-author/committer.png" alt="commiter"></p>
+<p>You have your name listed twice for every commit. You are both the author and the committer. Technically, the author is the one who created the patch, and the committer is the person who applied the patch.</p>
+<p>By default, both values are taken from your <a href="https://help.github.com/articles/setting-your-username-in-git/">git</a> <a href="https://help.github.com/articles/setting-your-email-in-git/">config</a></p>
+<p>However, there is a way to override them:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/3e9d0ca4ee9d0b4d60ce.js"></script>
+
+<p>This command will write any name and email to both, the committer and the author fields.</p>
+<h1 id="why-would-you-do-that">Why would you do that?</h1>
+<p>The real life use case scenario: imagine you have to work with a repository on someone else&rsquo;s computer. Or you work from you personal computer, but you want to commit your changes to your work repository. You might want to use the proper user name to keep the history clean and correct.</p>
+<h1 id="disclaimer">Disclaimer</h1>
+<p>First of all, this is not a security issue. You don&rsquo;t actually gain access to the person’s git account and repositories.
+The only thing that GitHub is doing here is linking the fake commit to their account based on their e-mail address. This activity will not be shown on their profile page.</p>
+<p>So use it wisely and do not abuse it too much :)</p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2015/11/01/github-deployments/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            GitHub Deployment statuses
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Fully automated Continuous Integration for your Open Source library for free
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

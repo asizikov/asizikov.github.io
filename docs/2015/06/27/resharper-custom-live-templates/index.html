@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Custom live templates for ReSharper | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Hi!
+As a .NET developer I&rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper. It saves me time, provides me a static analysis and generates code for me.
+In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 Live Templates. The good fact is that it&rsquo;s easy to customize, and you can introduce your own templates.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Custom live templates for ReSharper" />
+<meta property="og:description" content="Hi!
+As a .NET developer I&rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper. It saves me time, provides me a static analysis and generates code for me.
+In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 Live Templates. The good fact is that it&rsquo;s easy to customize, and you can introduce your own templates." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/" />
+<meta property="article:published_time" content="2015-06-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Custom live templates for ReSharper"/>
+<meta name="twitter:description" content="Hi!
+As a .NET developer I&rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper. It saves me time, provides me a static analysis and generates code for me.
+In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 Live Templates. The good fact is that it&rsquo;s easy to customize, and you can introduce your own templates."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Custom live templates for ReSharper</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2015-06-27
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/programming/">#programming</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/resharper/">#resharper</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>Hi!</p>
+<p>As a .NET developer I&rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called <a href="https://www.jetbrains.com/resharper/">ReSharper</a>.
+It saves me time, provides me a static analysis and generates code for me.</p>
+<p>In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 <a href="https://www.jetbrains.com/resharper/features/code_templates.html">Live Templates</a>. The good fact is that it&rsquo;s easy to customize, and you can introduce your own templates.</p>
+<h2 id="creating-the-live-template">Creating the Live Template</h2>
+<p>Go to RESHARPER -&gt; Templates Explorer</p>
+<p><img src="/images/resharper-custom-live-templates/templates-explorer.PNG" alt="Template Explorer"></p>
+<p>Select the C# scope and press the New Template button.</p>
+<p>We are going to create a template for the async method which returns a Task&lt;T&gt;.</p>
+<p>Let&rsquo;s type a template body:</p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">public async System.Threading.Tasks.Task<span class="err">&lt;</span>$RETURN_TYPE$&gt; $METHOD_NAME$Async(){$END$}</code></pre></div>
+<p><code>$RETURN_TYPE</code> and <code>$METHOD_NAME</code> are placeholders for the return type and for the method name.</p>
+<p>$END$ - marks the point where the text caret is placed when the template is inserted.</p>
+<h2 id="availability">Availability</h2>
+<p>Live templates allows us to define the scope where the template will be available. In our case async keyword is valid in the context of C# 5.0 and higher versions.</p>
+<p>To do so click the Availability link on the right side and select the option &ldquo;In C# where type member declaration is allowed&rdquo;. This will prevent the template to be activated in unexpected places (like inside the method). After that set the minimum C# version to 5.0.</p>
+<p><img src="/images/resharper-custom-live-templates/availability.PNG" alt="availability"></p>
+<p>Now the template should look like the following:</p>
+<p><img src="/images/resharper-custom-live-templates/overview.png" alt="Result"></p>
+<p>I&rsquo;ve declared the shortcat &lsquo;am&rsquo; for the template.</p>
+<h2 id="in-action">In action</h2>
+<p>Let&rsquo;s type &lsquo;am&rsquo; in the code and here we go: our brand new template is activated.</p>
+<p><img src="/images/resharper-custom-live-templates/in-action.PNG" alt="Template in action"></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Keeping the repository interface clean
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Sharing ReSharper settings and Live Templates
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

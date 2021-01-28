@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>serverless on Anton Sizikov</title>
+    <link>https://blog.cloud-eng.nl/tags/serverless/</link>
+    <description>Recent content in serverless on Anton Sizikov</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.cloud-eng.nl/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fix console logs for Azure Functions running in a Docker container</title>
+      <link>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</guid>
+      <description>Local development of C# Azure Functions on macOS is still a bit painful. Even the simple-ish logging might cause issues. Let&amp;rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one TimerTrigger function created.
+With the default Run/Debug configuration
+We can compile and run our function
+Our function will start and log to console as expected.
+I wish all the functions were that simple, right?</description>
+    </item>
+    
+  </channel>
+</rss>

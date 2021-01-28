@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Docker image tests | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
+It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
+When our images are lean the build time is reduced as well as the pull and startup time.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2020/09/29/container-tests/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Docker image tests" />
+<meta property="og:description" content="Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
+It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
+When our images are lean the build time is reduced as well as the pull and startup time." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2020/09/29/container-tests/" />
+<meta property="article:published_time" content="2020-09-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-29T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker image tests"/>
+<meta name="twitter:description" content="Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
+It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
+When our images are lean the build time is reduced as well as the pull and startup time."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Docker image tests</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2020-09-29
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/docker/">#docker</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">#devops</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.</p>
+<p>It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.</p>
+<p>When our images are lean the build time is reduced as well as the pull and startup time. Local Docker cache takes less space. And as a cherry on the cake, we pay less for our cloud storage and egress/cross-region/cross-az traffic.</p>
+<p>A win-win-win situation.</p>
+<p>We also should take care of the content of our images because we don&rsquo;t need to provide a broader attack surface. Fewer tools installed means fewer opportunities for those zero-days exploits.</p>
+<p>And last, but not least everyone who can pull our can inspect them (tools like <a href="https://github.com/wagoodman/dive">dive</a> can make this process easy as pie).</p>
+<p><img src="/images/2020-09-container-tests/dive.png" alt="Dive PNG screenshot"></p>
+<p>So it makes sense to reject images with sensitive data/information baked in the layer.</p>
+<h2 id="container-structure-test">Container Structure Test</h2>
+<p>There are several tools that are available to help us enforce policies on the images that we build and deploy. One of them is a framework called <a href="https://github.com/GoogleContainerTools/container-structure-test">Container Structure Tests</a></p>
+<p>The Container Structure Tests provide a framework to validate the structure of a container image. These tests can be used to check the output of commands in an image, as well as verify metadata and contents of the filesystem.</p>
+<p>Tests can be run either through a standalone binary or through a Docker image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">container-structure-test <span class="nb">test</span> --image gcr.io/registry/image:latest <span class="se">\
+</span><span class="se"></span>--config config.yaml
+</code></pre></div><p>Let&rsquo;s check a few examples.</p>
+<h2 id="bad-docker-image">Bad Docker image</h2>
+<p>I&rsquo;m going to use <a href="https://github.com/asizikov/asp-net-container">this repository</a> as an example. Feel free to fork it and play with it yourself.</p>
+<p>Let&rsquo;s review the docker file first:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/05bc249e0c6ecbd66a85b9da89427c20.js"></script>
+
+<p>Everything is wrong about it:</p>
+<ul>
+<li>All the files are transferred to the docker daemon</li>
+<li>.NET Core SDK is shipped to production</li>
+<li>Unit tests are shipped as well</li>
+<li>Many useless layers</li>
+<li>Large image size</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ docker images
+REPOSITORY           TAG       SIZE
+asp-net-container    latest    850MB
+</code></pre></div><p>850 MB for a super basic echo application. Let&rsquo;s get those things fixed.</p>
+<h2 id="local-setup">Local setup</h2>
+<p>At first, I&rsquo;m going to install container-structure-tests locally.</p>
+<h3 id="linux">Linux</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">curl -LO <span class="se">\
+</span><span class="se"></span>https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 <span class="se">\
+</span><span class="se"></span><span class="o">&amp;&amp;</span> chmod +x container-structure-test-linux-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
+</code></pre></div><h3 id="macos">MacOS</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">curl -LO <span class="se">\
+</span><span class="se"></span>https://storage.googleapis.com/container-structure-test/latest/container-structure-test-darwin-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+chmod +x container-structure-test-darwin-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure-test
+</code></pre></div><p>And let&rsquo;s create <code>container-structure-tests.yaml</code> file with the following content:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/5b35287e09341987f8abd9d4ebceec14.js"></script>
+
+<p>This test verifies if we have <code>.git</code> directory copied over to the <code>/app</code> working directory.</p>
+<p>And now we can run this (I assume that we already have an image built from our Dockerfile)</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">container-structure-test <span class="nb">test</span> <span class="se">\
+</span><span class="se"></span>        --image asp-net-container:latest <span class="se">\
+</span><span class="se"></span>        --config container-structure-tests.yaml 
+</code></pre></div><p><img src="/images/2020-09-container-tests/git-test.png" alt="The first test failed"></p>
+<p>This is something that can be fixed with a good <code>.dockerignore</code> file:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/146eaf6fc5a7eb20443abca93a6e3c8a.js"></script>
+
+<p>When I measure the difference on the CI (GitHub Actions) I can see that the transferred context size is reduced from
+140.3kB down to 23.55kB. The local difference is even more remarkable because I have packages, DLLs, and other obj content.</p>
+<h2 id="image-size-and-sdks">Image size and SDKs</h2>
+<p>Container Structure Tests support so-called <code>commandTests</code>. They are the tests that can execute any CLI tool of your choice against your container and verify the produced output.</p>
+<p>The syntax is pretty basic and somewhat limited. Tho we can still express our desires.</p>
+<p>We want our image to satisfy the following policies:</p>
+<ul>
+<li>No .NET Core SDK installed</li>
+<li>.NET Core runtime should be installed and registered</li>
+<li>No unit tests .dlls should be shipped</li>
+</ul>
+<p>Let&rsquo;s turn these requirements into tests:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">commandTests</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;.NET Core runtime installed&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;which&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>dotnet<span class="p">]</span><span class="w">
+</span><span class="w">      </span><span class="k">expectedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/usr/bin/dotnet&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no SDK installed&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dotnet&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;--list-sdks&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">      </span><span class="k">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*/sdk]*&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">    
+</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no test dlls present&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;find&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/app&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-name&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;*.Tests.dll&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">      </span><span class="k">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*.Tests.dll*&#34;</span><span class="p">]</span><span class="w">
+</span></code></pre></div><p>The first test executes <code>which</code> command and checks the standard output content with the provided string (this string is treated as a RegEx btw). This test will pass on the first run, so I can&rsquo;t call that a TDD approach, heh.</p>
+<p>The second test runs the <code>dotnet --list-sdks</code> command and verifies that there are no matches in the output.</p>
+<p>And the last one runs the <code>find</code> command which looks up for <code>*.Tests.dll</code> in the <code>/app</code> directory.</p>
+<p>To fix the second test, we should use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multi-stage build</a> approach.</p>
+<p>That will allow us to build and test our code in one container and then ship and run in another.</p>
+<p>And the test dlls could be excluded by this <a href="https://github.com/dotnet/sdk/blob/3704d0ae1e75166204f2ea154c37ca89097dc97d/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.Publish.targets#L63-L65">little fix</a> to the <code>.csproj</code> file.</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp3.1<span class="nt">&lt;/TargetFramework&gt;</span>
+    <span class="nt">&lt;IsPublishable&gt;</span>false<span class="nt">&lt;/IsPublishable&gt;</span>
+    <span class="nt">&lt;IsPackable&gt;</span>false<span class="nt">&lt;/IsPackable&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+</code></pre></div><h2 id="metadata-tests">Metadata tests</h2>
+<p><code>metadataTests</code> can help us to ensure that the necessary environment variables are set, that our image has labels, the needed ports are exposed and the working directory is set correctly.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">metadataTest</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">env</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ASPNETCORE_URLS&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;http://+:80&#39;</span><span class="w">
+</span><span class="w">      </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;DOTNET_RUNNING_IN_CONTAINER&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
+</span><span class="w">    </span><span class="k">labels</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.authors&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/asizikov&#39;</span><span class="w">
+</span><span class="w">      </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.source&#39;</span><span class="w">
+</span><span class="w">    </span><span class="k">workdir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/app&#34;</span><span class="w">
+</span><span class="w">    </span><span class="k">exposedPorts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;80&#34;</span><span class="p">]</span><span class="w">
+</span></code></pre></div><p>(I&rsquo;m using label <a href="https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys">naming schema</a> by <a href="https://opencontainers.org/">Open Container Initiative</a>)</p>
+<h2 id="automate-all-the-things">Automate all the things!</h2>
+<p>As soon as we have a successful tests run locally</p>
+<p><img src="/images/2020-09-container-tests/green-tests-local.png" alt="Green tests locally"></p>
+<p>it&rsquo;s time to put things together and update our GitHub Actions workflow file.</p>
+<p>I&rsquo;m going to use the <a href="https://github.com/marketplace/actions/container-structure-test-action">Container Structure Test Action</a> here.</p>
+<p>which is extremely easy to use: provide it with a name of your image or a <code>tar</code> file with the image export results.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>run<span class="w"> </span>structure<span class="w"> </span>tests<span class="w">
+</span><span class="w">      </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>plexsystems/container-structure-test-action@v0<span class="m">.1.0</span><span class="w">
+</span><span class="w">      </span><span class="k">with</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>my-image<span class="p">:</span>latest<span class="w">
+</span><span class="w">        </span><span class="k">config</span><span class="p">:</span><span class="w"> </span>tests.yaml<span class="w">
+</span></code></pre></div><p>The final action file would look like that:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/a8092cfaf780b5ff48549041c31134f9.js"></script>
+
+<p>and the fixed Dockerfile is <a href="https://github.com/asizikov/asp-net-container/blob/a1d35e57503479e68563f4c8bc1182f985b7028e/Dockerfile.fixed">here</a>.</p>
+<p>What could be better than a green CI pipeline?</p>
+<p><img src="/images/2020-09-container-tests/ci-green.png" alt="CI is green"></p>
+<p>PS: while fixing our tests we also reduced the size of our image. Now its size is just 208Mb. A nice side benefit, eh?</p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Fix console logs for Azure Functions running in a Docker container
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Using GitHub Container Registry with Kubernetes
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Anton Sizikov</title>
+    <link>https://blog.cloud-eng.nl/tags/programming/</link>
+    <description>Recent content in programming on Anton Sizikov</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.cloud-eng.nl/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>You are mocking it wrong.</title>
+      <link>https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/</link>
+      <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/</guid>
+      <description>Well, probably you are not, but let me grumble a little bit anyway.
+Mockingbird knows how to mock.
+I&amp;rsquo;ve been working with various code bases throughout of my career, and there is one pattern which I see rather often. As you may have already guessed it&amp;rsquo;s the unit-tests and mocking I&amp;rsquo;m going to talk about here. To give it a nice catchy start, I&amp;rsquo;d claim here, that mocks should be used when you have to, but not when you can.</description>
+    </item>
+    
+    <item>
+      <title>Write code for the reviewer, not for the compiler</title>
+      <link>https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/</link>
+      <pubDate>Sat, 24 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/</guid>
+      <description>I&amp;rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.
+Most of the time I try to understand, debug, fix or update existing code. Less often developers write new code from scratch. I think it&amp;rsquo;s safe to say that we all know how to work with a code written by another human.
+One might want to say that if we know how to work with other people&amp;rsquo;s code, we can be good at reading and understanding it during the code review process.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on C# 7 Local Functions</title>
+      <link>https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/</link>
+      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/</guid>
+      <description>Frankly when I first saw that C# 7 will come with new local functions I thought that that&amp;rsquo;s just a nice and a compact way of defining local helpers. In fact, it&amp;rsquo;s much more interesting and useful feature. Today I&amp;rsquo;m going to talk about it in more details.
+Let&amp;rsquo;s start with a brief overview of the current situation.
+Current options Private methods The first option that existed in C# 1 is having a private method.</description>
+    </item>
+    
+    <item>
+      <title>C# 7 features preview</title>
+      <link>https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/</link>
+      <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/</guid>
+      <description>Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference. As it&amp;rsquo;s one of the most important events for .NET dev community MSFT prepared quite a few awesome announcements for us:
+ Visual Studio &amp;ldquo;15&amp;rdquo; preview C# 7 preview Xamarin going open source and free Ubuntu workspace running natively on Windows 10 And lot more  Since I got a bit sick this weekend I had plenty of time to play with new VS15 and C# 7.</description>
+    </item>
+    
+    <item>
+      <title>ReSharper Annotations. Can it be null?</title>
+      <link>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</link>
+      <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</guid>
+      <description>Hi,
+ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis. The special edge case I want to talk about is nullness analysis.
+Unfortunately sometimes it&amp;rsquo;s hard to predict whether the method returns null or it doesn&amp;rsquo;t.
+To solve this problem R# provides an option to annotate your code.
+Let&amp;rsquo;s look at this snippet: public Bar Foo() { return Random.NextDouble() &amp;lt; 0.1 ?</description>
+    </item>
+    
+    <item>
+      <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 2.</title>
+      <link>https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/</link>
+      <pubDate>Fri, 14 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/</guid>
+      <description>Hi,
+In the previous post I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests.
+To do so let&amp;rsquo;s create a new project (Class Library), add a reference to the main project, and install few NuGet packages.
+Rx-Main, Rx-Testing, xUnit.Net and Moq.
+Install-Package Rx-Main Install-Package Rx-Testing Install-Package xunit Install-Package Moq Then we’ll create a class RxGitHubClientTest, inherited from ReactiveTest.</description>
+    </item>
+    
+    <item>
+      <title>AsyncSuffix ReSharper extension</title>
+      <link>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</link>
+      <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</guid>
+      <description>There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.
+That puts us in a situation where we should be able to distinguish between async and non-async versions of method. Microsoft suggests us to follow the naming convention where every asynchronous method include Async suffix after the operation name.</description>
+    </item>
+    
+    <item>
+      <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1.</title>
+      <link>https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/</link>
+      <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/</guid>
+      <description>Hi,
+Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and the approach in question was taken in a several applications with different modifications.
+Note: In this article I assume that the reader is familiar with the concept of Reactive Programming and Reactive Extensions.</description>
+    </item>
+    
+    <item>
+      <title>Sharing ReSharper settings and Live Templates</title>
+      <link>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</guid>
+      <description>In my previous post I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.
+All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper NuGet feed or to your own company&amp;rsquo;s private feed (in case you want to keep it away from the rest of the world).</description>
+    </item>
+    
+    <item>
+      <title>Custom live templates for ReSharper</title>
+      <link>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</link>
+      <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</guid>
+      <description>Hi!
+As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper. It saves me time, provides me a static analysis and generates code for me.
+In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 Live Templates. The good fact is that it&amp;rsquo;s easy to customize, and you can introduce your own templates.</description>
+    </item>
+    
+    <item>
+      <title>Keeping the repository interface clean</title>
+      <link>https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/</link>
+      <pubDate>Mon, 22 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/</guid>
+      <description>The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.
+In the simple scenario we have an interface like this one:
+public interface IClientRepository { Client Get(int id); IEnumerable&amp;lt;Client&amp;gt; GetAll(); }  However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.
+We don&amp;rsquo;t want to load our database with unnecessary joins and Entity Framework has a nice tool for that.</description>
+    </item>
+    
+  </channel>
+</rss>

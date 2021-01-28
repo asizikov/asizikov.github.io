@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubernetes on Anton Sizikov</title>
+    <link>https://blog.cloud-eng.nl/tags/kubernetes/</link>
+    <description>Recent content in kubernetes on Anton Sizikov</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.cloud-eng.nl/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using GitHub Container Registry with Kubernetes</title>
+      <link>https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/</link>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/</guid>
+      <description>GitHub Container Registry was introduced on the 1st of September 2020. It&amp;rsquo;s still in the Beta stage, so it&amp;rsquo;s rather not recommended to use it in production. However, it offers us free private storage for our Docker images, at least until the end of the Beta period.
+Private storage, free and unlimited download&amp;hellip; looks like a good enough option for local development.
+In this post, I&amp;rsquo;m going to configure my local Kubernetes cluster to pull images from my GitHub Container Registry.</description>
+    </item>
+    
+  </channel>
+</rss>

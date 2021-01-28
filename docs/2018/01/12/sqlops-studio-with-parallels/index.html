@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Connecting SQL Operations Studio to SQL Express server in Parallels VM | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='In this post, I&rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.
+Even though SQL Ops Studio is not a fully mature project it&rsquo;s already sufficient enough to perform simple and quick actions.
+Motivation Since I&rsquo;m running most of the apps on a host macOS and I&rsquo;m trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Connecting SQL Operations Studio to SQL Express server in Parallels VM" />
+<meta property="og:description" content="In this post, I&rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.
+Even though SQL Ops Studio is not a fully mature project it&rsquo;s already sufficient enough to perform simple and quick actions.
+Motivation Since I&rsquo;m running most of the apps on a host macOS and I&rsquo;m trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/" />
+<meta property="article:published_time" content="2018-01-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-01-12T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Connecting SQL Operations Studio to SQL Express server in Parallels VM"/>
+<meta name="twitter:description" content="In this post, I&rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.
+Even though SQL Ops Studio is not a fully mature project it&rsquo;s already sufficient enough to perform simple and quick actions.
+Motivation Since I&rsquo;m running most of the apps on a host macOS and I&rsquo;m trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Connecting SQL Operations Studio to SQL Express server in Parallels VM</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2018-01-12
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/tools/">#tools</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>In this post, I&rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.</p>
+<p>Even though SQL Ops Studio is not a fully mature project it&rsquo;s already sufficient enough to perform simple and quick actions.</p>
+<h3 id="motivation">Motivation</h3>
+<p>Since I&rsquo;m running most of the apps on a host macOS and I&rsquo;m trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks. I still have to keep MS SQL Management Studio installed because I&rsquo;m using RedGate tools such as SQL Source Control, but that&rsquo;s a different story.</p>
+<h3 id="my-system-overview">My system overview</h3>
+<p>First of all, let&rsquo;s check what I&rsquo;ve got installed here:</p>
+<ul>
+<li>MacOS host system. Running macOS High Sierra 10.13.2</li>
+<li>Parallels Desktop 13 Pro</li>
+<li>MS Windows 10 Pro Virtual Machine</li>
+<li>SQL Operations Studio 0.24.1</li>
+<li>SQL Express Server 2014</li>
+</ul>
+<p>Windows VM is <a href="http://kb.parallels.com/en/112093">configured</a> to have a static IP address.</p>
+<h3 id="set-up-sql-express-to-accept-incoming-connections">Set up SQL Express to accept incoming connections</h3>
+<p>To set up SQL Express we need SQL Server Configuration Manager.</p>
+<p>I&rsquo;m running SQL Express 2014 so need to type <code>SQLServerManager12.msc</code>.</p>
+<p><img src="/images/2018-01-sqlops/sql-manager.png" alt="Starting SQL Server Network Configuration Manager"></p>
+<p>Go to SQL Server Network Configuration -&gt; Protocols for SQLEXPRESS -&gt; TCP/IP</p>
+<p><img src="/images/2018-01-sqlops/sql-manager-protocols.png" alt="SQL Server Network Configuration screenshot"></p>
+<p>Right click and select <em>Enable</em>:</p>
+<p><img src="/images/2018-01-sqlops/sql-manager-tcp-enable.png" alt="Enable TCP/IP protocol"></p>
+<p>Set up port number as on the picture (you&rsquo;re free to use any value, I&rsquo;m using 5171 here)</p>
+<p><img src="/images/2018-01-sqlops/tcp-ip-port.png" alt="Set up tcp/ip port"></p>
+<h3 id="configure-windows-firewall">Configure Windows Firewall</h3>
+<p>We must allow <code>sqlserver.exe</code> to accept inbound connections:</p>
+<p><img src="/images/2018-01-sqlops/windows-firewall-rule.png" alt="Windows Firewall, create new rule"></p>
+<h3 id="kerberos">Kerberos</h3>
+<p>By this time you should be ready to connect to the SQL Server.</p>
+<p>Connection string should look like this one:</p>
+<p><code>tcp:&lt;your-vm-ip&gt;,5171, database-name</code></p>
+<p>In case your SQL EXPRESS instance is set up to use Windows Authentication most probably you would see an error like that:</p>
+<p><img src="/images/2018-01-sqlops/kerberos-error.png" alt="Kerberos Error message"></p>
+<p>There is a good article with step-by-step instructions. <a href="https://docs.microsoft.com/en-us/sql/sql-operations-studio/enable-kerberos">Please refer to it</a>.</p>
+<p>You can always <a href="https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/change-server-authentication-mode#SSMSProcedure">switch to Mixed Authentication Mode</a> :)</p>
+<p>That&rsquo;s all folks!</p>
+<p><img src="/images/2018-01-sqlops/connected.png" alt="Connected"></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            You are mocking it wrong.
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Provision your Azure environment with Terraform and Octopus Deploy
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

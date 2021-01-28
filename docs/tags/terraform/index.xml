@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>terraform on Anton Sizikov</title>
+    <link>https://blog.cloud-eng.nl/tags/terraform/</link>
+    <description>Recent content in terraform on Anton Sizikov</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.cloud-eng.nl/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</title>
+      <link>https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/</guid>
+      <description>In this post, I&amp;rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&amp;rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&amp;rsquo;m going to use Configuration-as-Code approach with a brand new Octopus provider for Terraform.
+Buckle up and let&amp;rsquo;s get started&amp;hellip;
+Tools Terraform I&amp;rsquo;m going to need terraform on my machine:
+Octopus Deploy For this post, I&amp;rsquo;ve signed up for a free tier of Octopus Deploy SaaS offering.</description>
+    </item>
+    
+    <item>
+      <title>Provision your Azure environment with Terraform and Octopus Deploy</title>
+      <link>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</guid>
+      <description>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.
+Current landscape We use a pretty standard setup for a .NET web application.
+We keep our code in one monorepo hosted in internal GitLab. We use TeamCity to build our code and we use Octopus Deploy to run our deployments to Azure.
+We have several environments (let&amp;rsquo;s call them feature, test, and prod) and they all are different.</description>
+    </item>
+    
+  </channel>
+</rss>

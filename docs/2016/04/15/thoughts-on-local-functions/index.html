@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Thoughts on C# 7 Local Functions | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers. In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m going to talk about it in more details.
+Let&rsquo;s start with a brief overview of the current situation.
+Current options Private methods The first option that existed in C# 1 is having a private method.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Thoughts on C# 7 Local Functions" />
+<meta property="og:description" content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers. In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m going to talk about it in more details.
+Let&rsquo;s start with a brief overview of the current situation.
+Current options Private methods The first option that existed in C# 1 is having a private method." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/" />
+<meta property="article:published_time" content="2016-04-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-04-15T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Thoughts on C# 7 Local Functions"/>
+<meta name="twitter:description" content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers. In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m going to talk about it in more details.
+Let&rsquo;s start with a brief overview of the current situation.
+Current options Private methods The first option that existed in C# 1 is having a private method."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Thoughts on C# 7 Local Functions</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2016-04-15
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/programming/">#programming</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a
+compact way of defining local helpers.
+In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m going to talk about it in more details.</p>
+<p>Let&rsquo;s start with a brief overview of the current situation.</p>
+<h2 id="current-options">Current options</h2>
+<h3 id="private-methods">Private methods</h3>
+<p>The first option that existed in C# 1 is having a private method.</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Bar</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">AsPrintable</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">AsPrintable</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">=&gt;</span>  <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>That&rsquo;s a clean and simple solution. It has few issues, though.</p>
+<p><code>AsPrintable</code> might have no sense outside of <code>Foo</code> method, but it&rsquo;s accessible for every other method inside the class.
+It will be taken into account by IntelliSense.</p>
+<p><img src="/images/thoughts-on-local-functions/private-method-discoverable.png" alt="Private method discoverable via IntelliSense"></p>
+<h3 id="func-and-action">Func and Action</h3>
+<p>We can try to hide our helper inside the scope of <code>Foo</code> method by converting it to <code>Func&lt;int, string&gt;</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">class</span> <span class="nc">Bar</span>
+ <span class="p">{</span>
+     <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">asPrintable</span> <span class="p">=</span> <span class="n">i</span> <span class="p">=&gt;</span> <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span> 
+         <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
+         <span class="p">{</span>
+             <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">asPrintable</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div><p>Any disadvantages? Yep, a lot.</p>
+<p>The call is unnecessary expensive: it will produce <a href="http://blogs.msdn.com/b/pfxteam/archive/2012/02/03/10263921.aspx">a couple of allocations</a>.</p>
+<p>There is no elegant way to define recursive lambda:</p>
+<p><img src="/images/thoughts-on-local-functions/func-factorial-not-compilable.png" alt="Lambda can not be recursive"></p>
+<p>We have to use an ugly trick:</p>
+<p><img src="/images/thoughts-on-local-functions/func-factorial-ugly.png" alt="Lambda can not be recursive"></p>
+<p>And the last, but not least is the fact that lambdas are very limited. You cannot use<br>
+<code>out</code>, <code>ref</code>,<code>params</code> and optional parameters. They cannot be generic.</p>
+<p>There is a bright side, though, a lambda can capture variables from enclosing method aka closure.</p>
+<h2 id="local-functions">Local functions</h2>
+<p>Local functions can be defined in the body of any method, constructor or property&rsquo;s getter, and setter.</p>
+<p>Since it will be transformed by compiler to regular private static method:</p>
+<p><img src="/images/thoughts-on-local-functions/local-function-decompiled.png" alt="Local function decompiled"></p>
+<p>there will be no overhead of calling it and it can have all the properties which regular method declaration can have:
+it can be asynchronous, it can be generic, it can be dynamic.</p>
+<p>Ok, there is a difference. Local functions can not be static. And local functions can capture variables from enclosing block:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Bar</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">length</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
+        <span class="kt">string</span> <span class="n">Length</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="s">$&#34;length is {length}&#34;</span><span class="p">;</span>
+        <span class="n">Length</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="useful-bits">Useful bits</h2>
+<p>As <a href="http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions">Bill Wagner</a> wrote
+local function is a perfect solution for iterators and asynchronous methods when it comes to parameters validation.</p>
+<p>The following code will throw an exception right away and not in a lazy manner.</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">AsEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">params</span> <span class="n">T</span><span class="p">[]</span> <span class="n">items</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">items</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">items</span><span class="p">));</span>
+
+    <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T2</span><span class="p">&gt;</span> <span class="n">Enumerate</span><span class="p">&lt;</span><span class="n">T2</span><span class="p">&gt;(</span><span class="n">T2</span><span class="p">[]</span> <span class="n">array</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">array</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">yield</span> <span class="k">return</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">Enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="other-observations">Other observations:</h2>
+<p>Local functions support <a href="https://msdn.microsoft.com/en-us/library/hh534540.aspx">Caller Info Attributes</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">SlimShady</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="k">void</span> <span class="n">Hi</span><span class="p">([</span><span class="n">CallerMemberName</span><span class="p">]</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Hi! My name is {name}&#34;</span><span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="n">Hi</span><span class="p">();</span>
+ <span class="p">}</span>
+
+</code></pre></div><p>Fun fact. You can declare a local function with the same name as an existing private method and local function will hide it.
+Same as for lambdas, though.</p>
+<p><img src="/images/thoughts-on-local-functions/local-function-priority-over-private-method.png" alt="Local function has priority over private method"></p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/dotnet/roslyn/issues/259">GitHub. Proposal: Nested local functions and type declarations</a></li>
+<li><a href="http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions">Bill Wagner. C# 7 Feature Proposal: Local Functions</a></li>
+<li><a href="https://github.com/dotnet/roslyn/issues/2930">GitHub. Discussion: Local Functions</a></li>
+<li><a href="http://blogs.msdn.com/b/pfxteam/archive/2012/02/03/10263921.aspx">MSDN blogs. Know Thine Implicit Allocations</a>.</li>
+<li><a href="https://msdn.microsoft.com/en-us/library/hh534540.aspx">MSDN. Caller Information (C# and Visual Basic)</a></li>
+</ul>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2016/04/05/catlight-tool/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            CatLight
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Dev environment 2016. Windows.
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

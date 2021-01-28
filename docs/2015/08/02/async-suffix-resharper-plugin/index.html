@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>AsyncSuffix ReSharper extension | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.
+That puts us in a situation where we should be able to distinguish between async and non-async versions of method. Microsoft suggests us to follow the naming convention where every asynchronous method include Async suffix after the operation name.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="AsyncSuffix ReSharper extension" />
+<meta property="og:description" content="There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.
+That puts us in a situation where we should be able to distinguish between async and non-async versions of method. Microsoft suggests us to follow the naming convention where every asynchronous method include Async suffix after the operation name." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/" />
+<meta property="article:published_time" content="2015-08-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-08-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AsyncSuffix ReSharper extension"/>
+<meta name="twitter:description" content="There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.
+That puts us in a situation where we should be able to distinguish between async and non-async versions of method. Microsoft suggests us to follow the naming convention where every asynchronous method include Async suffix after the operation name."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>AsyncSuffix ReSharper extension</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2015-08-02
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/programming/">#programming</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/resharper/">#resharper</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.</p>
+<p>That puts us in a situation where we should be able to distinguish between async and non-async versions of method. <a href="https://msdn.microsoft.com/en-us/library/hh873175.aspx">Microsoft suggests</a> us to follow the naming convention where every asynchronous method include Async suffix after the operation name.</p>
+<p>There are some questions about this guideline. What do we call an asynchronous method? Is it the one with <code>async</code> keyword?</p>
+<p>Well, <a href="http://stackoverflow.com/questions/15951774/naming-convention-for-async-methods">according to Stephen Toub</a> it’s the Task returning method in general (with a few exceptions).</p>
+<blockquote>
+<p>If a public method is Task-returning and is asynchronous in nature (as opposed to a method that is known to always execute synchronously to completion but still returns a Task for some reason), it should have an “Async” suffix. That’s the guideline. The primary goal here with the naming is to make it very obvious to a consumer of the functionality that the method being invoked will likely not complete all of its work synchronously; it of course also helps with the case where functionality is exposed with both synchronous and asynchronous methods such that you need a name difference to distinguish them. How the method achieves its asynchronous implementation is immaterial to the naming: whether async/await is used to garner the compiler’s help, or whether types and methods from System.Threading.Tasks are used directly (e.g. TaskCompletionSource) doesn’t really matter, as that doesn’t affect the method’s signature as far as a consumer of the method is concerned.</p>
+</blockquote>
+<p>Unfortunately developers tend to forget about this guideline as it’s not so natural. I noticed that this topic pops up quite often during the code reviews. What do lazy developers do in this situation? They automate the routine.</p>
+<p>Since we’re using ReSharper it seems to be an obvious solution to delegate this task to it.</p>
+<p>ReSharper supports <a href="https://www.jetbrains.com/resharper/help/Code_Inspection__Creating_Custom_Inspections_and_QuickFixes.html">custom code inspections</a> and <a href="http://stackoverflow.com/a/22509370/555014">we can build the new inspection</a>.</p>
+<p>This is a good solution, but it has few disadvantages. First of all it highlights the whole method with all the expressions in it, and it is very annoying when you work with legacy code and can’t change the method name.</p>
+<p><img src="/images/async-suffix-plugin/custom-inspection-in-action.png" alt="Custom inspection in action"></p>
+<p>Also it&rsquo;s not easy to skip override methods from analysis.</p>
+<p>So I’ve built an extension for ReSharper and named it AsyncSuffix. You can grab it from the <a href="https://resharper-plugins.jetbrains.com/packages/Sizikov.AsyncSuffix/">official NuGet feed</a>.</p>
+<p>This extension analyses the task returning method declarations, and suggests the Rename refactoring when it detects the ‘Async’ suffix is missing. It also has an option to exclude test methods from the analysis. By test methods I mean the method with the <code>[Test]</code>, <code>[Fact]</code> or <code>[TestMethod]</code> annotation. So as you see it supports only NUnit, MSTest, and xUnit.Net frameworks. This feature is turned on by default, but you can turn it off if you&rsquo;d like.</p>
+<p><img src="/images/async-suffix-plugin/in-action.gif" alt="extension is action"></p>
+<p>The extension code can be found on <a href="https://github.com/asizikov/AsyncSuffix">GitHub</a>.</p>
+<p>It’s a first version of the plugin, so feel free to <a href="https://github.com/asizikov/AsyncSuffix/issues">raise an issue</a> if you see any.</p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1.
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 2.
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on Anton Sizikov</title>
+    <link>https://blog.cloud-eng.nl/tags/tools/</link>
+    <description>Recent content in tools on Anton Sizikov</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.cloud-eng.nl/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Connecting SQL Operations Studio to SQL Express server in Parallels VM</title>
+      <link>https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/</link>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/</guid>
+      <description>In this post, I&amp;rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.
+Even though SQL Ops Studio is not a fully mature project it&amp;rsquo;s already sufficient enough to perform simple and quick actions.
+Motivation Since I&amp;rsquo;m running most of the apps on a host macOS and I&amp;rsquo;m trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks.</description>
+    </item>
+    
+    <item>
+      <title>Investigating unexpected MSBuild behavior</title>
+      <link>https://blog.cloud-eng.nl/2016/12/24/msbuild-investigation/</link>
+      <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2016/12/24/msbuild-investigation/</guid>
+      <description>Recently I took latest changes from git, merged dev to my current branch and decided to run few integration tests. You know, just to be sure.
+What do I see? well&amp;hellip; this.
+ Could not load file or assembly &amp;lsquo;Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=... or one of its dependencies.
+ That doesn&amp;rsquo;t sound right, though it&amp;rsquo;s typically easy to fix.
+The first reaction is to consolidate NuGet packages in my Solution. All the installed packages have same version 5.</description>
+    </item>
+    
+    <item>
+      <title>Dev environment 2016. Windows.</title>
+      <link>https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/</link>
+      <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/</guid>
+      <description>I&amp;rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.
+I guess it might be interesting to look back at some point and see how does it evolve.
+Background At my previous employer, we were very into Virtual Machines. We had different base VMs which every developer can download.
+That&amp;rsquo;s extremely handy when a new hire has nothing to do, but to install just a couple of tools that are not standard, and enter some credentials.</description>
+    </item>
+    
+    <item>
+      <title>CatLight</title>
+      <link>https://blog.cloud-eng.nl/2016/04/05/catlight-tool/</link>
+      <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2016/04/05/catlight-tool/</guid>
+      <description>It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.
+At work I hardly pay attention on the process, it just works: I push code to GitHub, later on TeamCity picks up changes and starts the build, and few minutes after I receive Slack or email notification about the result. However for my personal projects things are different. I&amp;rsquo;m using free plan on AppVeyor. It works pretty well except the fact that your build might stay in the queue for a while.</description>
+    </item>
+    
+    <item>
+      <title>How to convince Linus Torvalds to contribute to your project</title>
+      <link>https://blog.cloud-eng.nl/2015/11/03/abusing-github/</link>
+      <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/11/03/abusing-github/</guid>
+      <description>Look at all those famous people committing to some random developer’s boring repository.
+Why would they do that? In fact, they don’t.
+In general, git is just a tool that allows you to create patches and distribute them around by email.
+When you create a commit, it will be signed with your name and email. Look at the author part here:
+You have your name listed twice for every commit. You are both the author and the committer.</description>
+    </item>
+    
+    <item>
+      <title>Avoid typing user name when committing to GitHub repository</title>
+      <link>https://blog.cloud-eng.nl/2015/09/05/change-origin-for-github-repo/</link>
+      <pubDate>Sat, 05 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2015/09/05/change-origin-for-github-repo/</guid>
+      <description>I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don&amp;rsquo;t have my SSH key generated for the current environment.
+I can still work with my command line tool, however I have to type credentials every time I want to pull or push to the remote.
+Actually I&amp;rsquo;m fine with typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remote to have my user name in it.</description>
+    </item>
+    
+  </channel>
+</rss>

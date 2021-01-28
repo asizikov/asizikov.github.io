@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Blogs | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Paying your technical debt.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/blog/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Blogs" />
+<meta property="og:description" content="Paying your technical debt." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/blog/" />
+<meta property="og:updated_time" content="2021-01-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blogs"/>
+<meta name="twitter:description" content="Paying your technical debt."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    <link href="/blog/index.xml" rel="alternate" type="application/rss+xml" title="Anton Sizikov" />
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+
+
+
+<div class="p-strip page-banner">
+    <div class="row u-vertically-center">
+        <div class="col-8">
+            <h1>Blogs</h1>
+            <p>Paying your technical debt.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="p-strip is-wrapper posts posts--snazzy">
+    <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/">Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2021-01-27
+</p>
+                
+
+                
+                <p>In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&rsquo;m going to use Configuration-as-Code approach with a brand new Octopus provider for Terraform.
+Buckle up and let&rsquo;s get started&hellip;
+Tools Terraform I&rsquo;m going to need terraform on my machine:
+Octopus Deploy For this post, I&rsquo;ve signed up for a free tier of Octopus Deploy SaaS offering.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">
+    #devops</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/octopus-deploy/">
+    #octopus deploy</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/terraform/">
+    #terraform</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/">
+                        Read more<span class="u-off-screen"> of Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/">Using GitHub Container Registry with Kubernetes</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2020-10-08
+</p>
+                
+
+                
+                <p>GitHub Container Registry was introduced on the 1st of September 2020. It&rsquo;s still in the Beta stage, so it&rsquo;s rather not recommended to use it in production. However, it offers us free private storage for our Docker images, at least until the end of the Beta period.
+Private storage, free and unlimited download&hellip; looks like a good enough option for local development.
+In this post, I&rsquo;m going to configure my local Kubernetes cluster to pull images from my GitHub Container Registry.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">
+    #devops</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/kubernetes/">
+    #kubernetes</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/github/">
+    #github</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/">
+                        Read more<span class="u-off-screen"> of Using GitHub Container Registry with Kubernetes</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2020/09/29/container-tests/">Docker image tests</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2020-09-29
+</p>
+                
+
+                
+                <p>Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
+It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
+When our images are lean the build time is reduced as well as the pull and startup time.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/docker/">
+    #docker</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">
+    #devops</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2020/09/29/container-tests/">
+                        Read more<span class="u-off-screen"> of Docker image tests</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/">Fix console logs for Azure Functions running in a Docker container</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2020-07-10
+</p>
+                
+
+                
+                <p>Local development of C# Azure Functions on macOS is still a bit painful. Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one TimerTrigger function created.
+With the default Run/Debug configuration
+We can compile and run our function
+Our function will start and log to console as expected.
+I wish all the functions were that simple, right?</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/azure/">
+    #azure</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/docker/">
+    #docker</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/serverless/">
+    #serverless</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/">
+                        Read more<span class="u-off-screen"> of Fix console logs for Azure Functions running in a Docker container</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/">Provision your Azure environment with Terraform and Octopus Deploy</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2020-03-21
+</p>
+                
+
+                
+                <p>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.
+Current landscape We use a pretty standard setup for a .NET web application.
+We keep our code in one monorepo hosted in internal GitLab. We use TeamCity to build our code and we use Octopus Deploy to run our deployments to Azure.
+We have several environments (let&rsquo;s call them feature, test, and prod) and they all are different.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">
+    #devops</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/octopus-deploy/">
+    #octopus deploy</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/terraform/">
+    #terraform</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/azure/">
+    #azure</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/">
+                        Read more<span class="u-off-screen"> of Provision your Azure environment with Terraform and Octopus Deploy</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/">Connecting SQL Operations Studio to SQL Express server in Parallels VM</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2018-01-12
+</p>
+                
+
+                
+                <p>In this post, I&rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.
+Even though SQL Ops Studio is not a fully mature project it&rsquo;s already sufficient enough to perform simple and quick actions.
+Motivation Since I&rsquo;m running most of the apps on a host macOS and I&rsquo;m trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/tools/">
+    #tools</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/">
+                        Read more<span class="u-off-screen"> of Connecting SQL Operations Studio to SQL Express server in Parallels VM</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/">You are mocking it wrong.</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2017-12-23
+</p>
+                
+
+                
+                <p>Well, probably you are not, but let me grumble a little bit anyway.
+Mockingbird knows how to mock.
+I&rsquo;ve been working with various code bases throughout of my career, and there is one pattern which I see rather often. As you may have already guessed it&rsquo;s the unit-tests and mocking I&rsquo;m going to talk about here. To give it a nice catchy start, I&rsquo;d claim here, that mocks should be used when you have to, but not when you can.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/programming/">
+    #programming</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/">
+                        Read more<span class="u-off-screen"> of You are mocking it wrong.</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2016/12/24/msbuild-investigation/">Investigating unexpected MSBuild behavior</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-12-24
+</p>
+                
+
+                
+                <p>Recently I took latest changes from git, merged dev to my current branch and decided to run few integration tests. You know, just to be sure.
+What do I see? well&hellip; this.
+ Could not load file or assembly &lsquo;Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=... or one of its dependencies.
+ That doesn&rsquo;t sound right, though it&rsquo;s typically easy to fix.
+The first reaction is to consolidate NuGet packages in my Solution. All the installed packages have same version 5.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/tools/">
+    #tools</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2016/12/24/msbuild-investigation/">
+                        Read more<span class="u-off-screen"> of Investigating unexpected MSBuild behavior</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/">Write code for the reviewer, not for the compiler</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-09-24
+</p>
+                
+
+                
+                <p>I&rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.
+Most of the time I try to understand, debug, fix or update existing code. Less often developers write new code from scratch. I think it&rsquo;s safe to say that we all know how to work with a code written by another human.
+One might want to say that if we know how to work with other people&rsquo;s code, we can be good at reading and understanding it during the code review process.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/programming/">
+    #programming</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/">
+                        Read more<span class="u-off-screen"> of Write code for the reviewer, not for the compiler</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/">Dev environment 2016. Windows.</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2016-06-12
+</p>
+                
+
+                
+                <p>I&rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.
+I guess it might be interesting to look back at some point and see how does it evolve.
+Background At my previous employer, we were very into Virtual Machines. We had different base VMs which every developer can download.
+That&rsquo;s extremely handy when a new hire has nothing to do, but to install just a couple of tools that are not standard, and enter some credentials.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/tools/">
+    #tools</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/">
+                        Read more<span class="u-off-screen"> of Dev environment 2016. Windows.</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="p-strip is-wrapper">
+    <div class="row">
+        <footer class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--next p-article-pagination__link--no-title" href="/blog/page/2/"
+        aria-label="Next Page">
+        <span class="p-article-pagination__label">Next</span>
+    </a>
+    
+</footer>
+    </div>
+</div>
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

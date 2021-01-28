@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Dev environment 2016. Windows. | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='I&rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.
+I guess it might be interesting to look back at some point and see how does it evolve.
+Background At my previous employer, we were very into Virtual Machines. We had different base VMs which every developer can download.
+That&rsquo;s extremely handy when a new hire has nothing to do, but to install just a couple of tools that are not standard, and enter some credentials.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Dev environment 2016. Windows." />
+<meta property="og:description" content="I&rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.
+I guess it might be interesting to look back at some point and see how does it evolve.
+Background At my previous employer, we were very into Virtual Machines. We had different base VMs which every developer can download.
+That&rsquo;s extremely handy when a new hire has nothing to do, but to install just a couple of tools that are not standard, and enter some credentials." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/" />
+<meta property="article:published_time" content="2016-06-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-06-12T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dev environment 2016. Windows."/>
+<meta name="twitter:description" content="I&rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.
+I guess it might be interesting to look back at some point and see how does it evolve.
+Background At my previous employer, we were very into Virtual Machines. We had different base VMs which every developer can download.
+That&rsquo;s extremely handy when a new hire has nothing to do, but to install just a couple of tools that are not standard, and enter some credentials."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Dev environment 2016. Windows.</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2016-06-12
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/tools/">#tools</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p><img src="/images/dev-tools-2016-win/old-tools-8.png" alt="tool"></p>
+<p>I&rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.</p>
+<p>I guess it might be interesting to look back at some point and see how does it evolve.</p>
+<h2 id="background">Background</h2>
+<p>At my previous employer, we were very into Virtual Machines. We had different base VMs which every developer can download.</p>
+<p>That&rsquo;s extremely handy when a new hire has nothing to do, but to install just a couple of tools that are not standard, and enter some credentials.</p>
+<p>You remember those dialogs:</p>
+<blockquote>
+<p>&mdash; I can&rsquo;t build the project. Packages are missing&hellip;</p>
+</blockquote>
+<p>&mdash; Oh, yep, you need to add this private NuGet feed.</p>
+<blockquote>
+<p>&hellip;</p>
+<p>&mdash; I can&rsquo;t run the project locally.</p>
+<p>&mdash; Yeah, I think you need so put these lines into your <code>hosts</code> file.</p>
+</blockquote>
+<p>Well, now it&rsquo;s all gone.</p>
+<p>It&rsquo;s not only limited to this scenario. You want to experiment with a new unstable version of the framework (yes, <a href="https://twitter.com/NETCoreReadyYet/status/735972346436161536">.NET Core RC-final-almost-stable</a>, I&rsquo;m talking about you) and you don&rsquo;t want to mess up with your dev machine?</p>
+<p>Just fire a new VM up.</p>
+<p>Got a neat idea for a hackathon, but you think that JDK is not what you need on your computer? Giving a tech demo on the local meetup?</p>
+<p>A VM comes to the rescue.</p>
+<p>Got a new computer? Just copy the VM over and you&rsquo;re up to speed in 20 minutes.</p>
+<h2 id="back-to-the-topic">Back to the topic</h2>
+<p>So, what do I have on my base VM?</p>
+<h3 id="frameworks">Frameworks</h3>
+<p>I&rsquo;m a .NET web developer, so nothing special here:</p>
+<ul>
+<li>.NET framework 4.5.2 and 4.6</li>
+<li>Node.js (npm, gulp)</li>
+</ul>
+<h3 id="ide-and-editors">IDE and editors</h3>
+<p><img src="/images/dev-tools-2016-win/vscode.png" alt="vscode"></p>
+<ul>
+<li>VS 2015 with a set of extensions
+<ul>
+<li><a href="https://visualstudiogallery.msdn.microsoft.com/146b404a-3c91-46ff-932a-fb0f8b826f94">NoGit</a>.</li>
+<li><a href="http://www.viva64.com/en/">PVS Studio</a>. A static analysis tool for C#.</li>
+<li><a href="https://www.jetbrains.com/resharper/">ReSharper</a>. A developer productiviy tool.</li>
+<li><a href="http://www.oz-code.com/">OzCode</a>. A debugging addon for VS. Makes my life much easier.</li>
+<li><a href="https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6">SpecFlow</a>. A port of Cucumber.</li>
+</ul>
+</li>
+<li>ReSharper goes with a handfull of <a href="https://resharper-plugins.jetbrains.com">extensions</a> as well
+<ul>
+<li><a href="https://resharper-plugins.jetbrains.com/packages/ConfigureAwaitChecker.v9/">ConfigureAwaitChecker</a></li>
+<li><a href="https://resharper-plugins.jetbrains.com/packages/EtherealCode.ReSpeller/">ReSpeller</a></li>
+<li><a href="https://resharper-plugins.jetbrains.com/packages/JetBrains.Mnemonics/">Mnemonics Live Templates</a></li>
+<li><a href="https://resharper-plugins.jetbrains.com/packages/JLebosquain.EnhancedTooltip/">Enhanced Tooltip</a></li>
+<li><a href="https://resharper-plugins.jetbrains.com/packages/ReSharper.HeapView.R2016.1/">Heap Allocations Viewer</a></li>
+<li><a href="https://resharper-plugins.jetbrains.com/packages/Shaolinq.ReSharper/">Shaolinq.ReSharper</a></li>
+<li><a href="https://resharper-plugins.jetbrains.com/packages/Sizikov.AsyncSuffix">AsyncSuffix</a></li>
+<li><a href="https://resharper-plugins.jetbrains.com/packages/Sizikov.MrEric/">Mr. Eric</a></li>
+</ul>
+</li>
+<li><a href="https://www.jetbrains.com/rider/">Rider</a>. A cross-platform C# IDE based on the IntelliJ platform and ReSharper.</li>
+<li><a href="http://code.visualstudio.com/">Visual Studio Code</a> with extensions
+<ul>
+<li>C#</li>
+<li>Markdown preview</li>
+<li>Spelling and Grammar checker (being the only non-native speaker in a team is hard :) )</li>
+</ul>
+</li>
+</ul>
+<h3 id="file-managers-and-command-line-shell">File Managers and command line shell</h3>
+<p><img src="/images/dev-tools-2016-win/choco.png" alt="choco"></p>
+<ul>
+<li><a href="http://www.farmanager.com/index.php?l=en">Far manager</a>. An old school two panels file manager.</li>
+<li><a href="https://conemu.github.io/">ConEmu</a>. A powerful and advanced console window.</li>
+<li><a href="https://chocolatey.org/">Chocolatey package manager</a>. A package manager for Windows.</li>
+</ul>
+<h3 id="source-control">Source control</h3>
+<p><img src="/images/dev-tools-2016-win/gitkraken.png" alt="GitKraken"></p>
+<ul>
+<li><a href="https://git-scm.com/downloads">GitBash</a></li>
+<li><a href="https://www.gitkraken.com/">GitKraken</a> A cross-platform UI tool for Git.</li>
+</ul>
+<p>GitKraken is quite heavy and not super fast as most of the electron.js based tools are, but I find it&rsquo;s history tree view very readable. The merge tool is not bad at all.</p>
+<p>I do most of the git related operations in git bash, though.</p>
+<h2 id="debugging-and-profiling">Debugging and profiling</h2>
+<p><img src="/images/dev-tools-2016-win/linqpad.png" alt="linqpad"></p>
+<ul>
+<li><a href="https://www.jetbrains.com/decompiler/">DotPeek</a>. A free .NET decompiler.</li>
+<li><a href="https://www.jetbrains.com/dotmemory">DotMemory</a> .NET memory profiler.</li>
+<li><a href="http://www.windbg.org/">WinDbg</a>.</li>
+<li><a href="http://www.telerik.com/fiddler">Fiddler</a>. A free web debugging proxy.</li>
+<li>REST and Http clients. I use two, can&rsquo;t decide which one I prefer over an other.
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo">ARC</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop">Postman</a></li>
+</ul>
+</li>
+<li><a href="https://www.linqpad.net/">LINQPad</a> A .NET programmer’s playground.</li>
+</ul>
+<h3 id="communication">Communication</h3>
+<ul>
+<li>Slack</li>
+<li>Skype</li>
+</ul>
+<h3 id="other-tools">Other tools</h3>
+<ul>
+<li><a href="https://www.foxitsoftware.com/products/pdf-reader/">FoxitReader</a>. A PDF reader.</li>
+<li><a href="https://screentogif.codeplex.com/">ScreenToGif</a>.</li>
+<li><a href="http://www.getpaint.net/index.html">Paint.NET</a>. A free image and photo editing software.</li>
+<li>IIS and SQL Express</li>
+</ul>
+<h3 id="web-tools-and-services">Web tools and services</h3>
+<p>Besides all the tools above which I have installed locally there are web services I use on a pretty much daily basis.</p>
+<ul>
+<li><a href="http://requestb.in/">requestb.in</a>. An easy to use HTTP request inspector.</li>
+<li><a href="https://www.appveyor.com/">AppVeyor</a>. A free CI/CD service for my open source projects.</li>
+<li><a href="https://regex101.com/">regex101.com</a>. A super awesome regular expressions builder and debugger.</li>
+<li><a href="https://toggl.com">Toggl</a>. A time tracker.</li>
+</ul>
+<h2 id="batch-install">Batch install</h2>
+<p>Most of the tools could be installed from Chocolatey <a href="https://chocolatey.org/packages">gallery</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">choco install dotnet4.5.2 linqpad -y
+</code></pre></div><p>I prefer to have all the tools grouped into <code>.config</code> files:</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- commandline-tools.config --&gt;</span>
+<span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span class="nt">&lt;packages&gt;</span>
+  <span class="nt">&lt;package</span> <span class="na">id=</span><span class="s">&#34;git&#34;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;package</span> <span class="na">id=</span><span class="s">&#34;far&#34;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;package</span> <span class="na">id=</span><span class="s">&#34;nuget.commandline&#34;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;package</span> <span class="na">id=</span><span class="s">&#34;conemu&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/packages&gt;</span>
+</code></pre></div><p>and they could be installed all together.</p>
+<p><img src="/images/dev-tools-2016-win/choco-install-config.png" alt="choco-install"></p>
+<h2 id="a-call-to-action">A call to action</h2>
+<p>Are there any tools around which are worth to try?</p>
+<p>Please share in comments. I&rsquo;m always keen on trying new things.</p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Thoughts on C# 7 Local Functions
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Write code for the reviewer, not for the compiler
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

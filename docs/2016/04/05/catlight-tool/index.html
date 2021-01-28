@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>CatLight | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='It&rsquo;s hard to imagine modern development without continuous intergation and unit-tests.
+At work I hardly pay attention on the process, it just works: I push code to GitHub, later on TeamCity picks up changes and starts the build, and few minutes after I receive Slack or email notification about the result. However for my personal projects things are different. I&rsquo;m using free plan on AppVeyor. It works pretty well except the fact that your build might stay in the queue for a while.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2016/04/05/catlight-tool/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="CatLight" />
+<meta property="og:description" content="It&rsquo;s hard to imagine modern development without continuous intergation and unit-tests.
+At work I hardly pay attention on the process, it just works: I push code to GitHub, later on TeamCity picks up changes and starts the build, and few minutes after I receive Slack or email notification about the result. However for my personal projects things are different. I&rsquo;m using free plan on AppVeyor. It works pretty well except the fact that your build might stay in the queue for a while." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2016/04/05/catlight-tool/" />
+<meta property="article:published_time" content="2016-04-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-04-05T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CatLight"/>
+<meta name="twitter:description" content="It&rsquo;s hard to imagine modern development without continuous intergation and unit-tests.
+At work I hardly pay attention on the process, it just works: I push code to GitHub, later on TeamCity picks up changes and starts the build, and few minutes after I receive Slack or email notification about the result. However for my personal projects things are different. I&rsquo;m using free plan on AppVeyor. It works pretty well except the fact that your build might stay in the queue for a while."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>CatLight</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2016-04-05
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/tools/">#tools</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/appveyor/">#appveyor</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">#devops</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>It&rsquo;s hard to imagine modern development without continuous intergation and unit-tests.</p>
+<p>At work I hardly pay attention on the process, it just works: I push code
+to GitHub, later on TeamCity picks up changes and starts the build,
+and few minutes after I receive Slack or email notification about the result.
+However for my personal projects things are different. I&rsquo;m using free plan on AppVeyor.
+It works pretty well except the fact that your build might stay in the queue for a while.</p>
+<p>Last week I found a nice application called <a href="https://catlight.io/">CatLight</a>.
+That&rsquo;s a tiny tool wich shows you build notifications in a tray. Ok, not that tiny as it&rsquo;s built on electron and .NET :)
+Works for both Windows and OSX.</p>
+<p>Setup is very straightforward: provide your AppVeyor API key</p>
+<p><img src="/images/catlight-tool/api-key.png" alt="screenshot"></p>
+<p>Select all the projects you want to be notified about</p>
+<p><img src="/images/catlight-tool/select-projects.png" alt="screenshot"></p>
+<p>Select all the events you want to be aware of</p>
+<p><img src="/images/catlight-tool/settings.png" alt="screenshot"></p>
+<p>Trigger the build</p>
+<p><img src="/images/catlight-tool/build-started.png" alt="screenshot"></p>
+<p>and wait for the green light.</p>
+<p><img src="/images/catlight-tool/build-finished.png" alt="screenshot"></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            C# 7 features preview
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Thoughts on C# 7 Local Functions
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Reactive Extensions. Api client with Cache-Aside & Refresh-Ahead strategy. Part 1. | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Hi,
+Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and the approach in question was taken in a several applications with different modifications.
+Note: In this article I assume that the reader is familiar with the concept of Reactive Programming and Reactive Extensions.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1." />
+<meta property="og:description" content="Hi,
+Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and the approach in question was taken in a several applications with different modifications.
+Note: In this article I assume that the reader is familiar with the concept of Reactive Programming and Reactive Extensions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/" />
+<meta property="article:published_time" content="2015-07-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-07-26T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1."/>
+<meta name="twitter:description" content="Hi,
+Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and the approach in question was taken in a several applications with different modifications.
+Note: In this article I assume that the reader is familiar with the concept of Reactive Programming and Reactive Extensions."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1.</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2015-07-26
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/programming/">#programming</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>Hi,</p>
+<p>Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and  the approach in question was taken in a several applications with different modifications.</p>
+<p><font color="gray">Note: In this article I assume that the reader is familiar with the concept of <a href="https://en.wikipedia.org/wiki/Reactive_programming">Reactive Programming</a> and <a href="https://msdn.microsoft.com/en-us/data/gg577609.aspx">Reactive Extensions</a>.</font></p>
+<p>Let’s say that we have an url like that</p>
+<p>nonexisting-api.github.com/v1/raiting/user_name</p>
+<p>which returns the following json response:
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+     <span class="nt">&#34;id&#34;</span> <span class="p">:</span> <span class="s2">&#34;requested user name&#34;</span><span class="p">,</span>
+     <span class="nt">&#34;rating&#34;</span> <span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+     <span class="nt">&#34;lastModified&#34;</span> <span class="p">:</span> <span class="s2">&#34;2015-07-20&#34;</span>
+<span class="p">}</span></code></pre></div>
+Calling the api, deserializing the response and displaying the result to the user is a trivial task.<br>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">RatingModel</span><span class="p">&gt;</span> <span class="n">GetRatingForUser</span><span class="p">(</span><span class="kt">string</span> <span class="n">userName</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">ratingResponse</span> <span class="p">=</span> <span class="k">await</span> <span class="n">HttpClient</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">userName</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">ratingaResponse</span><span class="p">.</span><span class="n">IsSuccessful</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">ratingResponse</span><span class="p">.</span><span class="n">Exception</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">ratingResponse</span><span class="p">.</span><span class="n">Data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<center><font color="gray">the naive implementation</font></center>
+## Let’s add caching
+Assuming that we’re building the mobile app, and taking into account that our data is not business critical we can consider following requirements:
+<ol>
+<li>The app has to start quickly;</li>
+<li>It has to render the cached data first;</li>
+<li>It should try getting the fresh data;</li>
+<li>If succeeded it should put fresh data to its cache;</li>
+<li>Render the new data or report the error;</li>
+</ol>
+<p>Let me illustrate it with a sequence diagram. I hope I still remember how to draw them :)
+<img src="/images/rx-api-with-cache-one/diagram.png" alt="sequence diagram">
+There are different local cache strategies. The one I’m going to follow is a
+<a href="https://msdn.microsoft.com/en-us/library/dn589799.aspx">Cache-Aside</a> one.</p>
+<p>The basic idea is to treat the cache as a passive data storage so that the responsibility to update the cached data is delegated to the cache client.</p>
+<p>The points 2,3 and 4 are somewhat the realization of the <a href="https://docs.oracle.com/cd/E15357_01/coh.360/e15723/cache_rtwtwbra.htm#COHDG5177">Refresh-Ahead</a> caching pattern. Not the classical version though, but that’s what we need patterns for.</p>
+<h2 id="implementaton">Implementaton</h2>
+<p>Let’s create a new Class Library (.NET 4.5) project in visual studio and add the Rx-Main NuGet package to it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Install-Package Rx-Main</code></pre></div>
+<p>We’ll need the interface for the cache.
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">interface</span> <span class="n">ICache</span><span class="p">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="p">&gt;</span> <span class="k">where</span> <span class="n">TValue</span> <span class="p">:</span> <span class="n">IEntity</span><span class="p">&lt;</span><span class="n">TKey</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">HasCached</span><span class="p">(</span><span class="n">TKey</span> <span class="n">key</span><span class="p">);</span>
+    <span class="n">TValue</span> <span class="n">GetCachedItem</span><span class="p">(</span><span class="n">TKey</span> <span class="n">key</span><span class="p">);</span>
+    <span class="k">void</span> <span class="n">Put</span><span class="p">(</span><span class="n">TValue</span> <span class="n">updatedRating</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IRatingCache</span> <span class="p">:</span> <span class="n">ICache</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">RatingModel</span><span class="p">&gt;</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The http-client abstraction:
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">interface</span> <span class="n">IHttpClient</span>
+<span class="p">{</span>
+    <span class="n">Task</span><span class="p">&lt;</span><span class="n">RatingResponse</span><span class="p">&gt;</span> <span class="n">Get</span><span class="p">(</span><span class="kt">string</span> <span class="n">userName</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>And the models
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">RatingResponse</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsSuccessful</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">RatingModel</span> <span class="n">Data</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">Exception</span> <span class="n">Exception</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">RatingModel</span> 
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">UserName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Rating</span><span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">LastModified</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Let’s keep the actual http-request, parsing, deserialization and error handling outside the scope of this article</p>
+<p>The api client interface will look like that</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">interface</span> <span class="n">IRatingClient</span>
+<span class="p">{</span>
+    <span class="n">IObservable</span><span class="p">&lt;</span><span class="n">RatingModel</span><span class="p">&gt;</span> <span class="n">GetRatingForUser</span><span class="p">(</span><span class="kt">string</span> <span class="n">userName</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The key part here is the <a href="http://www.google.com/url?q=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Flibrary%2Fdd990377(v%3Dvs.110).aspx&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEndHmJ-ZVw1iN6PqzCDcW8PUcNAQ">IObservable&lt;T&gt;</a> i.e. the stream of events which you can subscribe to.</p>
+<p>The Rx power is in the ability to build the <a href="https://martinfowler.com/articles/collection-pipeline/">pipeline</a> using the basic blocks, which are quite simple. We can wrap the cache usage into the reusable component/rx-operator:
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">static</span> <span class="n">IObservable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">WithCache</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span>
+        <span class="k">this</span> <span class="n">IObservable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">source</span><span class="p">,</span> 
+        <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="k">get</span><span class="p">,</span> 
+        <span class="n">Action</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">put</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="k">class</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">Observable</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">observer</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">cached</span> <span class="p">=</span> <span class="k">get</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cached</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">observer</span><span class="p">.</span><span class="n">OnNext</span><span class="p">(</span><span class="n">cached</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">source</span><span class="p">.</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span>
+        <span class="p">{</span>
+            <span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+            <span class="n">observer</span><span class="p">.</span><span class="n">OnNext</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+        <span class="p">},</span> <span class="n">observer</span><span class="p">.</span><span class="n">OnError</span><span class="p">,</span> <span class="n">observer</span><span class="p">.</span><span class="n">OnCompleted</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">Disposable</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Note that there is neither dependency on cache type, nor any other information about the cache.</p>
+<p>Generally it’s not a great idea to re-render the UI with no reason. To avoid an unnecessary invocation of OnNext delegate we’re going to use <a href="https://msdn.microsoft.com/en-us/library/system.reactive.linq.observable.distinctuntilchanged(v=vs.103).aspx">DistinctUntilChanged</a> operator.</p>
+<p>To do that we should define the custom comparer:
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">RatingComparer</span> <span class="p">:</span> <span class="n">IEqualityComparer</span><span class="p">&lt;</span><span class="n">RatingModel</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">Equals</span><span class="p">(</span><span class="n">RatingModel</span> <span class="n">x</span><span class="p">,</span> <span class="n">RatingModel</span> <span class="n">y</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">.</span><span class="n">Rating</span> <span class="p">==</span> <span class="n">y</span><span class="p">.</span><span class="n">Rating</span> 
+        <span class="p">&amp;&amp;</span> <span class="n">x</span><span class="p">.</span><span class="n">LastModified</span> <span class="p">==</span> <span class="n">y</span><span class="p">.</span><span class="n">LastModified</span> 
+        <span class="p">&amp;&amp;</span> <span class="n">x</span><span class="p">.</span><span class="n">UserName</span> <span class="p">==</span> <span class="n">y</span><span class="p">.</span><span class="n">UserName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">GetHashCode</span><span class="p">(</span><span class="n">RatingModel</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">GetHashCode</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Now we have all the blocks required to get the desired behavior:</p>
+<ul>
+<li>Cache</li>
+<li>Rx caching operator</li>
+<li>Duplicates filter</li>
+</ul>
+<p>That means we are ready to chain them together and build the RxGitHubClient implementation:
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">RxGitHubClient</span> <span class="p">:</span> <span class="n">IRatingClient</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">IRatingCache</span> <span class="n">Cache</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">private</span> <span class="n">IHttpClient</span> <span class="n">HttpClient</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">private</span> <span class="n">IScheduler</span> <span class="n">Scheduler</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">RxGitHubClient</span><span class="p">(</span><span class="n">IRatingCache</span> <span class="n">cache</span><span class="p">,</span> 
+    	<span class="n">IHttpClient</span> <span class="n">httpClient</span><span class="p">,</span> 
+    	<span class="n">IScheduler</span> <span class="n">scheduler</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Cache</span> <span class="p">=</span> <span class="n">cache</span><span class="p">;</span>
+        <span class="n">HttpClient</span> <span class="p">=</span> <span class="n">httpClient</span><span class="p">;</span>
+        <span class="n">Scheduler</span> <span class="p">=</span> <span class="n">scheduler</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">IObservable</span><span class="p">&lt;</span><span class="n">RatingModel</span><span class="p">&gt;</span> <span class="n">GetRatingForUser</span><span class="p">(</span><span class="kt">string</span> <span class="n">userName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">GetRatingIntrn</span><span class="p">(</span><span class="n">userName</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">WithCache</span><span class="p">(</span>
+            	<span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Cache</span><span class="p">.</span><span class="n">GetCachedItem</span><span class="p">(</span><span class="n">userName</span><span class="p">),</span> 
+				<span class="n">model</span> <span class="p">=&gt;</span> <span class="n">Cache</span><span class="p">.</span><span class="n">Put</span><span class="p">(</span><span class="n">model</span><span class="p">))</span>
+            <span class="p">.</span><span class="n">DistinctUntilChanged</span><span class="p">(</span><span class="k">new</span> <span class="n">RatingModelComparer</span><span class="p">());</span>
+       <span class="p">}</span>
+    <span class="k">private</span> <span class="n">IObservable</span><span class="p">&lt;</span><span class="n">RatingModel</span><span class="p">&gt;</span> <span class="n">GetRatingIntrn</span><span class="p">(</span><span class="kt">string</span> <span class="n">userName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Observable</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="n">RatingModel</span><span class="p">&gt;(</span><span class="n">observer</span> <span class="p">=&gt;</span>
+        <span class="n">Scheduler</span><span class="p">.</span><span class="n">Schedule</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">ratingResponse</span> <span class="p">=</span> 
+				<span class="k">await</span> <span class="n">HttpClient</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">userName</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">ratingResponse</span><span class="p">.</span><span class="n">IsSuccessful</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">observer</span><span class="p">.</span><span class="n">OnError</span><span class="p">(</span><span class="n">ratingResponse</span><span class="p">.</span><span class="n">Exception</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">observer</span><span class="p">.</span><span class="n">OnNext</span><span class="p">(</span><span class="n">ratingResponse</span><span class="p">.</span><span class="n">Data</span><span class="p">);</span>
+                <span class="n">observer</span><span class="p">.</span><span class="n">OnCompleted</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Now the usage of the client becomes as simple as the client from the first example.
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Client</span><span class="p">.</span><span class="n">GetRatingForUser</span><span class="p">(</span><span class="n">userName</span><span class="p">)</span>
+	  <span class="p">.</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">RenderRating</span><span class="p">);</span>
+</code></pre></div>
+In the <a href="/2015/08/14/rx-api-with-cache-two/">next blog post</a> I’m going to write unit tests for this api client. Stay tuned.</p>
+<h2 id="links-and-sources">Links and sources</h2>
+<ul>
+<li><a href="https://reactivex.io/">ReactveX home</a></li>
+<li><a href="http://www.introtorx.com/content/v1.0.10621.0/05_Filtering.html">Introduction to Rx</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/data/gg577609.aspx">The Reactive Extensions (Rx)</a></li>
+<li><a href="http://docs.oracle.com/cd/E15357_01/coh.360/e15723/cache_rtwtwbra.htm#COHDG5177">Read-Through, Write-Through, Write-Behind, and Refresh-Ahead Caching</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/dn589799.aspx">Cache-Aside Pattern</a></li>
+<li><a href="https://www.websequencediagrams.com/">www.websequencediagrams.com</a></li>
+</ul>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Sharing ReSharper settings and Live Templates
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            AsyncSuffix ReSharper extension
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>octopus deploy | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='Paying your technical debt.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/tags/octopus-deploy/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="octopus deploy" />
+<meta property="og:description" content="Paying your technical debt." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/tags/octopus-deploy/" />
+<meta property="og:updated_time" content="2021-01-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="octopus deploy"/>
+<meta name="twitter:description" content="Paying your technical debt."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    <link href="/tags/octopus-deploy/index.xml" rel="alternate" type="application/rss+xml" title="Anton Sizikov" />
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+
+
+
+<div class="p-strip page-banner">
+    <div class="row">
+        <h1>
+            <span
+                class="u-capitalized">tag</span>:
+            octopus deploy
+        </h1>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="p-strip is-wrapper posts posts--snazzy">
+    <div class="row">
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/">Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2021-01-27
+</p>
+                
+
+                
+                <p>In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&rsquo;m going to use Configuration-as-Code approach with a brand new Octopus provider for Terraform.
+Buckle up and let&rsquo;s get started&hellip;
+Tools Terraform I&rsquo;m going to need terraform on my machine:
+Octopus Deploy For this post, I&rsquo;ve signed up for a free tier of Octopus Deploy SaaS offering.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">
+    #devops</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/octopus-deploy/">
+    #octopus deploy</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/terraform/">
+    #terraform</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/">
+                        Read more<span class="u-off-screen"> of Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+
+        
+
+        <div class="col-12">
+            <div class="p-card">
+                
+                <h2 class="p-heading--3"><a href="https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/">Provision your Azure environment with Terraform and Octopus Deploy</a></h2>
+
+                
+                
+                <p>
+
+
+<span class=" u-capitalized ">
+    on
+</span>
+2020-03-21
+</p>
+                
+
+                
+                <p>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.
+Current landscape We use a pretty standard setup for a .NET web application.
+We keep our code in one monorepo hosted in internal GitLab. We use TeamCity to build our code and we use Octopus Deploy to run our deployments to Azure.
+We have several environments (let&rsquo;s call them feature, test, and prod) and they all are different.</p>
+                
+
+                
+                <p>
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">
+    #devops</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/octopus-deploy/">
+    #octopus deploy</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/terraform/">
+    #terraform</a>&ensp;
+
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/azure/">
+    #azure</a>&ensp;
+</p>
+                
+
+                
+                <p>
+                    <a href="https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/">
+                        Read more<span class="u-off-screen"> of Provision your Azure environment with Terraform and Octopus Deploy</span>
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="p-strip is-wrapper">
+    <div class="row">
+        <footer class="p-article-pagination">
+    
+
+    
+</footer>
+    </div>
+</div>
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>

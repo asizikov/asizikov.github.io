@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Keeping the repository interface clean | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.
+In the simple scenario we have an interface like this one:
+public interface IClientRepository { Client Get(int id); IEnumerable&lt;Client&gt; GetAll(); }  However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.
+We don&rsquo;t want to load our database with unnecessary joins and Entity Framework has a nice tool for that.'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Keeping the repository interface clean" />
+<meta property="og:description" content="The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.
+In the simple scenario we have an interface like this one:
+public interface IClientRepository { Client Get(int id); IEnumerable&lt;Client&gt; GetAll(); }  However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.
+We don&rsquo;t want to load our database with unnecessary joins and Entity Framework has a nice tool for that." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/" />
+<meta property="article:published_time" content="2015-06-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-22T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Keeping the repository interface clean"/>
+<meta name="twitter:description" content="The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.
+In the simple scenario we have an interface like this one:
+public interface IClientRepository { Client Get(int id); IEnumerable&lt;Client&gt; GetAll(); }  However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.
+We don&rsquo;t want to load our database with unnecessary joins and Entity Framework has a nice tool for that."/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Keeping the repository interface clean</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2015-06-22
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/programming/">#programming</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.</p>
+<p>In the simple scenario we have an interface like this one:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">interface</span> <span class="n">IClientRepository</span>
+ <span class="p">{</span>
+ 	<span class="n">Client</span> <span class="n">Get</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+ 	<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">();</span>
+ <span class="p">}</span>
+</code></pre></div>
+<p>However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.</p>
+<p>We don&rsquo;t want to load our database with unnecessary joins and <a href="https://msdn.microsoft.com/en-us/data/jj574232.aspx">Entity Framework has a nice tool for that</a>.</p>
+<p>When we need to retrieve only client&rsquo;s orders we can include it into the query:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">context</span><span class="p">.</span><span class="n">Clients</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Id</span> <span class="p">==</span> <span class="n">id</span><span class="p">)</span>
+	 <span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Orders</span><span class="p">);</span>
+</code></pre></div>
+<p>When we need just addresses:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">context</span><span class="p">.</span><span class="n">Clients</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Id</span> <span class="p">==</span> <span class="n">id</span><span class="p">)</span>
+	 <span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Addresses</span><span class="p">);</span>
+</code></pre></div>
+<p>And the combination:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">context</span><span class="p">.</span><span class="n">Clients</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Id</span> <span class="p">==</span> <span class="n">id</span><span class="p">)</span>
+	 <span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Orders</span><span class="p">)</span>
+	 <span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Addresses</span><span class="p">);</span>
+</code></pre></div>
+<p>However the IClientRepository grows exponentially and quickly becomes an ugly monster:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">interface</span> <span class="n">IClientRepository</span>
+ <span class="p">{</span>
+ 	<span class="n">Client</span> <span class="n">Get</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+ 	<span class="n">Client</span> <span class="n">GetWithOrders</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+ 	<span class="n">Client</span> <span class="n">GetWithAddresses</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+ 	<span class="n">Client</span> <span class="n">GetWithOrdersAndAddresses</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+ 	<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">();</span>
+ <span class="p">}</span>
+</code></pre></div>
+<p>It&rsquo;s not a nice solution for sure: lot&rsquo;s of code duplication and very unclear interface.</p>
+<p>A typical way to avoid it is to use <a href="https://martinfowler.com/bliki/CQRS.html">CQRS</a> pattern and encapsulate the logic into the Query object.</p>
+<p>At my current project we&rsquo;re building microservices, and a CQRS looks like an overkill. It doesn&rsquo;t stop us from borrowing some ideas, though.
+Let&rsquo;s remove all these GetXXXX methods and add one more parameter to the Get method.</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">interface</span> <span class="n">IClientRepository</span>
+ <span class="p">{</span>
+ 	<span class="n">Client</span> <span class="n">Get</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">fetchPaths</span> <span class="p">=</span> <span class="k">null</span><span class="p">);</span>
+ 	<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">(</span><span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">fetchPaths</span> <span class="p">=</span> <span class="k">null</span><span class="p">);</span>
+ <span class="p">}</span>
+ 
+</code></pre></div>
+<p>The FetchPath is a simple generinc class which holds the collection of expressions that we&rsquo;re going to use to build our chain of Include statements.</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;&gt;</span> <span class="n">Paths</span> 
+  	<span class="p">{</span> 
+  	    <span class="k">get</span><span class="p">;</span>
+  	    <span class="k">private</span> <span class="k">set</span><span class="p">;</span> 
+  	<span class="p">}</span>
+
+  <span class="k">public</span> <span class="n">FetchPaths</span><span class="p">(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;</span> <span class="n">path</span><span class="p">)</span> 
+  								<span class="p">:</span> <span class="k">this</span><span class="p">(</span><span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="n">path</span> <span class="p">})</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="n">FetchPaths</span><span class="p">([</span><span class="n">NotNull</span><span class="p">]</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;&gt;</span> <span class="n">paths</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">paths</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentNullException</span><span class="p">(</span><span class="s">&#34;paths&#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">Paths</span> <span class="p">=</span> <span class="n">paths</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Concat</span><span class="p">([</span><span class="n">NotNull</span><span class="p">]</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">other</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">other</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentNullException</span><span class="p">(</span><span class="s">&#34;other&#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">Paths</span><span class="p">.</span><span class="n">Concat</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">Paths</span><span class="p">));</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+ 
+</code></pre></div>
+<p>Now we&rsquo;re ready to declare the following static class:
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">ClientFetchPaths</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="n">ClientFetchPaths</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Orders</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Orders</span><span class="p">);</span>
+        <span class="n">Adresses</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Adresses</span><span class="p">);</span>
+        <span class="n">OrdersAndAddresses</span> <span class="p">=</span> <span class="n">Adresses</span><span class="p">.</span><span class="n">Concat</span><span class="p">(</span><span class="n">Orders</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">Orders</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">Adresses</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">OrdersAndAddresses</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>So that we can get the clients including all the necessary child objects.</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp">   <span class="kt">var</span> <span class="n">clients</span> <span class="p">=</span> <span class="n">ClientRepository</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">ClientFetchPaths</span><span class="p">.</span><span class="n">OrdersAndAddresses</span><span class="p">);</span>
+</code></pre></div>
+<p>I want to mention that so far we don&rsquo;t have any EntityFramework dependency here. Than means that we can keep this code (interface, models and FetchPathes) in the same assembly and reference it from the unit test project.</p>
+<p>Now the repository implementation will be clean as well:</p>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">context</span><span class="p">.</span><span class="n">Clients</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Id</span> <span class="p">==</span> <span class="n">id</span><span class="p">)</span>
+     <span class="p">.</span><span class="n">Fetch</span><span class="p">(</span><span class="n">fetchPaths</span><span class="p">));</span>
+</code></pre></div>
+<p>Where Fetch is an extension method for IQueryable.
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">FetchExtensions</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="n">IQueryable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Fetch</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span>
+  				<span class="k">this</span> <span class="n">IQueryable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">queryable</span><span class="p">,</span> 
+<span class="na">  				[CanBeNull]</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">paths</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="k">class</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">queryable</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentNullException</span><span class="p">(</span><span class="s">&#34;queryable&#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">paths</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">return</span> <span class="n">queryable</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">paths</span><span class="p">.</span><span class="n">Paths</span><span class="p">.</span><span class="n">Aggregate</span><span class="p">(</span><span class="n">queryable</span><span class="p">,</span> 
+    	<span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">expression</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">current</span><span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">expression</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2015/06/21/hello-world/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Hello World
+        </span>
+    </a>
+    
+
+    
+    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/" aria-label="Next Post">
+        <span class="p-article-pagination__label">Next</span>
+        <span class="p-article-pagination__title">
+            Custom live templates for ReSharper
+        </span>
+    </a>
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>
