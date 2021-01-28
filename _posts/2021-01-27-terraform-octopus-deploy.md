@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy
-image: /images/2020-10-ghk8s/helmsman2.jpg
+image: /images/2021-01-tf/octopus-to-the-cloud.jpg
 ---
 
 In this post, I'm going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that's pretty much the same) with Octopus Deploy. To make it a little bit interesting I'm going to use Configuration-as-Code approach with a brand new [Octopus provider for Terraform].
