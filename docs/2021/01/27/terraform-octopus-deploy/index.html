@@ -170,6 +170,7 @@ Octopus Deploy For this post, I&rsquo;ve signed up for a free tier of Octopus De
 <section class="p-strip is-shallow">
     <main class="post-content">
         <p>In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&rsquo;m going to use Configuration-as-Code approach with a brand new <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest">Octopus provider for Terraform</a>.</p>
+<p><img src="/images/2021-01-tf/octopus-to-the-cloud.png" alt=""></p>
 <p>Buckle up and let&rsquo;s get started&hellip;</p>
 <h2 id="tools">Tools</h2>
 <h3 id="terraform">Terraform</h3>
@@ -201,9 +202,10 @@ az ad sp create-for-rbac --name sp-octopus-deploy
 <li>Build Azure Function</li>
 <li>Pack Azure DevOps artifact (zip)</li>
 <li>Upload it to Octopus Deploy&rsquo;s built-in feed</li>
-<li>Create and trigger Octopus Deploy release</li>
+<li>Create new Octopus Deploy release</li>
+<li>Trigger the deployment</li>
 </ul>
-<p>I&rsquo;m still waiting for <a href="https://help.octopus.com/t/cannot-set-up-an-integration-with-azure-devops/26216">the fix to my bug-report to be delivered</a>, without it I cannot make this demo end-to-end :(</p>
+<p><img src="/images/2021-01-tf/pipeline.png" alt=""></p>
 <h2 id="init">Init</h2>
 <p>Terraform provider is no different from other providers and can be found on <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest">Terraform Registry</a></p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/de5608266e39e4bd3656ee42971f4f9e.js"></script>
@@ -246,26 +248,32 @@ az ad sp create-for-rbac --name sp-octopus-deploy
 <p>And now the juicy part.</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/46cf47377155fef292da378d0cb0fdca.js"></script>
 
-<p>My deployment is super simple actually, just one step that is picking up the package from a built-in feed and pushing it to my only environment.</p>
+<p>My deployment is not complicated actually, just one step that is picking up the package from a built-in feed and pushing it to my only environment.</p>
 <p>I wish all deployments were that simple&hellip;</p>
 <p><img src="/images/2021-01-tf/process.png" alt=""></p>
 <h2 id="release">Release</h2>
-<p>Initially, I wanted to automate the release creation and trigger it via my Azure DevOps pipeline, but due to a very recent bug, I&rsquo;m blocked here. I&rsquo;ll update this post when things are fixed so for now just a manual process.</p>
-<p>I&rsquo;m creating a new release from the zip file in my built-in package feed</p>
-<p><img src="/images/2021-01-tf/release.png" alt=""></p>
-<p>And now I can sit back and watch it deploying my function.</p>
+<p>Release creation process is driven by Azure DevOps pipeline. The process is split into two stages. <code>Release Creation</code> and <code>Deployment</code>.</p>
+<h3 id="create-release-stage">Create Release stage</h3>
+<script type="application/javascript" src="https://gist.github.com/asizikov/2bbbcca82c0f05ad6ea42730c3b238b5.js"></script>
+
+<p>This stage uploads the build artifact to the built-in package feed, submits metadata and creates a new release.</p>
+<p><img src="/images/2021-01-tf/new-release.png" alt=""></p>
+<h3 id="deploy-release-stage">Deploy release stage</h3>
+<p><code>OctopusDeployRelease</code> task will trigger a new deployment process</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/488aa1b1d3f9b6bd8dfd5a24c820e3dd.js"></script>
+
 <p><img src="/images/2021-01-tf/deployment.png" alt=""></p>
 <p>Voilà, it&rsquo;s up and running.</p>
 <p><img src="/images/2021-01-tf/running.png" alt=""></p>
 <h2 id="import">Import</h2>
 <p>The neat part about Octopus Deploy is its resource ID&rsquo;s system. It&rsquo;s always easy to find the id of the object which makes it super easy to import existing resources into your terraform state.</p>
-<p>Let&rsquo;s assume that I already have an environment configured.</p>
+<p>Let&rsquo;s assume that I already have an environment configured and I want to adopt it so that I can manage it with Terraform.</p>
 <pre><code>https://cloud-eng.octopus.app/app#/Spaces-1/infrastructure/machines?environmentIds=Environments-7
 </code></pre><p>The URL looks this way. <code>Environments-7</code> is the id of my environment.</p>
 <p>All it takes to import the environment is to declare the resource and type one command:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/2301838944f3e1d5f4259451fa9a2a13.js"></script>
 
-<p>this is such a breath comparing to long and not so easy to get Ids in Azure :)</p>
+<p>this is such a breath of fresh air comparing to long and not so easy way to get Ids in Azure :)</p>
 <p>Happy provisioning!</p>
 
     </main>
