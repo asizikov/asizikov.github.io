@@ -11,6 +11,8 @@ slug: terraform-octopus-deploy
 
 In this post, I'm going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that's pretty much the same) with Octopus Deploy. To make it a little bit interesting I'm going to use Configuration-as-Code approach with a brand new [Octopus provider for Terraform](https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest).
 
+![](/images/2021-01-tf/octopus-to-the-cloud.png)
+
 Buckle up and let's get started...
 
 ## Tools
@@ -65,9 +67,10 @@ Nothing complicated:
  * Build Azure Function
  * Pack Azure DevOps artifact (zip)
  * Upload it to Octopus Deploy's built-in feed
- * Create and trigger Octopus Deploy release 
+ * Create new Octopus Deploy release
+ * Trigger the deployment
 
-I'm still waiting for [the fix to my bug-report to be delivered](https://help.octopus.com/t/cannot-set-up-an-integration-with-azure-devops/26216), without it I cannot make this demo end-to-end :(
+ ![](/images/2021-01-tf/pipeline.png)
 
 ## Init
 
@@ -131,7 +134,7 @@ And now the juicy part.
 
 {{< gist asizikov 46cf47377155fef292da378d0cb0fdca >}}
 
-My deployment is super simple actually, just one step that is picking up the package from a built-in feed and pushing it to my only environment. 
+My deployment is not complicated actually, just one step that is picking up the package from a built-in feed and pushing it to my only environment. 
 
 I wish all deployments were that simple...
 
@@ -140,13 +143,22 @@ I wish all deployments were that simple...
 
 ## Release
 
-Initially, I wanted to automate the release creation and trigger it via my Azure DevOps pipeline, but due to a very recent bug, I'm blocked here. I'll update this post when things are fixed so for now just a manual process.
+Release creation process is driven by Azure DevOps pipeline. The process is split into two stages. `Release Creation` and `Deployment`.
 
-I'm creating a new release from the zip file in my built-in package feed
+### Create Release stage
 
-![](/images/2021-01-tf/release.png)
+{{< gist asizikov 2bbbcca82c0f05ad6ea42730c3b238b5 >}}
 
-And now I can sit back and watch it deploying my function.
+This stage uploads the build artifact to the built-in package feed, submits metadata and creates a new release.
+
+![](/images/2021-01-tf/new-release.png)
+
+### Deploy release stage
+
+`OctopusDeployRelease` task will trigger a new deployment process
+
+{{< gist asizikov 488aa1b1d3f9b6bd8dfd5a24c820e3dd >}}
+
 
 ![](/images/2021-01-tf/deployment.png)
 
@@ -158,7 +170,7 @@ Voilà, it's up and running.
 
 The neat part about Octopus Deploy is its resource ID's system. It's always easy to find the id of the object which makes it super easy to import existing resources into your terraform state.
 
-Let's assume that I already have an environment configured. 
+Let's assume that I already have an environment configured and I want to adopt it so that I can manage it with Terraform. 
 
 ```
 https://cloud-eng.octopus.app/app#/Spaces-1/infrastructure/machines?environmentIds=Environments-7
@@ -171,6 +183,6 @@ All it takes to import the environment is to declare the resource and type one c
 
 {{< gist asizikov 2301838944f3e1d5f4259451fa9a2a13 >}}
 
-this is such a breath comparing to long and not so easy to get Ids in Azure :)
+this is such a breath of fresh air comparing to long and not so easy way to get Ids in Azure :)
 
 Happy provisioning!
