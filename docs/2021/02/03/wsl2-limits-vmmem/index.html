@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+
+
+
+
+
+<title>Configure WSL2 limits on Windows 10 | Anton Sizikov</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content='WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.
+One of the problems which used to bug me a lot was the memory consumption by Vmmem process.
+The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.
+I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:'>
+<meta name="keywords" content='azure, cloud engineering, software development'>
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/" />
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Configure WSL2 limits on Windows 10" />
+<meta property="og:description" content="WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.
+One of the problems which used to bug me a lot was the memory consumption by Vmmem process.
+The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.
+I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/" />
+<meta property="article:published_time" content="2021-02-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-03T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configure WSL2 limits on Windows 10"/>
+<meta name="twitter:description" content="WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.
+One of the problems which used to bug me a lot was the memory consumption by Vmmem process.
+The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.
+I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:"/>
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href='/css/style.css'>
+
+    
+
+</head><body><header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
+                    Anton Sizikov
+                </a>
+            </div>
+
+            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
+                <i class="p-icon--menu"></i>
+            </a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
+                <i class="p-icon--close"></i>
+            </a>
+        </div>
+
+        <nav class="p-navigation__nav">
+            <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+            </span>
+
+            <ul class="p-navigation__items" role="menu">
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/about">about</a>
+                </li>
+                
+                <li class="p-navigation__item" role="menuitem">
+                    <a class="p-navigation__link"
+                        href="https://blog.cloud-eng.nl/tags">tags</a>
+                </li>
+                
+            </ul>
+
+            
+            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
+    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
+        required="" aria-label="Query">
+    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
+    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
+        <i class="p-icon--close"></i>
+    </button>
+    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
+        <i class="p-icon--search"></i>
+    </button>
+</form>
+
+            
+        </nav>
+    </div>
+</header><div id="main-content">
+<header class="p-strip page-banner">
+    <div class="row">
+        <h1>Configure WSL2 limits on Windows 10</h1>
+    </div>
+
+    
+
+<div class="row">
+
+    
+    <div class="col-8">
+        
+
+
+
+
+<div class="p-media-object">
+
+    
+
+    <div class="p-media-object__details">
+
+        
+
+        
+        <p class="p-media-object__content">
+            <span class="u-capitalized">on</span>
+            2021-02-03
+        </p>
+        
+
+    </div>
+</div>
+
+
+    </div>
+    
+
+    
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        
+<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">#devops</a>&ensp;
+
+    </div>
+</div>
+
+</header>
+
+<section class="p-strip is-shallow">
+    <main class="post-content">
+        <p>WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.</p>
+<p>One of the problems which used to bug me a lot was the memory consumption by <code>Vmmem</code> process.</p>
+<p><img src="/images/2021-02-vmmem/vmmem.png" alt=""></p>
+<p>The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.</p>
+<p>I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:</p>
+<p>Stop the WSL first.</p>
+<pre><code> wsl --shutdown
+</code></pre><p>then create a <code>.wslconfig</code> file into the root directory of your users folder: <code>C:\Users\&lt;yourUserName&gt;\.wslconfig</code></p>
+<p>My <code>.wslconfig</code> looks this way:</p>
+<script type="application/javascript" src="https://gist.github.com/asizikov/a6ff67d8ce4b18acf77e14ca32771a32.js"></script>
+
+<p>More details on what options to configure can be found <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig">in documentation</a>.</p>
+<p>After WSL and Docker Engine restart things look much better now.</p>
+<p><img src="/images/2021-02-vmmem/fixed.png" alt=""></p>
+
+    </main>
+</section>
+
+
+<footer class="p-strip is-wrapper">
+    <div class="row">
+        <div class="p-article-pagination">
+    
+
+    
+    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/" aria-label="Previous Post">
+        <span class="p-article-pagination__label">Previous</span>
+        <span class="p-article-pagination__title">
+            Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy
+        </span>
+    </a>
+    
+
+    
+</div>
+    </div>
+</footer>
+
+
+
+
+
+        </div><footer class="p-strip is-shallow page-footer">
+    <div class="row">
+        <div class="col-12  u-align--center">
+            <p>
+                © 2021 Anton Sizikov
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-64347270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+</body>
+</html>
