@@ -6,10 +6,22 @@
     <description>Recent content in Blogs on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.cloud-eng.nl/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Configure WSL2 limits on Windows 10</title>
+      <link>https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/</guid>
+      <description>WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.
+One of the problems which used to bug me a lot was the memory consumption by Vmmem process.
+The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.
+I can&amp;rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:</description>
+    </item>
     
     <item>
       <title>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</title>
