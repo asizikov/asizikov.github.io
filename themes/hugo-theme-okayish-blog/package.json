@@ -28,7 +28,7 @@
   "homepage": "https://github.com/kongdivin/hugo-theme-okayish-blog#readme",
   "devDependencies": {
     "husky": "^4.3.8",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "vanilla-framework": "^2.22.1"
   }
 }
