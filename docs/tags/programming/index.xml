@@ -6,11 +6,7 @@
     <description>Recent content in programming on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Dec 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.cloud-eng.nl/tags/programming/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 23 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>You are mocking it wrong.</title>
       <link>https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/</link>
@@ -130,7 +126,7 @@ In fact code completion and code generation is a very crucial part of this produ
       <guid>https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/</guid>
       <description>The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.
 In the simple scenario we have an interface like this one:
-public interface IClientRepository { Client Get(int id); IEnumerable&amp;lt;Client&amp;gt; GetAll(); }  However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.
+public interface IClientRepository { Client Get(int id); IEnumerable&amp;lt;Client&amp;gt; GetAll(); } However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.
 We don&amp;rsquo;t want to load our database with unnecessary joins and Entity Framework has a nice tool for that.</description>
     </item>
     

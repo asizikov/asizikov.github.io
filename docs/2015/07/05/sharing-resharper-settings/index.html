@@ -29,9 +29,10 @@ All the plug-ins for ReSharper are regular NuGet packages. That means that we ca
 <meta property="og:description" content="In my previous post I&rsquo;ve described how to create your own Live Templates for ReSharper. Today I&rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.
 All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper NuGet feed or to your own company&rsquo;s private feed (in case you want to keep it away from the rest of the world)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2015-07-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-07-05T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sharing ReSharper settings and Live Templates"/>
@@ -173,7 +174,7 @@ All the plug-ins for ReSharper are regular NuGet packages. That means that we ca
 <h2 id="creating-nuget-package">Creating NuGet package</h2>
 <p>Once the settings file is exported to the Settings folder we might want to create a NuGet package.
 The .nuspec file for ReSharper 8.2 looks like the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 <span class="nt">&lt;package&gt;</span>
   <span class="nt">&lt;metadata&gt;</span>
     <span class="nt">&lt;id&gt;</span>YourCompany.Settings<span class="nt">&lt;/id&gt;</span>
@@ -199,18 +200,18 @@ The .nuspec file for ReSharper 8.2 looks like the following:</p>
   <span class="nt">&lt;/files&gt;</span>
 <span class="nt">&lt;/package&gt;</span> </code></pre></div>
 <p>If you use ReSharper 9.1 the .nuspec file is slightly different. Dependencies node should specify the &ldquo;Wave&rdquo; version, not the ReSharper version.</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
       <span class="nt">&lt;dependency</span> <span class="na">id=</span><span class="s">&#34;Wave&#34;</span> <span class="na">version=</span><span class="s">&#34;[2.0]&#34;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/dependencies&gt;</span></code></pre></div>
 <p>And due to the changes in the R# plug-in system you should provide target in a different way:</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;files&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;files&gt;</span>
     <span class="nt">&lt;file</span> <span class="na">src=</span><span class="s">&#34;..\Settings\&#34;</span> 
     <span class="na">target=</span><span class="s">&#34;DotFiles\Extensions\YourCompany.Settings\settings\&#34;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/files&gt;</span></code></pre></div>
 <p>Where &ldquo;YourCompany.Settings&rdquo; is a NuGet package id.</p>
 <p>To build the package we need the command line tool <a href="http://docs.nuget.org/consume/installing-nuget">NuGet.exe</a></p>
 <p>Ok, now we&rsquo;re ready to execute the command:
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">nuget.exe pack nuspec-file-name.nuspec</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nuget.exe pack nuspec-file-name.nuspec</code></pre></div></p>
 <p>If everything is set up correctly you will get the &ldquo;YourCompany.Settings.1.0.0.nupkg&rdquo; file as an output.</p>
 <h2 id="publishing-nuget-package">Publishing NuGet package</h2>
 <p>As I mentioned before ReSharper can consume four different NuGet feeds.</p>
@@ -274,7 +275,7 @@ The .nuspec file for ReSharper 8.2 looks like the following:</p>
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

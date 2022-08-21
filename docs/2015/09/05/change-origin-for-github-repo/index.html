@@ -31,9 +31,10 @@ Actually I&rsquo;m fine with typing the password, but not the user name. So what
 I can still work with my command line tool, however I have to type credentials every time I want to pull or push to the remote.
 Actually I&rsquo;m fine with typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remote to have my user name in it." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2015/09/05/change-origin-for-github-repo/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/09/05/change-origin-for-github-repo/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2015-09-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-09-05T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Avoid typing user name when committing to GitHub repository"/>
@@ -169,11 +170,11 @@ Actually I&rsquo;m fine with typing the password, but not the user name. So what
 <p><img src="/images/github-origin/password-required.png" alt="credentials required"></p>
 <p>Actually I&rsquo;m fine with typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remote to have my user name in it.</p>
 <p>First of all let&rsquo;s check what is the value of origin url.
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config remote.origin.url</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git config remote.origin.url</code></pre></div></p>
 <p>We&rsquo;ll get something like that:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">https://github.com/OWNER/repo.git</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/OWNER/repo.git</code></pre></div>
 <p>Now we can update the origin url.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config remote.origin.url https://USER@github.com/OWNER/repo.git</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git config remote.origin.url https://USER@github.com/OWNER/repo.git</code></pre></div>
 <p>Your user name, repository owner and repository name will be different.</p>
 <p>And the user name is not needed any more.</p>
 <p><img src="/images/github-origin/no-password.png" alt="credentials not required"></p>
@@ -216,7 +217,7 @@ Actually I&rsquo;m fine with typing the password, but not the user name. So what
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

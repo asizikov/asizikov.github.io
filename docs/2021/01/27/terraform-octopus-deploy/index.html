@@ -33,9 +33,10 @@ Buckle up and let&rsquo;s get started&hellip;
 Tools Terraform I&rsquo;m going to need terraform on my machine:
 Octopus Deploy For this post, I&rsquo;ve signed up for a free tier of Octopus Deploy SaaS offering." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2021-01-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-01-27T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy"/>
@@ -183,7 +184,7 @@ Octopus Deploy For this post, I&rsquo;ve signed up for a free tier of Octopus De
 <p>All configuration is going to be made against the default Space (<code>Spaces-1</code>), however, that&rsquo;s configurable too.</p>
 <h3 id="azure">Azure</h3>
 <p>To connect Octopus Deploy with Azure I&rsquo;m going to need a Service Principal.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># (!) make sure to follow the principle of least privilege here</span> 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># (!) make sure to follow the principle of least privilege here </span>
 <span class="c1"># and define the role and scope</span>
 az ad sp create-for-rbac --name sp-octopus-deploy
 </code></pre></div><p>Grap the tenant Id, application Id, password, and subscription Id values. We&rsquo;ll heed them later.</p>
@@ -268,7 +269,7 @@ az ad sp create-for-rbac --name sp-octopus-deploy
 <h2 id="import">Import</h2>
 <p>The neat part about Octopus Deploy is its resource ID&rsquo;s system. It&rsquo;s always easy to find the id of the object which makes it super easy to import existing resources into your terraform state.</p>
 <p>Let&rsquo;s assume that I already have an environment configured and I want to adopt it so that I can manage it with Terraform.</p>
-<pre><code>https://cloud-eng.octopus.app/app#/Spaces-1/infrastructure/machines?environmentIds=Environments-7
+<pre tabindex="0"><code>https://cloud-eng.octopus.app/app#/Spaces-1/infrastructure/machines?environmentIds=Environments-7
 </code></pre><p>The URL looks this way. <code>Environments-7</code> is the id of my environment.</p>
 <p>All it takes to import the environment is to declare the resource and type one command:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/2301838944f3e1d5f4259451fa9a2a13.js"></script>
@@ -314,7 +315,7 @@ az ad sp create-for-rbac --name sp-octopus-deploy
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

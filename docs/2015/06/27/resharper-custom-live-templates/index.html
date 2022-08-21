@@ -31,9 +31,10 @@ In fact code completion and code generation is a very crucial part of this produ
 As a .NET developer I&rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper. It saves me time, provides me a static analysis and generates code for me.
 In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 Live Templates. The good fact is that it&rsquo;s easy to customize, and you can introduce your own templates." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2015-06-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-06-27T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Custom live templates for ReSharper"/>
@@ -174,7 +175,7 @@ It saves me time, provides me a static analysis and generates code for me.</p>
 <p>Select the C# scope and press the New Template button.</p>
 <p>We are going to create a template for the async method which returns a Task&lt;T&gt;.</p>
 <p>Let&rsquo;s type a template body:</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">public async System.Threading.Tasks.Task<span class="err">&lt;</span>$RETURN_TYPE$&gt; $METHOD_NAME$Async(){$END$}</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="k">public</span> <span class="nx">async</span> <span class="nx">System</span><span class="o">.</span><span class="nx">Threading</span><span class="o">.</span><span class="nx">Tasks</span><span class="o">.</span><span class="nx">Task</span><span class="o">&lt;</span><span class="nv">$RETURN_TYPE</span><span class="err">$</span><span class="o">&gt;</span> <span class="nv">$METHOD_NAME$Async</span><span class="p">(){</span><span class="nv">$END</span><span class="err">$</span><span class="p">}</span></code></pre></div>
 <p><code>$RETURN_TYPE</code> and <code>$METHOD_NAME</code> are placeholders for the return type and for the method name.</p>
 <p>$END$ - marks the point where the text caret is placed when the template is inserted.</p>
 <h2 id="availability">Availability</h2>
@@ -226,7 +227,7 @@ It saves me time, provides me a static analysis and generates code for me.</p>
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

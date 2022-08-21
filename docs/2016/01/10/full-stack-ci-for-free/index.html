@@ -31,9 +31,10 @@ I want to show how you can set up the CI pipeline using free services and tools.
 I want to show how you can set up the CI pipeline using free services and tools.
  GitHub GitVersion AppVeyor  As an example I&rsquo;m going to use my pet project: AsyncSuffix plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-01-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-01-10T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fully automated Continuous Integration for your Open Source library for free"/>
@@ -225,19 +226,19 @@ For GitFlow I&rsquo;m using the following naming convention:</p>
 so we have no other option but having very similar configurations. However AppVeyor evolves very quickly and we can expect some improvements.</p>
 <p>Once we have templates defined we can start with actual build steps.</p>
 <p>Install GitVersion from <a href="https://chocolatey.org/">Chocolatey</a></p>
-<pre><code>install:
+<pre tabindex="0"><code>install:
     - choco install gitversion.portable -y
 </code></pre><p>Define environment variables (different for each branch configuration)</p>
-<pre><code>environment:
+<pre tabindex="0"><code>environment:
     resharper_nuget_api_key:
       secure: RjiHK3Oxp74LUrI1/vmc2S36zOSRLxFM1Eq0Qn4hixWiou11jFqUbW2ukMNXrazP
 </code></pre><p>Important note: the api key is <a href="https://ci.appveyor.com/tools/encrypt">encrypted</a> and can be published to the public repository.</p>
 <p>Restore NuGet packages and set the build version.</p>
-<pre><code>before_build:
+<pre tabindex="0"><code>before_build:
     - ps: nuget restore
     - ps: gitversion /l console /output buildserver /updateassemblyinfo /b (get-item env:APPVEYOR_REPO_BRANCH).Value
 </code></pre><p>The build itself:</p>
-<pre><code>build:
+<pre tabindex="0"><code>build:
     project: AsyncSuffix.sln
 </code></pre><p>Now it&rsquo;s time to create NuGet package.
 AppVeyor has a feature to create packages automatically:</p>
@@ -245,7 +246,7 @@ AppVeyor has a feature to create packages automatically:</p>
 <p>Doesn&rsquo;t work for me though. At the moment it <a href="http://help.appveyor.com/discussions/problems/2698-when-using-publish_nuget-true-my-nuspec-is-ignored-and-it-is-packaging-the-csproj-instead">ignores the content</a> of <code>.nuspec</code> file,
 and performs <code>nuget pack</code> command on the <code>csproj</code> file.</p>
 <p>That&rsquo;s why I have to define an <code>after_build</code> step:</p>
-<pre><code>after_build:
+<pre tabindex="0"><code>after_build:
     - ps: nuget pack AsyncSuffix/AsyncSuffix.nuspec -Version (get-item env:GitVersion_InformationalVersion).Value
 </code></pre><p>I have to specify the version, because the <code>nuget pack</code> command reads package version from assembly annotations.
 Unfortunately I have this annotation:</p>
@@ -253,7 +254,7 @@ Unfortunately I have this annotation:</p>
 
 <p>As you can guess <code>RegisterConfigurableSeverityAnnotation</code> is declared in one of R# SDK&rsquo;s assemblies. NuGet fails to load it and falls back to <code>1.0.0</code> version.</p>
 <p>The final step is different for every branch configuration:</p>
-<pre><code>- ps: if(-not $env:APPVEYOR_PULL_REQUEST_NUMBER){ 
+<pre tabindex="0"><code>- ps: if(-not $env:APPVEYOR_PULL_REQUEST_NUMBER){ 
         nuget push *.nupkg 
             -ApiKey (get-item env:resharper_nuget_api_key).Value 
             -Source https://resharper-plugins.jetbrains.com 
@@ -301,7 +302,7 @@ The <code>ApiKey</code> will be transparently decrypted and the package will be 
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

@@ -29,9 +29,10 @@
 <meta property="og:description" content="Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference. As it&rsquo;s one of the most important events for .NET dev community MSFT prepared quite a few awesome announcements for us:
  Visual Studio &ldquo;15&rdquo; preview C# 7 preview Xamarin going open source and free Ubuntu workspace running natively on Windows 10 And lot more  Since I got a bit sick this weekend I had plenty of time to play with new VS15 and C# 7." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-04-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-04-02T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C# 7 features preview"/>
@@ -190,7 +191,7 @@ There is a new installer by the way.</p>
 <h2 id="binary-literals-and-digit-separators">Binary literals and Digit separators</h2>
 <p>These are very minor features, you know, nothing to write home about:
 In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672(v=vs.71).aspx">existing</a> <code>int</code> literals such as hex we can use binary ones.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">LiteralsDemo</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">LiteralsDemo</span>
 <span class="p">{</span>
   <span class="k">public</span> <span class="k">void</span> <span class="n">BinaryLiterals</span><span class="p">()</span>
   <span class="p">{</span>
@@ -200,33 +201,30 @@ In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672(v=vs.7
       <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <p>Simple and works as expected.</p>
 <p><img src="/images/csharp-7-preview/binary-literals.png" alt="binary literals output"></p>
 <p>Same about digit separators. Similar feature exists <a href="https://www.oreilly.com/learning/java7-features">in Java</a> since version 7.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">DigitSeparators</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">DigitSeparators</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="kt">var</span> <span class="n">amount</span> <span class="p">=</span> <span class="m">1</span><span class="n">_000</span><span class="p">;</span>
-    <span class="kt">var</span> <span class="n">thatIsALot</span> <span class="p">=</span> <span class="m">1</span><span class="n">_000_000</span><span class="p">;</span>
-    <span class="kt">var</span> <span class="n">iAmHex</span> <span class="p">=</span> <span class="m">0</span><span class="n">x00_1A0</span><span class="p">;</span>
+    <span class="kt">var</span> <span class="n">amount</span> <span class="p">=</span> <span class="m">1_000</span><span class="p">;</span>
+    <span class="kt">var</span> <span class="n">thatIsALot</span> <span class="p">=</span> <span class="m">1_000_000</span><span class="p">;</span>
+    <span class="kt">var</span> <span class="n">iAmHex</span> <span class="p">=</span> <span class="m">0x00_1</span><span class="n">A0</span><span class="p">;</span>
     <span class="kt">var</span> <span class="n">binary</span> <span class="p">=</span> <span class="m">0</span><span class="n">b1_000</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <h2 id="local-functions">Local functions</h2>
 <p>Local functions can be defined in a scope of a method.</p>
 <p>This is something you would do when you need a small helper like this one:
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">RegularMethod2</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">RegularMethod2</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;</span> <span class="n">even</span> <span class="p">=</span> <span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">number</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="m">0</span><span class="p">;</span>
   <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">number</span> <span class="k">in</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">10</span><span class="p">).</span><span class="n">Where</span><span class="p">(</span><span class="n">even</span><span class="p">))</span>
   <span class="p">{</span>
       <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<span class="p">}</span></code></pre></div></p>
 <p>This could be rewritten in the following way now:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">LocalFunctoins</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">LocalFunctoins</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">void</span> <span class="n">RegularMethod</span><span class="p">()</span>
     <span class="p">{</span>
@@ -237,21 +235,19 @@ In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672(v=vs.7
           <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
        <span class="p">}</span>
      <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <p>As you can see local functions support expression bodies, they also can be <code>async</code>.</p>
 <p>Local functions can capture variables as lambdas do.
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">z</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">z</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">void</span> <span class="n">Init</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">Boo</span> <span class="p">=</span> <span class="n">z</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="n">Init</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<span class="p">}</span></code></pre></div></p>
 <p>Also might be handy for iterators:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="kt">int</span><span class="p">[]</span> <span class="n">GetFoos</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="kt">int</span><span class="p">[]</span> <span class="n">GetFoos</span><span class="p">()</span>
  <span class="p">{</span>
      <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">result</span><span class="p">()</span> <span class="c1">// iterator local function
 </span><span class="c1"></span>     <span class="p">{</span>
@@ -259,8 +255,7 @@ In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672(v=vs.7
          <span class="k">yield</span> <span class="k">return</span> <span class="m">2</span><span class="p">;</span>
      <span class="p">}</span>
      <span class="k">return</span> <span class="n">result</span><span class="p">().</span><span class="n">ToArray</span><span class="p">();</span>
- <span class="p">}</span>
-</code></pre></div>
+ <span class="p">}</span></code></pre></div>
 <h2 id="ref-returns-and-locals">Ref returns and locals</h2>
 <p>Sort of a low-level feature in my opinion. You can return reference from method.
 Erric Lippert <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/ref-returns-and-ref-locals/">thought that</a></p>
@@ -268,7 +263,7 @@ Erric Lippert <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/r
 <p>we believe that the feature does not have broad enough appeal or compelling usage cases to make it into a real supported mainstream language feature.</p>
 </blockquote>
 <p>Not anymore, he-he.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
  <span class="p">{</span>
      <span class="kt">var</span> <span class="n">arr</span> <span class="p">=</span> <span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">};</span>
      <span class="k">ref</span> <span class="kt">int</span> <span class="n">Get</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">)=&gt;</span> <span class="k">ref</span> <span class="n">array</span><span class="p">[</span><span class="n">index</span><span class="p">];</span> 
@@ -277,10 +272,9 @@ Erric Lippert <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/r
      <span class="n">item</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
      <span class="n">WriteLine</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="m">1</span><span class="p">]);</span>
      <span class="n">ReadLine</span><span class="p">();</span>
- <span class="p">}</span>
-</code></pre></div>
+ <span class="p">}</span></code></pre></div>
 <p>Will print:</p>
-<pre><code>2
+<pre tabindex="0"><code>2
 10
 </code></pre><h2 id="pattern-matching">Pattern matching</h2>
 <blockquote>
@@ -291,17 +285,16 @@ Unfortunately the syntax is not final now.</p>
 <p>There are several types of patterns supported for now.</p>
 <h3 id="type-pattern">Type pattern</h3>
 <p>The type pattern is useful for performing runtime type tests of reference types.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">item</span> <span class="k">is</span> <span class="kt">string</span> <span class="n">s</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <h3 id="constant-pattern">Constant Pattern</h3>
 <p>A constant pattern tests the runtime value of an expression against a constant value.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">item</span><span class="p">)</span>
     <span class="p">{</span>
@@ -312,30 +305,27 @@ Unfortunately the syntax is not final now.</p>
             <span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;It&#39;s something else&#34;</span><span class="p">);</span>
             <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <h3 id="var-pattern">Var Pattern</h3>
 <p>A match to a var pattern always succeeds. At runtime the value of expression bounds to a newly introduced local variable.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
  <span class="p">{</span>
      <span class="k">if</span><span class="p">(</span><span class="n">item</span> <span class="k">is</span> <span class="kt">var</span> <span class="n">x</span><span class="p">)</span>
      <span class="p">{</span>
          <span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span> <span class="p">==</span> <span class="n">x</span><span class="p">);</span> <span class="c1">// prints true
 </span><span class="c1"></span>     <span class="p">}</span>
- <span class="p">}</span>
-</code></pre></div>
+ <span class="p">}</span></code></pre></div>
 <h3 id="wildcard-pattern">Wildcard Pattern</h3>
 <p>Every expression matches the wildcard pattern.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
  <span class="p">{</span>
      <span class="k">if</span><span class="p">(</span><span class="n">item</span> <span class="k">is</span> <span class="p">*)</span>
      <span class="p">{</span>
          <span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Hi there&#34;</span><span class="p">);</span> <span class="c1">//will be executed
 </span><span class="c1"></span>     <span class="p">}</span>
- <span class="p">}</span>
-</code></pre></div>
+ <span class="p">}</span></code></pre></div>
 <h3 id="recursive-pattern">Recursive Pattern</h3>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="kt">int</span> <span class="n">Sum</span><span class="p">(</span><span class="n">LinkedListNode</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">root</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="kt">int</span> <span class="n">Sum</span><span class="p">(</span><span class="n">LinkedListNode</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">root</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">root</span><span class="p">)</span>
     <span class="p">{</span>
@@ -344,11 +334,10 @@ Unfortunately the syntax is not final now.</p>
             <span class="k">return</span> <span class="n">head</span> <span class="p">+</span> <span class="n">Sum</span><span class="p">(</span><span class="n">tail</span><span class="p">);</span>
         <span class="k">case</span> <span class="p">*:</span> <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <h3 id="others">Others</h3>
 <p><code>switch</code> based patterns could contain so-called guard close:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">switch</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
     <span class="p">{</span>
@@ -362,17 +351,15 @@ Unfortunately the syntax is not final now.</p>
             <span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;whatever&#34;</span><span class="p">);</span>
             <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>      
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <p>Patterns could be joined:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">item</span> <span class="k">is</span> <span class="kt">string</span> <span class="n">i</span> <span class="p">&amp;&amp;</span> <span class="n">i</span><span class="p">.</span><span class="n">Length</span> <span class="k">is</span> <span class="kt">int</span> <span class="n">l</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">WriteLine</span><span class="p">(</span><span class="n">l</span> <span class="p">&gt;</span> <span class="m">10</span><span class="p">);</span>
     <span class="p">}</span> 
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <h3 id="conclusion">Conclusion</h3>
 <p>Pattern matching is really neat. I spent some time with it and I like it.</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/cbee9628d38db448622cd98ff1fee1a6.js"></script>
@@ -424,7 +411,7 @@ Unfortunately the syntax is not final now.</p>
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

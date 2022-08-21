@@ -6,11 +6,7 @@
     <description>Recent content in devops on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.cloud-eng.nl/tags/devops/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configure WSL2 limits on Windows 10</title>
       <link>https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/</link>
