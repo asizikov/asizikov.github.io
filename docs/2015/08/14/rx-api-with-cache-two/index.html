@@ -35,9 +35,10 @@ To do so let&rsquo;s create a new project (Class Library), add a reference to th
 Rx-Main, Rx-Testing, xUnit.Net and Moq.
 Install-Package Rx-Main Install-Package Rx-Testing Install-Package xunit Install-Package Moq Then we’ll create a class RxGitHubClientTest, inherited from ReactiveTest." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2015-08-14T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-08-14T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 2."/>
@@ -172,7 +173,7 @@ Install-Package Rx-Main Install-Package Rx-Testing Install-Package xunit Install
 <p>In the <a href="/2015/07/26/rx-api-with-cache-one/">previous post</a> I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests.</p>
 <p>To do so let&rsquo;s create a new project (Class Library), add a reference to the main project, and install few NuGet packages.</p>
 <p><a href="https://www.nuget.org/packages/Rx-Main/">Rx-Main</a>, <a href="https://www.nuget.org/packages/Rx-Testing/">Rx-Testing</a>, <a href="https://www.nuget.org/packages/xunit/">xUnit.Net</a> and <a href="https://www.nuget.org/packages/moq/">Moq</a>.</p>
-<pre><code>Install-Package Rx-Main
+<pre tabindex="0"><code>Install-Package Rx-Main
 Install-Package Rx-Testing
 Install-Package xunit
 Install-Package Moq
@@ -184,7 +185,7 @@ I’m not going to post all the tests here, you can find them on GitHub (the lin
 <p>To do that we’ll need to mock <code>IHttpClient</code> and <code>IRatingCache</code>. Another class that we’ll use is <a href="https://msdn.microsoft.com/en-us/library/microsoft.reactive.testing.testscheduler(v=vs.103).aspx">TestScheduler</a> from <code>Rx-Test</code> package.</p>
 <p>TestScheduler implements <a href="https://msdn.microsoft.com/en-us/library/system.reactive.concurrency.ischeduler(v=vs.103).aspx">IScheduler</a> interface and can be substituted instead of platform dependent instance of scheduler. It allows us literally to control the time and execute asynchronous code step by step. If you’d like to know more details I recommend to read a good post <a href="http://blogs.msdn.com/b/rxteam/archive/2012/06/14/testing-rx-queries-using-virtual-time-scheduling.aspx">“Testing Rx Queries using Virtual Time Scheduling”</a>.</p>
 <p>Now our test set up looks like this:</p>
-<p><div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">RxGitHubClientTest</span><span class="p">()</span>
+<p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">RxGitHubClientTest</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">Model</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RatingModel</span>
     <span class="p">{</span>
@@ -195,12 +196,11 @@ I’m not going to post all the tests here, you can find them on GitHub (the lin
     <span class="n">Cache</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IRatingCache</span><span class="p">&gt;();</span>
     <span class="n">Scheduler</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TestScheduler</span><span class="p">();</span>
     <span class="n">HttpClient</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IHttpClient</span><span class="p">&gt;();</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 So now we’re ready to start with the test.</p>
 <h2 id="arrange">Arrange</h2>
 <p>First of all we need to set up Mocks behavior: the cache is empty, http client can download and parse the request.
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Cache</span><span class="p">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">HasCached</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;()))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Cache</span><span class="p">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">HasCached</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;()))</span>
      <span class="p">.</span><span class="n">Returns</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
 <span class="n">Cache</span><span class="p">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">cache</span> <span class="p">=&gt;</span> <span class="n">cache</span><span class="p">.</span><span class="n">GetCachedItem</span><span class="p">(</span><span class="n">UserName</span><span class="p">))</span>
      <span class="p">.</span><span class="n">Returns</span><span class="p">((</span><span class="n">RatingModel</span><span class="p">)</span> <span class="k">null</span><span class="p">);</span>
@@ -210,27 +210,22 @@ So now we’re ready to start with the test.</p>
 		      <span class="n">Data</span> <span class="p">=</span> <span class="n">Model</span><span class="p">,</span>
 		      <span class="n">IsSuccessful</span> <span class="p">=</span> <span class="k">true</span>
 		  <span class="p">});</span>
-<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="n">CreateClient</span><span class="p">();</span>
-</code></pre></div>
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="n">CreateClient</span><span class="p">();</span></code></pre></div>
 In this case we expect to get the sequence of <code>OnNext</code> and <code>OnCompleted</code> events.</p>
-<p><div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">expected</span> <span class="p">=</span> <span class="n">Scheduler</span>
-	<span class="p">.</span><span class="n">CreateHotObservable</span><span class="p">(</span><span class="n">OnNext</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="n">Model</span><span class="p">),</span> <span class="n">OnCompleted</span><span class="p">&lt;</span><span class="n">RatingModel</span><span class="p">&gt;(</span><span class="m">2</span><span class="p">));</span>
-</code></pre></div>
+<p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">expected</span> <span class="p">=</span> <span class="n">Scheduler</span>
+	<span class="p">.</span><span class="n">CreateHotObservable</span><span class="p">(</span><span class="n">OnNext</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="n">Model</span><span class="p">),</span> <span class="n">OnCompleted</span><span class="p">&lt;</span><span class="n">RatingModel</span><span class="p">&gt;(</span><span class="m">2</span><span class="p">));</span></code></pre></div>
 I guess I this part needs some clarification.  <code>OnNext(2, Model)</code> is a method which is declared in  <code>ReactiveTest</code>.
 It has a following signature:
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">static</span> <span class="n">Recorded</span><span class="p">&lt;</span><span class="n">Notification</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;</span> <span class="n">OnNext</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">long</span> <span class="n">ticks</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">static</span> <span class="n">Recorded</span><span class="p">&lt;</span><span class="n">Notification</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;</span> <span class="n">OnNext</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">long</span> <span class="n">ticks</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span></code></pre></div>
 Basically, it just records the fact that <code>OnNext</code> method was called with Model parameter. The Magic Number &ldquo;2&rdquo; is nothing more than the time in ticks. It’s not a real time, it’s the TestScheduler’s virtual time. It&rsquo;s not the most elegant solution though. The TestScheduler is created at tick number zero, on the tick number one we subscribe on events and on the tick two we’ll get the first event.</p>
 <h2 id="act">Act</h2>
-<p><div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">results</span> <span class="p">=</span> <span class="n">Scheduler</span>
-<span class="p">.</span><span class="n">Start</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">GetRatingForUser</span><span class="p">(</span><span class="n">UserName</span><span class="p">),</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">);</span>
-</code></pre></div>
+<p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">results</span> <span class="p">=</span> <span class="n">Scheduler</span>
+<span class="p">.</span><span class="n">Start</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">GetRatingForUser</span><span class="p">(</span><span class="n">UserName</span><span class="p">),</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">);</span></code></pre></div>
 Here we start our <code>TestScheduler</code>, which will be initialized in the zero tick, then it will subscribe on <code>client.GetRatingForUser(UserName)</code> on the first tick. The last parameter is the virtual time on which the subscriber should be disposed. We can ignore this one for now.</p>
 <p>And finally the last step.</p>
 <h2 id="assert">Assert</h2>
-<p><div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">ReactiveAssert</span><span class="p">.</span><span class="n">AreElementsEqual</span><span class="p">(</span><span class="n">expected</span><span class="p">.</span><span class="n">Messages</span><span class="p">,</span> <span class="n">results</span><span class="p">.</span><span class="n">Messages</span><span class="p">);</span>
-<span class="n">Cache</span><span class="p">.</span><span class="n">Verify</span><span class="p">(</span><span class="n">cache</span> <span class="p">=&gt;</span> <span class="n">cache</span><span class="p">.</span><span class="n">Put</span><span class="p">(</span><span class="n">Model</span><span class="p">),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Once</span><span class="p">);</span>
-</code></pre></div>
+<p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">ReactiveAssert</span><span class="p">.</span><span class="n">AreElementsEqual</span><span class="p">(</span><span class="n">expected</span><span class="p">.</span><span class="n">Messages</span><span class="p">,</span> <span class="n">results</span><span class="p">.</span><span class="n">Messages</span><span class="p">);</span>
+<span class="n">Cache</span><span class="p">.</span><span class="n">Verify</span><span class="p">(</span><span class="n">cache</span> <span class="p">=&gt;</span> <span class="n">cache</span><span class="p">.</span><span class="n">Put</span><span class="p">(</span><span class="n">Model</span><span class="p">),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Once</span><span class="p">);</span></code></pre></div>
 That&rsquo;s how we can be sure that the expected sequence is equal to the actual one. And we verify that new model was cached.</p>
 <p>This test could have been splitted into two parts, to follow the best practices (to have one assert per test method), but I wanted to show that all the regular approaches are valid in Rx-world.</p>
 <p>Ok, now we have a green bar.</p>
@@ -284,7 +279,7 @@ That&rsquo;s how we can be sure that the expected sequence is equal to the actua
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

@@ -33,9 +33,10 @@ Current landscape We use a pretty standard setup for a .NET web application.
 We keep our code in one monorepo hosted in internal GitLab. We use TeamCity to build our code and we use Octopus Deploy to run our deployments to Azure.
 We have several environments (let&rsquo;s call them feature, test, and prod) and they all are different." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2020-03-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-03-21T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Provision your Azure environment with Terraform and Octopus Deploy"/>
@@ -196,7 +197,7 @@ We have several environments (let&rsquo;s call them feature, test, and prod) and
 <p>We run our application in Azure, hence the choice of Terraform backend and a provider: we keep <a href="https://www.terraform.io/docs/state/index.html">Terraform state</a> in Azure.</p>
 <p>Please refer to <a href="https://docs.microsoft.com/en-us/azure/terraform/terraform-backend">the official documentation</a> for a detailed step by step guide on setting up storage for Terraform State.</p>
 <p>In short, you&rsquo;d need to run the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
 </span><span class="cp"></span>
 <span class="nv">RESOURCE_GROUP_NAME</span><span class="o">=</span>terraformstate-rg
 <span class="nv">STORAGE_ACCOUNT_NAME</span><span class="o">=</span>terraformstateci
@@ -226,11 +227,11 @@ az storage container create --name <span class="nv">$CONTAINER_NAME</span> --acc
 
 <p>note that I&rsquo;m using variables in a gist above.</p>
 <p>Variables are defined in a <code>variables.tf</code> file:</p>
-<div class="highlight"><pre class="chroma"><code class="language-HCL" data-lang="HCL"><span class="k">variable</span> <span class="s2">&#34;sql_server_admin_pwd&#34;</span> {
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HCL" data-lang="HCL"><span class="k">variable</span> <span class="s2">&#34;sql_server_admin_pwd&#34;</span> {
 <span class="n">  type</span>    <span class="o">=</span> <span class="k">string</span>
 }
 </code></pre></div><p>This works fine, but for the local testing I keep the <code>terraform.tfvars</code> files with the values:</p>
-<div class="highlight"><pre class="chroma"><code class="language-HCL" data-lang="HCL"><span class="n">resource_group_name</span>  <span class="o">=</span> <span class="s2">&#34;test_rg&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HCL" data-lang="HCL"><span class="n">resource_group_name</span>  <span class="o">=</span> <span class="s2">&#34;test_rg&#34;</span>
 <span class="n">sql_server_admin_name</span> <span class="o">=</span> <span class="s2">&#34;admin_name&#34;</span>
 <span class="n">sql_server_admin_pwd</span> <span class="o">=</span> <span class="s2">&#34;P@$$w0rd1!&#34;</span><span class="c1"> # dummy pwd used for local tests
 </span><span class="c1"></span>
@@ -247,7 +248,7 @@ az storage container create --name <span class="nv">$CONTAINER_NAME</span> --acc
 <p>After that we can build our code and then create a release package with our Terraform config.</p>
 <p>A TeamCity build configuration has a custom <code>%octopus.package.suffix%</code> variable declared. This is a suffix that is composed of the branch name. It&rsquo;s empty for the master branch build and has something like <code>feature-AB-123</code> for a feature branch with an <code>AB-123</code> name. Yes, this is a JIRA ticket name :)</p>
 <p>With this variable we can prepare a zipped artifacts file:</p>
-<pre><code>+:infrastructure/** =&gt; Terraform.%build.number%%octopus.package.suffix%.zip
+<pre tabindex="0"><code>+:infrastructure/** =&gt; Terraform.%build.number%%octopus.package.suffix%.zip
 </code></pre><p>that would produce a file <code>Terraform.1.123.9-feature-AB-123</code> which will later be uploaded to Octopus.</p>
 <p><img src="/images/2020-03-terraform-octopus/team-city-pipeline.JPG" alt="TeamCity pipeline"></p>
 <h3 id="octopus-setup">Octopus Setup</h3>
@@ -303,7 +304,7 @@ az storage container create --name <span class="nv">$CONTAINER_NAME</span> --acc
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

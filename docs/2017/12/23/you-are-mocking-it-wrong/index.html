@@ -31,9 +31,10 @@ I&rsquo;ve been working with various code bases throughout of my career, and the
 Mockingbird knows how to mock.
 I&rsquo;ve been working with various code bases throughout of my career, and there is one pattern which I see rather often. As you may have already guessed it&rsquo;s the unit-tests and mocking I&rsquo;m going to talk about here. To give it a nice catchy start, I&rsquo;d claim here, that mocks should be used when you have to, but not when you can." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2017-12-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2017-12-23T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="You are mocking it wrong."/>
@@ -169,7 +170,7 @@ I&rsquo;ve been working with various code bases throughout of my career, and the
 <p>I&rsquo;ll give a few examples of somewhat useless and even harmful tests.<br>
 All the examples are going to be made up, but I hope you&rsquo;d get the point.</p>
 <p>So, let&rsquo;s start with the typical <code>Greeter</code> example. This is a &ldquo;Hello, world&rdquo; of Unit Testing. In one way or another, this sample gets repeated in all the articles, posts and books dedicated to unit-tests and mocking frameworks.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">IGreeter</span><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">IGreeter</span><span class="p">{</span>
    <span class="kt">string</span> <span class="n">Greet</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">title</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -180,13 +181,13 @@ All the examples are going to be made up, but I hope you&rsquo;d get the point.<
 <span class="p">}</span>
 
 <span class="k">public</span> <span class="k">class</span> <span class="nc">Client</span><span class="p">{</span>
-  <span class="k">private</span> <span class="n">IGreeter</span> <span class="n">_greeter</span><span class="p">;</span>
+  <span class="k">private</span> <span class="n">IGreeter</span> <span class="m">_</span><span class="n">greeter</span><span class="p">;</span>
   <span class="k">public</span> <span class="n">Client</span><span class="p">(</span><span class="n">IGreeter</span> <span class="n">greeter</span><span class="p">){</span>
-    <span class="n">_greeter</span> <span class="p">=</span> <span class="n">greeter</span><span class="p">;</span>
+    <span class="m">_</span><span class="n">greeter</span> <span class="p">=</span> <span class="n">greeter</span><span class="p">;</span>
   <span class="p">}</span>
   
   <span class="k">public</span> <span class="kt">string</span> <span class="n">FormatPageHeader</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">title</span><span class="p">){</span>
-    <span class="k">return</span> <span class="s">&#34;&lt;h&gt;&#34;</span> <span class="p">+</span>  <span class="n">_greeter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span> <span class="p">+</span> <span class="s">&#34;&lt;/h&gt;&#34;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="s">&#34;&lt;h&gt;&#34;</span> <span class="p">+</span>  <span class="m">_</span><span class="n">greeter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span> <span class="p">+</span> <span class="s">&#34;&lt;/h&gt;&#34;</span><span class="p">;</span>
   <span class="p">}</span>  
 <span class="p">}</span>
 
@@ -200,9 +201,9 @@ All the examples are going to be made up, but I hope you&rsquo;d get the point.<
  <span class="p">}</span>
 </code></pre></div><p>So far so good. Tests are green. The Greeter interface isn&rsquo;t perfect, though. Two <code>strings</code> as a parameter? So easy to mess up, isn&rsquo;t it? Most probably you have a method like that in your project.</p>
 <p>Ok then, imagine that you decided to make this method less error prone. You don&rsquo;t have much time for a proper refactoring because you have a feature to work on. Let&rsquo;s just swap the parameters. It&rsquo;s much more natural for a human to put the title before the name. Depends on the culture, I know.</p>
-<p>(&ldquo;John&rdquo;, &ldquo;Mr.&quot;) is more awkward compared to (&ldquo;Mr.&quot;, &ldquo;John&rdquo;) and (&ldquo;Dr.&quot;, &ldquo;Smith&rdquo;).</p>
+<p>(&ldquo;John&rdquo;, &ldquo;Mr.&quot;) is more awkward compared to (&ldquo;Mr.&rdquo;, &ldquo;John&rdquo;) and (&ldquo;Dr.&rdquo;, &ldquo;Smith&rdquo;).</p>
 <p>So, we&rsquo;ll end up with the greeter like that:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="c1">//Version 2
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="c1">//Version 2
 </span><span class="c1"></span><span class="k">public</span> <span class="k">class</span> <span class="nc">Greeter2</span> <span class="p">:</span> <span class="n">IGreeter</span><span class="p">{</span>
   <span class="k">public</span> <span class="kt">string</span> <span class="n">Greet</span><span class="p">(</span><span class="kt">string</span> <span class="n">title</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">){</span>
     <span class="k">return</span> <span class="s">&#34;Hello, &#34;</span> <span class="p">+</span> <span class="n">title</span> <span class="p">+</span> <span class="s">&#34; &#34;</span> <span class="p">+</span> <span class="n">name</span><span class="p">;</span>
@@ -288,7 +289,7 @@ All the examples are going to be made up, but I hope you&rsquo;d get the point.<
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

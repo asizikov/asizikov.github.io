@@ -35,9 +35,10 @@ Unfortunately sometimes it&rsquo;s hard to predict whether the method returns nu
 To solve this problem R# provides an option to annotate your code.
 Let&rsquo;s look at this snippet: public Bar Foo() { return Random.NextDouble() &lt; 0.1 ?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2015-08-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-08-16T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ReSharper Annotations. Can it be null?"/>
@@ -175,13 +176,12 @@ Let&rsquo;s look at this snippet: public Bar Foo() { return Random.NextDouble() 
 <p>Unfortunately sometimes it&rsquo;s hard to predict whether the method returns <code>null</code> or it doesn&rsquo;t.</p>
 <p>To solve this problem R# provides an option to <a href="https://blog.jetbrains.com/dotnet/2015/08/12/how-to-use-jetbrains-annotations-to-improve-resharper-inspections/">annotate your code</a>.</p>
 <p>Let&rsquo;s look at this snippet:
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">Bar</span> <span class="n">Foo</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">Bar</span> <span class="n">Foo</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="n">Random</span><span class="p">.</span><span class="n">NextDouble</span><span class="p">()</span> <span class="p">&lt;</span> <span class="m">0.1</span> 
                     <span class="p">?</span> <span class="k">null</span>
                     <span class="p">:</span> <span class="k">new</span> <span class="n">Bar</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<span class="p">}</span></code></pre></div></p>
 <p>The<code>Foo()</code>returns<code>null</code>with a probability of 10%. However ReSharper doesn&rsquo;t warn us when we forget the null-check.</p>
 <p><img src="/images/resharper-annotations-can-it-be-null/no-canbenull-in-action.png" alt="screenshot">
 <em><font color="gray">without annotation</font></em></p>
@@ -190,15 +190,14 @@ Let&rsquo;s look at this snippet: public Bar Foo() { return Random.NextDouble() 
 <em><font color="gray">with annotation</font></em></p>
 <p>Unfortunately this trick doesn&rsquo;t work with asynchronous code.</p>
 <p>What if we have a code like this:
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="na">[CanBeNull]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="na">[CanBeNull]</span>
 <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">Bar</span><span class="p">&gt;</span> <span class="n">FooAsync</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">await</span> <span class="n">DoAsync</span><span class="p">();</span>
     <span class="k">return</span> <span class="n">Random</span><span class="p">.</span><span class="n">NextDouble</span><span class="p">()</span> <span class="p">&lt;</span> <span class="m">0.1</span>
                     <span class="p">?</span> <span class="k">null</span>
                     <span class="p">:</span> <span class="k">new</span> <span class="n">Bar</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<span class="p">}</span></code></pre></div></p>
 <p>Despite the fact that we return<code>null</code>here the actual return type is<code>Task&lt;Bar&gt;</code>. Which is not null by the way. So the annotation is wrong as well as the warning given to us by R#.
 <img src="/images/resharper-annotations-can-it-be-null/no-canbenull-async.png" alt="screenshot">
 <em><font color="gray">attribute applied to Task, but no to Bar</font></em></p>
@@ -255,7 +254,7 @@ There was even an <a href="https://youtrack.jetbrains.com/issue/RSRP-376091">iss
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

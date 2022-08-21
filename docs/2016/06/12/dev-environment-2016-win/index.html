@@ -33,9 +33,10 @@ I guess it might be interesting to look back at some point and see how does it e
 Background At my previous employer, we were very into Virtual Machines. We had different base VMs which every developer can download.
 That&rsquo;s extremely handy when a new hire has nothing to do, but to install just a couple of tools that are not standard, and enter some credentials." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-06-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-06-12T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dev environment 2016. Windows."/>
@@ -280,9 +281,9 @@ That&rsquo;s extremely handy when a new hire has nothing to do, but to install j
 </ul>
 <h2 id="batch-install">Batch install</h2>
 <p>Most of the tools could be installed from Chocolatey <a href="https://chocolatey.org/packages">gallery</a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">choco install dotnet4.5.2 linqpad -y
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">choco install dotnet4.5.2 linqpad -y
 </code></pre></div><p>I prefer to have all the tools grouped into <code>.config</code> files:</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- commandline-tools.config --&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- commandline-tools.config --&gt;</span>
 <span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span class="nt">&lt;packages&gt;</span>
   <span class="nt">&lt;package</span> <span class="na">id=</span><span class="s">&#34;git&#34;</span> <span class="nt">/&gt;</span>
@@ -334,7 +335,7 @@ That&rsquo;s extremely handy when a new hire has nothing to do, but to install j
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

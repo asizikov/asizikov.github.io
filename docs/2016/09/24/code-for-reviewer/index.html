@@ -31,9 +31,10 @@ One might want to say that if we know how to work with other people&rsquo;s code
 Most of the time I try to understand, debug, fix or update existing code. Less often developers write new code from scratch. I think it&rsquo;s safe to say that we all know how to work with a code written by another human.
 One might want to say that if we know how to work with other people&rsquo;s code, we can be good at reading and understanding it during the code review process." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-09-24T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-09-24T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Write code for the reviewer, not for the compiler"/>
@@ -173,7 +174,7 @@ One might want to say that if we know how to work with other people&rsquo;s code
 <h2 id="problem">Problem</h2>
 <p>Modern programming languages allow a developer to skip some symbols and take some shortcuts. It&rsquo;s different for every language, I&rsquo;ll use C# as an example in this post.</p>
 <p>Let&rsquo;s look at this snippet:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">ProcessSomething</span><span class="p">(</span><span class="n">Guid</span> <span class="n">accountId</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="n">ProcessSomething</span><span class="p">(</span><span class="n">Guid</span> <span class="n">accountId</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">AccountBalance</span> <span class="n">accountBalance</span> <span class="p">=</span> 
     <span class="k">this</span><span class="p">.</span><span class="n">balanceCalculator</span>
@@ -229,7 +230,7 @@ After that the result is passed to the instance method <strong>CalculateFees</st
 If the method was longer, it would not be important anyway. What&rsquo;s important is that the <code>balanceCalculator</code> was used to calculate the balance.</p>
 <p>Nobody would argue that the code outside of the editor contains less information about its structure. The absence of this knowledge is not that bad, though.</p>
 <p>For example, When reviewing the code outside of the editor no one can tell what&rsquo;s going on here:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Foo</span><span class="p">(</span><span class="n">Bar</span><span class="p">.</span><span class="n">Car</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Foo</span><span class="p">(</span><span class="n">Bar</span><span class="p">.</span><span class="n">Car</span><span class="p">);</span>
 <span class="n">Foo</span><span class="p">(</span><span class="n">Barr</span><span class="p">.</span><span class="n">Car</span><span class="p">);</span>
 <span class="n">Foo</span><span class="p">(</span><span class="n">Barrr</span><span class="p">.</span><span class="n">Car</span><span class="p">);</span>
 </code></pre></div><p>Each <code>*.Car</code> could be either a property of current class instance property or a static property of another class or an enum value. <code>this.</code> qualifier will help us with the first option, but that&rsquo;s it.</p>
@@ -292,7 +293,7 @@ The result of that method call is used as a parameter for  <strong>CalculateFees
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

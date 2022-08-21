@@ -31,9 +31,10 @@ Current options Private methods The first option that existed in C# 1 is having 
 Let&rsquo;s start with a brief overview of the current situation.
 Current options Private methods The first option that existed in C# 1 is having a private method." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-04-15T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-04-15T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Thoughts on C# 7 Local Functions"/>
@@ -169,7 +170,7 @@ In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m go
 <h2 id="current-options">Current options</h2>
 <h3 id="private-methods">Private methods</h3>
 <p>The first option that existed in C# 1 is having a private method.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Bar</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Bar</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
     <span class="p">{</span>
@@ -187,7 +188,7 @@ It will be taken into account by IntelliSense.</p>
 <p><img src="/images/thoughts-on-local-functions/private-method-discoverable.png" alt="Private method discoverable via IntelliSense"></p>
 <h3 id="func-and-action">Func and Action</h3>
 <p>We can try to hide our helper inside the scope of <code>Foo</code> method by converting it to <code>Func&lt;int, string&gt;</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">class</span> <span class="nc">Bar</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">class</span> <span class="nc">Bar</span>
  <span class="p">{</span>
      <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
      <span class="p">{</span>
@@ -214,7 +215,7 @@ It will be taken into account by IntelliSense.</p>
 <p>there will be no overhead of calling it and it can have all the properties which regular method declaration can have:
 it can be asynchronous, it can be generic, it can be dynamic.</p>
 <p>Ok, there is a difference. Local functions can not be static. And local functions can capture variables from enclosing block:</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Bar</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Bar</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
     <span class="p">{</span>
@@ -227,7 +228,7 @@ it can be asynchronous, it can be generic, it can be dynamic.</p>
 <p>As <a href="http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions">Bill Wagner</a> wrote
 local function is a perfect solution for iterators and asynchronous methods when it comes to parameters validation.</p>
 <p>The following code will throw an exception right away and not in a lazy manner.</p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">AsEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">params</span> <span class="n">T</span><span class="p">[]</span> <span class="n">items</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">AsEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">params</span> <span class="n">T</span><span class="p">[]</span> <span class="n">items</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">items</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">items</span><span class="p">));</span>
 
@@ -243,7 +244,7 @@ local function is a perfect solution for iterators and asynchronous methods when
 <span class="p">}</span>
 </code></pre></div><h2 id="other-observations">Other observations:</h2>
 <p>Local functions support <a href="https://msdn.microsoft.com/en-us/library/hh534540.aspx">Caller Info Attributes</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">SlimShady</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">SlimShady</span><span class="p">()</span>
  <span class="p">{</span>
      <span class="k">void</span> <span class="n">Hi</span><span class="p">([</span><span class="n">CallerMemberName</span><span class="p">]</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
      <span class="p">{</span>
@@ -303,7 +304,7 @@ Same as for lambdas, though.</p>
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

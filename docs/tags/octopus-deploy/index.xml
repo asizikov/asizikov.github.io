@@ -6,11 +6,7 @@
     <description>Recent content in octopus deploy on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.cloud-eng.nl/tags/octopus-deploy/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/octopus-deploy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</title>
       <link>https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/</link>

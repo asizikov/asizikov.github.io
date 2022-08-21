@@ -31,9 +31,10 @@ When our images are lean the build time is reduced as well as the pull and start
 It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
 When our images are lean the build time is reduced as well as the pull and startup time." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2020/09/29/container-tests/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2020/09/29/container-tests/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2020-09-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-09-29T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker image tests"/>
@@ -176,7 +177,7 @@ When our images are lean the build time is reduced as well as the pull and start
 <p>There are several tools that are available to help us enforce policies on the images that we build and deploy. One of them is a framework called <a href="https://github.com/GoogleContainerTools/container-structure-test">Container Structure Tests</a></p>
 <p>The Container Structure Tests provide a framework to validate the structure of a container image. These tests can be used to check the output of commands in an image, as well as verify metadata and contents of the filesystem.</p>
 <p>Tests can be run either through a standalone binary or through a Docker image.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">container-structure-test <span class="nb">test</span> --image gcr.io/registry/image:latest <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">container-structure-test <span class="nb">test</span> --image gcr.io/registry/image:latest <span class="se">\
 </span><span class="se"></span>--config config.yaml
 </code></pre></div><p>Let&rsquo;s check a few examples.</p>
 <h2 id="bad-docker-image">Bad Docker image</h2>
@@ -192,19 +193,19 @@ When our images are lean the build time is reduced as well as the pull and start
 <li>Many useless layers</li>
 <li>Large image size</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ docker images
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker images
 REPOSITORY           TAG       SIZE
 asp-net-container    latest    850MB
 </code></pre></div><p>850 MB for a super basic echo application. Let&rsquo;s get those things fixed.</p>
 <h2 id="local-setup">Local setup</h2>
 <p>At first, I&rsquo;m going to install container-structure-tests locally.</p>
 <h3 id="linux">Linux</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">curl -LO <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -LO <span class="se">\
 </span><span class="se"></span>https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 <span class="se">\
 </span><span class="se"></span><span class="o">&amp;&amp;</span> chmod +x container-structure-test-linux-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
 sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
 </code></pre></div><h3 id="macos">MacOS</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">curl -LO <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -LO <span class="se">\
 </span><span class="se"></span>https://storage.googleapis.com/container-structure-test/latest/container-structure-test-darwin-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
 chmod +x container-structure-test-darwin-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
 sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure-test
@@ -213,7 +214,7 @@ sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure
 
 <p>This test verifies if we have <code>.git</code> directory copied over to the <code>/app</code> working directory.</p>
 <p>And now we can run this (I assume that we already have an image built from our Dockerfile)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">container-structure-test <span class="nb">test</span> <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">container-structure-test <span class="nb">test</span> <span class="se">\
 </span><span class="se"></span>        --image asp-net-container:latest <span class="se">\
 </span><span class="se"></span>        --config container-structure-tests.yaml 
 </code></pre></div><p><img src="/images/2020-09-container-tests/git-test.png" alt="The first test failed"></p>
@@ -232,46 +233,46 @@ sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure
 <li>No unit tests .dlls should be shipped</li>
 </ul>
 <p>Let&rsquo;s turn these requirements into tests:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">commandTests</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;.NET Core runtime installed&#34;</span><span class="w">
-</span><span class="w">      </span><span class="k">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;which&#34;</span><span class="w">
-</span><span class="w">      </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>dotnet<span class="p">]</span><span class="w">
-</span><span class="w">      </span><span class="k">expectedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/usr/bin/dotnet&#34;</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">commandTests</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;.NET Core runtime installed&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;which&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">dotnet]</span><span class="w">
+</span><span class="w">      </span><span class="nt">expectedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/usr/bin/dotnet&#34;</span><span class="p">]</span><span class="w">
 </span><span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no SDK installed&#34;</span><span class="w">
-</span><span class="w">      </span><span class="k">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dotnet&#34;</span><span class="w">
-</span><span class="w">      </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;--list-sdks&#34;</span><span class="p">]</span><span class="w">
-</span><span class="w">      </span><span class="k">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*/sdk]*&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no SDK installed&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dotnet&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;--list-sdks&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">      </span><span class="nt">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*/sdk]*&#34;</span><span class="p">]</span><span class="w">
 </span><span class="w">    
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no test dlls present&#34;</span><span class="w">
-</span><span class="w">      </span><span class="k">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;find&#34;</span><span class="w">
-</span><span class="w">      </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/app&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-name&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;*.Tests.dll&#34;</span><span class="p">]</span><span class="w">
-</span><span class="w">      </span><span class="k">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*.Tests.dll*&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no test dlls present&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;find&#34;</span><span class="w">
+</span><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/app&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-name&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;*.Tests.dll&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">      </span><span class="nt">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*.Tests.dll*&#34;</span><span class="p">]</span><span class="w">
 </span></code></pre></div><p>The first test executes <code>which</code> command and checks the standard output content with the provided string (this string is treated as a RegEx btw). This test will pass on the first run, so I can&rsquo;t call that a TDD approach, heh.</p>
 <p>The second test runs the <code>dotnet --list-sdks</code> command and verifies that there are no matches in the output.</p>
 <p>And the last one runs the <code>find</code> command which looks up for <code>*.Tests.dll</code> in the <code>/app</code> directory.</p>
 <p>To fix the second test, we should use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multi-stage build</a> approach.</p>
 <p>That will allow us to build and test our code in one container and then ship and run in another.</p>
 <p>And the test dlls could be excluded by this <a href="https://github.com/dotnet/sdk/blob/3704d0ae1e75166204f2ea154c37ca89097dc97d/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.Publish.targets#L63-L65">little fix</a> to the <code>.csproj</code> file.</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">  <span class="nt">&lt;PropertyGroup&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml">  <span class="nt">&lt;PropertyGroup&gt;</span>
     <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp3.1<span class="nt">&lt;/TargetFramework&gt;</span>
     <span class="nt">&lt;IsPublishable&gt;</span>false<span class="nt">&lt;/IsPublishable&gt;</span>
     <span class="nt">&lt;IsPackable&gt;</span>false<span class="nt">&lt;/IsPackable&gt;</span>
   <span class="nt">&lt;/PropertyGroup&gt;</span>
 </code></pre></div><h2 id="metadata-tests">Metadata tests</h2>
 <p><code>metadataTests</code> can help us to ensure that the necessary environment variables are set, that our image has labels, the needed ports are exposed and the working directory is set correctly.</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">metadataTest</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">env</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ASPNETCORE_URLS&#39;</span><span class="w">
-</span><span class="w">        </span><span class="k">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;http://+:80&#39;</span><span class="w">
-</span><span class="w">      </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;DOTNET_RUNNING_IN_CONTAINER&#39;</span><span class="w">
-</span><span class="w">        </span><span class="k">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
-</span><span class="w">    </span><span class="k">labels</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.authors&#39;</span><span class="w">
-</span><span class="w">        </span><span class="k">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/asizikov&#39;</span><span class="w">
-</span><span class="w">      </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.source&#39;</span><span class="w">
-</span><span class="w">    </span><span class="k">workdir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/app&#34;</span><span class="w">
-</span><span class="w">    </span><span class="k">exposedPorts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;80&#34;</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadataTest</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ASPNETCORE_URLS&#39;</span><span class="w">
+</span><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;http://+:80&#39;</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;DOTNET_RUNNING_IN_CONTAINER&#39;</span><span class="w">
+</span><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
+</span><span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.authors&#39;</span><span class="w">
+</span><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/asizikov&#39;</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.source&#39;</span><span class="w">
+</span><span class="w">    </span><span class="nt">workdir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/app&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">exposedPorts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;80&#34;</span><span class="p">]</span><span class="w">
 </span></code></pre></div><p>(I&rsquo;m using label <a href="https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys">naming schema</a> by <a href="https://opencontainers.org/">Open Container Initiative</a>)</p>
 <h2 id="automate-all-the-things">Automate all the things!</h2>
 <p>As soon as we have a successful tests run locally</p>
@@ -279,11 +280,11 @@ sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure
 <p>it&rsquo;s time to put things together and update our GitHub Actions workflow file.</p>
 <p>I&rsquo;m going to use the <a href="https://github.com/marketplace/actions/container-structure-test-action">Container Structure Test Action</a> here.</p>
 <p>which is extremely easy to use: provide it with a name of your image or a <code>tar</code> file with the image export results.</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>run<span class="w"> </span>structure<span class="w"> </span>tests<span class="w">
-</span><span class="w">      </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>plexsystems/container-structure-test-action@v0<span class="m">.1.0</span><span class="w">
-</span><span class="w">      </span><span class="k">with</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>my-image<span class="p">:</span>latest<span class="w">
-</span><span class="w">        </span><span class="k">config</span><span class="p">:</span><span class="w"> </span>tests.yaml<span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">run structure tests</span><span class="w">
+</span><span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">plexsystems/container-structure-test-action@v0.1.0</span><span class="w">
+</span><span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">my-image:latest</span><span class="w">
+</span><span class="w">        </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l">tests.yaml</span><span class="w">
 </span></code></pre></div><p>The final action file would look like that:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/a8092cfaf780b5ff48549041c31134f9.js"></script>
 
@@ -330,7 +331,7 @@ sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>

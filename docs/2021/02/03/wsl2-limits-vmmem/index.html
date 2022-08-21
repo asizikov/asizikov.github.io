@@ -33,9 +33,10 @@ One of the problems which used to bug me a lot was the memory consumption by Vmm
 The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.
 I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/" />
+<meta property="og:url" content="https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2021-02-03T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-03T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Configure WSL2 limits on Windows 10"/>
@@ -171,7 +172,7 @@ I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is w
 <p>The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.</p>
 <p>I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:</p>
 <p>Stop the WSL first.</p>
-<pre><code> wsl --shutdown
+<pre tabindex="0"><code> wsl --shutdown
 </code></pre><p>then create a <code>.wslconfig</code> file into the root directory of your users folder: <code>C:\Users\&lt;yourUserName&gt;\.wslconfig</code></p>
 <p>My <code>.wslconfig</code> looks this way:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/a6ff67d8ce4b18acf77e14ca32771a32.js"></script>
@@ -211,7 +212,7 @@ I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is w
     <div class="row">
         <div class="col-12  u-align--center">
             <p>
-                © 2021 Anton Sizikov
+                © 2022 Anton Sizikov
             </p>
         </div>
     </div>
