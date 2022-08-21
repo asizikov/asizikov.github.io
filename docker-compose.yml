@@ -2,8 +2,6 @@ version: '3'
 services: 
   hugo: 
     image: klakegg/hugo:latest  
-    ports:  
-      - "4000:4000" 
     volumes:  
       - ./:/src
     command: server
