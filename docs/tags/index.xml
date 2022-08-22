@@ -6,13 +6,31 @@
     <description>Recent content in Tags on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>azure-devops</title>
+      <link>https://blog.cloud-eng.nl/tags/azure-devops/</link>
+      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/tags/azure-devops/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>devops</title>
       <link>https://blog.cloud-eng.nl/tags/devops/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hosted-agents</title>
+      <link>https://blog.cloud-eng.nl/tags/hosted-agents/</link>
+      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/tags/hosted-agents/</guid>
       <description></description>
     </item>
     
