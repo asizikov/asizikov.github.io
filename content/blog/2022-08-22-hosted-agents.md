@@ -87,6 +87,8 @@ Self-hosted agents are the agents which you set up and manage on your own.
 
 ![](/images/2022-08-hosted-agents/firewall.png)
 
+Managed agents will run in a cloud, and won't have access to your private network, however self-hosted agents can be deployed into your VNet, behind the corporate firewall.
+
 ## Self-Hosted agent
 
 Since I'm running Windows right now, I'll show you how to set up a Windows agent.
