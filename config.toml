@@ -1,74 +1,169 @@
-baseURL = "https://blog.cloud-eng.nl/"
-languageCode = "en-us"
-title = "Anton Sizikov"
-
-theme = "hugo-theme-okayish-blog"
-
-# Geekblog required configuration
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-disablePathToLower = true
-
-publishDir = "docs"
-
-googleAnalytics = "UA-64347270-1"
+baseURL                       = "https://blog.cloud-eng.nl/"
+languageCode                  = "en-us"
+title                         = "Anton Sizikov"
+theme                         = "personal-site"
+summaryLength                 = 5
 
 [permalinks]
   blog = "/:year/:month/:day/:slug/"
-uglyurls = true
 
-# Needed for mermaid shortcodes
-[markup]
-  [markup.goldmark.renderer]
-    unsafe = true
-  [markup.tableOfContents]
-    startLevel = 1
-    endLevel = 9
+[Author] # Used in authorbox
+  avatar                      = "img/avatar.jpeg"
 
-[taxonomies]
-  tag = "tags"
 
-[mediaTypes]
-  [mediaTypes."application/atom+xml"]
-    suffixes = ["xml"]
+[Params]
+  GoogleAnalytics = "UA-64347270-1"
+  subTitle                    = "Anton Sizikov's blog"
+  description                 = "Anton Sizikov's processional blog."
+  images                      = ["img/avatar.webp"]
+  copyright                   = "Anton Sizikov" # Copyright holder, otherwise will use .Site.Title
+  opengraph                   = true # Enable OpenGraph if true
+  twitter_cards               = true # Enable Twitter Cards if true
+  mainSections                = ["blog"] # Set main page sections
+  dateFormat                  = "January 02, 2006" # Change the format of dates
+  # customCSS                 = ["css/custom.css"] # Include custom CSS files
+  customJS                    = []
+  mainMenuAlignment           = "right" # Align main menu (desktop version) to the right side
+  authorbox                   = false # Show authorbox at bottom of single pages if true
+  comments                    = false # Enable comments for all site pages
+  related                     = true # Enable Related content for single pages
+  relatedMax                  = 5
+  mathjax                     = false # Enable MathJax for all site pages
+  hideNoPostsWarning          = false # Don't show no posts empty state warning in main page, if true
+  fontUnit                    = "em"
+  largestFontSize             = 2.5
+  smallestFontSize            = 1
+  googleSearchConsole         = ""
+  paginateLength              = 5
 
-[outputFormats]
-  [outputFormats.Atom]
-    name = "Atom"
-    mediaType = "application/atom+xml"
-    baseName = "atom"
-    isPlainText = false
-    rel = "alternate"
-    isHTML = false
-    noUgly = true
-    permalinkable = false
+  # Google Search custom, more info: https://cse.google.com/cse/all
+  customSearchId              = "004021659876411083349:a2ysxpichpc"
 
-[outputFormats.outputs]
-  home = ["HTML", "ATOM"]
-  page = ["HTML"]
-  section = ["HTML"]
-  taxonomy = ["HTML"]
-  term = ["HTML", "ATOM"]
+  endMessagePost              = ""
+    
+  # Formspree form contact id, more info: https://cse.google.com/cse/all
+  formspreeId                 = ""
+  
 
-[params]
-  description = "Paying your technical debt."
-  keywords = ["azure", "cloud engineering", "software development"]
-  images = []
 
-  logo = "me.jpg"
-  termsPaginate = 15
-  shareLinksEnabled = false
-  gaLocalEnabled = false
+[Params.Hero]
+  title                       = "Anton Sizikov"
+  desc                        = "Paying your technical debt."
 
+[Params.Entry]
+  meta                        = ["date", "categories"] # Enable meta fields in given order
+  toc                         = true # Enable Table of Contents
+  tocOpen                     = false # Open Table of Contents block. Optional
+
+[Params.Featured]
+  previewOnly                 = false # Show only preview featured image
+
+
+# Navigation bar
 [menu]
 
 [[menu.main]]
-  identifier = "tags"
-  name = "tags"
-  url = "/tags"
-
+identifier = "Tags"
+pre = "📝"
+url = "/tags" 
+weight = 1 
 
 [[menu.main]]
-  identifier = "about"
-  name = "about"
-  url = "/about"
+identifier = "About"
+pre = "😃"
+url = "/about" 
+weight = 4
+
+
+[Params.Breadcrumb]
+  enable                      = false # Enable breadcrumb block globally
+  homeText                    = "Home" # Home node text
+
+[Params.Social]
+  twitter                     = "return_true"
+  linkedin                    = "sizikov"
+  github                      = "asizikov"
+
+
+# Web App Manifest settings
+# https://www.w3.org/TR/appmanifest/
+# https://developers.google.com/web/fundamentals/web-app-manifest/
+[Params.Manifest]
+  name                        = "Anton Sizikov"
+  shortName                   = "Anton Sizikov"
+  display                     = "standalone"
+  startUrl                    = "/?utm_source=homescreen"
+  backgroundColor             = "#8dc153"
+  themeColor                  = "#1da1f2"
+  description                 = "Personal Site By Anton Sizikov"
+  orientation                 = "portrait"
+  scope                       = "/"
+
+[outputFormats]
+  [outputFormats.MANIFEST]
+    mediaType                 = "application/json"
+    baseName                  = "manifest"
+    isPlainText               = true
+    notAlternative            = true
+
+[outputs]
+  home                        = ["HTML", "RSS", "MANIFEST"]
+
+enableRobotsTXT               = true
+
+# Pagination
+Paginate                      = 15
+ 
+
+# Code
+[markup]
+  # defaultMarkdownHandler    = "blackfriday"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList          = true
+      footnote                = true
+      linkify                 = true
+      strikethrough           = true
+      table                   = true
+      taskList                = true
+      typographer             = true
+    [markup.goldmark.parser]
+      attribute               = true
+      autoHeadingID           = true
+      autoHeadingIDType       = "github"
+    [markup.goldmark.renderer]
+      hardWraps               = false
+      unsafe                  = true
+      xhtml                   = false
+  [markup.blackFriday]
+    angledQuotes              = false
+    footnoteAnchorPrefix      = ""
+    footnoteReturnLinkContents= ""
+    fractions                 = true
+    hrefTargetBlank           = false
+    latexDashes               = true
+    nofollowLinks             = false
+    noreferrerLinks           = false
+    plainIDAnchors            = true
+    skipHTML                  = false
+    smartDashes               = true
+    smartypants               = true
+    smartypantsQuotesNBSP     = false
+    taskLists                 = true
+  [markup.highlight]
+    codeFences                = true
+    guessSyntax               = false
+    hl_Lines                  = ""
+    lineNoStart               = 1
+    lineNos                   = false
+    lineNumbersInTable        = false
+    noClasses                 = false
+    style                     = "dracula"
+    tabWidth                  = 4
+  [markup.tableOfContents]
+    endLevel                  = 6
+    ordered                   = false
+    startLevel                = 2
+
+[taxonomies]
+tags = "tags"

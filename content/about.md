@@ -6,6 +6,8 @@ header:
   image: /images/01-about/hdr.jpeg
 seo: 
   type: Person
+toc: false
+page: true
 ---
 
 ![img](/images/01-about/hdr.jpeg)
