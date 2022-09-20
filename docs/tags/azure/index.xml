@@ -13,11 +13,7 @@
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</guid>
-      <description>Local development of C# Azure Functions on macOS is still a bit painful. Even the simple-ish logging might cause issues. Let&amp;rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one TimerTrigger function created.
-With the default Run/Debug configuration
-We can compile and run our function
-Our function will start and log to console as expected.
-I wish all the functions were that simple, right?</description>
+      <description>Local development of C# Azure Functions on macOS is still a bit painful.</description>
     </item>
     
     <item>
@@ -26,10 +22,7 @@ I wish all the functions were that simple, right?</description>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</guid>
-      <description>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.
-Current landscape We use a pretty standard setup for a .NET web application.
-We keep our code in one monorepo hosted in internal GitLab. We use TeamCity to build our code and we use Octopus Deploy to run our deployments to Azure.
-We have several environments (let&amp;rsquo;s call them feature, test, and prod) and they all are different.</description>
+      <description>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.</description>
     </item>
     
   </channel>

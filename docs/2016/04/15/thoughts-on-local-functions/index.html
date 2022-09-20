@@ -1,330 +1,475 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    
+<html class="no-js" lang="en-us">
 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1da1f2">
+	<title>Thoughts on C# 7 Local Functions |  Anton Sizikov </title>
+	<meta name="description"
+		content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers.">
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
 
-
-
-
-<title>Thoughts on C# 7 Local Functions | Anton Sizikov</title>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content='Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers. In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m going to talk about it in more details.
-Let&rsquo;s start with a brief overview of the current situation.
-Current options Private methods The first option that existed in C# 1 is having a private method.'>
-<meta name="keywords" content='azure, cloud engineering, software development'>
-<meta name="msapplication-TileColor" content="#b91d47">
-<meta name="theme-color" content="#ffffff">
-
-<link rel="canonical" href="https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/" />
-<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
-<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
-<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
-<link rel="manifest" href='/site.webmanifest'>
-<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
-
-<meta property="og:title" content="Thoughts on C# 7 Local Functions" />
-<meta property="og:description" content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers. In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m going to talk about it in more details.
-Let&rsquo;s start with a brief overview of the current situation.
-Current options Private methods The first option that existed in C# 1 is having a private method." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2016-04-15T00:00:00+00:00" />
-<meta property="article:modified_time" content="2016-04-15T00:00:00+00:00" />
-
-
-<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Thoughts on C# 7 Local Functions"/>
-<meta name="twitter:description" content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers. In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m going to talk about it in more details.
-Let&rsquo;s start with a brief overview of the current situation.
-Current options Private methods The first option that existed in C# 1 is having a private method."/>
+<meta name="twitter:description" content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers."/>
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-    
-    
-    
-    
-    
-    <link rel="stylesheet" href='/css/style.css'>
+	<meta name="twitter:site" content="@return_true" />
+	<meta itemprop="name" content="Thoughts on C# 7 Local Functions">
+<meta itemprop="description" content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers."><meta itemprop="datePublished" content="2016-04-15T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-04-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="534"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="keywords" content="programming," />
+	<link rel="stylesheet" href="/css/bundle.min.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<meta name="msapplication-TileColor" content="#1da1f2">
+	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	
+	<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"WebSite",
+	"name":"Anton Sizikov",
+	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"sameAs":[
+		"https://twitter.com/return_true",
+		"https://gitlab.com/",
+		"https://linkedin.com/in/sizikov",
+		"https://t.me/"
+		],
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "https://wisnuwiry.space/search?q={search_term}",
+		"query-input": "required name=search_term"
+	}
+}
+</script>
 
-    
+<script type='application/ld+json'>
+{
+	"@context": "http://www.schema.org",
+	"@type": "person",
+	"name": "",
+	"jobTitle": "",
+	"gender": "",
+	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"sameAs":[
+		"https://twitter.com/return_true",
+		"https://gitlab.com/",
+		"https://linkedin.com/in/sizikov",
+		"https://t.me/"
+		],
+	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "Mayong, Jepara",
+		"addressLocality": "Jepara",
+		"addressRegion": "Jawa Tengah",
+		"addressCountry": "Indonesia"
+	},
+	"email": "",
+	"birthDate": "2003-01-31",
+	"birthPlace": "Jepara",
+	"nationality": "Indonesian"
+}
+</script>
 
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
-                    Anton Sizikov
-                </a>
-            </div>
-
-            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
-                <i class="p-icon--menu"></i>
-            </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
-                <i class="p-icon--close"></i>
-            </a>
-        </div>
-
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
-
-            <ul class="p-navigation__items" role="menu">
-                
-                <li class="p-navigation__item" role="menuitem">
-                    <a class="p-navigation__link"
-                        href="https://blog.cloud-eng.nl/about">about</a>
-                </li>
-                
-                <li class="p-navigation__item" role="menuitem">
-                    <a class="p-navigation__link"
-                        href="https://blog.cloud-eng.nl/tags">tags</a>
-                </li>
-                
-            </ul>
-
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-
-            
-        </nav>
-    </div>
-</header><div id="main-content">
-<header class="p-strip page-banner">
-    <div class="row">
-        <h1>Thoughts on C# 7 Local Functions</h1>
-    </div>
-
-    
-
-<div class="row">
-
-    
-    <div class="col-8">
-        
-
-
-
-
-<div class="p-media-object">
-
-    
-
-    <div class="p-media-object__details">
-
-        
-
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2016-04-15
-        </p>
-        
-
-    </div>
-</div>
-
-
-    </div>
-    
-
-    
-
-</div>
+<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"BlogPosting",
+	"mainEntityOfPage":{
+		"@type":"WebPage",
+		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2016\/04\/15\/thoughts-on-local-functions\/"
+	},
+	"headline":"Thoughts on C# 7 Local Functions",
+	"datePublished":"2016-04-15T00",
+	"dateModified":"2016-04-15T00",
+	"description":"Frankly when I first saw that C# 7 will come with new local functions I thought that that\u0026rsquo;s just a nice and a compact way of defining local helpers.",
+	"isFamilyFriendly": "true",
+	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"wordCount" : "534",
+	"keywords": ["programming"],
+	"genre": ["programming"],
+	"accountablePerson": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"author": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"creator": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"publisher":{
+		"@type":"Organization",
+		"name":"", 
+		"logo": {
+			"@type": "imageObject",
+			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+		}
+	}
+}</script>
 
 
+	<meta content="" property="fb:admins">
+	<meta content="" property="fb:app_id">
+	<meta content="index,follow" name="googlebot">
+	<meta content="follow, all" name="Googlebot-Image">
+	<meta content="follow, all" name="Scooter">
+	<meta content="follow, all" name="msnbot">
+	<meta content="follow, all" name="alexabot">
+	<meta content="follow, all" name="Slurp">
+	<meta content="follow, all" name="ZyBorg">
+	<meta content="follow, all" name="Scooter">
+	<meta content="true" name="MSSmartTagsPreventParsing">
+	<meta content="ALL" name="SPIDERS">
+	<meta content="ALL" name="WEBCRAWLERS">
+	<meta
+		content="aeiwi, alexa, alltheWeb, altavista, aol netfind, anzwers, canada, directhit, euroseek, excite, overture, go, google, hotbot. infomak, kanoodle, lycos, mastersite, national directory, northern light, searchit, simplesearch, Websmostlinked, webtop, what-u-seek, aol, yahoo, webcrawler, infoseek, excite, magellan, looksmart, bing, cnet, googlebot"
+		name="search engines">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+</head>
 
-
-<div class="row">
-    <div class="col-12">
-        
-<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/programming/">#programming</a>&ensp;
-
-    </div>
-</div>
-
+<body class="">
+	<div class="site-container">
+		<header class="top" id="js-header">
+	<a class="logo" href="/" title="Anton Sizikov">
+    <img src="/img/placeholder.svg" alt="Anton Sizikov" class="lazyload" data-src="/img/avatar.jpeg">
+</a>
+	
+	<nav class="navbar js-navbar">
+		<ul class="navbar__menu">
+			
+			
+				
+				<li>
+					<a href="/tags" target="_self">
+						📝 Tags
+					</a>
+				</li>
+				
+				
+				<li>
+					<a href="/about" target="_self">
+						😃 About
+					</a>
+				</li>
+				
+		</ul>
+		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
+		</button>
+	</nav>
 </header>
 
-<section class="p-strip is-shallow">
-    <main class="post-content">
-        <p>Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a
+		<main>
+			
+<div class="wrapper big-wrapper featured__box featured__box__img">
+	
+	
+	<div class="hero__content">
+		<h1>Thoughts on C# 7 Local Functions</h1>
+	</div>
+	 
+	<p class="property">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg> <time itemprop="datePublished" datetime="2016-04-15T00:00:00Z">April 15, 2016</time> 
+    </span>
+    <span>·</span>
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 3 min read
+    </span>
+</p>
+	
+</div>
+	
+	<article id="article" class="post__entry single grid wrapper big-wrapper">
+		<div class="main">
+		
+		<div class="entry__toc card">
+			
+<div id="toc__box" class="toc__box">
+    <div class="toc__list collapse">
+        <h3 class="toc__title" id="toc__toggle">
+            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
+            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
+        </h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#current-options">Current options</a>
+      <ul>
+        <li><a href="#private-methods">Private methods</a></li>
+        <li><a href="#func-and-action">Func and Action</a></li>
+      </ul>
+    </li>
+    <li><a href="#local-functions">Local functions</a></li>
+    <li><a href="#useful-bits">Useful bits</a></li>
+    <li><a href="#other-observations">Other observations:</a></li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+		</div>
+			<div>
+			<div class="entry__content">
+				<p>Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a
 compact way of defining local helpers.
 In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m going to talk about it in more details.</p>
 <p>Let&rsquo;s start with a brief overview of the current situation.</p>
-<h2 id="current-options">Current options</h2>
-<h3 id="private-methods">Private methods</h3>
+<h2 id="current-options" itemprop="headline" class="heading">Current options <a class="anchor-link" href="#current-options">#</a></h2>
+<h3 id="private-methods" itemprop="headline" class="heading">Private methods <a class="anchor-link" href="#private-methods">#</a></h3>
 <p>The first option that existed in C# 1 is having a private method.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Bar</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">AsPrintable</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">private</span> <span class="kt">string</span> <span class="n">AsPrintable</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">=&gt;</span>  <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>That&rsquo;s a clean and simple solution. It has few issues, though.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bar</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">AsPrintable</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="kt">string</span> <span class="n">AsPrintable</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">=&gt;</span>  <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>That&rsquo;s a clean and simple solution. It has few issues, though.</p>
 <p><code>AsPrintable</code> might have no sense outside of <code>Foo</code> method, but it&rsquo;s accessible for every other method inside the class.
 It will be taken into account by IntelliSense.</p>
-<p><img src="/images/thoughts-on-local-functions/private-method-discoverable.png" alt="Private method discoverable via IntelliSense"></p>
-<h3 id="func-and-action">Func and Action</h3>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/thoughts-on-local-functions/private-method-discoverable.png'
+    alt='Private method discoverable via IntelliSense'
+     title="Private method discoverable via IntelliSense"
+ 	/>
+</figure>
+</p>
+<h3 id="func-and-action" itemprop="headline" class="heading">Func and Action <a class="anchor-link" href="#func-and-action">#</a></h3>
 <p>We can try to hide our helper inside the scope of <code>Foo</code> method by converting it to <code>Func&lt;int, string&gt;</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">class</span> <span class="nc">Bar</span>
- <span class="p">{</span>
-     <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">asPrintable</span> <span class="p">=</span> <span class="n">i</span> <span class="p">=&gt;</span> <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span> 
-         <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
-         <span class="p">{</span>
-             <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">asPrintable</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
-         <span class="p">}</span>
-     <span class="p">}</span>
- <span class="p">}</span>
-</code></pre></div><p>Any disadvantages? Yep, a lot.</p>
-<p>The call is unnecessary expensive: it will produce <a href="http://blogs.msdn.com/b/pfxteam/archive/2012/02/03/10263921.aspx">a couple of allocations</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="k">class</span> <span class="nc">Bar</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">asPrintable</span> <span class="p">=</span> <span class="n">i</span> <span class="p">=&gt;</span> <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">         <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">{</span>
+</span></span><span class="line"><span class="cl">             <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">asPrintable</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">         <span class="p">}</span>
+</span></span><span class="line"><span class="cl">     <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></div><p>Any disadvantages? Yep, a lot.</p>
+<p>The call is unnecessary expensive: it will produce <a href="http://blogs.msdn.com/b/pfxteam/archive/2012/02/03/10263921.aspx" target="_blank" rel="noopener">a couple of allocations</a>.</p>
 <p>There is no elegant way to define recursive lambda:</p>
-<p><img src="/images/thoughts-on-local-functions/func-factorial-not-compilable.png" alt="Lambda can not be recursive"></p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/thoughts-on-local-functions/func-factorial-not-compilable.png'
+    alt='Lambda can not be recursive'
+     title="Lambda can not be recursive"
+ 	/>
+</figure>
+</p>
 <p>We have to use an ugly trick:</p>
-<p><img src="/images/thoughts-on-local-functions/func-factorial-ugly.png" alt="Lambda can not be recursive"></p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/thoughts-on-local-functions/func-factorial-ugly.png'
+    alt='Lambda can not be recursive'
+     title="Lambda can not be recursive"
+ 	/>
+</figure>
+</p>
 <p>And the last, but not least is the fact that lambdas are very limited. You cannot use<br>
 <code>out</code>, <code>ref</code>,<code>params</code> and optional parameters. They cannot be generic.</p>
 <p>There is a bright side, though, a lambda can capture variables from enclosing method aka closure.</p>
-<h2 id="local-functions">Local functions</h2>
+<h2 id="local-functions" itemprop="headline" class="heading">Local functions <a class="anchor-link" href="#local-functions">#</a></h2>
 <p>Local functions can be defined in the body of any method, constructor or property&rsquo;s getter, and setter.</p>
 <p>Since it will be transformed by compiler to regular private static method:</p>
-<p><img src="/images/thoughts-on-local-functions/local-function-decompiled.png" alt="Local function decompiled"></p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/thoughts-on-local-functions/local-function-decompiled.png'
+    alt='Local function decompiled'
+     title="Local function decompiled"
+ 	/>
+</figure>
+</p>
 <p>there will be no overhead of calling it and it can have all the properties which regular method declaration can have:
 it can be asynchronous, it can be generic, it can be dynamic.</p>
 <p>Ok, there is a difference. Local functions can not be static. And local functions can capture variables from enclosing block:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Bar</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">var</span> <span class="n">length</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
-        <span class="kt">string</span> <span class="n">Length</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="s">$&#34;length is {length}&#34;</span><span class="p">;</span>
-        <span class="n">Length</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><h2 id="useful-bits">Useful bits</h2>
-<p>As <a href="http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions">Bill Wagner</a> wrote
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bar</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">length</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">string</span> <span class="n">Length</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="s">$&#34;length is {length}&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Length</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="useful-bits" itemprop="headline" class="heading">Useful bits <a class="anchor-link" href="#useful-bits">#</a></h2>
+<p>As <a href="http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions" target="_blank" rel="noopener">Bill Wagner</a> wrote
 local function is a perfect solution for iterators and asynchronous methods when it comes to parameters validation.</p>
 <p>The following code will throw an exception right away and not in a lazy manner.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">AsEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">params</span> <span class="n">T</span><span class="p">[]</span> <span class="n">items</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">items</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">items</span><span class="p">));</span>
-
-    <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T2</span><span class="p">&gt;</span> <span class="n">Enumerate</span><span class="p">&lt;</span><span class="n">T2</span><span class="p">&gt;(</span><span class="n">T2</span><span class="p">[]</span> <span class="n">array</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">array</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">yield</span> <span class="k">return</span> <span class="n">item</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">Enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><h2 id="other-observations">Other observations:</h2>
-<p>Local functions support <a href="https://msdn.microsoft.com/en-us/library/hh534540.aspx">Caller Info Attributes</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">SlimShady</span><span class="p">()</span>
- <span class="p">{</span>
-     <span class="k">void</span> <span class="n">Hi</span><span class="p">([</span><span class="n">CallerMemberName</span><span class="p">]</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Hi! My name is {name}&#34;</span><span class="p">);</span>
-     <span class="p">}</span>
-
-     <span class="n">Hi</span><span class="p">();</span>
- <span class="p">}</span>
-
-</code></pre></div><p>Fun fact. You can declare a local function with the same name as an existing private method and local function will hide it.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">AsEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">params</span> <span class="n">T</span><span class="p">[]</span> <span class="n">items</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">items</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">items</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T2</span><span class="p">&gt;</span> <span class="n">Enumerate</span><span class="p">&lt;</span><span class="n">T2</span><span class="p">&gt;(</span><span class="n">T2</span><span class="p">[]</span> <span class="n">array</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">array</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">yield</span> <span class="k">return</span> <span class="n">item</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="other-observations" itemprop="headline" class="heading">Other observations: <a class="anchor-link" href="#other-observations">#</a></h2>
+<p>Local functions support <a href="https://msdn.microsoft.com/en-us/library/hh534540.aspx" target="_blank" rel="noopener">Caller Info Attributes</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">SlimShady</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="k">void</span> <span class="n">Hi</span><span class="p">([</span><span class="n">CallerMemberName</span><span class="p">]</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Hi! My name is {name}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="n">Hi</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></div><p>Fun fact. You can declare a local function with the same name as an existing private method and local function will hide it.
 Same as for lambdas, though.</p>
-<p><img src="/images/thoughts-on-local-functions/local-function-priority-over-private-method.png" alt="Local function has priority over private method"></p>
-<h2 id="links">Links</h2>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/thoughts-on-local-functions/local-function-priority-over-private-method.png'
+    alt='Local function has priority over private method'
+     title="Local function has priority over private method"
+ 	/>
+</figure>
+</p>
+<h2 id="links" itemprop="headline" class="heading">Links <a class="anchor-link" href="#links">#</a></h2>
 <ul>
-<li><a href="https://github.com/dotnet/roslyn/issues/259">GitHub. Proposal: Nested local functions and type declarations</a></li>
-<li><a href="http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions">Bill Wagner. C# 7 Feature Proposal: Local Functions</a></li>
-<li><a href="https://github.com/dotnet/roslyn/issues/2930">GitHub. Discussion: Local Functions</a></li>
-<li><a href="http://blogs.msdn.com/b/pfxteam/archive/2012/02/03/10263921.aspx">MSDN blogs. Know Thine Implicit Allocations</a>.</li>
-<li><a href="https://msdn.microsoft.com/en-us/library/hh534540.aspx">MSDN. Caller Information (C# and Visual Basic)</a></li>
+<li><a href="https://github.com/dotnet/roslyn/issues/259" target="_blank" rel="noopener">GitHub. Proposal: Nested local functions and type declarations</a></li>
+<li><a href="http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions" target="_blank" rel="noopener">Bill Wagner. C# 7 Feature Proposal: Local Functions</a></li>
+<li><a href="https://github.com/dotnet/roslyn/issues/2930" target="_blank" rel="noopener">GitHub. Discussion: Local Functions</a></li>
+<li><a href="http://blogs.msdn.com/b/pfxteam/archive/2012/02/03/10263921.aspx" target="_blank" rel="noopener">MSDN blogs. Know Thine Implicit Allocations</a>.</li>
+<li><a href="https://msdn.microsoft.com/en-us/library/hh534540.aspx" target="_blank" rel="noopener">MSDN. Caller Information (C# and Visual Basic)</a></li>
 </ul>
 
-    </main>
-</section>
+				
+				
 
+				
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
-    
-
-    
-    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2016/04/05/catlight-tool/" aria-label="Previous Post">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            CatLight
-        </span>
-    </a>
-    
-
-    
-    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/" aria-label="Next Post">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            Dev environment 2016. Windows.
-        </span>
-    </a>
-    
+			</div>
+			
+			<div class="entry__footer">
+				
+<div class="post__tag">
+			<a href="/tags/programming/"># programming</a>
 </div>
-    </div>
-</footer>
+				
+				
+
+			</div>
+			
+			</div>
+		</div>
+
+		
+	</article>
+	<div class="wrapper">
+		
 
 
 
-
-
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Anton Sizikov
-            </p>
-        </div>
-    </div>
-</footer>
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-64347270-1', 'auto');
+		
+	</div>
 	
-	ga('send', 'pageview');
-}
+
+		</main>
+		<footer class="footer">
+<div class="footer__social">
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
+			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
+
+		</a>
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
+			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
+
+		</a>
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
+			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
+
+		</a>
+</div>
+	<div class="footer__copyright">© 2022 <a href="https://wisnuwiry.space">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+</footer>
+	</div>
+	
+
+
+
+<script type="text/javascript" src="/js/bundle.min.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+<script>
+    
+    
+    
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
+    
+
+    
+    
+    
+    
+
+    if ('serviceWorker' in navigator) {
+        const buildDate = "9/20/22";
+        navigator.serviceWorker
+            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+
+        navigator.serviceWorker
+            .ready
+            .then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+    }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
 
 </body>
+
 </html>

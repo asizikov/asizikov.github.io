@@ -3,6 +3,7 @@ languageCode                  = "en-us"
 title                         = "Anton Sizikov"
 theme                         = "personal-site"
 summaryLength                 = 5
+publishDir                    = "docs"
 
 [permalinks]
   blog = "/:year/:month/:day/:slug/"

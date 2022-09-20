@@ -1,174 +1,263 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    
+<html class="no-js" lang="en-us">
 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1da1f2">
+	<title>GitHub Deployment statuses |  Anton Sizikov </title>
+	<meta name="description"
+		content="It’s very important to collect and track as much information as you can about your system.">
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
 
-
-
-
-<title>GitHub Deployment statuses | Anton Sizikov</title>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content='It’s very important to collect and track as much information as you can about your system. We have logging, monitoring, reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue Tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code.'>
-<meta name="keywords" content='azure, cloud engineering, software development'>
-<meta name="msapplication-TileColor" content="#b91d47">
-<meta name="theme-color" content="#ffffff">
-
-<link rel="canonical" href="https://blog.cloud-eng.nl/2015/11/01/github-deployments/" />
-<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
-<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
-<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
-<link rel="manifest" href='/site.webmanifest'>
-<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
-
-<meta property="og:title" content="GitHub Deployment statuses" />
-<meta property="og:description" content="It’s very important to collect and track as much information as you can about your system. We have logging, monitoring, reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue Tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2015/11/01/github-deployments/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2015-11-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2015-11-01T00:00:00+00:00" />
-
-
-<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GitHub Deployment statuses"/>
-<meta name="twitter:description" content="It’s very important to collect and track as much information as you can about your system. We have logging, monitoring, reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue Tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code."/>
+<meta name="twitter:description" content="It’s very important to collect and track as much information as you can about your system."/>
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-    
-    
-    
-    
-    
-    <link rel="stylesheet" href='/css/style.css'>
+	<meta name="twitter:site" content="@return_true" />
+	<meta itemprop="name" content="GitHub Deployment statuses">
+<meta itemprop="description" content="It’s very important to collect and track as much information as you can about your system."><meta itemprop="datePublished" content="2015-11-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-11-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="407"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="keywords" content="github,devops," />
+	<link rel="stylesheet" href="/css/bundle.min.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<meta name="msapplication-TileColor" content="#1da1f2">
+	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	
+	<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"WebSite",
+	"name":"Anton Sizikov",
+	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"sameAs":[
+		"https://twitter.com/return_true",
+		"https://gitlab.com/",
+		"https://linkedin.com/in/sizikov",
+		"https://t.me/"
+		],
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "https://wisnuwiry.space/search?q={search_term}",
+		"query-input": "required name=search_term"
+	}
+}
+</script>
 
-    
+<script type='application/ld+json'>
+{
+	"@context": "http://www.schema.org",
+	"@type": "person",
+	"name": "",
+	"jobTitle": "",
+	"gender": "",
+	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"sameAs":[
+		"https://twitter.com/return_true",
+		"https://gitlab.com/",
+		"https://linkedin.com/in/sizikov",
+		"https://t.me/"
+		],
+	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "Mayong, Jepara",
+		"addressLocality": "Jepara",
+		"addressRegion": "Jawa Tengah",
+		"addressCountry": "Indonesia"
+	},
+	"email": "",
+	"birthDate": "2003-01-31",
+	"birthPlace": "Jepara",
+	"nationality": "Indonesian"
+}
+</script>
 
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
-                    Anton Sizikov
-                </a>
-            </div>
-
-            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
-                <i class="p-icon--menu"></i>
-            </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
-                <i class="p-icon--close"></i>
-            </a>
-        </div>
-
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
-
-            <ul class="p-navigation__items" role="menu">
-                
-                <li class="p-navigation__item" role="menuitem">
-                    <a class="p-navigation__link"
-                        href="https://blog.cloud-eng.nl/about">about</a>
-                </li>
-                
-                <li class="p-navigation__item" role="menuitem">
-                    <a class="p-navigation__link"
-                        href="https://blog.cloud-eng.nl/tags">tags</a>
-                </li>
-                
-            </ul>
-
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-
-            
-        </nav>
-    </div>
-</header><div id="main-content">
-<header class="p-strip page-banner">
-    <div class="row">
-        <h1>GitHub Deployment statuses</h1>
-    </div>
-
-    
-
-<div class="row">
-
-    
-    <div class="col-8">
-        
-
-
-
-
-<div class="p-media-object">
-
-    
-
-    <div class="p-media-object__details">
-
-        
-
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2015-11-01
-        </p>
-        
-
-    </div>
-</div>
-
-
-    </div>
-    
-
-    
-
-</div>
-
-
+<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"BlogPosting",
+	"mainEntityOfPage":{
+		"@type":"WebPage",
+		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2015\/11\/01\/github-deployments\/"
+	},
+	"headline":"GitHub Deployment statuses",
+	"datePublished":"2015-11-01T00",
+	"dateModified":"2015-11-01T00",
+	"description":"It’s very important to collect and track as much information as you can about your system.",
+	"isFamilyFriendly": "true",
+	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"wordCount" : "407",
+	"keywords": ["github","devops"],
+	"genre": ["github","devops"],
+	"accountablePerson": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"author": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"creator": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"publisher":{
+		"@type":"Organization",
+		"name":"", 
+		"logo": {
+			"@type": "imageObject",
+			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+		}
+	}
+}</script>
 
 
-<div class="row">
-    <div class="col-12">
-        
-<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/github/">#github</a>&ensp;
+	<meta content="" property="fb:admins">
+	<meta content="" property="fb:app_id">
+	<meta content="index,follow" name="googlebot">
+	<meta content="follow, all" name="Googlebot-Image">
+	<meta content="follow, all" name="Scooter">
+	<meta content="follow, all" name="msnbot">
+	<meta content="follow, all" name="alexabot">
+	<meta content="follow, all" name="Slurp">
+	<meta content="follow, all" name="ZyBorg">
+	<meta content="follow, all" name="Scooter">
+	<meta content="true" name="MSSmartTagsPreventParsing">
+	<meta content="ALL" name="SPIDERS">
+	<meta content="ALL" name="WEBCRAWLERS">
+	<meta
+		content="aeiwi, alexa, alltheWeb, altavista, aol netfind, anzwers, canada, directhit, euroseek, excite, overture, go, google, hotbot. infomak, kanoodle, lycos, mastersite, national directory, northern light, searchit, simplesearch, Websmostlinked, webtop, what-u-seek, aol, yahoo, webcrawler, infoseek, excite, magellan, looksmart, bing, cnet, googlebot"
+		name="search engines">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+</head>
 
-<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">#devops</a>&ensp;
-
-    </div>
-</div>
-
+<body class="">
+	<div class="site-container">
+		<header class="top" id="js-header">
+	<a class="logo" href="/" title="Anton Sizikov">
+    <img src="/img/placeholder.svg" alt="Anton Sizikov" class="lazyload" data-src="/img/avatar.jpeg">
+</a>
+	
+	<nav class="navbar js-navbar">
+		<ul class="navbar__menu">
+			
+			
+				
+				<li>
+					<a href="/tags" target="_self">
+						📝 Tags
+					</a>
+				</li>
+				
+				
+				<li>
+					<a href="/about" target="_self">
+						😃 About
+					</a>
+				</li>
+				
+		</ul>
+		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
+		</button>
+	</nav>
 </header>
 
-<section class="p-strip is-shallow">
-    <main class="post-content">
-        <p>It’s very important to collect and track as much information as you can about your system. We have logging, monitoring, reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue Tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code.</p>
+		<main>
+			
+<div class="wrapper big-wrapper featured__box featured__box__img">
+	
+	
+	<div class="hero__content">
+		<h1>GitHub Deployment statuses</h1>
+	</div>
+	 
+	<p class="property">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg> <time itemprop="datePublished" datetime="2015-11-01T00:00:00Z">November 01, 2015</time> 
+    </span>
+    <span>·</span>
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 2 min read
+    </span>
+</p>
+	
+</div>
+	
+	<article id="article" class="post__entry single grid wrapper big-wrapper">
+		<div class="main">
+		
+		<div class="entry__toc card">
+			
+<div id="toc__box" class="toc__box">
+    <div class="toc__list collapse">
+        <h3 class="toc__title" id="toc__toggle">
+            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
+            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
+        </h3>
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+		</div>
+			<div>
+			<div class="entry__content">
+				<p>It’s very important to collect and track as much information as you can about your system. We have logging, monitoring, reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue Tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code.</p>
 <p>The actual process of programming is tracked by VCS. The majority of teams can easily tell you where did this line of code come from. Author, branch name, and often the issue identifier are stored in association with the commit. If you don’t modify the history then you’ll be able to track down the way developer was building the feature.</p>
-<p>GitHub provides you with extra level of storing information about your code. It’s definitely not just the web UI for your repository. The Pull Request collects all the commits related to the feature, it tracks the discussion and as long as it’s a part of your history you can not <a href="https://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github">delete the PR</a>. That makes it a great place to aggregate other events.</p>
-<p>The feature, which is well known is the <a href="https://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github">GitHub Statuses API</a></p>
-<p><img src="/images/github-deployments/statuses.png" alt="Statuses in action"></p>
-<p>Statuses are most often sent by CI server. However CI is not the only possible source of this information. Anyway statuses are linked to the commit and you can use them in your process. For example with the combination of <a href="https://help.github.com/articles/about-protected-branches/">protected branches</a> and statuses you can prevent you from merging code, that can not be build, into master branch.</p>
+<p>GitHub provides you with extra level of storing information about your code. It’s definitely not just the web UI for your repository. The Pull Request collects all the commits related to the feature, it tracks the discussion and as long as it’s a part of your history you can not <a href="https://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github" target="_blank" rel="noopener">delete the PR</a>. That makes it a great place to aggregate other events.</p>
+<p>The feature, which is well known is the <a href="https://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github" target="_blank" rel="noopener">GitHub Statuses API</a></p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/github-deployments/statuses.png'
+    alt='Statuses in action'
+     title="Statuses in action"
+ 	/>
+</figure>
+</p>
+<p>Statuses are most often sent by CI server. However CI is not the only possible source of this information. Anyway statuses are linked to the commit and you can use them in your process. For example with the combination of <a href="https://help.github.com/articles/about-protected-branches/" target="_blank" rel="noopener">protected branches</a> and statuses you can prevent you from merging code, that can not be build, into master branch.</p>
 <p>The other feature of GitHub, which I discovered not so long ago is Deployment Statuses. It’s quite simple at the moment. The only thing it does it links the branch/commit or tag with the event of deployment and sends notifications around.</p>
-<p><img src="/images/github-deployments/deployment.png" alt="Deployment created"></p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/github-deployments/deployment.png'
+    alt='Deployment created'
+     title="Deployment created"
+ 	/>
+</figure>
+</p>
 <p>Successful deployment on the test environment is just another confirmation for your teammates that your changes are fine and it’s time to merge your code.</p>
-<p><img src="/images/github-deployments/deployments.png" alt="Deployments in action"></p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/github-deployments/deployments.png'
+    alt='Deployments in action'
+     title="Deployments in action"
+ 	/>
+</figure>
+</p>
 <p>That’s how it looks like. Well, except the fact that I don’t usually talk to myself.</p>
 <p>Requesting the new deployment using Octokit.net is relatively simple:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/25715ab8fb008f9a3e97.js"></script>
@@ -177,72 +266,99 @@
 <script type="application/javascript" src="https://gist.github.com/asizikov/cd70f64ec3659f095074.js"></script>
 
 <p>As I mentioned earlier the deployment can be requested for the particular commit, for the branch or for the tag.</p>
-<h1 id="links">Links</h1>
+<h1 id="links" itemprop="headline" class="heading">Links</h1>
 <ul>
-<li><a href="https://developer.github.com/v3/repos/statuses/">Statuses API</a></li>
-<li><a href="https://developer.github.com/v3/repos/deployments/">Deployments API</a></li>
-<li><a href="http://githubengineering.com/deploying-branches-to-github-com/">Deploying branches to GitHub</a></li>
+<li><a href="https://developer.github.com/v3/repos/statuses/" target="_blank" rel="noopener">Statuses API</a></li>
+<li><a href="https://developer.github.com/v3/repos/deployments/" target="_blank" rel="noopener">Deployments API</a></li>
+<li><a href="http://githubengineering.com/deploying-branches-to-github-com/" target="_blank" rel="noopener">Deploying branches to GitHub</a></li>
 </ul>
 
-    </main>
-</section>
+				
+				
 
+				
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
-    
-
-    
-    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2015/09/05/change-origin-for-github-repo/" aria-label="Previous Post">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            Avoid typing user name when committing to GitHub repository
-        </span>
-    </a>
-    
-
-    
-    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2015/11/03/abusing-github/" aria-label="Next Post">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            How to convince Linus Torvalds to contribute to your project
-        </span>
-    </a>
-    
+			</div>
+			
+			<div class="entry__footer">
+				
+<div class="post__tag">
+			<a href="/tags/github/"># github</a>
+			<a href="/tags/devops/"># devops</a>
 </div>
-    </div>
-</footer>
+				
+				
+
+			</div>
+			
+			</div>
+		</div>
+
+		
+	</article>
+	<div class="wrapper">
+		
 
 
 
-
-
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Anton Sizikov
-            </p>
-        </div>
-    </div>
-</footer>
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-64347270-1', 'auto');
+		
+	</div>
 	
-	ga('send', 'pageview');
-}
+
+		</main>
+		<footer class="footer">
+<div class="footer__social">
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
+			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
+
+		</a>
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
+			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
+
+		</a>
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
+			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
+
+		</a>
+</div>
+	<div class="footer__copyright">© 2022 <a href="https://wisnuwiry.space">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+</footer>
+	</div>
+	
+
+
+
+<script type="text/javascript" src="/js/bundle.min.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+<script>
+    
+    
+    
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
+    
+
+    
+    
+    
+    
+
+    if ('serviceWorker' in navigator) {
+        const buildDate = "9/20/22";
+        navigator.serviceWorker
+            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+
+        navigator.serviceWorker
+            .ready
+            .then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+    }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
 
 </body>
+
 </html>

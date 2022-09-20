@@ -13,8 +13,7 @@
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/04/05/catlight-tool/</guid>
-      <description>It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.
-At work I hardly pay attention on the process, it just works: I push code to GitHub, later on TeamCity picks up changes and starts the build, and few minutes after I receive Slack or email notification about the result. However for my personal projects things are different. I&amp;rsquo;m using free plan on AppVeyor. It works pretty well except the fact that your build might stay in the queue for a while.</description>
+      <description>It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.</description>
     </item>
     
     <item>
@@ -23,9 +22,7 @@ At work I hardly pay attention on the process, it just works: I push code to Git
       <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/</guid>
-      <description>This is a long title. Well, the post is going to be long as well.
-I want to show how you can set up the CI pipeline using free services and tools.
- GitHub GitVersion AppVeyor  As an example I&amp;rsquo;m going to use my pet project: AsyncSuffix plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package.</description>
+      <description>This is a long title.</description>
     </item>
     
   </channel>

@@ -14,10 +14,7 @@
       
       <guid>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</guid>
       <description>Hi,
-ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis. The special edge case I want to talk about is nullness analysis.
-Unfortunately sometimes it&amp;rsquo;s hard to predict whether the method returns null or it doesn&amp;rsquo;t.
-To solve this problem R# provides an option to annotate your code.
-Let&amp;rsquo;s look at this snippet: public Bar Foo() { return Random.NextDouble() &amp;lt; 0.1 ?</description>
+ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis.</description>
     </item>
     
     <item>
@@ -26,8 +23,7 @@ Let&amp;rsquo;s look at this snippet: public Bar Foo() { return Random.NextDoubl
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</guid>
-      <description>There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.
-That puts us in a situation where we should be able to distinguish between async and non-async versions of method. Microsoft suggests us to follow the naming convention where every asynchronous method include Async suffix after the operation name.</description>
+      <description>There is a tendency in a .</description>
     </item>
     
     <item>
@@ -36,8 +32,7 @@ That puts us in a situation where we should be able to distinguish between async
       <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</guid>
-      <description>In my previous post I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.
-All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper NuGet feed or to your own company&amp;rsquo;s private feed (in case you want to keep it away from the rest of the world).</description>
+      <description>In my previous post I&amp;rsquo;ve described how to create your own Live Templates for ReSharper.</description>
     </item>
     
     <item>
@@ -47,8 +42,7 @@ All the plug-ins for ReSharper are regular NuGet packages. That means that we ca
       
       <guid>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</guid>
       <description>Hi!
-As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper. It saves me time, provides me a static analysis and generates code for me.
-In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 Live Templates. The good fact is that it&amp;rsquo;s easy to customize, and you can introduce your own templates.</description>
+As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper.</description>
     </item>
     
   </channel>

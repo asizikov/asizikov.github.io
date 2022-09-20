@@ -1,206 +1,273 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    
+<html class="no-js" lang="en-us">
 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1da1f2">
+	<title>Fully automated Continuous Integration for your Open Source library for free |  Anton Sizikov </title>
+	<meta name="description"
+		content="This is a long title.">
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
 
-
-
-
-<title>Fully automated Continuous Integration for your Open Source library for free | Anton Sizikov</title>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content='This is a long title. Well, the post is going to be long as well.
-I want to show how you can set up the CI pipeline using free services and tools.
- GitHub GitVersion AppVeyor  As an example I&rsquo;m going to use my pet project: AsyncSuffix plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package.'>
-<meta name="keywords" content='azure, cloud engineering, software development'>
-<meta name="msapplication-TileColor" content="#b91d47">
-<meta name="theme-color" content="#ffffff">
-
-<link rel="canonical" href="https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/" />
-<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
-<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
-<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
-<link rel="manifest" href='/site.webmanifest'>
-<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
-
-<meta property="og:title" content="Fully automated Continuous Integration for your Open Source library for free" />
-<meta property="og:description" content="This is a long title. Well, the post is going to be long as well.
-I want to show how you can set up the CI pipeline using free services and tools.
- GitHub GitVersion AppVeyor  As an example I&rsquo;m going to use my pet project: AsyncSuffix plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2016-01-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2016-01-10T00:00:00+00:00" />
-
-
-<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fully automated Continuous Integration for your Open Source library for free"/>
-<meta name="twitter:description" content="This is a long title. Well, the post is going to be long as well.
-I want to show how you can set up the CI pipeline using free services and tools.
- GitHub GitVersion AppVeyor  As an example I&rsquo;m going to use my pet project: AsyncSuffix plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package."/>
+<meta name="twitter:description" content="This is a long title."/>
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-    
-    
-    
-    
-    
-    <link rel="stylesheet" href='/css/style.css'>
+	<meta name="twitter:site" content="@return_true" />
+	<meta itemprop="name" content="Fully automated Continuous Integration for your Open Source library for free">
+<meta itemprop="description" content="This is a long title."><meta itemprop="datePublished" content="2016-01-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-01-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="824"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="keywords" content="github,appveyor,devops," />
+	<link rel="stylesheet" href="/css/bundle.min.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<meta name="msapplication-TileColor" content="#1da1f2">
+	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	
+	<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"WebSite",
+	"name":"Anton Sizikov",
+	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"sameAs":[
+		"https://twitter.com/return_true",
+		"https://gitlab.com/",
+		"https://linkedin.com/in/sizikov",
+		"https://t.me/"
+		],
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "https://wisnuwiry.space/search?q={search_term}",
+		"query-input": "required name=search_term"
+	}
+}
+</script>
 
-    
+<script type='application/ld+json'>
+{
+	"@context": "http://www.schema.org",
+	"@type": "person",
+	"name": "",
+	"jobTitle": "",
+	"gender": "",
+	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"sameAs":[
+		"https://twitter.com/return_true",
+		"https://gitlab.com/",
+		"https://linkedin.com/in/sizikov",
+		"https://t.me/"
+		],
+	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "Mayong, Jepara",
+		"addressLocality": "Jepara",
+		"addressRegion": "Jawa Tengah",
+		"addressCountry": "Indonesia"
+	},
+	"email": "",
+	"birthDate": "2003-01-31",
+	"birthPlace": "Jepara",
+	"nationality": "Indonesian"
+}
+</script>
 
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
-                    Anton Sizikov
-                </a>
-            </div>
-
-            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
-                <i class="p-icon--menu"></i>
-            </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
-                <i class="p-icon--close"></i>
-            </a>
-        </div>
-
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
-
-            <ul class="p-navigation__items" role="menu">
-                
-                <li class="p-navigation__item" role="menuitem">
-                    <a class="p-navigation__link"
-                        href="https://blog.cloud-eng.nl/about">about</a>
-                </li>
-                
-                <li class="p-navigation__item" role="menuitem">
-                    <a class="p-navigation__link"
-                        href="https://blog.cloud-eng.nl/tags">tags</a>
-                </li>
-                
-            </ul>
-
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-
-            
-        </nav>
-    </div>
-</header><div id="main-content">
-<header class="p-strip page-banner">
-    <div class="row">
-        <h1>Fully automated Continuous Integration for your Open Source library for free</h1>
-    </div>
-
-    
-
-<div class="row">
-
-    
-    <div class="col-8">
-        
-
-
-
-
-<div class="p-media-object">
-
-    
-
-    <div class="p-media-object__details">
-
-        
-
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2016-01-10
-        </p>
-        
-
-    </div>
-</div>
-
-
-    </div>
-    
-
-    
-
-</div>
+<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"BlogPosting",
+	"mainEntityOfPage":{
+		"@type":"WebPage",
+		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2016\/01\/10\/full-stack-ci-for-free\/"
+	},
+	"headline":"Fully automated Continuous Integration for your Open Source library for free",
+	"datePublished":"2016-01-10T00",
+	"dateModified":"2016-01-10T00",
+	"description":"This is a long title.",
+	"isFamilyFriendly": "true",
+	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"wordCount" : "824",
+	"keywords": ["github","appveyor","devops"],
+	"genre": ["github","appveyor","devops"],
+	"accountablePerson": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"author": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"creator": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"publisher":{
+		"@type":"Organization",
+		"name":"", 
+		"logo": {
+			"@type": "imageObject",
+			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+		}
+	}
+}</script>
 
 
+	<meta content="" property="fb:admins">
+	<meta content="" property="fb:app_id">
+	<meta content="index,follow" name="googlebot">
+	<meta content="follow, all" name="Googlebot-Image">
+	<meta content="follow, all" name="Scooter">
+	<meta content="follow, all" name="msnbot">
+	<meta content="follow, all" name="alexabot">
+	<meta content="follow, all" name="Slurp">
+	<meta content="follow, all" name="ZyBorg">
+	<meta content="follow, all" name="Scooter">
+	<meta content="true" name="MSSmartTagsPreventParsing">
+	<meta content="ALL" name="SPIDERS">
+	<meta content="ALL" name="WEBCRAWLERS">
+	<meta
+		content="aeiwi, alexa, alltheWeb, altavista, aol netfind, anzwers, canada, directhit, euroseek, excite, overture, go, google, hotbot. infomak, kanoodle, lycos, mastersite, national directory, northern light, searchit, simplesearch, Websmostlinked, webtop, what-u-seek, aol, yahoo, webcrawler, infoseek, excite, magellan, looksmart, bing, cnet, googlebot"
+		name="search engines">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+</head>
 
-
-<div class="row">
-    <div class="col-12">
-        
-<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/github/">#github</a>&ensp;
-
-<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/appveyor/">#appveyor</a>&ensp;
-
-<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">#devops</a>&ensp;
-
-    </div>
-</div>
-
+<body class="">
+	<div class="site-container">
+		<header class="top" id="js-header">
+	<a class="logo" href="/" title="Anton Sizikov">
+    <img src="/img/placeholder.svg" alt="Anton Sizikov" class="lazyload" data-src="/img/avatar.jpeg">
+</a>
+	
+	<nav class="navbar js-navbar">
+		<ul class="navbar__menu">
+			
+			
+				
+				<li>
+					<a href="/tags" target="_self">
+						📝 Tags
+					</a>
+				</li>
+				
+				
+				<li>
+					<a href="/about" target="_self">
+						😃 About
+					</a>
+				</li>
+				
+		</ul>
+		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
+		</button>
+	</nav>
 </header>
 
-<section class="p-strip is-shallow">
-    <main class="post-content">
-        <p><img src="/images/ci-for-free/communism.png" alt="open source is commumism">
+		<main>
+			
+<div class="wrapper big-wrapper featured__box featured__box__img">
+	
+	
+	<div class="hero__content">
+		<h1>Fully automated Continuous Integration for your Open Source library for free</h1>
+	</div>
+	 
+	<p class="property">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg> <time itemprop="datePublished" datetime="2016-01-10T00:00:00Z">January 10, 2016</time> 
+    </span>
+    <span>·</span>
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 4 min read
+    </span>
+</p>
+	
+</div>
+	
+	<article id="article" class="post__entry single grid wrapper big-wrapper">
+		<div class="main">
+		
+		<div class="entry__toc card">
+			
+<div id="toc__box" class="toc__box">
+    <div class="toc__list collapse">
+        <h3 class="toc__title" id="toc__toggle">
+            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
+            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
+        </h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#github">GitHub</a></li>
+    <li><a href="#gitversion">GitVersion</a></li>
+    <li><a href="#appveyor">AppVeyor</a></li>
+    <li><a href="#the-goal">The goal</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+		</div>
+			<div>
+			<div class="entry__content">
+				<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/ci-for-free/communism.png'
+    alt='open source is commumism'
+     title="open source is commumism"
+ 	/>
+</figure>
+
 This is a long title. Well, the post is going to be long as well.</p>
 <p>I want to show how you can set up the CI pipeline using free services and tools.</p>
 <ul>
-<li><a href="https://github.com">GitHub</a></li>
-<li><a href="https://github.com/GitTools/GitVersion">GitVersion</a></li>
-<li><a href="https://www.appveyor.com/">AppVeyor</a></li>
+<li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+<li><a href="https://github.com/GitTools/GitVersion" target="_blank" rel="noopener">GitVersion</a></li>
+<li><a href="https://www.appveyor.com/" target="_blank" rel="noopener">AppVeyor</a></li>
 </ul>
-<p>As an example I&rsquo;m going to use my pet project: <a href="https://github.com/asizikov/AsyncSuffix">AsyncSuffix</a> plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package. I actually faced some limitations of NuGet.exe and AppVeyor.</p>
-<h2 id="github">GitHub</h2>
+<p>As an example I&rsquo;m going to use my pet project: <a href="https://github.com/asizikov/AsyncSuffix" target="_blank" rel="noopener">AsyncSuffix</a> plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package. I actually faced some limitations of NuGet.exe and AppVeyor.</p>
+<h2 id="github" itemprop="headline" class="heading">GitHub <a class="anchor-link" href="#github">#</a></h2>
 <p>Git and GitHub both are kind of industry standard for open source software development nowadays.</p>
 <p>I&rsquo;m using slightly modified version of git flow for my project. I have two mandatory branches <code>master</code> and <code>develop</code>.
 <code>Master</code> branch contains released code marked with tags. <code>Develop</code> branch is for stable pre-release code.
-These two branches are configured <a href="https://help.github.com/articles/about-protected-branches/">as protected</a>, so code can never be merged unless <a href="https://github.com/blog/2051-protected-branches-and-required-status-checks">CI server reports the successful build</a>. This allows me to publish stable and pre release packages automatically.</p>
+These two branches are configured <a href="https://help.github.com/articles/about-protected-branches/" target="_blank" rel="noopener">as protected</a>, so code can never be merged unless <a href="https://github.com/blog/2051-protected-branches-and-required-status-checks" target="_blank" rel="noopener">CI server reports the successful build</a>. This allows me to publish stable and pre release packages automatically.</p>
 <p>The development is taking place in feature branches. The build triggered from the feature branch will create an alpha package and publish it to separate NuGet feed provided by AppVeyor.</p>
-<h2 id="gitversion">GitVersion</h2>
+<h2 id="gitversion" itemprop="headline" class="heading">GitVersion <a class="anchor-link" href="#gitversion">#</a></h2>
 <p>I like the approach suggested by GitVersion. You can define package version based on your branching model.</p>
 <p>The basic idea is simple:</p>
 <ul>
 <li>The build triggered by commit to Feature branch produces alpha package, beta packages come from develop branch, release candidates come from master.</li>
 <li>The tag produces stable version.</li>
 </ul>
-<p>If you want to get more backgrounds I recommend you a nice <a href="http://gusztavvargadr.github.io/2015/09/20/1-everyday-gitflow-and-semantic-versioning/">couple</a> of <a href="http://gusztavvargadr.github.io/2015/10/30/2-gitversion-to-the-rescue/">posts</a> written by <a href="https://twitter.com/gusztavvargadr">my colleague</a>.</p>
-<h2 id="appveyor">AppVeyor</h2>
+<p>If you want to get more backgrounds I recommend you a nice <a href="http://gusztavvargadr.github.io/2015/09/20/1-everyday-gitflow-and-semantic-versioning/" target="_blank" rel="noopener">couple</a> of <a href="http://gusztavvargadr.github.io/2015/10/30/2-gitversion-to-the-rescue/" target="_blank" rel="noopener">posts</a> written by <a href="https://twitter.com/gusztavvargadr" target="_blank" rel="noopener">my colleague</a>.</p>
+<h2 id="appveyor" itemprop="headline" class="heading">AppVeyor <a class="anchor-link" href="#appveyor">#</a></h2>
 <p>I&rsquo;m using AppVeyor as a CI server.</p>
-<p>AppVeyor is a free cloud build server which is <a href="http://www.appveyor.com/docs">easy to integrate</a> with your GitHub repository.
+<p>AppVeyor is a free cloud build server which is <a href="http://www.appveyor.com/docs" target="_blank" rel="noopener">easy to integrate</a> with your GitHub repository.
 Creating the account is simple, you can log in using your GitHub and you’re done.</p>
 <p>There are two ways to configure build for the project.</p>
 <ul>
 <li>Using UI</li>
-<li>By placing <a href="https://www.appveyor.com/docs/appveyor-yml">AppVeyor.yml</a> file to the root of the repository.</li>
+<li>By placing <a href="https://www.appveyor.com/docs/appveyor-yml" target="_blank" rel="noopener">AppVeyor.yml</a> file to the root of the repository.</li>
 </ul>
 <p>First option is good for testing, but committing configuration file to the repository gives you ability to track versions.</p>
-<h2 id="the-goal">The goal</h2>
+<h2 id="the-goal" itemprop="headline" class="heading">The goal <a class="anchor-link" href="#the-goal">#</a></h2>
 <p>As I already mentioned, I work in a feature branch and I want to make sure that build is not broken.
 That means that build server constantly compiles and packs code.
 However code in a feature branch is most likely unstable and it&rsquo;s better not to publish it to the official feed.</p>
@@ -212,7 +279,7 @@ I&rsquo;m dogfooding anyway.</p>
 <li>Build process is triggered by any commit, merge or tag action</li>
 <li>Build process depends on the branch name</li>
 </ul>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration" itemprop="headline" class="heading">Configuration <a class="anchor-link" href="#configuration">#</a></h2>
 <p>First of all we need to agree on the branch naming. Typically it depends on the branching model you use.
 For GitFlow I&rsquo;m using the following naming convention:</p>
 <ul>
@@ -225,14 +292,14 @@ For GitFlow I&rsquo;m using the following naming convention:</p>
 <p>Unfortunately there is no way to have common sections in the config file (well, at least at the moment),
 so we have no other option but having very similar configurations. However AppVeyor evolves very quickly and we can expect some improvements.</p>
 <p>Once we have templates defined we can start with actual build steps.</p>
-<p>Install GitVersion from <a href="https://chocolatey.org/">Chocolatey</a></p>
+<p>Install GitVersion from <a href="https://chocolatey.org/" target="_blank" rel="noopener">Chocolatey</a></p>
 <pre tabindex="0"><code>install:
     - choco install gitversion.portable -y
 </code></pre><p>Define environment variables (different for each branch configuration)</p>
 <pre tabindex="0"><code>environment:
     resharper_nuget_api_key:
       secure: RjiHK3Oxp74LUrI1/vmc2S36zOSRLxFM1Eq0Qn4hixWiou11jFqUbW2ukMNXrazP
-</code></pre><p>Important note: the api key is <a href="https://ci.appveyor.com/tools/encrypt">encrypted</a> and can be published to the public repository.</p>
+</code></pre><p>Important note: the api key is <a href="https://ci.appveyor.com/tools/encrypt" target="_blank" rel="noopener">encrypted</a> and can be published to the public repository.</p>
 <p>Restore NuGet packages and set the build version.</p>
 <pre tabindex="0"><code>before_build:
     - ps: nuget restore
@@ -242,8 +309,19 @@ so we have no other option but having very similar configurations. However AppVe
     project: AsyncSuffix.sln
 </code></pre><p>Now it&rsquo;s time to create NuGet package.
 AppVeyor has a feature to create packages automatically:</p>
-<p><img src="/images/ci-for-free/package-projects.png" alt="CreatePackage"></p>
-<p>Doesn&rsquo;t work for me though. At the moment it <a href="http://help.appveyor.com/discussions/problems/2698-when-using-publish_nuget-true-my-nuspec-is-ignored-and-it-is-packaging-the-csproj-instead">ignores the content</a> of <code>.nuspec</code> file,
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/ci-for-free/package-projects.png'
+    alt='CreatePackage'
+     title="CreatePackage"
+ 	/>
+</figure>
+</p>
+<p>Doesn&rsquo;t work for me though. At the moment it <a href="http://help.appveyor.com/discussions/problems/2698-when-using-publish_nuget-true-my-nuspec-is-ignored-and-it-is-packaging-the-csproj-instead" target="_blank" rel="noopener">ignores the content</a> of <code>.nuspec</code> file,
 and performs <code>nuget pack</code> command on the <code>csproj</code> file.</p>
 <p>That&rsquo;s why I have to define an <code>after_build</code> step:</p>
 <pre tabindex="0"><code>after_build:
@@ -261,68 +339,107 @@ Unfortunately I have this annotation:</p>
       }
 </code></pre><p>If <code>APPVEYOR_PULL_REQUEST_NUMBER</code> environment variable is defined that means that we&rsquo;re currently performing a synthetic build of merge commit from Pull Request.
 The <code>ApiKey</code> will be transparently decrypted and the package will be published:</p>
-<p><img src="/images/ci-for-free/pushing-package.png" alt="Success"></p>
-<p>P.S. You can definitely do more than publishing packages. You can <a href="https://www.appveyor.com/docs/running-tests">execute tests</a>, custom build scripts (PowerShell, <a href="http://fsharp.github.io/FAKE/">FAKE</a>) or even <a href="https://www.appveyor.com/docs/deployment">deploy</a> your application.</p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/ci-for-free/pushing-package.png'
+    alt='Success'
+     title="Success"
+ 	/>
+</figure>
+</p>
+<p>P.S. You can definitely do more than publishing packages. You can <a href="https://www.appveyor.com/docs/running-tests" target="_blank" rel="noopener">execute tests</a>, custom build scripts (PowerShell, <a href="http://fsharp.github.io/FAKE/" target="_blank" rel="noopener">FAKE</a>) or even <a href="https://www.appveyor.com/docs/deployment" target="_blank" rel="noopener">deploy</a> your application.</p>
 
-    </main>
-</section>
+				
+				
 
+				
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
-    
-
-    
-    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2015/11/03/abusing-github/" aria-label="Previous Post">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            How to convince Linus Torvalds to contribute to your project
-        </span>
-    </a>
-    
-
-    
-    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/" aria-label="Next Post">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            C# 7 features preview
-        </span>
-    </a>
-    
+			</div>
+			
+			<div class="entry__footer">
+				
+<div class="post__tag">
+			<a href="/tags/github/"># github</a>
+			<a href="/tags/appveyor/"># appveyor</a>
+			<a href="/tags/devops/"># devops</a>
 </div>
-    </div>
-</footer>
+				
+				
+
+			</div>
+			
+			</div>
+		</div>
+
+		
+	</article>
+	<div class="wrapper">
+		
 
 
 
-
-
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Anton Sizikov
-            </p>
-        </div>
-    </div>
-</footer>
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-64347270-1', 'auto');
+		
+	</div>
 	
-	ga('send', 'pageview');
-}
+
+		</main>
+		<footer class="footer">
+<div class="footer__social">
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
+			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
+
+		</a>
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
+			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
+
+		</a>
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
+			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
+
+		</a>
+</div>
+	<div class="footer__copyright">© 2022 <a href="https://wisnuwiry.space">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+</footer>
+	</div>
+	
+
+
+
+<script type="text/javascript" src="/js/bundle.min.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+<script>
+    
+    
+    
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
+    
+
+    
+    
+    
+    
+
+    if ('serviceWorker' in navigator) {
+        const buildDate = "9/20/22";
+        navigator.serviceWorker
+            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+
+        navigator.serviceWorker
+            .ready
+            .then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+    }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
 
 </body>
+
 </html>

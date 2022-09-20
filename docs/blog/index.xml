@@ -13,10 +13,7 @@
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2022/08/22/ado-hosted-agents/</guid>
-      <description>TLDR Today I&amp;rsquo;m going to talk about self-hosted build agents.
-After reading this post you will be able to host your own Windows or macOS build agent (we&amp;rsquo;ll run it on your laptop) and use it to execute AzureDevOps Pipeline.
-Motivation It&amp;rsquo;s common to run different steps of your build and deployment on different machines. You build steps can have different requirements, for example:
- Compute and disk space requirements Software requirements (SDKs, OSs) Lifecycles Location (geolocation, network isolation)  AzureDevOps and GitHub support two differet types of build agents:</description>
+      <description>TLDR # Today I&amp;rsquo;m going to talk about self-hosted build agents.</description>
     </item>
     
     <item>
@@ -25,10 +22,7 @@ Motivation It&amp;rsquo;s common to run different steps of your build and deploy
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/</guid>
-      <description>WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.
-One of the problems which used to bug me a lot was the memory consumption by Vmmem process.
-The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.
-I can&amp;rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:</description>
+      <description>WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.</description>
     </item>
     
     <item>
@@ -37,10 +31,7 @@ I can&amp;rsquo;t fix the problem, but at least I know how to patch it up. Here 
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/</guid>
-      <description>In this post, I&amp;rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&amp;rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&amp;rsquo;m going to use Configuration-as-Code approach with a brand new Octopus provider for Terraform.
-Buckle up and let&amp;rsquo;s get started&amp;hellip;
-Tools Terraform I&amp;rsquo;m going to need terraform on my machine:
-Octopus Deploy For this post, I&amp;rsquo;ve signed up for a free tier of Octopus Deploy SaaS offering.</description>
+      <description>In this post, I&amp;rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&amp;rsquo;s pretty much the same) with Octopus Deploy.</description>
     </item>
     
     <item>
@@ -49,9 +40,7 @@ Octopus Deploy For this post, I&amp;rsquo;ve signed up for a free tier of Octopu
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/</guid>
-      <description>GitHub Container Registry was introduced on the 1st of September 2020. It&amp;rsquo;s still in the Beta stage, so it&amp;rsquo;s rather not recommended to use it in production. However, it offers us free private storage for our Docker images, at least until the end of the Beta period.
-Private storage, free and unlimited download&amp;hellip; looks like a good enough option for local development.
-In this post, I&amp;rsquo;m going to configure my local Kubernetes cluster to pull images from my GitHub Container Registry.</description>
+      <description>GitHub Container Registry was introduced on the 1st of September 2020.</description>
     </item>
     
     <item>
@@ -60,9 +49,7 @@ In this post, I&amp;rsquo;m going to configure my local Kubernetes cluster to pu
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2020/09/29/container-tests/</guid>
-      <description>Today we&amp;rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
-It&amp;rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
-When our images are lean the build time is reduced as well as the pull and startup time.</description>
+      <description>Today we&amp;rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.</description>
     </item>
     
     <item>
@@ -71,11 +58,7 @@ When our images are lean the build time is reduced as well as the pull and start
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</guid>
-      <description>Local development of C# Azure Functions on macOS is still a bit painful. Even the simple-ish logging might cause issues. Let&amp;rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one TimerTrigger function created.
-With the default Run/Debug configuration
-We can compile and run our function
-Our function will start and log to console as expected.
-I wish all the functions were that simple, right?</description>
+      <description>Local development of C# Azure Functions on macOS is still a bit painful.</description>
     </item>
     
     <item>
@@ -84,10 +67,7 @@ I wish all the functions were that simple, right?</description>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</guid>
-      <description>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.
-Current landscape We use a pretty standard setup for a .NET web application.
-We keep our code in one monorepo hosted in internal GitLab. We use TeamCity to build our code and we use Octopus Deploy to run our deployments to Azure.
-We have several environments (let&amp;rsquo;s call them feature, test, and prod) and they all are different.</description>
+      <description>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.</description>
     </item>
     
     <item>
@@ -96,9 +76,7 @@ We have several environments (let&amp;rsquo;s call them feature, test, and prod)
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/</guid>
-      <description>In this post, I&amp;rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.
-Even though SQL Ops Studio is not a fully mature project it&amp;rsquo;s already sufficient enough to perform simple and quick actions.
-Motivation Since I&amp;rsquo;m running most of the apps on a host macOS and I&amp;rsquo;m trying to keep my windows VM as lean and possible, I think SQL Ops Studio is a good choice for most of my SQL related tasks.</description>
+      <description>In this post, I&amp;rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.</description>
     </item>
     
     <item>
@@ -107,9 +85,7 @@ Motivation Since I&amp;rsquo;m running most of the apps on a host macOS and I&am
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/</guid>
-      <description>Well, probably you are not, but let me grumble a little bit anyway.
-Mockingbird knows how to mock.
-I&amp;rsquo;ve been working with various code bases throughout of my career, and there is one pattern which I see rather often. As you may have already guessed it&amp;rsquo;s the unit-tests and mocking I&amp;rsquo;m going to talk about here. To give it a nice catchy start, I&amp;rsquo;d claim here, that mocks should be used when you have to, but not when you can.</description>
+      <description>Well, probably you are not, but let me grumble a little bit anyway.</description>
     </item>
     
     <item>
@@ -118,11 +94,7 @@ I&amp;rsquo;ve been working with various code bases throughout of my career, and
       <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/12/24/msbuild-investigation/</guid>
-      <description>Recently I took latest changes from git, merged dev to my current branch and decided to run few integration tests. You know, just to be sure.
-What do I see? well&amp;hellip; this.
- Could not load file or assembly &amp;lsquo;Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=... or one of its dependencies.
- That doesn&amp;rsquo;t sound right, though it&amp;rsquo;s typically easy to fix.
-The first reaction is to consolidate NuGet packages in my Solution. All the installed packages have same version 5.</description>
+      <description>Recently I took latest changes from git, merged dev to my current branch and decided to run few integration tests.</description>
     </item>
     
     <item>
@@ -131,9 +103,7 @@ The first reaction is to consolidate NuGet packages in my Solution. All the inst
       <pubDate>Sat, 24 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/</guid>
-      <description>I&amp;rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.
-Most of the time I try to understand, debug, fix or update existing code. Less often developers write new code from scratch. I think it&amp;rsquo;s safe to say that we all know how to work with a code written by another human.
-One might want to say that if we know how to work with other people&amp;rsquo;s code, we can be good at reading and understanding it during the code review process.</description>
+      <description>I&amp;rsquo;ve been doing code reviews on a daily basis for several years for now.</description>
     </item>
     
     <item>
@@ -142,10 +112,7 @@ One might want to say that if we know how to work with other people&amp;rsquo;s 
       <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/</guid>
-      <description>I&amp;rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.
-I guess it might be interesting to look back at some point and see how does it evolve.
-Background At my previous employer, we were very into Virtual Machines. We had different base VMs which every developer can download.
-That&amp;rsquo;s extremely handy when a new hire has nothing to do, but to install just a couple of tools that are not standard, and enter some credentials.</description>
+      <description>I&amp;rsquo;ve changed a job last month and had to build up my dev environment from scratch again.</description>
     </item>
     
     <item>
@@ -154,9 +121,7 @@ That&amp;rsquo;s extremely handy when a new hire has nothing to do, but to insta
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/</guid>
-      <description>Frankly when I first saw that C# 7 will come with new local functions I thought that that&amp;rsquo;s just a nice and a compact way of defining local helpers. In fact, it&amp;rsquo;s much more interesting and useful feature. Today I&amp;rsquo;m going to talk about it in more details.
-Let&amp;rsquo;s start with a brief overview of the current situation.
-Current options Private methods The first option that existed in C# 1 is having a private method.</description>
+      <description>Frankly when I first saw that C# 7 will come with new local functions I thought that that&amp;rsquo;s just a nice and a compact way of defining local helpers.</description>
     </item>
     
     <item>
@@ -165,8 +130,7 @@ Current options Private methods The first option that existed in C# 1 is having 
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/04/05/catlight-tool/</guid>
-      <description>It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.
-At work I hardly pay attention on the process, it just works: I push code to GitHub, later on TeamCity picks up changes and starts the build, and few minutes after I receive Slack or email notification about the result. However for my personal projects things are different. I&amp;rsquo;m using free plan on AppVeyor. It works pretty well except the fact that your build might stay in the queue for a while.</description>
+      <description>It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.</description>
     </item>
     
     <item>
@@ -175,8 +139,7 @@ At work I hardly pay attention on the process, it just works: I push code to Git
       <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/</guid>
-      <description>Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference. As it&amp;rsquo;s one of the most important events for .NET dev community MSFT prepared quite a few awesome announcements for us:
- Visual Studio &amp;ldquo;15&amp;rdquo; preview C# 7 preview Xamarin going open source and free Ubuntu workspace running natively on Windows 10 And lot more  Since I got a bit sick this weekend I had plenty of time to play with new VS15 and C# 7.</description>
+      <description>Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference.</description>
     </item>
     
     <item>
@@ -185,9 +148,7 @@ At work I hardly pay attention on the process, it just works: I push code to Git
       <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/</guid>
-      <description>This is a long title. Well, the post is going to be long as well.
-I want to show how you can set up the CI pipeline using free services and tools.
- GitHub GitVersion AppVeyor  As an example I&amp;rsquo;m going to use my pet project: AsyncSuffix plugin for ReSharper. The reason is that the way you pack and publish R# extensions is slightly different from the regular NuGet package.</description>
+      <description>This is a long title.</description>
     </item>
     
     <item>
@@ -196,11 +157,7 @@ I want to show how you can set up the CI pipeline using free services and tools.
       <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/11/03/abusing-github/</guid>
-      <description>Look at all those famous people committing to some random developer’s boring repository.
-Why would they do that? In fact, they don’t.
-In general, git is just a tool that allows you to create patches and distribute them around by email.
-When you create a commit, it will be signed with your name and email. Look at the author part here:
-You have your name listed twice for every commit. You are both the author and the committer.</description>
+      <description>Look at all those famous people committing to some random developer’s boring repository.</description>
     </item>
     
     <item>
@@ -209,7 +166,7 @@ You have your name listed twice for every commit. You are both the author and th
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/11/01/github-deployments/</guid>
-      <description>It’s very important to collect and track as much information as you can about your system. We have logging, monitoring, reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue Tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code.</description>
+      <description>It’s very important to collect and track as much information as you can about your system.</description>
     </item>
     
     <item>
@@ -218,9 +175,7 @@ You have your name listed twice for every commit. You are both the author and th
       <pubDate>Sat, 05 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/09/05/change-origin-for-github-repo/</guid>
-      <description>I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don&amp;rsquo;t have my SSH key generated for the current environment.
-I can still work with my command line tool, however I have to type credentials every time I want to pull or push to the remote.
-Actually I&amp;rsquo;m fine with typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remote to have my user name in it.</description>
+      <description>I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don&amp;rsquo;t have my SSH key generated for the current environment.</description>
     </item>
     
     <item>
@@ -230,10 +185,7 @@ Actually I&amp;rsquo;m fine with typing the password, but not the user name. So 
       
       <guid>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</guid>
       <description>Hi,
-ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis. The special edge case I want to talk about is nullness analysis.
-Unfortunately sometimes it&amp;rsquo;s hard to predict whether the method returns null or it doesn&amp;rsquo;t.
-To solve this problem R# provides an option to annotate your code.
-Let&amp;rsquo;s look at this snippet: public Bar Foo() { return Random.NextDouble() &amp;lt; 0.1 ?</description>
+ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis.</description>
     </item>
     
     <item>
@@ -243,10 +195,7 @@ Let&amp;rsquo;s look at this snippet: public Bar Foo() { return Random.NextDoubl
       
       <guid>https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/</guid>
       <description>Hi,
-In the previous post I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests.
-To do so let&amp;rsquo;s create a new project (Class Library), add a reference to the main project, and install few NuGet packages.
-Rx-Main, Rx-Testing, xUnit.Net and Moq.
-Install-Package Rx-Main Install-Package Rx-Testing Install-Package xunit Install-Package Moq Then we’ll create a class RxGitHubClientTest, inherited from ReactiveTest.</description>
+In the previous post I told you how to implement the Reactive Api client with caching.</description>
     </item>
     
     <item>
@@ -255,8 +204,7 @@ Install-Package Rx-Main Install-Package Rx-Testing Install-Package xunit Install
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</guid>
-      <description>There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.
-That puts us in a situation where we should be able to distinguish between async and non-async versions of method. Microsoft suggests us to follow the naming convention where every asynchronous method include Async suffix after the operation name.</description>
+      <description>There is a tendency in a .</description>
     </item>
     
     <item>
@@ -266,8 +214,7 @@ That puts us in a situation where we should be able to distinguish between async
       
       <guid>https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/</guid>
       <description>Hi,
-Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and the approach in question was taken in a several applications with different modifications.
-Note: In this article I assume that the reader is familiar with the concept of Reactive Programming and Reactive Extensions.</description>
+Today I want to talk about the development of the api client library.</description>
     </item>
     
     <item>
@@ -276,8 +223,7 @@ Note: In this article I assume that the reader is familiar with the concept of R
       <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</guid>
-      <description>In my previous post I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.
-All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper NuGet feed or to your own company&amp;rsquo;s private feed (in case you want to keep it away from the rest of the world).</description>
+      <description>In my previous post I&amp;rsquo;ve described how to create your own Live Templates for ReSharper.</description>
     </item>
     
     <item>
@@ -287,8 +233,7 @@ All the plug-ins for ReSharper are regular NuGet packages. That means that we ca
       
       <guid>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</guid>
       <description>Hi!
-As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper. It saves me time, provides me a static analysis and generates code for me.
-In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 Live Templates. The good fact is that it&amp;rsquo;s easy to customize, and you can introduce your own templates.</description>
+As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper.</description>
     </item>
     
     <item>
@@ -297,10 +242,7 @@ In fact code completion and code generation is a very crucial part of this produ
       <pubDate>Mon, 22 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/</guid>
-      <description>The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.
-In the simple scenario we have an interface like this one:
-public interface IClientRepository { Client Get(int id); IEnumerable&amp;lt;Client&amp;gt; GetAll(); } However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.
-We don&amp;rsquo;t want to load our database with unnecessary joins and Entity Framework has a nice tool for that.</description>
+      <description>The repository pattern is being blamed quite often.</description>
     </item>
     
     <item>
@@ -309,8 +251,7 @@ We don&amp;rsquo;t want to load our database with unnecessary joins and Entity F
       <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2015/06/21/hello-world/</guid>
-      <description>I&amp;rsquo;m not sure if I can be more hipster, but now I have a blog which is hosted by GitHub pages and served by jekyll. Yeah, I had to install python and ruby to run it.
-class Program { static void Main(string[] args) { Console.WriteLine(&amp;#34;Hello World!&amp;#34;); } } </description>
+      <description>I&amp;rsquo;m not sure if I can be more hipster, but now I have a blog which is hosted by GitHub pages and served by jekyll.</description>
     </item>
     
   </channel>
