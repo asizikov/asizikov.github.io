@@ -23,14 +23,3 @@ Since that time I've been working with various technologies: mobile, desktop, we
 I currently work as an Enterprise Solutions Engineer at [GitHub](https://github.com) and as an independent consultant at [Arcticfox Consulting](https://arcticfox-consulting.com/).
 
 I know a thing or two about GitHub, CI/CD, SDLC, Cloud and programming.
-
-## Social links
-
-* [Anton @ LinkedIn](https://www.linkedin.com/in/sizikov/)
-* [return-true @ Twitter](https://twitter.com/return_true)
-* [asizikov @ GitHub](https://github.com/asizikov)
- 
-[!["Anton Sizikov at Stack Overflow"][2]][1]
-
-  [1]: https://stackoverflow.com/users/555014/anton-sizikov
-  [2]: https://stackoverflow.com/users/flair/555014.png
