@@ -13,9 +13,7 @@
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2020/09/29/container-tests/</guid>
-      <description>Today we&amp;rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
-It&amp;rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
-When our images are lean the build time is reduced as well as the pull and startup time.</description>
+      <description>Today we&amp;rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.</description>
     </item>
     
     <item>
@@ -24,11 +22,7 @@ When our images are lean the build time is reduced as well as the pull and start
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</guid>
-      <description>Local development of C# Azure Functions on macOS is still a bit painful. Even the simple-ish logging might cause issues. Let&amp;rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one TimerTrigger function created.
-With the default Run/Debug configuration
-We can compile and run our function
-Our function will start and log to console as expected.
-I wish all the functions were that simple, right?</description>
+      <description>Local development of C# Azure Functions on macOS is still a bit painful.</description>
     </item>
     
   </channel>

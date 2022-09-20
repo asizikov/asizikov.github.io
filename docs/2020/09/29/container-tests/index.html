@@ -1,187 +1,262 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    
+<html class="no-js" lang="en-us">
 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1da1f2">
+	<title>Docker image tests |  Anton Sizikov </title>
+	<meta name="description"
+		content="Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.">
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
 
-
-
-
-<title>Docker image tests | Anton Sizikov</title>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content='Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
-It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
-When our images are lean the build time is reduced as well as the pull and startup time.'>
-<meta name="keywords" content='azure, cloud engineering, software development'>
-<meta name="msapplication-TileColor" content="#b91d47">
-<meta name="theme-color" content="#ffffff">
-
-<link rel="canonical" href="https://blog.cloud-eng.nl/2020/09/29/container-tests/" />
-<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
-<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
-<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
-<link rel="manifest" href='/site.webmanifest'>
-<link rel="mask-icon" href='/safari-pinned-tab.svg' color="#696969">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
-
-<meta property="og:title" content="Docker image tests" />
-<meta property="og:description" content="Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
-It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
-When our images are lean the build time is reduced as well as the pull and startup time." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.cloud-eng.nl/2020/09/29/container-tests/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2020-09-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-09-29T00:00:00+00:00" />
-
-
-<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker image tests"/>
-<meta name="twitter:description" content="Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
-It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.
-When our images are lean the build time is reduced as well as the pull and startup time."/>
+<meta name="twitter:description" content="Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship."/>
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-    
-    
-    
-    
-    
-    <link rel="stylesheet" href='/css/style.css'>
+	<meta name="twitter:site" content="@return_true" />
+	<meta itemprop="name" content="Docker image tests">
+<meta itemprop="description" content="Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship."><meta itemprop="datePublished" content="2020-09-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-09-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="932"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="keywords" content="docker,devops," />
+	<link rel="stylesheet" href="/css/bundle.min.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<meta name="msapplication-TileColor" content="#1da1f2">
+	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	
+	<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"WebSite",
+	"name":"Anton Sizikov",
+	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"sameAs":[
+		"https://twitter.com/return_true",
+		"https://gitlab.com/",
+		"https://linkedin.com/in/sizikov",
+		"https://t.me/"
+		],
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "https://wisnuwiry.space/search?q={search_term}",
+		"query-input": "required name=search_term"
+	}
+}
+</script>
 
-    
+<script type='application/ld+json'>
+{
+	"@context": "http://www.schema.org",
+	"@type": "person",
+	"name": "",
+	"jobTitle": "",
+	"gender": "",
+	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"sameAs":[
+		"https://twitter.com/return_true",
+		"https://gitlab.com/",
+		"https://linkedin.com/in/sizikov",
+		"https://t.me/"
+		],
+	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "Mayong, Jepara",
+		"addressLocality": "Jepara",
+		"addressRegion": "Jawa Tengah",
+		"addressCountry": "Indonesia"
+	},
+	"email": "",
+	"birthDate": "2003-01-31",
+	"birthPlace": "Jepara",
+	"nationality": "Indonesian"
+}
+</script>
 
-</head><body><header id="navigation" class="p-navigation">
-    <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link u-vertically-center p-link--logo" href="https://blog.cloud-eng.nl/">
-                    Anton Sizikov
-                </a>
-            </div>
-
-            <a href="#navigation" class="p-navigation__toggle--open" title="Menu" aria-label="Open Menu">
-                <i class="p-icon--menu"></i>
-            </a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="Close Menu" aria-label="Close Menu">
-                <i class="p-icon--close"></i>
-            </a>
-        </div>
-
-        <nav class="p-navigation__nav">
-            <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-            </span>
-
-            <ul class="p-navigation__items" role="menu">
-                
-                <li class="p-navigation__item" role="menuitem">
-                    <a class="p-navigation__link"
-                        href="https://blog.cloud-eng.nl/about">about</a>
-                </li>
-                
-                <li class="p-navigation__item" role="menuitem">
-                    <a class="p-navigation__link"
-                        href="https://blog.cloud-eng.nl/tags">tags</a>
-                </li>
-                
-            </ul>
-
-            
-            <form class="p-search-box" action="https://www.google.com/search" target="_blank">
-    <input type="search" class="p-search-box__input" name="q" placeholder='Search'
-        required="" aria-label="Query">
-    <input type="hidden" name="sitesearch" value="https://blog.cloud-eng.nl/">
-    <button type="reset" class="p-search-box__reset" alt="reset" aria-label="Reset">
-        <i class="p-icon--close"></i>
-    </button>
-    <button type="submit" class="p-search-box__button" alt="search" aria-label="Search">
-        <i class="p-icon--search"></i>
-    </button>
-</form>
-
-            
-        </nav>
-    </div>
-</header><div id="main-content">
-<header class="p-strip page-banner">
-    <div class="row">
-        <h1>Docker image tests</h1>
-    </div>
-
-    
-
-<div class="row">
-
-    
-    <div class="col-8">
-        
-
-
-
-
-<div class="p-media-object">
-
-    
-
-    <div class="p-media-object__details">
-
-        
-
-        
-        <p class="p-media-object__content">
-            <span class="u-capitalized">on</span>
-            2020-09-29
-        </p>
-        
-
-    </div>
-</div>
-
-
-    </div>
-    
-
-    
-
-</div>
+<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"BlogPosting",
+	"mainEntityOfPage":{
+		"@type":"WebPage",
+		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2020\/09\/29\/container-tests\/"
+	},
+	"headline":"Docker image tests",
+	"datePublished":"2020-09-29T00",
+	"dateModified":"2020-09-29T00",
+	"description":"Today we\u0026rsquo;re going to set up a CI\/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.",
+	"isFamilyFriendly": "true",
+	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"wordCount" : "932",
+	"keywords": ["docker","devops"],
+	"genre": ["docker","devops"],
+	"accountablePerson": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"author": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"creator": {
+		"@type": "Person",
+		"name": "",
+		"url": ""
+	},
+	"publisher":{
+		"@type":"Organization",
+		"name":"", 
+		"logo": {
+			"@type": "imageObject",
+			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+		}
+	}
+}</script>
 
 
+	<meta content="" property="fb:admins">
+	<meta content="" property="fb:app_id">
+	<meta content="index,follow" name="googlebot">
+	<meta content="follow, all" name="Googlebot-Image">
+	<meta content="follow, all" name="Scooter">
+	<meta content="follow, all" name="msnbot">
+	<meta content="follow, all" name="alexabot">
+	<meta content="follow, all" name="Slurp">
+	<meta content="follow, all" name="ZyBorg">
+	<meta content="follow, all" name="Scooter">
+	<meta content="true" name="MSSmartTagsPreventParsing">
+	<meta content="ALL" name="SPIDERS">
+	<meta content="ALL" name="WEBCRAWLERS">
+	<meta
+		content="aeiwi, alexa, alltheWeb, altavista, aol netfind, anzwers, canada, directhit, euroseek, excite, overture, go, google, hotbot. infomak, kanoodle, lycos, mastersite, national directory, northern light, searchit, simplesearch, Websmostlinked, webtop, what-u-seek, aol, yahoo, webcrawler, infoseek, excite, magellan, looksmart, bing, cnet, googlebot"
+		name="search engines">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+</head>
 
-
-<div class="row">
-    <div class="col-12">
-        
-<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/docker/">#docker</a>&ensp;
-
-<a class="p-link--hashtag" href="https://blog.cloud-eng.nl/tags/devops/">#devops</a>&ensp;
-
-    </div>
-</div>
-
+<body class="">
+	<div class="site-container">
+		<header class="top" id="js-header">
+	<a class="logo" href="/" title="Anton Sizikov">
+    <img src="/img/placeholder.svg" alt="Anton Sizikov" class="lazyload" data-src="/img/avatar.jpeg">
+</a>
+	
+	<nav class="navbar js-navbar">
+		<ul class="navbar__menu">
+			
+			
+				
+				<li>
+					<a href="/tags" target="_self">
+						📝 Tags
+					</a>
+				</li>
+				
+				
+				<li>
+					<a href="/about" target="_self">
+						😃 About
+					</a>
+				</li>
+				
+		</ul>
+		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
+		</button>
+	</nav>
 </header>
 
-<section class="p-strip is-shallow">
-    <main class="post-content">
-        <p>Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.</p>
+		<main>
+			
+<div class="wrapper big-wrapper featured__box featured__box__img">
+	
+	
+	<div class="hero__content">
+		<h1>Docker image tests</h1>
+	</div>
+	 
+	<p class="property">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg> <time itemprop="datePublished" datetime="2020-09-29T00:00:00Z">September 29, 2020</time> 
+    </span>
+    <span>·</span>
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 5 min read
+    </span>
+</p>
+	
+</div>
+	
+	<article id="article" class="post__entry single grid wrapper big-wrapper">
+		<div class="main">
+		
+		<div class="entry__toc card">
+			
+<div id="toc__box" class="toc__box">
+    <div class="toc__list collapse">
+        <h3 class="toc__title" id="toc__toggle">
+            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
+            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
+        </h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#container-structure-test">Container Structure Test</a></li>
+    <li><a href="#bad-docker-image">Bad Docker image</a></li>
+    <li><a href="#local-setup">Local setup</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#macos">MacOS</a></li>
+      </ul>
+    </li>
+    <li><a href="#image-size-and-sdks">Image size and SDKs</a></li>
+    <li><a href="#metadata-tests">Metadata tests</a></li>
+    <li><a href="#automate-all-the-things">Automate all the things!</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+		</div>
+			<div>
+			<div class="entry__content">
+				<p>Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.</p>
 <p>It&rsquo;s a good idea to review your docker images. First of all, it can save time, disk space, and money.</p>
 <p>When our images are lean the build time is reduced as well as the pull and startup time. Local Docker cache takes less space. And as a cherry on the cake, we pay less for our cloud storage and egress/cross-region/cross-az traffic.</p>
 <p>A win-win-win situation.</p>
 <p>We also should take care of the content of our images because we don&rsquo;t need to provide a broader attack surface. Fewer tools installed means fewer opportunities for those zero-days exploits.</p>
-<p>And last, but not least everyone who can pull our can inspect them (tools like <a href="https://github.com/wagoodman/dive">dive</a> can make this process easy as pie).</p>
-<p><img src="/images/2020-09-container-tests/dive.png" alt="Dive PNG screenshot"></p>
+<p>And last, but not least everyone who can pull our can inspect them (tools like <a href="https://github.com/wagoodman/dive" target="_blank" rel="noopener">dive</a> can make this process easy as pie).</p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/2020-09-container-tests/dive.png'
+    alt='Dive PNG screenshot'
+     title="Dive PNG screenshot"
+ 	/>
+</figure>
+</p>
 <p>So it makes sense to reject images with sensitive data/information baked in the layer.</p>
-<h2 id="container-structure-test">Container Structure Test</h2>
-<p>There are several tools that are available to help us enforce policies on the images that we build and deploy. One of them is a framework called <a href="https://github.com/GoogleContainerTools/container-structure-test">Container Structure Tests</a></p>
+<h2 id="container-structure-test" itemprop="headline" class="heading">Container Structure Test <a class="anchor-link" href="#container-structure-test">#</a></h2>
+<p>There are several tools that are available to help us enforce policies on the images that we build and deploy. One of them is a framework called <a href="https://github.com/GoogleContainerTools/container-structure-test" target="_blank" rel="noopener">Container Structure Tests</a></p>
 <p>The Container Structure Tests provide a framework to validate the structure of a container image. These tests can be used to check the output of commands in an image, as well as verify metadata and contents of the filesystem.</p>
 <p>Tests can be run either through a standalone binary or through a Docker image.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">container-structure-test <span class="nb">test</span> --image gcr.io/registry/image:latest <span class="se">\
-</span><span class="se"></span>--config config.yaml
-</code></pre></div><p>Let&rsquo;s check a few examples.</p>
-<h2 id="bad-docker-image">Bad Docker image</h2>
-<p>I&rsquo;m going to use <a href="https://github.com/asizikov/asp-net-container">this repository</a> as an example. Feel free to fork it and play with it yourself.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">container-structure-test <span class="nb">test</span> --image gcr.io/registry/image:latest <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--config config.yaml
+</span></span></code></pre></div><p>Let&rsquo;s check a few examples.</p>
+<h2 id="bad-docker-image" itemprop="headline" class="heading">Bad Docker image <a class="anchor-link" href="#bad-docker-image">#</a></h2>
+<p>I&rsquo;m going to use <a href="https://github.com/asizikov/asp-net-container" target="_blank" rel="noopener">this repository</a> as an example. Feel free to fork it and play with it yourself.</p>
 <p>Let&rsquo;s review the docker file first:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/05bc249e0c6ecbd66a85b9da89427c20.js"></script>
 
@@ -193,37 +268,48 @@ When our images are lean the build time is reduced as well as the pull and start
 <li>Many useless layers</li>
 <li>Large image size</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker images
-REPOSITORY           TAG       SIZE
-asp-net-container    latest    850MB
-</code></pre></div><p>850 MB for a super basic echo application. Let&rsquo;s get those things fixed.</p>
-<h2 id="local-setup">Local setup</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker images
+</span></span><span class="line"><span class="cl">REPOSITORY           TAG       SIZE
+</span></span><span class="line"><span class="cl">asp-net-container    latest    850MB
+</span></span></code></pre></div><p>850 MB for a super basic echo application. Let&rsquo;s get those things fixed.</p>
+<h2 id="local-setup" itemprop="headline" class="heading">Local setup <a class="anchor-link" href="#local-setup">#</a></h2>
 <p>At first, I&rsquo;m going to install container-structure-tests locally.</p>
-<h3 id="linux">Linux</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -LO <span class="se">\
-</span><span class="se"></span>https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 <span class="se">\
-</span><span class="se"></span><span class="o">&amp;&amp;</span> chmod +x container-structure-test-linux-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
-</code></pre></div><h3 id="macos">MacOS</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -LO <span class="se">\
-</span><span class="se"></span>https://storage.googleapis.com/container-structure-test/latest/container-structure-test-darwin-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-chmod +x container-structure-test-darwin-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure-test
-</code></pre></div><p>And let&rsquo;s create <code>container-structure-tests.yaml</code> file with the following content:</p>
+<h3 id="linux" itemprop="headline" class="heading">Linux <a class="anchor-link" href="#linux">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -LO <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="o">&amp;&amp;</span> chmod +x container-structure-test-linux-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+</span></span><span class="line"><span class="cl">sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
+</span></span></code></pre></div><h3 id="macos" itemprop="headline" class="heading">MacOS <a class="anchor-link" href="#macos">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -LO <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>https://storage.googleapis.com/container-structure-test/latest/container-structure-test-darwin-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+</span></span><span class="line"><span class="cl">chmod +x container-structure-test-darwin-amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+</span></span><span class="line"><span class="cl">sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure-test
+</span></span></code></pre></div><p>And let&rsquo;s create <code>container-structure-tests.yaml</code> file with the following content:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/5b35287e09341987f8abd9d4ebceec14.js"></script>
 
 <p>This test verifies if we have <code>.git</code> directory copied over to the <code>/app</code> working directory.</p>
 <p>And now we can run this (I assume that we already have an image built from our Dockerfile)</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">container-structure-test <span class="nb">test</span> <span class="se">\
-</span><span class="se"></span>        --image asp-net-container:latest <span class="se">\
-</span><span class="se"></span>        --config container-structure-tests.yaml 
-</code></pre></div><p><img src="/images/2020-09-container-tests/git-test.png" alt="The first test failed"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">container-structure-test <span class="nb">test</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --image asp-net-container:latest <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --config container-structure-tests.yaml 
+</span></span></code></pre></div><p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/2020-09-container-tests/git-test.png'
+    alt='The first test failed'
+     title="The first test failed"
+ 	/>
+</figure>
+</p>
 <p>This is something that can be fixed with a good <code>.dockerignore</code> file:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/146eaf6fc5a7eb20443abca93a6e3c8a.js"></script>
 
 <p>When I measure the difference on the CI (GitHub Actions) I can see that the transferred context size is reduced from
 140.3kB down to 23.55kB. The local difference is even more remarkable because I have packages, DLLs, and other obj content.</p>
-<h2 id="image-size-and-sdks">Image size and SDKs</h2>
+<h2 id="image-size-and-sdks" itemprop="headline" class="heading">Image size and SDKs <a class="anchor-link" href="#image-size-and-sdks">#</a></h2>
 <p>Container Structure Tests support so-called <code>commandTests</code>. They are the tests that can execute any CLI tool of your choice against your container and verify the produced output.</p>
 <p>The syntax is pretty basic and somewhat limited. Tho we can still express our desires.</p>
 <p>We want our image to satisfy the following policies:</p>
@@ -233,125 +319,174 @@ sudo mv container-structure-test-darwin-amd64 /usr/local/bin/container-structure
 <li>No unit tests .dlls should be shipped</li>
 </ul>
 <p>Let&rsquo;s turn these requirements into tests:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">commandTests</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;.NET Core runtime installed&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;which&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">dotnet]</span><span class="w">
-</span><span class="w">      </span><span class="nt">expectedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/usr/bin/dotnet&#34;</span><span class="p">]</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no SDK installed&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dotnet&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;--list-sdks&#34;</span><span class="p">]</span><span class="w">
-</span><span class="w">      </span><span class="nt">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*/sdk]*&#34;</span><span class="p">]</span><span class="w">
-</span><span class="w">    
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no test dlls present&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;find&#34;</span><span class="w">
-</span><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/app&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-name&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;*.Tests.dll&#34;</span><span class="p">]</span><span class="w">
-</span><span class="w">      </span><span class="nt">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*.Tests.dll*&#34;</span><span class="p">]</span><span class="w">
-</span></code></pre></div><p>The first test executes <code>which</code> command and checks the standard output content with the provided string (this string is treated as a RegEx btw). This test will pass on the first run, so I can&rsquo;t call that a TDD approach, heh.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">commandTests</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;.NET Core runtime installed&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;which&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">dotnet]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">expectedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/usr/bin/dotnet&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no SDK installed&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dotnet&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;--list-sdks&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*/sdk]*&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;no test dlls present&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;find&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;/app&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-name&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;*.Tests.dll&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">excludedOutput</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;.*.Tests.dll*&#34;</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></div><p>The first test executes <code>which</code> command and checks the standard output content with the provided string (this string is treated as a RegEx btw). This test will pass on the first run, so I can&rsquo;t call that a TDD approach, heh.</p>
 <p>The second test runs the <code>dotnet --list-sdks</code> command and verifies that there are no matches in the output.</p>
 <p>And the last one runs the <code>find</code> command which looks up for <code>*.Tests.dll</code> in the <code>/app</code> directory.</p>
-<p>To fix the second test, we should use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multi-stage build</a> approach.</p>
+<p>To fix the second test, we should use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank" rel="noopener">multi-stage build</a> approach.</p>
 <p>That will allow us to build and test our code in one container and then ship and run in another.</p>
-<p>And the test dlls could be excluded by this <a href="https://github.com/dotnet/sdk/blob/3704d0ae1e75166204f2ea154c37ca89097dc97d/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.Publish.targets#L63-L65">little fix</a> to the <code>.csproj</code> file.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml">  <span class="nt">&lt;PropertyGroup&gt;</span>
-    <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp3.1<span class="nt">&lt;/TargetFramework&gt;</span>
-    <span class="nt">&lt;IsPublishable&gt;</span>false<span class="nt">&lt;/IsPublishable&gt;</span>
-    <span class="nt">&lt;IsPackable&gt;</span>false<span class="nt">&lt;/IsPackable&gt;</span>
-  <span class="nt">&lt;/PropertyGroup&gt;</span>
-</code></pre></div><h2 id="metadata-tests">Metadata tests</h2>
+<p>And the test dlls could be excluded by this <a href="https://github.com/dotnet/sdk/blob/3704d0ae1e75166204f2ea154c37ca89097dc97d/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.Publish.targets#L63-L65" target="_blank" rel="noopener">little fix</a> to the <code>.csproj</code> file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">  <span class="nt">&lt;PropertyGroup&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp3.1<span class="nt">&lt;/TargetFramework&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;IsPublishable&gt;</span>false<span class="nt">&lt;/IsPublishable&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;IsPackable&gt;</span>false<span class="nt">&lt;/IsPackable&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/PropertyGroup&gt;</span>
+</span></span></code></pre></div><h2 id="metadata-tests" itemprop="headline" class="heading">Metadata tests <a class="anchor-link" href="#metadata-tests">#</a></h2>
 <p><code>metadataTests</code> can help us to ensure that the necessary environment variables are set, that our image has labels, the needed ports are exposed and the working directory is set correctly.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">metadataTest</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">env</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ASPNETCORE_URLS&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;http://+:80&#39;</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;DOTNET_RUNNING_IN_CONTAINER&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
-</span><span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.authors&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/asizikov&#39;</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.source&#39;</span><span class="w">
-</span><span class="w">    </span><span class="nt">workdir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/app&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">exposedPorts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;80&#34;</span><span class="p">]</span><span class="w">
-</span></code></pre></div><p>(I&rsquo;m using label <a href="https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys">naming schema</a> by <a href="https://opencontainers.org/">Open Container Initiative</a>)</p>
-<h2 id="automate-all-the-things">Automate all the things!</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">metadataTest</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ASPNETCORE_URLS&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;http://+:80&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;DOTNET_RUNNING_IN_CONTAINER&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.authors&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/asizikov&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;org.opencontainers.image.source&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">workdir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/app&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">exposedPorts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;80&#34;</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></div><p>(I&rsquo;m using label <a href="https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys" target="_blank" rel="noopener">naming schema</a> by <a href="https://opencontainers.org/" target="_blank" rel="noopener">Open Container Initiative</a>)</p>
+<h2 id="automate-all-the-things" itemprop="headline" class="heading">Automate all the things! <a class="anchor-link" href="#automate-all-the-things">#</a></h2>
 <p>As soon as we have a successful tests run locally</p>
-<p><img src="/images/2020-09-container-tests/green-tests-local.png" alt="Green tests locally"></p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/2020-09-container-tests/green-tests-local.png'
+    alt='Green tests locally'
+     title="Green tests locally"
+ 	/>
+</figure>
+</p>
 <p>it&rsquo;s time to put things together and update our GitHub Actions workflow file.</p>
-<p>I&rsquo;m going to use the <a href="https://github.com/marketplace/actions/container-structure-test-action">Container Structure Test Action</a> here.</p>
+<p>I&rsquo;m going to use the <a href="https://github.com/marketplace/actions/container-structure-test-action" target="_blank" rel="noopener">Container Structure Test Action</a> here.</p>
 <p>which is extremely easy to use: provide it with a name of your image or a <code>tar</code> file with the image export results.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">run structure tests</span><span class="w">
-</span><span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">plexsystems/container-structure-test-action@v0.1.0</span><span class="w">
-</span><span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">my-image:latest</span><span class="w">
-</span><span class="w">        </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l">tests.yaml</span><span class="w">
-</span></code></pre></div><p>The final action file would look like that:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">run structure tests</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">plexsystems/container-structure-test-action@v0.1.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">my-image:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l">tests.yaml</span><span class="w">
+</span></span></span></code></pre></div><p>The final action file would look like that:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/a8092cfaf780b5ff48549041c31134f9.js"></script>
 
-<p>and the fixed Dockerfile is <a href="https://github.com/asizikov/asp-net-container/blob/a1d35e57503479e68563f4c8bc1182f985b7028e/Dockerfile.fixed">here</a>.</p>
+<p>and the fixed Dockerfile is <a href="https://github.com/asizikov/asp-net-container/blob/a1d35e57503479e68563f4c8bc1182f985b7028e/Dockerfile.fixed" target="_blank" rel="noopener">here</a>.</p>
 <p>What could be better than a green CI pipeline?</p>
-<p><img src="/images/2020-09-container-tests/ci-green.png" alt="CI is green"></p>
+<p><figure class="post__image">
+	<img 
+	itemprop="image"
+	class="lazyload post__image" 
+    data-sizes="auto"
+    src="/img/placeholder.svg"
+    data-src='/images/2020-09-container-tests/ci-green.png'
+    alt='CI is green'
+     title="CI is green"
+ 	/>
+</figure>
+</p>
 <p>PS: while fixing our tests we also reduced the size of our image. Now its size is just 208Mb. A nice side benefit, eh?</p>
 
-    </main>
-</section>
+				
+				
 
+				
 
-<footer class="p-strip is-wrapper">
-    <div class="row">
-        <div class="p-article-pagination">
-    
-
-    
-    <a class="p-article-pagination__link--previous" href="https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/" aria-label="Previous Post">
-        <span class="p-article-pagination__label">Previous</span>
-        <span class="p-article-pagination__title">
-            Fix console logs for Azure Functions running in a Docker container
-        </span>
-    </a>
-    
-
-    
-    <a class="p-article-pagination__link--next" href="https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/" aria-label="Next Post">
-        <span class="p-article-pagination__label">Next</span>
-        <span class="p-article-pagination__title">
-            Using GitHub Container Registry with Kubernetes
-        </span>
-    </a>
-    
+			</div>
+			
+			<div class="entry__footer">
+				
+<div class="post__tag">
+			<a href="/tags/docker/"># docker</a>
+			<a href="/tags/devops/"># devops</a>
 </div>
-    </div>
-</footer>
+				
+				
+
+			</div>
+			
+			</div>
+		</div>
+
+		
+	</article>
+	<div class="wrapper">
+		
 
 
 
-
-
-        </div><footer class="p-strip is-shallow page-footer">
-    <div class="row">
-        <div class="col-12  u-align--center">
-            <p>
-                © 2022 Anton Sizikov
-            </p>
-        </div>
-    </div>
-</footer>
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-64347270-1', 'auto');
+		
+	</div>
 	
-	ga('send', 'pageview');
-}
+
+		</main>
+		<footer class="footer">
+<div class="footer__social">
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
+			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
+
+		</a>
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
+			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
+
+		</a>
+		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
+			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
+
+		</a>
+</div>
+	<div class="footer__copyright">© 2022 <a href="https://wisnuwiry.space">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+</footer>
+	</div>
+	
+
+
+
+<script type="text/javascript" src="/js/bundle.min.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+<script>
+    
+    
+    
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
+    
+
+    
+    
+    
+    
+
+    if ('serviceWorker' in navigator) {
+        const buildDate = "9/20/22";
+        navigator.serviceWorker
+            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+
+        navigator.serviceWorker
+            .ready
+            .then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+    }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
 
 </body>
+
 </html>
