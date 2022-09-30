@@ -1,4 +1,4 @@
 # asizikov.github.io
 Personal blog
 
-[![Build Status](https://travis-ci.org/asizikov/asizikov.github.io.svg?branch=master)](https://travis-ci.org/asizikov/asizikov.github.io)
+[![pages-build-deployment](https://github.com/asizikov/asizikov.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/asizikov/asizikov.github.io/actions/workflows/pages/pages-build-deployment)
