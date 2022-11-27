@@ -17,7 +17,8 @@
 			
 			"extensions": [
 				"bungcip.better-toml",
-				"davidanson.vscode-markdownlint"
+				"davidanson.vscode-markdownlint",
+				"GitHub.Copilot"
 			]
 		}
 	},

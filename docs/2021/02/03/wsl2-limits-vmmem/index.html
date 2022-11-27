@@ -239,8 +239,8 @@
 <p>The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.</p>
 <p>I can&rsquo;t fix the problem, but at least I know how to patch it up. Here is what I do:</p>
 <p>Stop the WSL first.</p>
-<pre tabindex="0"><code> wsl --shutdown
-</code></pre><p>then create a <code>.wslconfig</code> file into the root directory of your users folder: <code>C:\Users\&lt;yourUserName&gt;\.wslconfig</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> wsl --shutdown
+</span></span></code></pre></div><p>then create a <code>.wslconfig</code> file into the root directory of your users folder: <code>C:\Users\&lt;yourUserName&gt;\.wslconfig</code></p>
 <p>My <code>.wslconfig</code> looks this way:</p>
 <script type="application/javascript" src="https://gist.github.com/asizikov/a6ff67d8ce4b18acf77e14ca32771a32.js"></script>
 
@@ -325,7 +325,7 @@
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "9/20/22";
+        const buildDate = "11/27/22";
         navigator.serviceWorker
             .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
             .then(function (registration) {
