@@ -384,7 +384,7 @@
 </p>
 <p>Download the agent and configure it</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\&gt;</span> <span class="n">mkdir</span> <span class="n">agent</span> <span class="p">;</span> <span class="nb">cd </span><span class="n">agent</span>
-</span></span><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">agent</span><span class="p">&gt;</span> <span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">Compression</span><span class="p">.</span><span class="n">FileSystem</span> <span class="p">;</span> <span class="no">[System.IO.Compression.ZipFile]</span><span class="p">::</span><span class="n">ExtractToDirectory</span><span class="p">(</span><span class="s2">&#34;$HOME\Downloads\vsts-agent-win-x64-2.179.0.zip&#34;</span><span class="p">,</span> <span class="s2">&#34;$PWD&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">agent</span><span class="p">&gt;</span> <span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="py">IO</span><span class="p">.</span><span class="py">Compression</span><span class="p">.</span><span class="py">FileSystem</span> <span class="p">;</span> <span class="p">[</span><span class="no">System.IO.Compression.ZipFile</span><span class="p">]::</span><span class="n">ExtractToDirectory</span><span class="p">(</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">\Downloads\vsts-agent-win-x64-2.179.0.zip&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="nv">$PWD</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p><figure class="post__image">
 	<img 
 	itemprop="image"
@@ -510,7 +510,7 @@
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "9/20/22";
+        const buildDate = "11/27/22";
         navigator.serviceWorker
             .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
             .then(function (registration) {
