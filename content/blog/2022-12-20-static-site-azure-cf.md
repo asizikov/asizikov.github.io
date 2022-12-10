@@ -5,10 +5,11 @@ tags:
   - azure
   - cloudflare
   - devops
+  - terraform
 slug: static-site-azure-cf
 ---
 
-In this post, I will show you how to set up a static site on Azure with Cloudflare. The site will be served from Azure Storage and will be protected by Cloudflare. The site will be deployed from GitHub Actions. The whole process will take about 10 minutes.
+In this post, I will show you how to set up a static Hugo site on Azure with a custom domain managed by Cloudflare. The site will be built by Hugo, served from Azure Storage. It will be deployed by GitHub Actions.
 
 ## Prerequisites
 
@@ -17,28 +18,19 @@ To follow this tutorial, you will need the following:
 * Cloudflare account
 * GitHub account
 
+## Repository
+
+You can find the repository for this tutorial [here](https://github.com/asizikov/static-website-ci).
+
+`infra` directory contains Terraform code to create Azure resources. `site` directory contains the Hugo site.
+
 ## Create Azure resources
 
-First, we need to create a resource group and a storage account. We will use the Azure CLI to do that. Open a terminal and run the following commands:
+First, we need to create a resource group and a storage account. We will use Terraform to create the resources. Create a new file called `main.tf` in the `infra` directory of the repository. Add the following content to the file:
 
-```bash
-az group create --name static-site --location westeurope
-az storage account create --name staticsite --resource-group static-site --sku Standard_LRS --encryption-services blob
-```
 
 ## Create a static site
 
-Next, we need to create a static site in the storage account. We will use the Azure Portal for that. Open the Azure Portal and navigate to the storage account that you created in the previous step. Click on `Static website` in the left menu and then click on `Enable`:
-
-![Enable static website](/images/2022-12-static-site-azure-cf/enable-static-website.png)
-
-Next, click on `Save`:
-
-![Save static website](/images/2022-12-static-site-azure-cf/save-static-website.png)
-
-Now, you should see the following:
-
-![Static website enabled](/images/2022-12-static-site-azure-cf/static-website-enabled.png)
 
 ## Create a GitHub repository
 
