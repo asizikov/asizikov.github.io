@@ -41,20 +41,14 @@ We're going to use OIDC authentication to authenticate [GitHub workflows to Azur
 
 Make sure to follow the least privileged principle and assign the application only the necessary permissions. In our case I'd recomment limiting the scope of the application to the resource group that will contain the resources.
 
-Once we have it all prepared, we can maintain the rest with Terraform.
+Once we have it all prepared, we can maintain the rest with Terraform and Terragrunt.
+
+Project structure:
+
+
 
 ## Create a static site
 
-
-## Create a GitHub repository
-
-Next, we need to create a GitHub repository. You can use any repository that you want. In this tutorial, I will use a repository called `static-site`. You can create a new repository by clicking on the `New` button in the GitHub UI:
-
-![New repository](/images/2022-12-static-site-azure-cf/new-repository.png)
-
-Next, enter the name of the repository and click on `Create repository`:
-
-![Create repository](/images/2022-12-static-site-azure-cf/create-repository.png)
 
 ## Create a GitHub Actions workflow
 
