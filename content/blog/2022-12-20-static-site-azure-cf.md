@@ -22,12 +22,26 @@ To follow this tutorial, you will need the following:
 
 You can find the repository for this tutorial [here](https://github.com/asizikov/static-website-ci).
 
-`infra` directory contains Terraform code to create Azure resources. `site` directory contains the Hugo site.
+`infra` directory contains Terraform code, and `site` directory contains the Hugo site.
 
 ## Create Azure resources
 
-First, we need to create a resource group and a storage account. We will use Terraform to create the resources. Create a new file called `main.tf` in the `infra` directory of the repository. Add the following content to the file:
+I'm going to use azure storage as a backend for terraform. You can use any backend you want. To create a storage account, run the following command:
 
+```bash
+# Create a resource group that will contain the resources
+
+az group create --name <RESOURCE_GROUP_NAME> --location <LOCATION>
+# Create a storage account that will be used as a backend for Terraform
+
+az storage account create --name <STORAGE_ACCOUNT_NAME> --resource-group <RESOURCE_GROUP_NAME> --sku Standard_LRS --encryption-services blob
+```
+
+We're going to use OIDC authentication to authenticate [GitHub workflows to Azure](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure). To do that, we need to create an Azure AD application. We'll follow the instructions from the [Azure documentation](https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure?tabs=azure-portal%2Clinux).
+
+Make sure to follow the least privileged principle and assign the application only the necessary permissions. In our case I'd recomment limiting the scope of the application to the resource group that will contain the resources.
+
+Once we have it all prepared, we can maintain the rest with Terraform.
 
 ## Create a static site
 
