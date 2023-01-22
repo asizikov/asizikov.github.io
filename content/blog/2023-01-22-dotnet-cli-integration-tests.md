@@ -1,5 +1,5 @@
 ---
-date: "2023-02-22T00:00:00Z"
+date: "2023-01-22T00:00:00Z"
 title: Integration tests for .NET CLI tools
 tags: 
  - github-actions
