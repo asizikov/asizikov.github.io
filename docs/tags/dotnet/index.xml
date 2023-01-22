@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dotnet on Anton Sizikov</title>
+    <link>https://blog.cloud-eng.nl/tags/dotnet/</link>
+    <description>Recent content in dotnet on Anton Sizikov</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Integration tests for .NET CLI tools</title>
+      <link>https://blog.cloud-eng.nl/2023/01/22/dotnet-cli-integration-tests/</link>
+      <pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cloud-eng.nl/2023/01/22/dotnet-cli-integration-tests/</guid>
+      <description>I&amp;rsquo;ve spent Saturday evening working on a small project.</description>
+    </item>
+    
+  </channel>
+</rss>
