@@ -1,6 +1,6 @@
 ---
 date: "2023-01-23T00:00:00Z"
-title: Github Container Registry. Keeping traffic below the limit.
+title: GitHub Container Registry. Keeping traffic below the limit.
 tags: 
  - github-actions
  - azure
