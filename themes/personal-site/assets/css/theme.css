@@ -14,13 +14,13 @@
 }
 
 body.dark-theme {
-    --background-color: #0d2538;
-    --text-color: #ffffff;
+    --background-color: #232425;
+    --text-color: #a9a9b3;
     --link-color: #3592da;
     --primary-color: #1da1f2;
-    --card-color: #0f2d44;
-    --white-color: #ffffff;
+    --card-color: #1b1c1d;
+    --white-color: #a9a9b3;
     --border-color: #17354c;
     --disabled-text-color: #ced8de;
-    --header-bg: #0f2d44;
+    --header-bg: #1b1c1d;
 }
