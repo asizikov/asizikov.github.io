@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-us">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,33 +9,32 @@
 	<title>Provision your Azure environment with Terraform and Octopus Deploy |  Anton Sizikov </title>
 	<meta name="description"
 		content="My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.">
-	<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
-
-<meta name="twitter:title" content="Provision your Azure environment with Terraform and Octopus Deploy"/>
+	<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/img/avatar.webp" /><meta name="twitter:title" content="Provision your Azure environment with Terraform and Octopus Deploy"/>
 <meta name="twitter:description" content="My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations."/>
+      <meta name="twitter:site" content="@return_true"/>
 
 	<meta name="twitter:site" content="@return_true" />
 	<meta itemprop="name" content="Provision your Azure environment with Terraform and Octopus Deploy">
 <meta itemprop="description" content="My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations."><meta itemprop="datePublished" content="2020-03-21T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-03-21T00:00:00+00:00" />
-<meta itemprop="wordCount" content="907"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="wordCount" content="907"><meta itemprop="image" content="http://localhost:1313/img/avatar.webp" />
 <meta itemprop="keywords" content="devops,octopus deploy,terraform,azure," />
 	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
 	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	<link rel="manifest" href="http://localhost:1313/manifest.json">
 	
 	<script type="application/ld+json">
 {
 	"@context":"http://schema.org",
 	"@type":"WebSite",
 	"name":"Anton Sizikov",
-	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"url":"http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
@@ -57,14 +56,14 @@
 	"name": "",
 	"jobTitle": "",
 	"gender": "",
-	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"url": "http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
 		"https://linkedin.com/in/sizikov",
 		"https://t.me/"
 		],
-	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"image": "http:\/\/localhost:1313\/img\/avatar.jpeg",
 	"address": {
 		"@type": "PostalAddress",
 		"streetAddress": "Mayong, Jepara",
@@ -85,14 +84,14 @@
 	"@type":"BlogPosting",
 	"mainEntityOfPage":{
 		"@type":"WebPage",
-		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2020\/03\/21\/azure-terraform-octopus\/"
+		"@id":"http:\/\/localhost:1313\/http:\/\/localhost:1313\/2020\/03\/21\/azure-terraform-octopus\/"
 	},
 	"headline":"Provision your Azure environment with Terraform and Octopus Deploy",
 	"datePublished":"2020-03-21T00",
 	"dateModified":"2020-03-21T00",
 	"description":"My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.",
 	"isFamilyFriendly": "true",
-	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"image": ["http://localhost:1313/img/avatar.jpeg"],
 	"wordCount" : "907",
 	"keywords": ["devops","octopus deploy","terraform","azure"],
 	"genre": ["devops","octopus deploy","terraform","azure"],
@@ -116,7 +115,7 @@
 		"name":"", 
 		"logo": {
 			"@type": "imageObject",
-			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+			"url": "http:\/\/localhost:1313\/img\/avatar.jpeg"
 		}
 	}
 }</script>
@@ -293,11 +292,11 @@
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;container_name: </span><span class="nv">$CONTAINER_NAME</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;access_key: </span><span class="nv">$ACCOUNT_KEY</span><span class="s2">&#34;</span>
 </span></span></code></pre></div><p>Once you&rsquo;ve successfully created a storage for your state you can update your <code>main.tf</code> file with the backend configuration:</p>
-<script type="application/javascript" src="https://gist.github.com/asizikov/06893cb889d885d7e749a5444fb00b14.js"></script>
+<script src="https://gist.github.com/asizikov/06893cb889d885d7e749a5444fb00b14.js"></script>
 
 <p>For the purpose of this blog post I&rsquo;ll be creating just a new resource group with one SQL server.</p>
 <p>Let&rsquo;s declare our setup in a new <code>sql.tf</code> file:</p>
-<script type="application/javascript" src="https://gist.github.com/asizikov/ff7e182aa9ff919b394c22d4dcae6795.js"></script>
+<script src="https://gist.github.com/asizikov/ff7e182aa9ff919b394c22d4dcae6795.js"></script>
 
 <p>note that I&rsquo;m using variables in a gist above.</p>
 <p>Variables are defined in a <code>variables.tf</code> file:</p>
@@ -316,7 +315,7 @@
 <p>I had to invent a convention here.</p>
 <p>Every variable declaration <code>var_name = &quot;abc123&quot;</code> will be converted to a  <code>var_name = &quot;#{var_name}&quot;</code> line.</p>
 <p>To do that we&rsquo;ve set up a build step with the following PowerShell script:</p>
-<script type="application/javascript" src="https://gist.github.com/asizikov/ff5aa7c6bd6a7f513e84622dc9fcfbea.js"></script>
+<script src="https://gist.github.com/asizikov/ff5aa7c6bd6a7f513e84622dc9fcfbea.js"></script>
 
 <p>After that we can build our code and then create a release package with our Terraform config.</p>
 <p>A TeamCity build configuration has a custom <code>%octopus.package.suffix%</code> variable declared. This is a suffix that is composed of the branch name. It&rsquo;s empty for the master branch build and has something like <code>feature-AB-123</code> for a feature branch with an <code>AB-123</code> name. Yes, this is a JIRA ticket name :)</p>
@@ -403,10 +402,10 @@
 			<div class="entry__footer">
 				
 <div class="post__tag">
-			<a href="/tags/devops/"># devops</a>
-			<a href="/tags/octopus-deploy/"># octopus deploy</a>
-			<a href="/tags/terraform/"># terraform</a>
-			<a href="/tags/azure/"># azure</a>
+			<a href="/tags/devops/"># Devops</a>
+			<a href="/tags/octopus-deploy/"># Octopus Deploy</a>
+			<a href="/tags/terraform/"># Terraform</a>
+			<a href="/tags/azure/"># Azure</a>
 </div>
 				
 				
@@ -440,7 +439,7 @@
 
 		</a>
 </div>
-	<div class="footer__copyright">© 2023 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
 </footer>
 	</div>
 	
@@ -463,9 +462,9 @@
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "1/23/23";
+        const buildDate = "4/1/24";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-us">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,33 +9,32 @@
 	<title>Fix console logs for Azure Functions running in a Docker container |  Anton Sizikov </title>
 	<meta name="description"
 		content="Local development of C# Azure Functions on macOS is still a bit painful.">
-	<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
-
-<meta name="twitter:title" content="Fix console logs for Azure Functions running in a Docker container"/>
+	<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/img/avatar.webp" /><meta name="twitter:title" content="Fix console logs for Azure Functions running in a Docker container"/>
 <meta name="twitter:description" content="Local development of C# Azure Functions on macOS is still a bit painful."/>
+      <meta name="twitter:site" content="@return_true"/>
 
 	<meta name="twitter:site" content="@return_true" />
 	<meta itemprop="name" content="Fix console logs for Azure Functions running in a Docker container">
 <meta itemprop="description" content="Local development of C# Azure Functions on macOS is still a bit painful."><meta itemprop="datePublished" content="2020-07-10T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-07-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="279"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="wordCount" content="279"><meta itemprop="image" content="http://localhost:1313/img/avatar.webp" />
 <meta itemprop="keywords" content="azure,docker,serverless," />
 	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
 	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	<link rel="manifest" href="http://localhost:1313/manifest.json">
 	
 	<script type="application/ld+json">
 {
 	"@context":"http://schema.org",
 	"@type":"WebSite",
 	"name":"Anton Sizikov",
-	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"url":"http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
@@ -57,14 +56,14 @@
 	"name": "",
 	"jobTitle": "",
 	"gender": "",
-	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"url": "http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
 		"https://linkedin.com/in/sizikov",
 		"https://t.me/"
 		],
-	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"image": "http:\/\/localhost:1313\/img\/avatar.jpeg",
 	"address": {
 		"@type": "PostalAddress",
 		"streetAddress": "Mayong, Jepara",
@@ -85,14 +84,14 @@
 	"@type":"BlogPosting",
 	"mainEntityOfPage":{
 		"@type":"WebPage",
-		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2020\/07\/10\/azure-function-docker-log\/"
+		"@id":"http:\/\/localhost:1313\/http:\/\/localhost:1313\/2020\/07\/10\/azure-function-docker-log\/"
 	},
 	"headline":"Fix console logs for Azure Functions running in a Docker container",
 	"datePublished":"2020-07-10T00",
 	"dateModified":"2020-07-10T00",
 	"description":"Local development of C# Azure Functions on macOS is still a bit painful.",
 	"isFamilyFriendly": "true",
-	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"image": ["http://localhost:1313/img/avatar.jpeg"],
 	"wordCount" : "279",
 	"keywords": ["azure","docker","serverless"],
 	"genre": ["azure","docker","serverless"],
@@ -116,7 +115,7 @@
 		"name":"", 
 		"logo": {
 			"@type": "imageObject",
-			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+			"url": "http:\/\/localhost:1313\/img\/avatar.jpeg"
 		}
 	}
 }</script>
@@ -264,14 +263,14 @@ Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have 
 </p>
 <p>Our function will start and log to console as expected.</p>
 <p>I wish all the functions were that simple, right? Unfortunately, sometimes we need more, sometimes we even have to use some shared libraries. So let&rsquo;s create one:</p>
-<script type="application/javascript" src="https://gist.github.com/asizikov/1f09de4906a61d768c2ef85b980b1a0c.js"></script>
+<script src="https://gist.github.com/asizikov/1f09de4906a61d768c2ef85b980b1a0c.js"></script>
 
 <p>Nothing fancy there, one class, one interface accepting the <code>ILogger&lt;T&gt;</code> as a dependency.</p>
 <p>Let&rsquo;s update function code accordingly: will make is non-static, and use construction injection to get the <code>IAsyncGreeter</code> injected:</p>
-<script type="application/javascript" src="https://gist.github.com/asizikov/3528207d6fba89f70257278c68fe6ade.js"></script>
+<script src="https://gist.github.com/asizikov/3528207d6fba89f70257278c68fe6ade.js"></script>
 
 <p>In order to register this external dependency and use a propper .NET Core-style DI we need to install <code>Microsoft.Azure.Functions.Extensions</code> NuGet package and create a <code>Startup</code> class like this one:</p>
-<script type="application/javascript" src="https://gist.github.com/asizikov/4ca721ce2e96ba1663f2c63fcbc50e0a.js"></script>
+<script src="https://gist.github.com/asizikov/4ca721ce2e96ba1663f2c63fcbc50e0a.js"></script>
 
 <p>You would expect it to work, right?</p>
 <p>I wish&hellip;</p>
@@ -291,7 +290,7 @@ Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have 
 <p>Why would one logger print it&rsquo;s output to console while another one just flushes our logs to void?</p>
 <p>Because they are two different loggers with different settings. One logger is instantiated and configured in our <code>Startup.cs</code> class and another one is built and configured by function host and injected into the method instead. Oh, well.</p>
 <p>I want to run this function in docker, so let&rsquo;s create a <code>Dockerfile</code>.</p>
-<script type="application/javascript" src="https://gist.github.com/asizikov/7bbd14242e0a7ea198979746aa24d129.js"></script>
+<script src="https://gist.github.com/asizikov/7bbd14242e0a7ea198979746aa24d129.js"></script>
 
 <p>Note that I&rsquo;m setting <code>AzureFunctionsJobHost__Logging__Console__IsEnabled</code> environment variable here.</p>
 <p><figure class="post__image">
@@ -310,7 +309,7 @@ Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="s2">&#34;logLevel&#34;</span><span class="err">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&#34;default&#34;</span><span class="p">:</span> <span class="s2">&#34;Information&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span></code></pre></div><script type="application/javascript" src="https://gist.github.com/asizikov/8ec81eac670f989ab10fc4fbcaa977d9.js"></script>
+</span></span></code></pre></div><script src="https://gist.github.com/asizikov/8ec81eac670f989ab10fc4fbcaa977d9.js"></script>
 
 <p>And voilà, we&rsquo;ve got logs in our container:</p>
 <p><figure class="post__image">
@@ -336,9 +335,9 @@ Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have 
 			<div class="entry__footer">
 				
 <div class="post__tag">
-			<a href="/tags/azure/"># azure</a>
-			<a href="/tags/docker/"># docker</a>
-			<a href="/tags/serverless/"># serverless</a>
+			<a href="/tags/azure/"># Azure</a>
+			<a href="/tags/docker/"># Docker</a>
+			<a href="/tags/serverless/"># Serverless</a>
 </div>
 				
 				
@@ -372,7 +371,7 @@ Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have 
 
 		</a>
 </div>
-	<div class="footer__copyright">© 2023 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
 </footer>
 	</div>
 	
@@ -395,9 +394,9 @@ Even the simple-ish logging might cause issues. Let&rsquo;s assume that we have 
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "1/23/23";
+        const buildDate = "4/1/24";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

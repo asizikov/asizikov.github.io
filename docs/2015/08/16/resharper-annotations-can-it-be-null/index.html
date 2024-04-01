@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-us">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,35 +10,34 @@
 	<meta name="description"
 		content="Hi,
 ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis.">
-	<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
-
-<meta name="twitter:title" content="ReSharper Annotations. Can it be null?"/>
+	<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/img/avatar.webp" /><meta name="twitter:title" content="ReSharper Annotations. Can it be null?"/>
 <meta name="twitter:description" content="Hi,
 ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis."/>
+      <meta name="twitter:site" content="@return_true"/>
 
 	<meta name="twitter:site" content="@return_true" />
 	<meta itemprop="name" content="ReSharper Annotations. Can it be null?">
 <meta itemprop="description" content="Hi,
 ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis."><meta itemprop="datePublished" content="2015-08-16T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2015-08-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="256"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="wordCount" content="256"><meta itemprop="image" content="http://localhost:1313/img/avatar.webp" />
 <meta itemprop="keywords" content="resharper,programming," />
 	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
 	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	<link rel="manifest" href="http://localhost:1313/manifest.json">
 	
 	<script type="application/ld+json">
 {
 	"@context":"http://schema.org",
 	"@type":"WebSite",
 	"name":"Anton Sizikov",
-	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"url":"http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
@@ -60,14 +59,14 @@ ReSharper is doing great job when it comes to semantics of your code and control
 	"name": "",
 	"jobTitle": "",
 	"gender": "",
-	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"url": "http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
 		"https://linkedin.com/in/sizikov",
 		"https://t.me/"
 		],
-	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"image": "http:\/\/localhost:1313\/img\/avatar.jpeg",
 	"address": {
 		"@type": "PostalAddress",
 		"streetAddress": "Mayong, Jepara",
@@ -88,14 +87,14 @@ ReSharper is doing great job when it comes to semantics of your code and control
 	"@type":"BlogPosting",
 	"mainEntityOfPage":{
 		"@type":"WebPage",
-		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2015\/08\/16\/resharper-annotations-can-it-be-null\/"
+		"@id":"http:\/\/localhost:1313\/http:\/\/localhost:1313\/2015\/08\/16\/resharper-annotations-can-it-be-null\/"
 	},
 	"headline":"ReSharper Annotations. Can it be null?",
 	"datePublished":"2015-08-16T00",
 	"dateModified":"2015-08-16T00",
 	"description":"Hi,\nReSharper is doing great job when it comes to semantics of your code and control flow graph analysis.",
 	"isFamilyFriendly": "true",
-	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"image": ["http://localhost:1313/img/avatar.jpeg"],
 	"wordCount" : "256",
 	"keywords": ["resharper","programming"],
 	"genre": ["resharper","programming"],
@@ -119,7 +118,7 @@ ReSharper is doing great job when it comes to semantics of your code and control
 		"name":"", 
 		"logo": {
 			"@type": "imageObject",
-			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+			"url": "http:\/\/localhost:1313\/img\/avatar.jpeg"
 		}
 	}
 }</script>
@@ -234,10 +233,10 @@ ReSharper is doing great job when it comes to semantics of your code and control
 <p>Unfortunately sometimes it&rsquo;s hard to predict whether the method returns <code>null</code> or it doesn&rsquo;t.</p>
 <p>To solve this problem R# provides an option to <a href="https://blog.jetbrains.com/dotnet/2015/08/12/how-to-use-jetbrains-annotations-to-improve-resharper-inspections/" target="_blank" rel="noopener">annotate your code</a>.</p>
 <p>Let&rsquo;s look at this snippet:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="n">Bar</span> <span class="n">Foo</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Bar</span> <span class="n">Foo</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Random</span><span class="p">.</span><span class="n">NextDouble</span><span class="p">()</span> <span class="p">&lt;</span> <span class="m">0.1</span> 
-</span></span><span class="line"><span class="cl">                    <span class="p">?</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">?</span> <span class="kc">null</span>
 </span></span><span class="line"><span class="cl">                    <span class="p">:</span> <span class="k">new</span> <span class="n">Bar</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></p>
 <p>The<code>Foo()</code>returns<code>null</code>with a probability of 10%. However ReSharper doesn&rsquo;t warn us when we forget the null-check.</p>
@@ -271,11 +270,11 @@ ReSharper is doing great job when it comes to semantics of your code and control
 <p>Unfortunately this trick doesn&rsquo;t work with asynchronous code.</p>
 <p>What if we have a code like this:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="na">[CanBeNull]</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">Bar</span><span class="p">&gt;</span> <span class="n">FooAsync</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">Bar</span><span class="p">&gt;</span> <span class="n">FooAsync</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">await</span> <span class="n">DoAsync</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Random</span><span class="p">.</span><span class="n">NextDouble</span><span class="p">()</span> <span class="p">&lt;</span> <span class="m">0.1</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">?</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">?</span> <span class="kc">null</span>
 </span></span><span class="line"><span class="cl">                    <span class="p">:</span> <span class="k">new</span> <span class="n">Bar</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></p>
 <p>Despite the fact that we return<code>null</code>here the actual return type is<code>Task&lt;Bar&gt;</code>. Which is not null by the way. So the annotation is wrong as well as the warning given to us by R#.
@@ -338,8 +337,8 @@ There was even an <a href="https://youtrack.jetbrains.com/issue/RSRP-376091" tar
 			<div class="entry__footer">
 				
 <div class="post__tag">
-			<a href="/tags/resharper/"># resharper</a>
-			<a href="/tags/programming/"># programming</a>
+			<a href="/tags/resharper/"># Resharper</a>
+			<a href="/tags/programming/"># Programming</a>
 </div>
 				
 				
@@ -373,7 +372,7 @@ There was even an <a href="https://youtrack.jetbrains.com/issue/RSRP-376091" tar
 
 		</a>
 </div>
-	<div class="footer__copyright">© 2023 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
 </footer>
 	</div>
 	
@@ -396,9 +395,9 @@ There was even an <a href="https://youtrack.jetbrains.com/issue/RSRP-376091" tar
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "1/23/23";
+        const buildDate = "4/1/24";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

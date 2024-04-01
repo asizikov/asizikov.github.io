@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-us">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,33 +9,32 @@
 	<title>Keeping the repository interface clean |  Anton Sizikov </title>
 	<meta name="description"
 		content="The repository pattern is being blamed quite often.">
-	<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
-
-<meta name="twitter:title" content="Keeping the repository interface clean"/>
+	<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/img/avatar.webp" /><meta name="twitter:title" content="Keeping the repository interface clean"/>
 <meta name="twitter:description" content="The repository pattern is being blamed quite often."/>
+      <meta name="twitter:site" content="@return_true"/>
 
 	<meta name="twitter:site" content="@return_true" />
 	<meta itemprop="name" content="Keeping the repository interface clean">
 <meta itemprop="description" content="The repository pattern is being blamed quite often."><meta itemprop="datePublished" content="2015-06-22T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2015-06-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="523"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="wordCount" content="523"><meta itemprop="image" content="http://localhost:1313/img/avatar.webp" />
 <meta itemprop="keywords" content="programming," />
 	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
 	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	<link rel="manifest" href="http://localhost:1313/manifest.json">
 	
 	<script type="application/ld+json">
 {
 	"@context":"http://schema.org",
 	"@type":"WebSite",
 	"name":"Anton Sizikov",
-	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"url":"http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
@@ -57,14 +56,14 @@
 	"name": "",
 	"jobTitle": "",
 	"gender": "",
-	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"url": "http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
 		"https://linkedin.com/in/sizikov",
 		"https://t.me/"
 		],
-	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"image": "http:\/\/localhost:1313\/img\/avatar.jpeg",
 	"address": {
 		"@type": "PostalAddress",
 		"streetAddress": "Mayong, Jepara",
@@ -85,14 +84,14 @@
 	"@type":"BlogPosting",
 	"mainEntityOfPage":{
 		"@type":"WebPage",
-		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2015\/06\/22\/clean-repository-interface\/"
+		"@id":"http:\/\/localhost:1313\/http:\/\/localhost:1313\/2015\/06\/22\/clean-repository-interface\/"
 	},
 	"headline":"Keeping the repository interface clean",
 	"datePublished":"2015-06-22T00",
 	"dateModified":"2015-06-22T00",
 	"description":"The repository pattern is being blamed quite often.",
 	"isFamilyFriendly": "true",
-	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"image": ["http://localhost:1313/img/avatar.jpeg"],
 	"wordCount" : "523",
 	"keywords": ["programming"],
 	"genre": ["programming"],
@@ -116,7 +115,7 @@
 		"name":"", 
 		"logo": {
 			"@type": "imageObject",
-			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+			"url": "http:\/\/localhost:1313\/img\/avatar.jpeg"
 		}
 	}
 }</script>
@@ -224,7 +223,7 @@
 			<div class="entry__content">
 				<p>The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.</p>
 <p>In the simple scenario we have an interface like this one:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="k">public</span> <span class="k">interface</span> <span class="nc">IClientRepository</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="kd">public</span> <span class="k">interface</span> <span class="nc">IClientRepository</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"> 	<span class="n">Client</span> <span class="n">Get</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"> 	<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">();</span>
@@ -242,7 +241,7 @@
 </span></span><span class="line"><span class="cl">	 <span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Orders</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	 <span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Addresses</span><span class="p">);</span></span></span></code></pre></div>
 <p>However the IClientRepository grows exponentially and quickly becomes an ugly monster:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="k">public</span> <span class="k">interface</span> <span class="nc">IClientRepository</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="kd">public</span> <span class="k">interface</span> <span class="nc">IClientRepository</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"> 	<span class="n">Client</span> <span class="n">Get</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"> 	<span class="n">Client</span> <span class="n">GetWithOrders</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
@@ -254,29 +253,29 @@
 <p>A typical way to avoid it is to use <a href="https://martinfowler.com/bliki/CQRS.html" target="_blank" rel="noopener">CQRS</a> pattern and encapsulate the logic into the Query object.</p>
 <p>At my current project we&rsquo;re building microservices, and a CQRS looks like an overkill. It doesn&rsquo;t stop us from borrowing some ideas, though.
 Let&rsquo;s remove all these GetXXXX methods and add one more parameter to the Get method.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="k">public</span> <span class="k">interface</span> <span class="nc">IClientRepository</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="kd">public</span> <span class="k">interface</span> <span class="nc">IClientRepository</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="cl"> 	<span class="n">Client</span> <span class="n">Get</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">fetchPaths</span> <span class="p">=</span> <span class="k">null</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"> 	<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">(</span><span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">fetchPaths</span> <span class="p">=</span> <span class="k">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 	<span class="n">Client</span> <span class="n">Get</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">fetchPaths</span> <span class="p">=</span> <span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 	<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">(</span><span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">fetchPaths</span> <span class="p">=</span> <span class="kc">null</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"> </span></span></code></pre></div>
 <p>The FetchPath is a simple generinc class which holds the collection of expressions that we&rsquo;re going to use to build our chain of Include statements.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"> <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;&gt;</span> <span class="n">Paths</span> 
+</span></span><span class="line"><span class="cl"> <span class="kd">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;&gt;</span> <span class="n">Paths</span> 
 </span></span><span class="line"><span class="cl"> 	<span class="p">{</span> 
 </span></span><span class="line"><span class="cl"> 	    <span class="k">get</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"> 	    <span class="k">private</span> <span class="k">set</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"> 	    <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> 
 </span></span><span class="line"><span class="cl"> 	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> <span class="k">public</span> <span class="n">FetchPaths</span><span class="p">(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;</span> <span class="n">path</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"> <span class="kd">public</span> <span class="n">FetchPaths</span><span class="p">(</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;</span> <span class="n">path</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl"> 								<span class="p">:</span> <span class="k">this</span><span class="p">(</span><span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="n">path</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> <span class="k">public</span> <span class="n">FetchPaths</span><span class="p">([</span><span class="n">NotNull</span><span class="p">]</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;&gt;</span> <span class="n">paths</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">public</span> <span class="n">FetchPaths</span><span class="p">([</span><span class="n">NotNull</span><span class="p">]</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;&gt;</span> <span class="n">paths</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="n">paths</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="n">paths</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">   <span class="p">{</span>
 </span></span><span class="line"><span class="cl">     <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentNullException</span><span class="p">(</span><span class="s">&#34;paths&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">   <span class="p">}</span>
@@ -284,9 +283,9 @@ Let&rsquo;s remove all these GetXXXX methods and add one more parameter to the G
 </span></span><span class="line"><span class="cl">   <span class="n">Paths</span> <span class="p">=</span> <span class="n">paths</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> <span class="k">public</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Concat</span><span class="p">([</span><span class="n">NotNull</span><span class="p">]</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">public</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Concat</span><span class="p">([</span><span class="n">NotNull</span><span class="p">]</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">other</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="n">other</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="n">other</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">   <span class="p">{</span>
 </span></span><span class="line"><span class="cl">     <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentNullException</span><span class="p">(</span><span class="s">&#34;other&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">   <span class="p">}</span>
@@ -295,18 +294,18 @@ Let&rsquo;s remove all these GetXXXX methods and add one more parameter to the G
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Now we&rsquo;re ready to declare the following static class:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">ClientFetchPaths</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">ClientFetchPaths</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="n">ClientFetchPaths</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="n">ClientFetchPaths</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Orders</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Orders</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Adresses</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Adresses</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">OrdersAndAddresses</span> <span class="p">=</span> <span class="n">Adresses</span><span class="p">.</span><span class="n">Concat</span><span class="p">(</span><span class="n">Orders</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">Orders</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">Adresses</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">OrdersAndAddresses</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">Orders</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">Adresses</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">Client</span><span class="p">&gt;</span> <span class="n">OrdersAndAddresses</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></p>
 <p>So that we can get the clients including all the necessary child objects.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">   <span class="kt">var</span> <span class="n">clients</span> <span class="p">=</span> <span class="n">ClientRepository</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">ClientFetchPaths</span><span class="p">.</span><span class="n">OrdersAndAddresses</span><span class="p">);</span></span></span></code></pre></div>
@@ -315,18 +314,18 @@ Let&rsquo;s remove all these GetXXXX methods and add one more parameter to the G
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">context</span><span class="p">.</span><span class="n">Clients</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span> <span class="n">client</span><span class="p">.</span><span class="n">Id</span> <span class="p">==</span> <span class="n">id</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">     <span class="p">.</span><span class="n">Fetch</span><span class="p">(</span><span class="n">fetchPaths</span><span class="p">));</span></span></span></code></pre></div>
 <p>Where Fetch is an extension method for IQueryable.
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">FetchExtensions</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">FetchExtensions</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">public</span> <span class="k">static</span> <span class="n">IQueryable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Fetch</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">static</span> <span class="n">IQueryable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Fetch</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span>
 </span></span><span class="line"><span class="cl">  				<span class="k">this</span> <span class="n">IQueryable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">queryable</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="na">  				[CanBeNull]</span> <span class="n">FetchPaths</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">paths</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="k">class</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">queryable</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">queryable</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentNullException</span><span class="p">(</span><span class="s">&#34;queryable&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">paths</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">paths</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">queryable</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -345,7 +344,7 @@ Let&rsquo;s remove all these GetXXXX methods and add one more parameter to the G
 			<div class="entry__footer">
 				
 <div class="post__tag">
-			<a href="/tags/programming/"># programming</a>
+			<a href="/tags/programming/"># Programming</a>
 </div>
 				
 				
@@ -379,7 +378,7 @@ Let&rsquo;s remove all these GetXXXX methods and add one more parameter to the G
 
 		</a>
 </div>
-	<div class="footer__copyright">© 2023 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
 </footer>
 	</div>
 	
@@ -402,9 +401,9 @@ Let&rsquo;s remove all these GetXXXX methods and add one more parameter to the G
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "1/23/23";
+        const buildDate = "4/1/24";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

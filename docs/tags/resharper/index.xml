@@ -1,49 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>resharper on Anton Sizikov</title>
-    <link>https://blog.cloud-eng.nl/tags/resharper/</link>
-    <description>Recent content in resharper on Anton Sizikov</description>
+    <title>Resharper on Anton Sizikov</title>
+    <link>http://localhost:1313/tags/resharper/</link>
+    <description>Recent content in Resharper on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Aug 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/resharper/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Aug 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/resharper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ReSharper Annotations. Can it be null?</title>
-      <link>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</link>
+      <link>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</guid>
-      <description>Hi,
-ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis.</description>
+      <guid>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</guid>
+      <description>Hi,&#xA;ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis.</description>
     </item>
-    
     <item>
       <title>AsyncSuffix ReSharper extension</title>
-      <link>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</link>
+      <link>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</link>
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</guid>
+      <guid>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</guid>
       <description>There is a tendency in a .</description>
     </item>
-    
     <item>
       <title>Sharing ReSharper settings and Live Templates</title>
-      <link>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</link>
+      <link>http://localhost:1313/2015/07/05/sharing-resharper-settings/</link>
       <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</guid>
+      <guid>http://localhost:1313/2015/07/05/sharing-resharper-settings/</guid>
       <description>In my previous post I&amp;rsquo;ve described how to create your own Live Templates for ReSharper.</description>
     </item>
-    
     <item>
       <title>Custom live templates for ReSharper</title>
-      <link>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</link>
+      <link>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</link>
       <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</guid>
-      <description>Hi!
-As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper.</description>
+      <guid>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</guid>
+      <description>Hi!&#xA;As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper.</description>
     </item>
-    
   </channel>
 </rss>
