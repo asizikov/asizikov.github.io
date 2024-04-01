@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github-actions on Anton Sizikov</title>
-    <link>https://blog.cloud-eng.nl/tags/github-actions/</link>
-    <description>Recent content in github-actions on Anton Sizikov</description>
+    <title>Github-Actions on Anton Sizikov</title>
+    <link>http://localhost:1313/tags/github-actions/</link>
+    <description>Recent content in Github-Actions on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/github-actions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/github-actions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Actions Across Multiple Repositories Unified Build Pipeline</title>
+      <link>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</guid>
+      <description>GitHub Actions # The other day, I was working with a customer who was planning to migrate from JetBrains TeamCity to GitHub Actions.</description>
+    </item>
     <item>
       <title>GitHub Container Registry. Keeping traffic below the spending limit.</title>
-      <link>https://blog.cloud-eng.nl/2023/01/23/ghcr-acr-traffic/</link>
+      <link>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</link>
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2023/01/23/ghcr-acr-traffic/</guid>
+      <guid>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</guid>
       <description>GitHub Container Registry is a great service.</description>
     </item>
-    
     <item>
       <title>Integration tests for .NET CLI tools</title>
-      <link>https://blog.cloud-eng.nl/2023/01/22/dotnet-cli-integration-tests/</link>
+      <link>http://localhost:1313/2023/01/22/dotnet-cli-integration-tests/</link>
       <pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2023/01/22/dotnet-cli-integration-tests/</guid>
+      <guid>http://localhost:1313/2023/01/22/dotnet-cli-integration-tests/</guid>
       <description>I&amp;rsquo;ve spent Saturday evening working on a small project.</description>
     </item>
-    
     <item>
       <title>GitHub Environment Protection with Tags</title>
-      <link>https://blog.cloud-eng.nl/2022/11/26/environment-protection-tags/</link>
+      <link>http://localhost:1313/2022/11/26/environment-protection-tags/</link>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2022/11/26/environment-protection-tags/</guid>
+      <guid>http://localhost:1313/2022/11/26/environment-protection-tags/</guid>
       <description>A recent request from a customer caught my attention.</description>
     </item>
-    
   </channel>
 </rss>

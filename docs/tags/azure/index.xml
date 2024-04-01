@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>azure on Anton Sizikov</title>
-    <link>https://blog.cloud-eng.nl/tags/azure/</link>
-    <description>Recent content in azure on Anton Sizikov</description>
+    <title>Azure on Anton Sizikov</title>
+    <link>http://localhost:1313/tags/azure/</link>
+    <description>Recent content in Azure on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.cloud-eng.nl/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub Container Registry. Keeping traffic below the spending limit.</title>
-      <link>https://blog.cloud-eng.nl/2023/01/23/ghcr-acr-traffic/</link>
+      <link>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</link>
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2023/01/23/ghcr-acr-traffic/</guid>
+      <guid>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</guid>
       <description>GitHub Container Registry is a great service.</description>
     </item>
-    
     <item>
       <title>Fix console logs for Azure Functions running in a Docker container</title>
-      <link>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</link>
+      <link>http://localhost:1313/2020/07/10/azure-function-docker-log/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</guid>
+      <guid>http://localhost:1313/2020/07/10/azure-function-docker-log/</guid>
       <description>Local development of C# Azure Functions on macOS is still a bit painful.</description>
     </item>
-    
     <item>
       <title>Provision your Azure environment with Terraform and Octopus Deploy</title>
-      <link>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</link>
+      <link>http://localhost:1313/2020/03/21/azure-terraform-octopus/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</guid>
+      <guid>http://localhost:1313/2020/03/21/azure-terraform-octopus/</guid>
       <description>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.</description>
     </item>
-    
   </channel>
 </rss>

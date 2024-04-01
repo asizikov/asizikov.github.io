@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-us">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,33 +9,32 @@
 	<title>Thoughts on C# 7 Local Functions |  Anton Sizikov </title>
 	<meta name="description"
 		content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers.">
-	<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
-
-<meta name="twitter:title" content="Thoughts on C# 7 Local Functions"/>
+	<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/img/avatar.webp" /><meta name="twitter:title" content="Thoughts on C# 7 Local Functions"/>
 <meta name="twitter:description" content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers."/>
+      <meta name="twitter:site" content="@return_true"/>
 
 	<meta name="twitter:site" content="@return_true" />
 	<meta itemprop="name" content="Thoughts on C# 7 Local Functions">
 <meta itemprop="description" content="Frankly when I first saw that C# 7 will come with new local functions I thought that that&rsquo;s just a nice and a compact way of defining local helpers."><meta itemprop="datePublished" content="2016-04-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2016-04-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="534"><meta itemprop="image" content="https://blog.cloud-eng.nl/img/avatar.webp"/>
+<meta itemprop="wordCount" content="534"><meta itemprop="image" content="http://localhost:1313/img/avatar.webp" />
 <meta itemprop="keywords" content="programming," />
 	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="https://blog.cloud-eng.nl/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://blog.cloud-eng.nl/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://blog.cloud-eng.nl/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="https://blog.cloud-eng.nl/icons/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
 	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="https://blog.cloud-eng.nl/manifest.json">
+	<link rel="manifest" href="http://localhost:1313/manifest.json">
 	
 	<script type="application/ld+json">
 {
 	"@context":"http://schema.org",
 	"@type":"WebSite",
 	"name":"Anton Sizikov",
-	"url":"https:\/\/blog.cloud-eng.nl\/",
+	"url":"http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
@@ -57,14 +56,14 @@
 	"name": "",
 	"jobTitle": "",
 	"gender": "",
-	"url": "https:\/\/blog.cloud-eng.nl\/",
+	"url": "http:\/\/localhost:1313\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
 		"https://linkedin.com/in/sizikov",
 		"https://t.me/"
 		],
-	"image": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg",
+	"image": "http:\/\/localhost:1313\/img\/avatar.jpeg",
 	"address": {
 		"@type": "PostalAddress",
 		"streetAddress": "Mayong, Jepara",
@@ -85,14 +84,14 @@
 	"@type":"BlogPosting",
 	"mainEntityOfPage":{
 		"@type":"WebPage",
-		"@id":"https:\/\/blog.cloud-eng.nl\/https:\/\/blog.cloud-eng.nl\/2016\/04\/15\/thoughts-on-local-functions\/"
+		"@id":"http:\/\/localhost:1313\/http:\/\/localhost:1313\/2016\/04\/15\/thoughts-on-local-functions\/"
 	},
 	"headline":"Thoughts on C# 7 Local Functions",
 	"datePublished":"2016-04-15T00",
 	"dateModified":"2016-04-15T00",
 	"description":"Frankly when I first saw that C# 7 will come with new local functions I thought that that\u0026rsquo;s just a nice and a compact way of defining local helpers.",
 	"isFamilyFriendly": "true",
-	"image": ["https://blog.cloud-eng.nl/img/avatar.jpeg"],
+	"image": ["http://localhost:1313/img/avatar.jpeg"],
 	"wordCount" : "534",
 	"keywords": ["programming"],
 	"genre": ["programming"],
@@ -116,7 +115,7 @@
 		"name":"", 
 		"logo": {
 			"@type": "imageObject",
-			"url": "https:\/\/blog.cloud-eng.nl\/img\/avatar.jpeg"
+			"url": "http:\/\/localhost:1313\/img\/avatar.jpeg"
 		}
 	}
 }</script>
@@ -244,7 +243,7 @@ In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m go
 <p>The first option that existed in C# 1 is having a private method.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bar</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
@@ -252,7 +251,7 @@ In fact, it&rsquo;s much more interesting and useful feature. Today I&rsquo;m go
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="kt">string</span> <span class="n">AsPrintable</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">=&gt;</span>  <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">string</span> <span class="n">AsPrintable</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">=&gt;</span>  <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>That&rsquo;s a clean and simple solution. It has few issues, though.</p>
 <p><code>AsPrintable</code> might have no sense outside of <code>Foo</code> method, but it&rsquo;s accessible for every other method inside the class.
@@ -273,7 +272,7 @@ It will be taken into account by IntelliSense.</p>
 <p>We can try to hide our helper inside the scope of <code>Foo</code> method by converting it to <code>Func&lt;int, string&gt;</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="k">class</span> <span class="nc">Bar</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">     <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="kd">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">     <span class="p">{</span>
 </span></span><span class="line"><span class="cl">         <span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">asPrintable</span> <span class="p">=</span> <span class="n">i</span> <span class="p">=&gt;</span> <span class="s">$&#34;I have {i} here&#34;</span><span class="p">;</span> 
 </span></span><span class="line"><span class="cl">         <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
@@ -333,7 +332,7 @@ it can be asynchronous, it can be generic, it can be dynamic.</p>
 <p>Ok, there is a difference. Local functions can not be static. And local functions can capture variables from enclosing block:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bar</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">length</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="kt">string</span> <span class="n">Length</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="s">$&#34;length is {length}&#34;</span><span class="p">;</span>
@@ -344,9 +343,9 @@ it can be asynchronous, it can be generic, it can be dynamic.</p>
 <p>As <a href="http://thebillwagner.com/Blog/Item/2016-03-02-C7FeatureProposalLocalFunctions" target="_blank" rel="noopener">Bill Wagner</a> wrote
 local function is a perfect solution for iterators and asynchronous methods when it comes to parameters validation.</p>
 <p>The following code will throw an exception right away and not in a lazy manner.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">AsEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">params</span> <span class="n">T</span><span class="p">[]</span> <span class="n">items</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">AsEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">params</span> <span class="n">T</span><span class="p">[]</span> <span class="n">items</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">items</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">items</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">items</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">items</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T2</span><span class="p">&gt;</span> <span class="n">Enumerate</span><span class="p">&lt;</span><span class="n">T2</span><span class="p">&gt;(</span><span class="n">T2</span><span class="p">[]</span> <span class="n">array</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
@@ -360,9 +359,9 @@ local function is a perfect solution for iterators and asynchronous methods when
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="other-observations" itemprop="headline" class="heading">Other observations: <a class="anchor-link" href="#other-observations">#</a></h2>
 <p>Local functions support <a href="https://msdn.microsoft.com/en-us/library/hh534540.aspx" target="_blank" rel="noopener">Caller Info Attributes</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">SlimShady</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">SlimShady</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">     <span class="k">void</span> <span class="n">Hi</span><span class="p">([</span><span class="n">CallerMemberName</span><span class="p">]</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="k">void</span> <span class="n">Hi</span><span class="p">([</span><span class="n">CallerMemberName</span><span class="p">]</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="kc">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">     <span class="p">{</span>
 </span></span><span class="line"><span class="cl">         <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Hi! My name is {name}&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">     <span class="p">}</span>
@@ -401,7 +400,7 @@ Same as for lambdas, though.</p>
 			<div class="entry__footer">
 				
 <div class="post__tag">
-			<a href="/tags/programming/"># programming</a>
+			<a href="/tags/programming/"># Programming</a>
 </div>
 				
 				
@@ -435,7 +434,7 @@ Same as for lambdas, though.</p>
 
 		</a>
 </div>
-	<div class="footer__copyright">© 2023 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
+	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
 </footer>
 	</div>
 	
@@ -458,9 +457,9 @@ Same as for lambdas, though.</p>
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "1/23/23";
+        const buildDate = "4/1/24";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });
