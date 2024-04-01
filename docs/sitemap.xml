@@ -32,6 +32,20 @@
   
   
   <url>
+    <loc>http://localhost:1313/tags/devops/</loc>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    
+     
+    <priority>0.3</priority>
+    
+    
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
     
@@ -89,20 +103,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/azure/</loc>
-    <lastmod>2023-01-23T00:00:00+00:00</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    
-     
-    <priority>0.3</priority>
-    
-    
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:1313/tags/devops/</loc>
     <lastmod>2023-01-23T00:00:00+00:00</lastmod>
     
     <changefreq>monthly</changefreq>

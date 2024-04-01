@@ -9,11 +9,11 @@
     <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/multirepo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GitHub Actions Across Multiple Repositories Unified Build Pipeline</title>
+      <title>GitHub Actions: Unified Build Pipeline for Multi-Repo Application</title>
       <link>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</guid>
-      <description>GitHub Actions # The other day, I was working with a customer who was planning to migrate from JetBrains TeamCity to GitHub Actions.</description>
+      <description>Common Misconceptions about GitHub Actions # The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.</description>
     </item>
   </channel>
 </rss>

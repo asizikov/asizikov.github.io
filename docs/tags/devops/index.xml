@@ -6,8 +6,15 @@
     <description>Recent content in Devops on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Actions: Unified Build Pipeline for Multi-Repo Application</title>
+      <link>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</guid>
+      <description>Common Misconceptions about GitHub Actions # The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.</description>
+    </item>
     <item>
       <title>GitHub Container Registry. Keeping traffic below the spending limit.</title>
       <link>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</link>
