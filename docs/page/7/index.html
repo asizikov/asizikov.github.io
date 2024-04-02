@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#1da1f2">
-	<title> Anton Sizikov Anton Sizikov&#39;s blog</title>
+	<title> Anton Sizikov </title>
 	<meta name="description"
 		content="Anton Sizikov&#39;s processional blog.">
 	<meta name="twitter:card" content="summary_large_image" />
@@ -104,9 +104,12 @@
 <body class="">
 	<div class="site-container">
 		<header class="top" id="js-header">
-	<a class="logo" href="/" title="Anton Sizikov">
-    <img src="/img/placeholder.svg" alt="Anton Sizikov" class="lazyload" data-src="/img/avatar.jpeg">
-</a>
+	<div class="terminal">
+    <span class="terminal__user">anton-sizikov@localhost</span>:
+    <span class="terminal__prompt">~$</span>
+    <span class="terminal__path">/home/</span>
+    <span class="terminal__cursor">_</span>
+</div>
 	
 	<nav class="navbar js-navbar">
 		<ul class="navbar__menu">
@@ -141,21 +144,6 @@
 
 		<main>
 			
-	<div class="hero">
-	<header class="hero__content">
-	<div class="wrapper">
-		<h1 itemprop="name"  style="text-align: left;" >
-	
-		Anton Sizikov
-	
-		</h1>
-	
-		<p  style="text-align: left;" >Paying your technical debt.</p>
-	
-		</div>
-	</header>
-</div>
-
 	
 	
 		<div class="feed">
@@ -252,7 +240,7 @@
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "4/1/24";
+        const buildDate = "4/2/24";
         navigator.serviceWorker
             .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {

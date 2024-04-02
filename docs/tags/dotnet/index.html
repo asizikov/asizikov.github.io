@@ -145,9 +145,12 @@
 <body class="">
 	<div class="site-container">
 		<header class="top" id="js-header">
-	<a class="logo" href="/" title="Anton Sizikov">
-    <img src="/img/placeholder.svg" alt="Anton Sizikov" class="lazyload" data-src="/img/avatar.jpeg">
-</a>
+	<div class="terminal">
+    <span class="terminal__user">anton-sizikov@localhost</span>:
+    <span class="terminal__prompt">~$</span>
+    <span class="terminal__path">/home/</span>
+    <span class="terminal__cursor">_</span>
+</div>
 	
 	<nav class="navbar js-navbar">
 		<ul class="navbar__menu">
@@ -255,7 +258,7 @@
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "4/1/24";
+        const buildDate = "4/2/24";
         navigator.serviceWorker
             .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {

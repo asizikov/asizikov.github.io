@@ -20,6 +20,6 @@ Since that time I've been working with various technologies: mobile, desktop, we
 
 ## What am I up to these days?
 
-I currently work as an Enterprise Solutions Engineer at [GitHub](https://github.com) and as an independent consultant at [Arcticfox Consulting](https://arcticfox-consulting.com/).
+I currently work as Senior Solutions Engineer at [GitHub](https://github.com).
 
 I know a thing or two about GitHub, CI/CD, SDLC, Cloud and programming.

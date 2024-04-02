@@ -14,7 +14,7 @@ publishDir                    = "docs"
 
 [Params]
   GoogleAnalytics             = "UA-64347270-1"
-  subTitle                    = "Anton Sizikov's blog"
+  subTitle                    = ""
   description                 = "Anton Sizikov's processional blog."
   images                      = ["img/avatar.webp"]
   copyright                   = "Anton Sizikov" # Copyright holder, otherwise will use .Site.Title
@@ -49,7 +49,7 @@ publishDir                    = "docs"
 
 [Params.Hero]
   title                       = "Anton Sizikov"
-  desc                        = "Paying your technical debt."
+  desc                        = ""
 
 [Params.Entry]
   meta                        = ["date", "categories"] # Enable meta fields in given order

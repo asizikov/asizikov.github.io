@@ -18,7 +18,7 @@
 	<meta itemprop="name" content="Hi, I&#39;m Anton.">
 <meta itemprop="description" content="I&rsquo;m an Amsterdam-based software engineer, building cool things on the .">
 
-<meta itemprop="wordCount" content="141"><meta itemprop="image" content="http://localhost:1313/img/avatar.webp" />
+<meta itemprop="wordCount" content="132"><meta itemprop="image" content="http://localhost:1313/img/avatar.webp" />
 <meta itemprop="keywords" content="" />
 	<link rel="stylesheet" href="/css/bundle.min.css">
 	<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
@@ -114,9 +114,12 @@
 <body class="">
 	<div class="site-container">
 		<header class="top" id="js-header">
-	<a class="logo" href="/" title="Anton Sizikov">
-    <img src="/img/placeholder.svg" alt="Anton Sizikov" class="lazyload" data-src="/img/avatar.jpeg">
-</a>
+	<div class="terminal">
+    <span class="terminal__user">anton-sizikov@localhost</span>:
+    <span class="terminal__prompt">~$</span>
+    <span class="terminal__path">/home/</span>
+    <span class="terminal__cursor">_</span>
+</div>
 	
 	<nav class="navbar js-navbar">
 		<ul class="navbar__menu">
@@ -180,7 +183,7 @@
 <p>I wrote my first line of code in Pascal when I was 15. Or 14? In 2003, I got my first copy of Visual Studio .NET and a book about C++. Well, you know it&rsquo;s hard to build a C++ Hello World program with C# compiler. It took me a while to realize that I&rsquo;m using the wrong language. Anyway, for now, C# is the main and most powerful tool in my toolset.</p>
 <p>Since that time I&rsquo;ve been working with various technologies: mobile, desktop, web (backend and frontend).</p>
 <h2 id="what-am-i-up-to-these-days" itemprop="headline" class="heading">What am I up to these days? <a class="anchor-link" href="#what-am-i-up-to-these-days">#</a></h2>
-<p>I currently work as an Enterprise Solutions Engineer at <a href="https://github.com" target="_blank" rel="noopener">GitHub</a> and as an independent consultant at <a href="https://arcticfox-consulting.com/" target="_blank" rel="noopener">Arcticfox Consulting</a>.</p>
+<p>I currently work as Senior Solutions Engineer at <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>.</p>
 <p>I know a thing or two about GitHub, CI/CD, SDLC, Cloud and programming.</p>
 
 				
@@ -232,7 +235,7 @@
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "4/1/24";
+        const buildDate = "4/2/24";
         navigator.serviceWorker
             .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
