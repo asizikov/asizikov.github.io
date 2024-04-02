@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/github/</link>
+    <link>/tags/github/</link>
     <description>Recent content in Github on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Nov 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub Environment Protection with Tags</title>
-      <link>http://localhost:1313/2022/11/26/environment-protection-tags/</link>
+      <link>/2022/11/26/environment-protection-tags/</link>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2022/11/26/environment-protection-tags/</guid>
+      <guid>/2022/11/26/environment-protection-tags/</guid>
       <description>A recent request from a customer caught my attention.</description>
     </item>
     <item>
       <title>Using GitHub Container Registry with Kubernetes</title>
-      <link>http://localhost:1313/2020/10/08/using-github-registry-with-k8s/</link>
+      <link>/2020/10/08/using-github-registry-with-k8s/</link>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2020/10/08/using-github-registry-with-k8s/</guid>
+      <guid>/2020/10/08/using-github-registry-with-k8s/</guid>
       <description>GitHub Container Registry was introduced on the 1st of September 2020.</description>
     </item>
     <item>
       <title>Fully automated Continuous Integration for your Open Source library for free</title>
-      <link>http://localhost:1313/2016/01/10/full-stack-ci-for-free/</link>
+      <link>/2016/01/10/full-stack-ci-for-free/</link>
       <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2016/01/10/full-stack-ci-for-free/</guid>
+      <guid>/2016/01/10/full-stack-ci-for-free/</guid>
       <description>This is a long title.</description>
     </item>
     <item>
       <title>How to convince Linus Torvalds to contribute to your project</title>
-      <link>http://localhost:1313/2015/11/03/abusing-github/</link>
+      <link>/2015/11/03/abusing-github/</link>
       <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/11/03/abusing-github/</guid>
+      <guid>/2015/11/03/abusing-github/</guid>
       <description>Look at all those famous people committing to some random developer’s boring repository.</description>
     </item>
     <item>
       <title>GitHub Deployment statuses</title>
-      <link>http://localhost:1313/2015/11/01/github-deployments/</link>
+      <link>/2015/11/01/github-deployments/</link>
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/11/01/github-deployments/</guid>
+      <guid>/2015/11/01/github-deployments/</guid>
       <description>It’s very important to collect and track as much information as you can about your system.</description>
     </item>
     <item>
       <title>Avoid typing user name when committing to GitHub repository</title>
-      <link>http://localhost:1313/2015/09/05/change-origin-for-github-repo/</link>
+      <link>/2015/09/05/change-origin-for-github-repo/</link>
       <pubDate>Sat, 05 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/09/05/change-origin-for-github-repo/</guid>
+      <guid>/2015/09/05/change-origin-for-github-repo/</guid>
       <description>I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don&amp;rsquo;t have my SSH key generated for the current environment.</description>
     </item>
   </channel>

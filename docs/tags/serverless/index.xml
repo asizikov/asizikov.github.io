@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Serverless on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/serverless/</link>
+    <link>/tags/serverless/</link>
     <description>Recent content in Serverless on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fix console logs for Azure Functions running in a Docker container</title>
-      <link>http://localhost:1313/2020/07/10/azure-function-docker-log/</link>
+      <link>/2020/07/10/azure-function-docker-log/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2020/07/10/azure-function-docker-log/</guid>
+      <guid>/2020/07/10/azure-function-docker-log/</guid>
       <description>Local development of C# Azure Functions on macOS is still a bit painful.</description>
     </item>
   </channel>

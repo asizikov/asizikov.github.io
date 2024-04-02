@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Appveyor on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/appveyor/</link>
+    <link>/tags/appveyor/</link>
     <description>Recent content in Appveyor on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/appveyor/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/appveyor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CatLight</title>
-      <link>http://localhost:1313/2016/04/05/catlight-tool/</link>
+      <link>/2016/04/05/catlight-tool/</link>
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2016/04/05/catlight-tool/</guid>
+      <guid>/2016/04/05/catlight-tool/</guid>
       <description>It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.</description>
     </item>
     <item>
       <title>Fully automated Continuous Integration for your Open Source library for free</title>
-      <link>http://localhost:1313/2016/01/10/full-stack-ci-for-free/</link>
+      <link>/2016/01/10/full-stack-ci-for-free/</link>
       <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2016/01/10/full-stack-ci-for-free/</guid>
+      <guid>/2016/01/10/full-stack-ci-for-free/</guid>
       <description>This is a long title.</description>
     </item>
   </channel>

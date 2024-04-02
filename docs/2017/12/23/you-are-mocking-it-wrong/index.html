@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 	<meta name="description"
 		content="Well, probably you are not, but let me grumble a little bit anyway.">
 	<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:1313/img/avatar.webp" /><meta name="twitter:title" content="You are mocking it wrong."/>
+<meta name="twitter:image" content="/img/avatar.webp" /><meta name="twitter:title" content="You are mocking it wrong."/>
 <meta name="twitter:description" content="Well, probably you are not, but let me grumble a little bit anyway."/>
       <meta name="twitter:site" content="@return_true"/>
 
@@ -18,24 +18,24 @@
 	<meta itemprop="name" content="You are mocking it wrong.">
 <meta itemprop="description" content="Well, probably you are not, but let me grumble a little bit anyway."><meta itemprop="datePublished" content="2017-12-23T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-12-23T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1523"><meta itemprop="image" content="http://localhost:1313/img/avatar.webp" />
+<meta itemprop="wordCount" content="1523"><meta itemprop="image" content="/img/avatar.webp" />
 <meta itemprop="keywords" content="programming," />
 	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="http://localhost:1313/icons/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+	<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
 	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="http://localhost:1313/manifest.json">
+	<link rel="manifest" href="/manifest.json">
 	
 	<script type="application/ld+json">
 {
 	"@context":"http://schema.org",
 	"@type":"WebSite",
 	"name":"Anton Sizikov",
-	"url":"http:\/\/localhost:1313\/",
+	"url":"\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
@@ -57,14 +57,14 @@
 	"name": "",
 	"jobTitle": "",
 	"gender": "",
-	"url": "http:\/\/localhost:1313\/",
+	"url": "\/",
 	"sameAs":[
 		"https://twitter.com/return_true",
 		"https://gitlab.com/",
 		"https://linkedin.com/in/sizikov",
 		"https://t.me/"
 		],
-	"image": "http:\/\/localhost:1313\/img\/avatar.jpeg",
+	"image": "\/img\/avatar.jpeg",
 	"address": {
 		"@type": "PostalAddress",
 		"streetAddress": "Mayong, Jepara",
@@ -85,14 +85,14 @@
 	"@type":"BlogPosting",
 	"mainEntityOfPage":{
 		"@type":"WebPage",
-		"@id":"http:\/\/localhost:1313\/http:\/\/localhost:1313\/2017\/12\/23\/you-are-mocking-it-wrong\/"
+		"@id":"\/\/2017\/12\/23\/you-are-mocking-it-wrong\/"
 	},
 	"headline":"You are mocking it wrong.",
 	"datePublished":"2017-12-23T00",
 	"dateModified":"2017-12-23T00",
 	"description":"Well, probably you are not, but let me grumble a little bit anyway.",
 	"isFamilyFriendly": "true",
-	"image": ["http://localhost:1313/img/avatar.jpeg"],
+	"image": ["/img/avatar.jpeg"],
 	"wordCount" : "1523",
 	"keywords": ["programming"],
 	"genre": ["programming"],
@@ -116,7 +116,7 @@
 		"name":"", 
 		"logo": {
 			"@type": "imageObject",
-			"url": "http:\/\/localhost:1313\/img\/avatar.jpeg"
+			"url": "\/img\/avatar.jpeg"
 		}
 	}
 }</script>
@@ -148,9 +148,11 @@
 	<div class="site-container">
 		<header class="top" id="js-header">
 	<div class="terminal">
-    <span class="terminal__user">anton-sizikov@localhost</span>:
-    <span class="terminal__prompt">~$</span>
-    <span class="terminal__path">/home/</span>
+    <a href="/" class="terminal__link">
+        <span class="terminal__user">anton-sizikov@localhost</span>:
+        <span class="terminal__prompt">~$</span>
+        <span class="terminal__path">/home/</span>        
+    </a>
     <span class="terminal__cursor">_</span>
 </div>
 	
@@ -414,7 +416,7 @@ All the examples are going to be made up, but I hope you&rsquo;d get the point.<
     if ('serviceWorker' in navigator) {
         const buildDate = "4/2/24";
         navigator.serviceWorker
-            .register("http://localhost:1313/sw.js", { scope: '/' })
+            .register("/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

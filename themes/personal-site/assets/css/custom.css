@@ -20,6 +20,11 @@ body.dark-theme {
     padding: 10px;
 }
 
+.terminal__link {
+    color: var(--white-color);
+    margin-right: auto;
+}
+
 .terminal__user {
     margin-right: 5px;
 }
@@ -47,4 +52,5 @@ body.dark-theme {
         opacity: 1;
     }
 }
+
 

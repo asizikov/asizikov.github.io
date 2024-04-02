@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/programming/</link>
+    <link>/tags/programming/</link>
     <description>Recent content in Programming on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Dec 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>You are mocking it wrong.</title>
-      <link>http://localhost:1313/2017/12/23/you-are-mocking-it-wrong/</link>
+      <link>/2017/12/23/you-are-mocking-it-wrong/</link>
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2017/12/23/you-are-mocking-it-wrong/</guid>
+      <guid>/2017/12/23/you-are-mocking-it-wrong/</guid>
       <description>Well, probably you are not, but let me grumble a little bit anyway.</description>
     </item>
     <item>
       <title>Write code for the reviewer, not for the compiler</title>
-      <link>http://localhost:1313/2016/09/24/code-for-reviewer/</link>
+      <link>/2016/09/24/code-for-reviewer/</link>
       <pubDate>Sat, 24 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2016/09/24/code-for-reviewer/</guid>
+      <guid>/2016/09/24/code-for-reviewer/</guid>
       <description>I&amp;rsquo;ve been doing code reviews on a daily basis for several years for now.</description>
     </item>
     <item>
       <title>Thoughts on C# 7 Local Functions</title>
-      <link>http://localhost:1313/2016/04/15/thoughts-on-local-functions/</link>
+      <link>/2016/04/15/thoughts-on-local-functions/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2016/04/15/thoughts-on-local-functions/</guid>
+      <guid>/2016/04/15/thoughts-on-local-functions/</guid>
       <description>Frankly when I first saw that C# 7 will come with new local functions I thought that that&amp;rsquo;s just a nice and a compact way of defining local helpers.</description>
     </item>
     <item>
       <title>C# 7 features preview</title>
-      <link>http://localhost:1313/2016/04/02/csharp-seven-preview/</link>
+      <link>/2016/04/02/csharp-seven-preview/</link>
       <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2016/04/02/csharp-seven-preview/</guid>
+      <guid>/2016/04/02/csharp-seven-preview/</guid>
       <description>Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference.</description>
     </item>
     <item>
       <title>ReSharper Annotations. Can it be null?</title>
-      <link>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</link>
+      <link>/2015/08/16/resharper-annotations-can-it-be-null/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</guid>
+      <guid>/2015/08/16/resharper-annotations-can-it-be-null/</guid>
       <description>Hi,&#xA;ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis.</description>
     </item>
     <item>
       <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 2.</title>
-      <link>http://localhost:1313/2015/08/14/rx-api-with-cache-two/</link>
+      <link>/2015/08/14/rx-api-with-cache-two/</link>
       <pubDate>Fri, 14 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/08/14/rx-api-with-cache-two/</guid>
+      <guid>/2015/08/14/rx-api-with-cache-two/</guid>
       <description>Hi,&#xA;In the previous post I told you how to implement the Reactive Api client with caching.</description>
     </item>
     <item>
       <title>AsyncSuffix ReSharper extension</title>
-      <link>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</link>
+      <link>/2015/08/02/async-suffix-resharper-plugin/</link>
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</guid>
+      <guid>/2015/08/02/async-suffix-resharper-plugin/</guid>
       <description>There is a tendency in a .</description>
     </item>
     <item>
       <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1.</title>
-      <link>http://localhost:1313/2015/07/26/rx-api-with-cache-one/</link>
+      <link>/2015/07/26/rx-api-with-cache-one/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/07/26/rx-api-with-cache-one/</guid>
+      <guid>/2015/07/26/rx-api-with-cache-one/</guid>
       <description>Hi,&#xA;Today I want to talk about the development of the api client library.</description>
     </item>
     <item>
       <title>Sharing ReSharper settings and Live Templates</title>
-      <link>http://localhost:1313/2015/07/05/sharing-resharper-settings/</link>
+      <link>/2015/07/05/sharing-resharper-settings/</link>
       <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/07/05/sharing-resharper-settings/</guid>
+      <guid>/2015/07/05/sharing-resharper-settings/</guid>
       <description>In my previous post I&amp;rsquo;ve described how to create your own Live Templates for ReSharper.</description>
     </item>
     <item>
       <title>Custom live templates for ReSharper</title>
-      <link>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</link>
+      <link>/2015/06/27/resharper-custom-live-templates/</link>
       <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</guid>
+      <guid>/2015/06/27/resharper-custom-live-templates/</guid>
       <description>Hi!&#xA;As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called ReSharper.</description>
     </item>
     <item>
       <title>Keeping the repository interface clean</title>
-      <link>http://localhost:1313/2015/06/22/clean-repository-interface/</link>
+      <link>/2015/06/22/clean-repository-interface/</link>
       <pubDate>Mon, 22 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/06/22/clean-repository-interface/</guid>
+      <guid>/2015/06/22/clean-repository-interface/</guid>
       <description>The repository pattern is being blamed quite often.</description>
     </item>
   </channel>

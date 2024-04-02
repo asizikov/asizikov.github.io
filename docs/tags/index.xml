@@ -2,129 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Anton Sizikov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Devops</title>
-      <link>http://localhost:1313/tags/devops/</link>
+      <link>/tags/devops/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/devops/</guid>
+      <guid>/tags/devops/</guid>
       <description></description>
     </item>
     <item>
       <title>Github-Actions</title>
-      <link>http://localhost:1313/tags/github-actions/</link>
+      <link>/tags/github-actions/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github-actions/</guid>
+      <guid>/tags/github-actions/</guid>
       <description></description>
     </item>
     <item>
       <title>Multirepo</title>
-      <link>http://localhost:1313/tags/multirepo/</link>
+      <link>/tags/multirepo/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/multirepo/</guid>
+      <guid>/tags/multirepo/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
-      <link>http://localhost:1313/tags/azure/</link>
+      <link>/tags/azure/</link>
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/azure/</guid>
+      <guid>/tags/azure/</guid>
       <description></description>
     </item>
     <item>
       <title>Dotnet</title>
-      <link>http://localhost:1313/tags/dotnet/</link>
+      <link>/tags/dotnet/</link>
       <pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dotnet/</guid>
+      <guid>/tags/dotnet/</guid>
       <description></description>
     </item>
     <item>
       <title>Github</title>
-      <link>http://localhost:1313/tags/github/</link>
+      <link>/tags/github/</link>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github/</guid>
+      <guid>/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure-Devops</title>
-      <link>http://localhost:1313/tags/azure-devops/</link>
+      <link>/tags/azure-devops/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/azure-devops/</guid>
+      <guid>/tags/azure-devops/</guid>
       <description></description>
     </item>
     <item>
       <title>Hosted-Agents</title>
-      <link>http://localhost:1313/tags/hosted-agents/</link>
+      <link>/tags/hosted-agents/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hosted-agents/</guid>
+      <guid>/tags/hosted-agents/</guid>
       <description></description>
     </item>
     <item>
       <title>Octopus Deploy</title>
-      <link>http://localhost:1313/tags/octopus-deploy/</link>
+      <link>/tags/octopus-deploy/</link>
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/octopus-deploy/</guid>
+      <guid>/tags/octopus-deploy/</guid>
       <description></description>
     </item>
     <item>
       <title>Terraform</title>
-      <link>http://localhost:1313/tags/terraform/</link>
+      <link>/tags/terraform/</link>
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/terraform/</guid>
+      <guid>/tags/terraform/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
-      <link>http://localhost:1313/tags/kubernetes/</link>
+      <link>/tags/kubernetes/</link>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kubernetes/</guid>
+      <guid>/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
+      <link>/tags/docker/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
+      <guid>/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Serverless</title>
-      <link>http://localhost:1313/tags/serverless/</link>
+      <link>/tags/serverless/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/serverless/</guid>
+      <guid>/tags/serverless/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
+      <link>/tags/tools/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tools/</guid>
+      <guid>/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>http://localhost:1313/tags/programming/</link>
+      <link>/tags/programming/</link>
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/programming/</guid>
+      <guid>/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Appveyor</title>
-      <link>http://localhost:1313/tags/appveyor/</link>
+      <link>/tags/appveyor/</link>
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/appveyor/</guid>
+      <guid>/tags/appveyor/</guid>
       <description></description>
     </item>
     <item>
       <title>Resharper</title>
-      <link>http://localhost:1313/tags/resharper/</link>
+      <link>/tags/resharper/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/resharper/</guid>
+      <guid>/tags/resharper/</guid>
       <description></description>
     </item>
   </channel>
