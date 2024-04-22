@@ -1,0 +1,127 @@
+:root {
+  --primary-color: #ffeb3b; /* bright yellow */
+  --secondary-color: #000; /* black */
+  --tertiary-color: #fff; /* white */
+  --text-color:#333; /* dark grey */
+}
+
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color); /* dark grey text for good readability */  
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+
+
+footer {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+}
+
+a {
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* header */
+header {
+  display: flex;
+  justify-content: stretch;
+  left: 0;
+  width: 100%;
+}
+
+.international__typo__header__layout {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 75px;
+}
+
+.international__typo__header__layout__left {
+  display: flex;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20%; 
+  justify-content: flex-end;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.international__typo__header__layout__right {
+  display: flex;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  justify-content: flex-start;
+  white-space: nowrap;
+
+}
+
+.international__typo__header__layout__right__tld {
+  font-weight: bold;
+  color: var(--secondary-color);
+  border: 2px dotted var(--secondary-color);
+}
+
+/* main */
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.international__typo__main__layout {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+
+.international__typo__main__layout__left {
+  width: 20%;
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box; 
+  align-self: stretch;
+}
+
+.international__typo__main__layout__right {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  padding: 40px 0 0 0px;
+}
+
+.international__typo__main__layout__right__content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 40px;
+}
+
+

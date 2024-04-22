@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Anton Sizikov</title>
+    <title>Home on Anton Sizikov</title>
     <link>/</link>
-    <description>Recent content on Anton Sizikov</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Home on Anton Sizikov</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,14 @@
       <link>/2024/04/01/github-actions-mulitrepo/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
       <guid>/2024/04/01/github-actions-mulitrepo/</guid>
-      <description>Common Misconceptions about GitHub Actions # The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.</description>
+      <description>Common Misconceptions about GitHub Actions The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.</description>
+    </item>
+    <item>
+      <title>Post 3</title>
+      <link>/posts/post-3/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      <guid>/posts/post-3/</guid>
+      <description>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis.</description>
     </item>
     <item>
       <title>GitHub Container Registry. Keeping traffic below the spending limit.</title>
@@ -41,7 +48,7 @@
       <link>/2022/08/22/ado-hosted-agents/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
       <guid>/2022/08/22/ado-hosted-agents/</guid>
-      <description>TLDR # Today I&amp;rsquo;m going to talk about self-hosted build agents.</description>
+      <description>TLDR Today I&amp;rsquo;m going to talk about self-hosted build agents.</description>
     </item>
     <item>
       <title>Configure WSL2 limits on Windows 10</title>

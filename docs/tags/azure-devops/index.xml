@@ -4,7 +4,7 @@
     <title>Azure-Devops on Anton Sizikov</title>
     <link>/tags/azure-devops/</link>
     <description>Recent content in Azure-Devops on Anton Sizikov</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Aug 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/azure-devops/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>/2022/08/22/ado-hosted-agents/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
       <guid>/2022/08/22/ado-hosted-agents/</guid>
-      <description>TLDR # Today I&amp;rsquo;m going to talk about self-hosted build agents.</description>
+      <description>TLDR Today I&amp;rsquo;m going to talk about self-hosted build agents.</description>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,7 @@
     <title>Github-Actions on Anton Sizikov</title>
     <link>/tags/github-actions/</link>
     <description>Recent content in Github-Actions on Anton Sizikov</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/github-actions/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>/2024/04/01/github-actions-mulitrepo/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
       <guid>/2024/04/01/github-actions-mulitrepo/</guid>
-      <description>Common Misconceptions about GitHub Actions # The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.</description>
+      <description>Common Misconceptions about GitHub Actions The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.</description>
     </item>
     <item>
       <title>GitHub Container Registry. Keeping traffic below the spending limit.</title>

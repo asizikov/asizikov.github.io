@@ -1,284 +1,64 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-us">
-
+<html lang="en-us" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1da1f2">
-	<title>C# 7 features preview |  Anton Sizikov </title>
-	<meta name="description"
-		content="Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference.">
-	<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/img/avatar.webp" /><meta name="twitter:title" content="C# 7 features preview"/>
-<meta name="twitter:description" content="Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference."/>
-      <meta name="twitter:site" content="@return_true"/>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>C# 7 features preview | Anton Sizikov</title>
 
-	<meta name="twitter:site" content="@return_true" />
-	<meta itemprop="name" content="C# 7 features preview">
-<meta itemprop="description" content="Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference."><meta itemprop="datePublished" content="2016-04-02T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2016-04-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="853"><meta itemprop="image" content="/img/avatar.webp" />
-<meta itemprop="keywords" content="programming," />
-	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
-	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="/manifest.json">
-	
-	<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"WebSite",
-	"name":"Anton Sizikov",
-	"url":"\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"potentialAction": {
-		"@type": "SearchAction",
-		"target": "https://wisnuwiry.space/search?q={search_term}",
-		"query-input": "required name=search_term"
-	}
-}
-</script>
-
-<script type='application/ld+json'>
-{
-	"@context": "http://www.schema.org",
-	"@type": "person",
-	"name": "",
-	"jobTitle": "",
-	"gender": "",
-	"url": "\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"image": "\/img\/avatar.jpeg",
-	"address": {
-		"@type": "PostalAddress",
-		"streetAddress": "Mayong, Jepara",
-		"addressLocality": "Jepara",
-		"addressRegion": "Jawa Tengah",
-		"addressCountry": "Indonesia"
-	},
-	"email": "",
-	"birthDate": "2003-01-31",
-	"birthPlace": "Jepara",
-	"nationality": "Indonesian"
-}
-</script>
-
-<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"BlogPosting",
-	"mainEntityOfPage":{
-		"@type":"WebPage",
-		"@id":"\/\/2016\/04\/02\/csharp-seven-preview\/"
-	},
-	"headline":"C# 7 features preview",
-	"datePublished":"2016-04-02T00",
-	"dateModified":"2016-04-02T00",
-	"description":"Last week my twitter feed exploded with lots of entries about Microsoft \/\/Build 2016 conference.",
-	"isFamilyFriendly": "true",
-	"image": ["/img/avatar.jpeg"],
-	"wordCount" : "853",
-	"keywords": ["programming"],
-	"genre": ["programming"],
-	"accountablePerson": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"author": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"creator": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"publisher":{
-		"@type":"Organization",
-		"name":"", 
-		"logo": {
-			"@type": "imageObject",
-			"url": "\/img\/avatar.jpeg"
-		}
-	}
-}</script>
+    <link rel="stylesheet" href="/css/main.css">
 
 
-	<meta content="" property="fb:admins">
-	<meta content="" property="fb:app_id">
-	<meta content="index,follow" name="googlebot">
-	<meta content="follow, all" name="Googlebot-Image">
-	<meta content="follow, all" name="Scooter">
-	<meta content="follow, all" name="msnbot">
-	<meta content="follow, all" name="alexabot">
-	<meta content="follow, all" name="Slurp">
-	<meta content="follow, all" name="ZyBorg">
-	<meta content="follow, all" name="Scooter">
-	<meta content="true" name="MSSmartTagsPreventParsing">
-	<meta content="ALL" name="SPIDERS">
-	<meta content="ALL" name="WEBCRAWLERS">
-	<meta
-		content="aeiwi, alexa, alltheWeb, altavista, aol netfind, anzwers, canada, directhit, euroseek, excite, overture, go, google, hotbot. infomak, kanoodle, lycos, mastersite, national directory, northern light, searchit, simplesearch, Websmostlinked, webtop, what-u-seek, aol, yahoo, webcrawler, infoseek, excite, magellan, looksmart, bing, cnet, googlebot"
-		name="search engines">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-	
+      <script src="/js/main.js"></script>
+
+
 </head>
-
-<body class="">
-	<div class="site-container">
-		<header class="top" id="js-header">
-	<div class="terminal">
-    <a href="/" class="terminal__link">
-        <span class="terminal__user">anton-sizikov@localhost</span>:
-        <span class="terminal__prompt">~$</span>
-        <span class="terminal__path">/home/</span>        
-    </a>
-    <span class="terminal__cursor">_</span>
-</div>
-	
-	<nav class="navbar js-navbar">
-		<ul class="navbar__menu">
-			
-			
-				
-				<li>
-					<a href="/tags" target="_self">
-						📝 Tags
-					</a>
-				</li>
-				
-				
-				<li>
-					<a href="/about" target="_self">
-						😃 About
-					</a>
-				</li>
-				
-		</ul>
-		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
-		</button>
-	</nav>
-	<div class="search">
-	<button class="search__btn btn" aria-label="Switch Theme" id="toggle-theme">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-			<path id="icon-theme"></path>
-		</svg>
-	</button>
-</div>
-</header>
-
-		<main>
-			
-<div class="wrapper big-wrapper featured__box featured__box__img">
-	
-	
-	<div class="hero__content">
-		<h1>C# 7 features preview</h1>
-	</div>
-	 
-	<p class="property">
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg> <time itemprop="datePublished" datetime="2016-04-02T00:00:00Z">April 02, 2016</time> 
-    </span>
-    <span>·</span>
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 5 min read
-    </span>
-</p>
-	
-</div>
-	
-	<article id="article" class="post__entry single grid wrapper big-wrapper">
-		<div class="main">
-		
-		<div class="entry__toc card">
-			
-<div id="toc__box" class="toc__box">
-    <div class="toc__list collapse">
-        <h3 class="toc__title" id="toc__toggle">
-            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
-            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
-        </h3>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#getting-started">Getting started</a></li>
-    <li><a href="#enabling-experimental-features">Enabling experimental features</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#binary-literals-and-digit-separators">Binary literals and Digit separators</a></li>
-    <li><a href="#local-functions">Local functions</a></li>
-    <li><a href="#ref-returns-and-locals">Ref returns and locals</a></li>
-    <li><a href="#pattern-matching">Pattern matching</a>
-      <ul>
-        <li><a href="#type-pattern">Type pattern</a></li>
-        <li><a href="#constant-pattern">Constant Pattern</a></li>
-        <li><a href="#var-pattern">Var Pattern</a></li>
-        <li><a href="#wildcard-pattern">Wildcard Pattern</a></li>
-        <li><a href="#recursive-pattern">Recursive Pattern</a></li>
-        <li><a href="#others">Others</a></li>
-        <li><a href="#conclusion">Conclusion</a></li>
-      </ul>
-    </li>
-    <li><a href="#links">Links</a></li>
-  </ul>
-</nav>
+<body>
+  <header>
+    <div class="international__typo__header__layout">
+    <div class="international__typo__header__layout__left">
+        <span class="international__typo__header__layout_subdomain">blog.</span>
     </div>
+    <div class="international__typo__header__layout__right">
+        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
+        <span class="international__typo__header__layout__right__tld">.nl</span>
+    <div>                        
 </div>
 
-		</div>
-			<div>
-			<div class="entry__content">
-				<p>Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference.
+
+
+  </header>
+  <main>
+    <div class="international__typo__main__layout">
+      <div class="international__typo__main__layout__left"></div>
+      <div class="international__typo__main__layout__right">
+        <div class="international__typo__main__layout__right__content">
+        
+  <h1>C# 7 features preview</h1>
+
+  
+  
+  <time datetime="2016-04-02T00:00:00&#43;00:00">April 2, 2016</time>
+
+  <p>Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference.
 As it&rsquo;s one of the most important events for .NET dev community MSFT prepared quite a few awesome announcements for us:</p>
 <ul>
-<li><a href="https://www.visualstudio.com/news/vs15-preview-vs" target="_blank" rel="noopener">Visual Studio &ldquo;15&rdquo; preview</a></li>
+<li><a href="https://www.visualstudio.com/news/vs15-preview-vs">Visual Studio &ldquo;15&rdquo; preview</a></li>
 <li>C# 7 preview</li>
-<li><a href="https://blogs.msdn.microsoft.com/visualstudio/2016/03/31/mobile-app-development-made-easy-with-visual-studio-and-xamarin/" target="_blank" rel="noopener">Xamarin going open source and free</a></li>
-<li><a href="https://blogs.windows.com/buildingapps/2016/03/30/run-bash-on-ubuntu-on-windows/" target="_blank" rel="noopener">Ubuntu workspace running natively on Windows 10</a></li>
+<li><a href="https://blogs.msdn.microsoft.com/visualstudio/2016/03/31/mobile-app-development-made-easy-with-visual-studio-and-xamarin/">Xamarin going open source and free</a></li>
+<li><a href="https://blogs.windows.com/buildingapps/2016/03/30/run-bash-on-ubuntu-on-windows/">Ubuntu workspace running natively on Windows 10</a></li>
 <li>And lot more</li>
 </ul>
 <p>Since I got a bit sick this weekend I had plenty of time to play with new VS15 and C# 7.</p>
-<h2 id="getting-started" itemprop="headline" class="heading">Getting started <a class="anchor-link" href="#getting-started">#</a></h2>
-<p>Let&rsquo;s grab a <a href="https://www.visualstudio.com/en-us/downloads/visual-studio-next-downloads-vs.aspx" target="_blank" rel="noopener">VS &ldquo;15&rdquo; first</a>.
+<h2 id="getting-started">Getting started</h2>
+<p>Let&rsquo;s grab a <a href="https://www.visualstudio.com/en-us/downloads/visual-studio-next-downloads-vs.aspx">VS &ldquo;15&rdquo; first</a>.
 There is a new installer by the way.</p>
-<h2 id="enabling-experimental-features" itemprop="headline" class="heading">Enabling experimental features <a class="anchor-link" href="#enabling-experimental-features">#</a></h2>
+<h2 id="enabling-experimental-features">Enabling experimental features</h2>
 <p>By default VS15 is using C# 6, so we need to add conditional compilation symbols to our project:
 <code>__DEMO__</code>.</p>
 <p>To do that you should go to Properties &gt; Build &gt; Conditional compilation symbols
-<figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/csharp-7-preview/conditional-demo.png'
-    alt='conditional compilation symbols dialog'
-     title="conditional compilation symbols dialog"
- 	/>
-</figure>
-</p>
+<img src="/images/csharp-7-preview/conditional-demo.png" alt="conditional compilation symbols dialog"></p>
 <p>Once we&rsquo;re done with that VS15 will pick up changes automatically.</p>
-<h2 id="features" itemprop="headline" class="heading">Features <a class="anchor-link" href="#features">#</a></h2>
+<h2 id="features">Features</h2>
 <p>As of today C# 7 goes with several features:</p>
 <ul>
 <li>Binary literals</li>
@@ -287,9 +67,9 @@ There is a new installer by the way.</p>
 <li>Ref returns and locals</li>
 <li>Pattern matching</li>
 </ul>
-<h2 id="binary-literals-and-digit-separators" itemprop="headline" class="heading">Binary literals and Digit separators <a class="anchor-link" href="#binary-literals-and-digit-separators">#</a></h2>
+<h2 id="binary-literals-and-digit-separators">Binary literals and Digit separators</h2>
 <p>These are very minor features, you know, nothing to write home about:
-In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672%28v=vs.71%29.aspx" target="_blank" rel="noopener">existing</a> <code>int</code> literals such as hex we can use binary ones.</p>
+In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672(v=vs.71).aspx">existing</a> <code>int</code> literals such as hex we can use binary ones.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LiteralsDemo</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">BinaryLiterals</span><span class="p">()</span>
@@ -302,19 +82,8 @@ In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672%28v=vs
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Simple and works as expected.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/csharp-7-preview/binary-literals.png'
-    alt='binary literals output'
-     title="binary literals output"
- 	/>
-</figure>
-</p>
-<p>Same about digit separators. Similar feature exists <a href="https://www.oreilly.com/learning/java7-features" target="_blank" rel="noopener">in Java</a> since version 7.</p>
+<p><img src="/images/csharp-7-preview/binary-literals.png" alt="binary literals output"></p>
+<p>Same about digit separators. Similar feature exists <a href="https://www.oreilly.com/learning/java7-features">in Java</a> since version 7.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">DigitSeparators</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">amount</span> <span class="p">=</span> <span class="m">1_000</span><span class="p">;</span>
@@ -322,7 +91,7 @@ In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672%28v=vs
 </span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">iAmHex</span> <span class="p">=</span> <span class="m">0x00</span><span class="n">_1A0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">binary</span> <span class="p">=</span> <span class="m">0</span><span class="n">b1_000</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<h2 id="local-functions" itemprop="headline" class="heading">Local functions <a class="anchor-link" href="#local-functions">#</a></h2>
+<h2 id="local-functions">Local functions</h2>
 <p>Local functions can be defined in a scope of a method.</p>
 <p>This is something you would do when you need a small helper like this one:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">RegularMethod2</span><span class="p">()</span>
@@ -366,9 +135,9 @@ In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672%28v=vs
 </span></span><span class="line"><span class="cl">     <span class="p">}</span>
 </span></span><span class="line"><span class="cl">     <span class="k">return</span> <span class="n">result</span><span class="p">().</span><span class="n">ToArray</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span></span></span></code></pre></div>
-<h2 id="ref-returns-and-locals" itemprop="headline" class="heading">Ref returns and locals <a class="anchor-link" href="#ref-returns-and-locals">#</a></h2>
+<h2 id="ref-returns-and-locals">Ref returns and locals</h2>
 <p>Sort of a low-level feature in my opinion. You can return reference from method.
-Erric Lippert <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/ref-returns-and-ref-locals/" target="_blank" rel="noopener">thought that</a></p>
+Erric Lippert <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/ref-returns-and-ref-locals/">thought that</a></p>
 <blockquote>
 <p>we believe that the feature does not have broad enough appeal or compelling usage cases to make it into a real supported mainstream language feature.</p>
 </blockquote>
@@ -386,14 +155,14 @@ Erric Lippert <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/r
 <p>Will print:</p>
 <pre tabindex="0"><code>2
 10
-</code></pre><h2 id="pattern-matching" itemprop="headline" class="heading">Pattern matching <a class="anchor-link" href="#pattern-matching">#</a></h2>
+</code></pre><h2 id="pattern-matching">Pattern matching</h2>
 <blockquote>
 <p>Patterns are used in the <code>is</code> operator and in a <code>switch</code>-statement to express the shape of data against which incoming data is to be compared. Patterns may be recursive so that subparts of the data may be matched against subpatterns.</p>
 </blockquote>
 <p>This is huge. C# community has been waiting for it for a long time.
 Unfortunately the syntax is not final now.</p>
 <p>There are several types of patterns supported for now.</p>
-<h3 id="type-pattern" itemprop="headline" class="heading">Type pattern <a class="anchor-link" href="#type-pattern">#</a></h3>
+<h3 id="type-pattern">Type pattern</h3>
 <p>The type pattern is useful for performing runtime type tests of reference types.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -402,7 +171,7 @@ Unfortunately the syntax is not final now.</p>
 </span></span><span class="line"><span class="cl">        <span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<h3 id="constant-pattern" itemprop="headline" class="heading">Constant Pattern <a class="anchor-link" href="#constant-pattern">#</a></h3>
+<h3 id="constant-pattern">Constant Pattern</h3>
 <p>A constant pattern tests the runtime value of an expression against a constant value.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -416,7 +185,7 @@ Unfortunately the syntax is not final now.</p>
 </span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<h3 id="var-pattern" itemprop="headline" class="heading">Var Pattern <a class="anchor-link" href="#var-pattern">#</a></h3>
+<h3 id="var-pattern">Var Pattern</h3>
 <p>A match to a var pattern always succeeds. At runtime the value of expression bounds to a newly introduced local variable.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="kd">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
@@ -425,7 +194,7 @@ Unfortunately the syntax is not final now.</p>
 </span></span><span class="line"><span class="cl">         <span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span> <span class="p">==</span> <span class="n">x</span><span class="p">);</span> <span class="c1">// prints true</span>
 </span></span><span class="line"><span class="cl">     <span class="p">}</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span></span></span></code></pre></div>
-<h3 id="wildcard-pattern" itemprop="headline" class="heading">Wildcard Pattern <a class="anchor-link" href="#wildcard-pattern">#</a></h3>
+<h3 id="wildcard-pattern">Wildcard Pattern</h3>
 <p>Every expression matches the wildcard pattern.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="kd">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
@@ -434,7 +203,7 @@ Unfortunately the syntax is not final now.</p>
 </span></span><span class="line"><span class="cl">         <span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Hi there&#34;</span><span class="p">);</span> <span class="c1">//will be executed</span>
 </span></span><span class="line"><span class="cl">     <span class="p">}</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span></span></span></code></pre></div>
-<h3 id="recursive-pattern" itemprop="headline" class="heading">Recursive Pattern <a class="anchor-link" href="#recursive-pattern">#</a></h3>
+<h3 id="recursive-pattern">Recursive Pattern</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">int</span> <span class="n">Sum</span><span class="p">(</span><span class="n">LinkedListNode</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">root</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">switch</span> <span class="p">(</span><span class="n">root</span><span class="p">)</span>
@@ -445,7 +214,7 @@ Unfortunately the syntax is not final now.</p>
 </span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="p">*:</span> <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<h3 id="others" itemprop="headline" class="heading">Others <a class="anchor-link" href="#others">#</a></h3>
+<h3 id="others">Others</h3>
 <p><code>switch</code> based patterns could contain so-called guard close:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Foo</span><span class="p">(</span><span class="kt">object</span> <span class="n">item</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -470,111 +239,35 @@ Unfortunately the syntax is not final now.</p>
 </span></span><span class="line"><span class="cl">        <span class="n">WriteLine</span><span class="p">(</span><span class="n">l</span> <span class="p">&gt;</span> <span class="m">10</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span> 
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<h3 id="conclusion" itemprop="headline" class="heading">Conclusion <a class="anchor-link" href="#conclusion">#</a></h3>
+<h3 id="conclusion">Conclusion</h3>
 <p>Pattern matching is really neat. I spent some time with it and I like it.</p>
 <script src="https://gist.github.com/asizikov/cbee9628d38db448622cd98ff1fee1a6.js"></script>
 
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/csharp-7-preview/console-installer.png'
-    alt='console installer output'
-     title="console installer output"
- 	/>
-</figure>
-</p>
-<h2 id="links" itemprop="headline" class="heading">Links <a class="anchor-link" href="#links">#</a></h2>
+<p><img src="/images/csharp-7-preview/console-installer.png" alt="console installer output"></p>
+<h2 id="links">Links</h2>
 <ul>
-<li><a href="https://github.com/dotnet/roslyn/issues/2930" target="_blank" rel="noopener">GitHub Discussion: Local Functions</a></li>
-<li><a href="https://github.com/dotnet/roslyn/issues/118" target="_blank" rel="noopener">GitHub Proposal: Ref Returns and Locals</a></li>
-<li><a href="https://github.com/dotnet/roslyn/issues/215" target="_blank" rel="noopener">GitHub Proposal: Binary literals</a></li>
-<li><a href="https://github.com/dotnet/roslyn/blob/024ad0a207c9f38493ff9163a377b9aacae371c7/docs/features/patterns.md" target="_blank" rel="noopener">GitHub Roslyn Docs, Pattern Matching for C#</a></li>
+<li><a href="https://github.com/dotnet/roslyn/issues/2930">GitHub Discussion: Local Functions</a></li>
+<li><a href="https://github.com/dotnet/roslyn/issues/118">GitHub Proposal: Ref Returns and Locals</a></li>
+<li><a href="https://github.com/dotnet/roslyn/issues/215">GitHub Proposal: Binary literals</a></li>
+<li><a href="https://github.com/dotnet/roslyn/blob/024ad0a207c9f38493ff9163a377b9aacae371c7/docs/features/patterns.md">GitHub Roslyn Docs, Pattern Matching for C#</a></li>
 </ul>
 
-				
-
-				
-
-			</div>
-			
-			<div class="entry__footer">
-				
-<div class="post__tag">
-			<a href="/tags/programming/"># Programming</a>
-</div>
-				
-				
-
-			</div>
-			
-			</div>
-		</div>
-	</article>
-	<div class="wrapper">
-		
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/programming/">Programming</a></li>
+    </ul>
+  </div>
 
 
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <p>Copyright 2024. All rights reserved.</p>
 
-	</div>
-	
-
-		</main>
-		<footer class="footer">
-<div class="footer__social">
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
-			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
-			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
-			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
-
-		</a>
-</div>
-	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
-</footer>
-	</div>
-	
-
-
-
-<script type="text/javascript" src="/js/bundle.min.js" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
-<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
-<script>
-    
-    
-    
-        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
-    
-
-    
-    
-    
-    
-
-    if ('serviceWorker' in navigator) {
-        const buildDate = "4/2/24";
-        navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
-            .then(function (registration) {
-                console.log('Service Worker Registered');
-            });
-
-        navigator.serviceWorker
-            .ready
-            .then(function (registration) {
-                console.log('Service Worker Ready');
-            });
-    }
-</script>
-
+  </footer>
 </body>
-
 </html>

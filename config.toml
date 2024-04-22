@@ -1,7 +1,7 @@
 baseURL                       = "https://blog.cloud-eng.nl/"
 languageCode                  = "en-us"
 title                         = "Anton Sizikov"
-theme                         = "personal-site"
+theme                         = "international-typo"
 summaryLength                 = 5
 publishDir                    = "docs"
 
