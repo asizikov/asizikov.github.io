@@ -1,8 +1,16 @@
 {{ define "main" }}
   {{ .Content }}
   {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .Date | time.Format "2006-01-02"}} - {{ .LinkTitle }}</a></h2>
+  <div class="international__typo__post__block">
+    <div class="international__typo__post__block__left">      
+    <div class="international__typo__post__block__left__date">
+      {{ .Date | time.Format "2006-01-02"}}
+    </div>
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    </div>
+    <div class="international__typo__post__block__right">      
     {{ .Summary }}
-    
+    </div>
+  </div>
   {{ end }}
 {{ end }}
