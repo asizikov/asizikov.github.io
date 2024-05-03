@@ -210,6 +210,23 @@ main {
   overflow-x: auto; 
 }
 
+/* 404 */
+.international__typo__four-oh-hour__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 600px;
+}
+
+.international__typo__four-oh-hour__left {
+  color: var(--tertiary-color);
+}
+
+.international__typo__four-oh-hour__right {
+  color: var(--secondary-color);
+}
+
 
 body::after {
   content: "";
