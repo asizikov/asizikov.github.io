@@ -1,130 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-us">
-
+<html lang="en-us" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1da1f2">
-	<title>AzureDevOps and hosted agents |  Anton Sizikov </title>
-	<meta name="description"
-		content="TLDR # Today I&rsquo;m going to talk about self-hosted build agents.">
-	<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/img/avatar.webp" /><meta name="twitter:title" content="AzureDevOps and hosted agents"/>
-<meta name="twitter:description" content="TLDR # Today I&rsquo;m going to talk about self-hosted build agents."/>
-      <meta name="twitter:site" content="@return_true"/>
-
-	<meta name="twitter:site" content="@return_true" />
-	<meta itemprop="name" content="AzureDevOps and hosted agents">
-<meta itemprop="description" content="TLDR # Today I&rsquo;m going to talk about self-hosted build agents."><meta itemprop="datePublished" content="2022-08-22T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-08-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="697"><meta itemprop="image" content="/img/avatar.webp" />
-<meta itemprop="keywords" content="devops,azure-devops,hosted-agents," />
-	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
-	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="/manifest.json">
-	
-	<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"WebSite",
-	"name":"Anton Sizikov",
-	"url":"\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"potentialAction": {
-		"@type": "SearchAction",
-		"target": "https://wisnuwiry.space/search?q={search_term}",
-		"query-input": "required name=search_term"
-	}
-}
-</script>
-
-<script type='application/ld+json'>
-{
-	"@context": "http://www.schema.org",
-	"@type": "person",
-	"name": "",
-	"jobTitle": "",
-	"gender": "",
-	"url": "\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"image": "\/img\/avatar.jpeg",
-	"address": {
-		"@type": "PostalAddress",
-		"streetAddress": "Mayong, Jepara",
-		"addressLocality": "Jepara",
-		"addressRegion": "Jawa Tengah",
-		"addressCountry": "Indonesia"
-	},
-	"email": "",
-	"birthDate": "2003-01-31",
-	"birthPlace": "Jepara",
-	"nationality": "Indonesian"
-}
-</script>
-
-<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"BlogPosting",
-	"mainEntityOfPage":{
-		"@type":"WebPage",
-		"@id":"\/\/2022\/08\/22\/ado-hosted-agents\/"
-	},
-	"headline":"AzureDevOps and hosted agents",
-	"datePublished":"2022-08-22T00",
-	"dateModified":"2022-08-22T00",
-	"description":"TLDR # Today I\u0026rsquo;m going to talk about self-hosted build agents.",
-	"isFamilyFriendly": "true",
-	"image": ["/img/avatar.jpeg"],
-	"wordCount" : "697",
-	"keywords": ["devops","azure-devops","hosted-agents"],
-	"genre": ["devops","azure-devops","hosted-agents"],
-	"accountablePerson": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"author": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"creator": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"publisher":{
-		"@type":"Organization",
-		"name":"", 
-		"logo": {
-			"@type": "imageObject",
-			"url": "\/img\/avatar.jpeg"
-		}
-	}
-}</script>
-
-
-	<meta content="" property="fb:admins">
-	<meta content="" property="fb:app_id">
-	<meta content="index,follow" name="googlebot">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta content="index,follow" name="googlebot">
 	<meta content="follow, all" name="Googlebot-Image">
 	<meta content="follow, all" name="Scooter">
 	<meta content="follow, all" name="msnbot">
@@ -142,117 +21,49 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	
+<title>AzureDevOps and hosted agents | Anton Sizikov</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
 </head>
-
-<body class="">
-	<div class="site-container">
-		<header class="top" id="js-header">
-	<div class="terminal">
-    <a href="/" class="terminal__link">
-        <span class="terminal__user">anton-sizikov@localhost</span>:
-        <span class="terminal__prompt">~$</span>
-        <span class="terminal__path">/home/</span>        
-    </a>
-    <span class="terminal__cursor">_</span>
-</div>
-	
-	<nav class="navbar js-navbar">
-		<ul class="navbar__menu">
-			
-			
-				
-				<li>
-					<a href="/tags" target="_self">
-						📝 Tags
-					</a>
-				</li>
-				
-				
-				<li>
-					<a href="/about" target="_self">
-						😃 About
-					</a>
-				</li>
-				
-		</ul>
-		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
-		</button>
-	</nav>
-	<div class="search">
-	<button class="search__btn btn" aria-label="Switch Theme" id="toggle-theme">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-			<path id="icon-theme"></path>
-		</svg>
-	</button>
-</div>
-</header>
-
-		<main>
-			
-<div class="wrapper big-wrapper featured__box featured__box__img">
-	
-	
-	<div class="hero__content">
-		<h1>AzureDevOps and hosted agents</h1>
-	</div>
-	 
-	<p class="property">
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg> <time itemprop="datePublished" datetime="2022-08-22T00:00:00Z">August 22, 2022</time> 
-    </span>
-    <span>·</span>
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 4 min read
-    </span>
-</p>
-	
-</div>
-	
-	<article id="article" class="post__entry single grid wrapper big-wrapper">
-		<div class="main">
-		
-		<div class="entry__toc card">
-			
-<div id="toc__box" class="toc__box">
-    <div class="toc__list collapse">
-        <h3 class="toc__title" id="toc__toggle">
-            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
-            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
-        </h3>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#tldr">TLDR</a></li>
-    <li><a href="#motivation">Motivation</a></li>
-    <li><a href="#microsoft-hosted-build-agents">Microsoft-Hosted Build Agents</a>
-      <ul>
-        <li><a href="#hardware">Hardware</a></li>
-        <li><a href="#security">Security</a></li>
-        <li><a href="#limitations">limitations</a></li>
-      </ul>
-    </li>
-    <li><a href="#self-hosted-agents">Self-hosted agents</a>
-      <ul>
-        <li><a href="#types">Types</a></li>
-        <li><a href="#overview">Overview</a></li>
-      </ul>
-    </li>
-    <li><a href="#self-hosted-agent">Self-Hosted agent</a></li>
-    <li><a href="#obtain-a-personal-access-token--pat">Obtain a personal access token  (PAT)</a></li>
-    <li><a href="#verify">Verify</a></li>
-    <li><a href="#important-notes">Important notes</a></li>
-  </ul>
-</nav>
+<body>
+  <header>
+    <div class="international__typo__header__layout">
+    <div class="international__typo__header__layout__left">
+        <span class="international__typo__header__layout_subdomain">
+            <a class="international__typo__header__home" href="/">blog.</a></span>
     </div>
+    <div class="international__typo__header__layout__right">
+        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
+        <span class="international__typo__header__layout__right__tld">.nl</span>
+    <div>                        
 </div>
 
-		</div>
-			<div>
-			<div class="entry__content">
-				<h2 id="tldr" itemprop="headline" class="heading">TLDR <a class="anchor-link" href="#tldr">#</a></h2>
+
+
+  </header>
+  <main>
+    <div class="international__typo__main__layout">
+      <div class="international__typo__main__layout__left"></div>
+      <div class="international__typo__main__layout__right">
+        <div class="international__typo__main__layout__right__content">
+        
+<div class="international__typo__post__content">
+  <h1>AzureDevOps and hosted agents</h1>
+
+  
+  
+  <h2>Published on: 
+  <time datetime="2022-08-22T00:00:00&#43;00:00">August 22, 2022</time></h2>
+
+  <h2 id="tldr">TLDR</h2>
 <p>Today I&rsquo;m going to talk about self-hosted build agents.</p>
 <p>After reading this post you will be able to host your own Windows or macOS build agent (we&rsquo;ll run it on your laptop) and use it to execute AzureDevOps Pipeline.</p>
-<h2 id="motivation" itemprop="headline" class="heading">Motivation <a class="anchor-link" href="#motivation">#</a></h2>
+<h2 id="motivation">Motivation</h2>
 <p>It&rsquo;s common to run different steps of your build and deployment on different machines. You build steps can have different requirements, for example:</p>
 <ul>
 <li>Compute and disk space requirements</li>
@@ -266,7 +77,7 @@
 <li>Selfhosted</li>
 </ul>
 <p>From now on I&rsquo;m going to talk about Azure DevOps, but the same patterns and ideas apply to any other modern build systems.</p>
-<h2 id="microsoft-hosted-build-agents" itemprop="headline" class="heading">Microsoft-Hosted Build Agents <a class="anchor-link" href="#microsoft-hosted-build-agents">#</a></h2>
+<h2 id="microsoft-hosted-build-agents">Microsoft-Hosted Build Agents</h2>
 <p>Microsoft-hosted agents are convenient, because this is probably the simplest way to execute our build pipelines.</p>
 <p>Managed agents have these advantages:</p>
 <ul>
@@ -275,28 +86,17 @@
 <li>consumption based billing</li>
 </ul>
 <p>The agent choice is generic and broad enough to cover most of the common use cases.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/tools.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h3 id="hardware" itemprop="headline" class="heading">Hardware <a class="anchor-link" href="#hardware">#</a></h3>
-<p>Microsoft-hosted agents that run Windows and Linux images are provisioned on Azure general purpose virtual machines <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/dv2-dsv2-series#dsv2-series" target="_blank" rel="noopener">Standard_DS2_v2</a>. These virtual machines are co-located in the same geography as your Azure DevOps organization.</p>
+<p><img src="/images/2022-08-hosted-agents/tools.png" alt=""></p>
+<h3 id="hardware">Hardware</h3>
+<p>Microsoft-hosted agents that run Windows and Linux images are provisioned on Azure general purpose virtual machines <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/dv2-dsv2-series#dsv2-series">Standard_DS2_v2</a>. These virtual machines are co-located in the same geography as your Azure DevOps organization.</p>
 <p>Agents that run macOS images are provisioned on Mac Pros. These agents always run in US and Europe irrespective of the location of your Azure DevOps organization.</p>
 <p>All of these machines have 10 GB of free disk space available for your pipelines to run.</p>
-<h3 id="security" itemprop="headline" class="heading">Security <a class="anchor-link" href="#security">#</a></h3>
+<h3 id="security">Security</h3>
 <ul>
 <li>Microsoft-hosted agents run on Azure public network, they are not assigned public IP addresses. That means external entities cannot target Microsoft-hosted agents.</li>
 <li>You don&rsquo;t have to worry about security issues when running code, frameworks or containers downloaded from Internet.</li>
 </ul>
-<h3 id="limitations" itemprop="headline" class="heading">limitations <a class="anchor-link" href="#limitations">#</a></h3>
+<h3 id="limitations">limitations</h3>
 <p>However it&rsquo;s important to understand the limitations</p>
 <ul>
 <li>Diskspace is limited</li>
@@ -309,227 +109,64 @@
 <li>No control over the waiting time (it depends on the load)</li>
 </ul>
 <p>To address these issues Microsoft (and other vendors) allow us to use self-hosted agents.</p>
-<h2 id="self-hosted-agents" itemprop="headline" class="heading">Self-hosted agents <a class="anchor-link" href="#self-hosted-agents">#</a></h2>
+<h2 id="self-hosted-agents">Self-hosted agents</h2>
 <p>Self-hosted agents are the agents which you set up and manage on your own.</p>
-<h3 id="types" itemprop="headline" class="heading">Types <a class="anchor-link" href="#types">#</a></h3>
+<h3 id="types">Types</h3>
 <ul>
 <li>macOS agent</li>
 <li>Linux agent (x64, ARM, RHEL6)</li>
 <li>Windows agent (x64, x86)</li>
 <li>Docker agent</li>
 </ul>
-<h3 id="overview" itemprop="headline" class="heading">Overview <a class="anchor-link" href="#overview">#</a></h3>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/firewall.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+<h3 id="overview">Overview</h3>
+<p><img src="/images/2022-08-hosted-agents/firewall.png" alt=""></p>
 <p>Managed agents will run in a cloud, and won&rsquo;t have access to your private network, however self-hosted agents can be deployed into your VNet, behind the corporate firewall.</p>
-<h2 id="self-hosted-agent" itemprop="headline" class="heading">Self-Hosted agent <a class="anchor-link" href="#self-hosted-agent">#</a></h2>
+<h2 id="self-hosted-agent">Self-Hosted agent</h2>
 <p>Since I&rsquo;m running Windows right now, I&rsquo;ll show you how to set up a Windows agent.</p>
 <p>There are several steps which I need to complete in order to set up a build agent:</p>
-<h2 id="obtain-a-personal-access-token--pat" itemprop="headline" class="heading">Obtain a personal access token  (PAT) <a class="anchor-link" href="#obtain-a-personal-access-token--pat">#</a></h2>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='https://docs.microsoft.com/en-us/azure/devops/repos/git/media/select-personal-access-tokens.jpg'
-    alt='Go to your security details.'
-     title="Go to your security details."
- 	/>
-</figure>
-</p>
+<h2 id="obtain-a-personal-access-token--pat">Obtain a personal access token  (PAT)</h2>
+<p><img src="https://docs.microsoft.com/en-us/azure/devops/repos/git/media/select-personal-access-tokens.jpg" alt="Go to your security details."></p>
 <p>and create a PAT with these scopes</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/pat.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+<p><img src="/images/2022-08-hosted-agents/pat.png" alt=""></p>
 <p>create a new pool</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/new-pool.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+<p><img src="/images/2022-08-hosted-agents/new-pool.png" alt=""></p>
 <p>create a new agent</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/new-agent.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+<p><img src="/images/2022-08-hosted-agents/new-agent.png" alt=""></p>
 <p>Download the agent and configure it</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\&gt;</span> <span class="n">mkdir</span> <span class="n">agent</span> <span class="p">;</span> <span class="nb">cd </span><span class="n">agent</span>
 </span></span><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">agent</span><span class="p">&gt;</span> <span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="py">IO</span><span class="p">.</span><span class="py">Compression</span><span class="p">.</span><span class="py">FileSystem</span> <span class="p">;</span> <span class="p">[</span><span class="no">System.IO.Compression.ZipFile</span><span class="p">]::</span><span class="n">ExtractToDirectory</span><span class="p">(</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">\Downloads\vsts-agent-win-x64-2.179.0.zip&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="nv">$PWD</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/configure.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+</span></span></code></pre></div><p><img src="/images/2022-08-hosted-agents/configure.png" alt=""></p>
 <p>If everything is good, you should be able to see your new agent:</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/running.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h2 id="verify" itemprop="headline" class="heading">Verify <a class="anchor-link" href="#verify">#</a></h2>
+<p><img src="/images/2022-08-hosted-agents/running.png" alt=""></p>
+<h2 id="verify">Verify</h2>
 <p>We can create simple pipeline</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/build.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+<p><img src="/images/2022-08-hosted-agents/build.png" alt=""></p>
 <p>And verify if it&rsquo;s running on my PC</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2022-08-hosted-agents/output.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+<p><img src="/images/2022-08-hosted-agents/output.png" alt=""></p>
 <p>As you can se we have our pipeline running on my computer. This means I can use my own hardware such as GPU or devices connected to my laptop. Also I have acces to internal network, printers and whatnot.</p>
 <p>In reallity you would probably run the self-hosted agent on VM or a dedicated phisical machine.</p>
-<h2 id="important-notes" itemprop="headline" class="heading">Important notes <a class="anchor-link" href="#important-notes">#</a></h2>
+<h2 id="important-notes">Important notes</h2>
 <p>It is a <strong>bad practice to configure your self-hosted agents for public repositories</strong>. Keep in mind that anyone can create a fork of your repository, modify a pipileine and execute code on you machine. It&rsquo;s ok for a test, it&rsquo;s ok to configure it for private repo, but please be careful, and don&rsquo;t forget to shut down the agent when you don&rsquo;t need it anymore.</p>
 
-				
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/devops/">Devops</a></li>
+        <li><a href="/tags/azure-devops/">Azure-Devops</a></li>
+        <li><a href="/tags/hosted-agents/">Hosted-Agents</a></li>
+    </ul>
+  </div>
 
-				
-
-			</div>
-			
-			<div class="entry__footer">
-				
-<div class="post__tag">
-			<a href="/tags/devops/"># Devops</a>
-			<a href="/tags/azure-devops/"># Azure-Devops</a>
-			<a href="/tags/hosted-agents/"># Hosted-Agents</a>
 </div>
-				
-				
 
-			</div>
-			
-			</div>
-		</div>
-	</article>
-	<div class="wrapper">
-		
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <p>Copyright 2024. All rights reserved.</p>
 
-
-
-	</div>
-	
-
-		</main>
-		<footer class="footer">
-<div class="footer__social">
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
-			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
-			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
-			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
-
-		</a>
-</div>
-	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
-</footer>
-	</div>
-	
-
-
-
-<script type="text/javascript" src="/js/bundle.min.js" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
-<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
-<script>
-    
-    
-    
-        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
-    
-
-    
-    
-    
-    
-
-    if ('serviceWorker' in navigator) {
-        const buildDate = "4/2/24";
-        navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
-            .then(function (registration) {
-                console.log('Service Worker Registered');
-            });
-
-        navigator.serviceWorker
-            .ready
-            .then(function (registration) {
-                console.log('Service Worker Ready');
-            });
-    }
-</script>
-
+  </footer>
 </body>
-
 </html>

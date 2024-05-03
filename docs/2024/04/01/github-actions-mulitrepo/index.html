@@ -1,130 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-us">
-
+<html lang="en-us" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1da1f2">
-	<title>GitHub Actions: Unified Build Pipeline for Multi-Repo Application |  Anton Sizikov </title>
-	<meta name="description"
-		content="Common Misconceptions about GitHub Actions # The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.">
-	<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/img/avatar.webp" /><meta name="twitter:title" content="GitHub Actions: Unified Build Pipeline for Multi-Repo Application"/>
-<meta name="twitter:description" content="Common Misconceptions about GitHub Actions # The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions."/>
-      <meta name="twitter:site" content="@return_true"/>
-
-	<meta name="twitter:site" content="@return_true" />
-	<meta itemprop="name" content="GitHub Actions: Unified Build Pipeline for Multi-Repo Application">
-<meta itemprop="description" content="Common Misconceptions about GitHub Actions # The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions."><meta itemprop="datePublished" content="2024-04-01T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2024-04-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1184"><meta itemprop="image" content="/img/avatar.webp" />
-<meta itemprop="keywords" content="github-actions,multirepo,devops," />
-	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
-	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="/manifest.json">
-	
-	<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"WebSite",
-	"name":"Anton Sizikov",
-	"url":"\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"potentialAction": {
-		"@type": "SearchAction",
-		"target": "https://wisnuwiry.space/search?q={search_term}",
-		"query-input": "required name=search_term"
-	}
-}
-</script>
-
-<script type='application/ld+json'>
-{
-	"@context": "http://www.schema.org",
-	"@type": "person",
-	"name": "",
-	"jobTitle": "",
-	"gender": "",
-	"url": "\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"image": "\/img\/avatar.jpeg",
-	"address": {
-		"@type": "PostalAddress",
-		"streetAddress": "Mayong, Jepara",
-		"addressLocality": "Jepara",
-		"addressRegion": "Jawa Tengah",
-		"addressCountry": "Indonesia"
-	},
-	"email": "",
-	"birthDate": "2003-01-31",
-	"birthPlace": "Jepara",
-	"nationality": "Indonesian"
-}
-</script>
-
-<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"BlogPosting",
-	"mainEntityOfPage":{
-		"@type":"WebPage",
-		"@id":"\/\/2024\/04\/01\/github-actions-mulitrepo\/"
-	},
-	"headline":"GitHub Actions: Unified Build Pipeline for Multi-Repo Application",
-	"datePublished":"2024-04-01T00",
-	"dateModified":"2024-04-01T00",
-	"description":"Common Misconceptions about GitHub Actions # The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.",
-	"isFamilyFriendly": "true",
-	"image": ["/img/avatar.jpeg"],
-	"wordCount" : "1184",
-	"keywords": ["github-actions","multirepo","devops"],
-	"genre": ["github-actions","multirepo","devops"],
-	"accountablePerson": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"author": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"creator": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"publisher":{
-		"@type":"Organization",
-		"name":"", 
-		"logo": {
-			"@type": "imageObject",
-			"url": "\/img\/avatar.jpeg"
-		}
-	}
-}</script>
-
-
-	<meta content="" property="fb:admins">
-	<meta content="" property="fb:app_id">
-	<meta content="index,follow" name="googlebot">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta content="index,follow" name="googlebot">
 	<meta content="follow, all" name="Googlebot-Image">
 	<meta content="follow, all" name="Scooter">
 	<meta content="follow, all" name="msnbot">
@@ -142,119 +21,51 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	
+<title>GitHub Actions: Unified Build Pipeline for Multi-Repo Application | Anton Sizikov</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
 </head>
-
-<body class="">
-	<div class="site-container">
-		<header class="top" id="js-header">
-	<div class="terminal">
-    <a href="/" class="terminal__link">
-        <span class="terminal__user">anton-sizikov@localhost</span>:
-        <span class="terminal__prompt">~$</span>
-        <span class="terminal__path">/home/</span>        
-    </a>
-    <span class="terminal__cursor">_</span>
-</div>
-	
-	<nav class="navbar js-navbar">
-		<ul class="navbar__menu">
-			
-			
-				
-				<li>
-					<a href="/tags" target="_self">
-						📝 Tags
-					</a>
-				</li>
-				
-				
-				<li>
-					<a href="/about" target="_self">
-						😃 About
-					</a>
-				</li>
-				
-		</ul>
-		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
-		</button>
-	</nav>
-	<div class="search">
-	<button class="search__btn btn" aria-label="Switch Theme" id="toggle-theme">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-			<path id="icon-theme"></path>
-		</svg>
-	</button>
-</div>
-</header>
-
-		<main>
-			
-<div class="wrapper big-wrapper featured__box featured__box__img">
-	
-	
-	<div class="hero__content">
-		<h1>GitHub Actions: Unified Build Pipeline for Multi-Repo Application</h1>
-	</div>
-	 
-	<p class="property">
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg> <time itemprop="datePublished" datetime="2024-04-01T00:00:00Z">April 01, 2024</time> 
-    </span>
-    <span>·</span>
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 6 min read
-    </span>
-</p>
-	
-</div>
-	
-	<article id="article" class="post__entry single grid wrapper big-wrapper">
-		<div class="main">
-		
-		<div class="entry__toc card">
-			
-<div id="toc__box" class="toc__box">
-    <div class="toc__list collapse">
-        <h3 class="toc__title" id="toc__toggle">
-            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
-            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
-        </h3>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#common-misconceptions-about-github-actions">Common Misconceptions about GitHub Actions</a></li>
-    <li><a href="#demo-organization">Demo Organization</a></li>
-    <li><a href="#triggers">Triggers</a></li>
-    <li><a href="#building-code-from-another-repository">Building code from another repository</a></li>
-    <li><a href="#multiple-jobs-and-artifacts">Multiple jobs and artifacts</a></li>
-    <li><a href="#keeping-workflows-next-to-source-code">Keeping Workflows next to source code</a></li>
-    <li><a href="#summary">Summary</a></li>
-    <li><a href="#disclosure">Disclosure</a></li>
-  </ul>
-</nav>
+<body>
+  <header>
+    <div class="international__typo__header__layout">
+    <div class="international__typo__header__layout__left">
+        <span class="international__typo__header__layout_subdomain">
+            <a class="international__typo__header__home" href="/">blog.</a></span>
     </div>
+    <div class="international__typo__header__layout__right">
+        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
+        <span class="international__typo__header__layout__right__tld">.nl</span>
+    <div>                        
 </div>
 
-		</div>
-			<div>
-			<div class="entry__content">
-				<h2 id="common-misconceptions-about-github-actions" itemprop="headline" class="heading">Common Misconceptions about GitHub Actions <a class="anchor-link" href="#common-misconceptions-about-github-actions">#</a></h2>
+
+
+  </header>
+  <main>
+    <div class="international__typo__main__layout">
+      <div class="international__typo__main__layout__left"></div>
+      <div class="international__typo__main__layout__right">
+        <div class="international__typo__main__layout__right__content">
+        
+<div class="international__typo__post__content">
+  <h1>GitHub Actions: Unified Build Pipeline for Multi-Repo Application</h1>
+
+  
+  
+  <h2>Published on: 
+  <time datetime="2024-04-01T00:00:00&#43;00:00">April 1, 2024</time></h2>
+
+  <h2 id="common-misconceptions-about-github-actions">Common Misconceptions about GitHub Actions</h2>
 <p>The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.
 They expressed a concern that GitHub Actions does not work well in multi-repo setup; they were used to having build pipelines separate from the source code distributed across multiple repositories.</p>
 <p>What they had in mind was a business application that consisted of multiple services, each in its own repository. They wanted to have a single multi-stage pipeline that will be triggered by changes in any of these components and will build, test, and deploy the entire application.</p>
 <p>Something like this:</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2024-02-actions/multi-repo-pipeline.png'
-    alt='Multi-Repo Pipeline'
-     title="Multi-Repo Pipeline"
- 	/>
-</figure>
-</p>
+<p><img src="/images/2024-02-actions/multi-repo-pipeline.png" alt="Multi-Repo Pipeline"></p>
 <p>My customer had some misconceptions about GitHub Actions, such as:</p>
 <ul>
 <li>GitHub Actions can only build the code stored in the same repository.</li>
@@ -262,32 +73,21 @@ They expressed a concern that GitHub Actions does not work well in multi-repo se
 </ul>
 <p>These misunderstandings led them to believe they couldn&rsquo;t achieve the same &ldquo;single pane of glass&rdquo; experience they had with TeamCity.</p>
 <p>In this post, I&rsquo;ll demonstrate a simplified version of such a setup.</p>
-<h2 id="demo-organization" itemprop="headline" class="heading">Demo Organization <a class="anchor-link" href="#demo-organization">#</a></h2>
-<p>I&rsquo;ll use <a href="https://github.com/chain-builds" target="_blank" rel="noopener">chain-builds</a> organization as an example.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2024-02-actions/chain-builds-organization.png'
-    alt='Chain Builds'
-     title="Chain Builds"
- 	/>
-</figure>
-</p>
+<h2 id="demo-organization">Demo Organization</h2>
+<p>I&rsquo;ll use <a href="https://github.com/chain-builds">chain-builds</a> organization as an example.</p>
+<p><img src="/images/2024-02-actions/chain-builds-organization.png" alt="Chain Builds"></p>
 <p>This organization has the following repositories:</p>
 <ul>
-<li><a href="https://github.com/chain-builds/builds" target="_blank" rel="noopener">chain-builds/builds</a>: contains the build pipeline that orchestrates builds and deployments across the organization.</li>
-<li><a href="https://github.com/chain-builds/source-code-backend" target="_blank" rel="noopener">chain-builds/source-code-backend</a>: This repository contains the backend code, which is a .NET Application.</li>
-<li><a href="https://github.com/chain-builds/source-code-frontend" target="_blank" rel="noopener">chain-builds/source-code-frontend</a>: This repository contains the frontend code, a Node.js application.</li>
-<li><a href="https://github.com/chain-builds/micro-service" target="_blank" rel="noopener">chain-builds/micro-service</a>: This repository is for a Python service, complete with tests.</li>
+<li><a href="https://github.com/chain-builds/builds">chain-builds/builds</a>: contains the build pipeline that orchestrates builds and deployments across the organization.</li>
+<li><a href="https://github.com/chain-builds/source-code-backend">chain-builds/source-code-backend</a>: This repository contains the backend code, which is a .NET Application.</li>
+<li><a href="https://github.com/chain-builds/source-code-frontend">chain-builds/source-code-frontend</a>: This repository contains the frontend code, a Node.js application.</li>
+<li><a href="https://github.com/chain-builds/micro-service">chain-builds/micro-service</a>: This repository is for a Python service, complete with tests.</li>
 </ul>
 <p>For the purposes of this post, the specific functionalities of these applications are not important; they are just templates that I quicky scafolded for this post.
 Let&rsquo;s suppose that these services are part of one large busines application, requiring collective build, testing, and deployment processes.</p>
-<h2 id="triggers" itemprop="headline" class="heading">Triggers <a class="anchor-link" href="#triggers">#</a></h2>
+<h2 id="triggers">Triggers</h2>
 <p>Since our main build pipeline defined in the <code>chain-builds/builds</code> repository, we need to be able to trigger in from every dependent repository.</p>
-<p>This is quite easy to achieve with GitHub Actions, specifically by emmiting the the <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch" target="_blank" rel="noopener"><code>repository_dispatch</code> event</a>.</p>
+<p>This is quite easy to achieve with GitHub Actions, specifically by emmiting the the <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch"><code>repository_dispatch</code> event</a>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c">#https://github.com/chain-builds/builds/.github/workflows/build.yml</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w">
@@ -314,19 +114,8 @@ Let&rsquo;s suppose that these services are part of one large busines applicatio
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">event-type</span><span class="p">:</span><span class="w"> </span><span class="l">dependency_updated</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">client-payload</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{&#34;triggered_by&#34;: &#34;${{ github.repository }}, on push event&#34;, &#34;commit_sha&#34;: &#34;${{ github.sha }}&#34;, &#34;branch&#34;: &#34;${{ github.ref }}&#34;}&#39;</span><span class="w">
 </span></span></span></code></pre></div><p>Because I&rsquo;m calling an external workflow, I need to provide a Personal Access Token (PAT) with &ldquo;content read a write access&rdquo; to the <code>builds</code> repository. (I&rsquo;m using fine-grained PAT here).</p>
-<p>I can have this PAT on the organization level, so it can be <a href="https://docs.github.com/en/actions/using-workflows/sharing-workflows-secrets-and-runners-with-your-organization#sharing-secrets-and-variables-within-an-organization" target="_blank" rel="noopener">shared with repositories that require it</a>.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2024-02-actions/pat-org-settings.png'
-    alt='PAT Organization'
-     title="PAT Organization"
- 	/>
-</figure>
-</p>
+<p>I can have this PAT on the organization level, so it can be <a href="https://docs.github.com/en/actions/using-workflows/sharing-workflows-secrets-and-runners-with-your-organization#sharing-secrets-and-variables-within-an-organization">shared with repositories that require it</a>.</p>
+<p><img src="/images/2024-02-actions/pat-org-settings.png" alt="PAT Organization"></p>
 <p>this will submit a <code>repository_dispatch</code> event to the <code>builds</code> repository with the following payload:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;triggered_by&#34;</span><span class="p">:</span> <span class="s2">&#34;chain-builds/micro-service, on push event&#34;</span><span class="p">,</span>
@@ -353,19 +142,8 @@ Let&rsquo;s suppose that these services are part of one large busines applicatio
 </span></span></span><span class="line"><span class="cl"><span class="sd">            echo &#34;Manual trigger&#34; &gt;&gt; $GITHUB_STEP_SUMMARY
 </span></span></span><span class="line"><span class="cl"><span class="sd">          fi</span><span class="w">          
 </span></span></span></code></pre></div><p>This will be rendered as following:</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2024-02-actions/who-triggered-me.png'
-    alt='Who Triggered Me'
-     title="Who Triggered Me"
- 	/>
-</figure>
-</p>
-<h2 id="building-code-from-another-repository" itemprop="headline" class="heading">Building code from another repository <a class="anchor-link" href="#building-code-from-another-repository">#</a></h2>
+<p><img src="/images/2024-02-actions/who-triggered-me.png" alt="Who Triggered Me"></p>
+<h2 id="building-code-from-another-repository">Building code from another repository</h2>
 <p>Now that we have a way to trigger the build pipeline from the source code repositories, we need to be able to checkout the code from these repositories.</p>
 <p>For a simple scenario, where there is no need to store pipelines in the srouce code repo, we can keep the entire build logic in our <code>builds</code> repository.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c">#https://github.com/chain-builds/builds/.github/workflows/build.yml</span><span class="w">
@@ -383,7 +161,7 @@ Let&rsquo;s suppose that these services are part of one large busines applicatio
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npm install</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npm test</span><span class="w">
 </span></span></span></code></pre></div><p>Here, I&rsquo;m just using <code>actions/checkout</code> action to checkout the code from the <code>source-code-frontend</code> repository. This repository is public, so I don&rsquo;t need to provide any credentials.</p>
-<h2 id="multiple-jobs-and-artifacts" itemprop="headline" class="heading">Multiple jobs and artifacts <a class="anchor-link" href="#multiple-jobs-and-artifacts">#</a></h2>
+<h2 id="multiple-jobs-and-artifacts">Multiple jobs and artifacts</h2>
 <p>In real-world scenario, we would probably have multiple jobs that build and test different parts of the application.
 This is what I&rsquo;m doing to build and test the backend code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c">#https://github.com/chain-builds/builds/.github/workflows/build.yml</span><span class="w">
@@ -433,7 +211,7 @@ This is what I&rsquo;m doing to build and test the backend code:</p>
 </span></span></span><span class="line"><span class="cl"><span class="sd">          echo &#34;Deploying application&#34;
 </span></span></span><span class="line"><span class="cl"><span class="sd">          ls -la</span><span class="w">          
 </span></span></span></code></pre></div><p>This approach is quite straightforward: build and test code in parallel, upload artifacts, and then deploy everything once all jobs are completed.</p>
-<h2 id="keeping-workflows-next-to-source-code" itemprop="headline" class="heading">Keeping Workflows next to source code <a class="anchor-link" href="#keeping-workflows-next-to-source-code">#</a></h2>
+<h2 id="keeping-workflows-next-to-source-code">Keeping Workflows next to source code</h2>
 <p>Let&rsquo;s make it a bit more complicated. In my <code>chain-builds/micro-service</code> repository, I have a <code>build.yml</code> workflow that defines the build pipeline for this repository.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># https://github.com/chain-builds/micro-service/.github/workflows/build.yml</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#.. triggers omitted</span><span class="w">
@@ -467,110 +245,35 @@ This is what I&rsquo;m doing to build and test the backend code:</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">main</span><span class="w">
 </span></span></span></code></pre></div><p>These settings allow the workflow to be triggered manually, called by another workflow, or by pushing code to any branch other than <code>main</code>.
 The push to any feature branch will run this workflow independently of the Common Build Pipeline. This way only the source code of this Python service will be built and tested without the need to run the entire build pipeline.</p>
-<h2 id="summary" itemprop="headline" class="heading">Summary <a class="anchor-link" href="#summary">#</a></h2>
+<h2 id="summary">Summary</h2>
 <p>In this post, I demonstate how GitHub Actions can orchestrate complex build pipelines across multiple repositories.
 Any change pushed to <code>main</code> branch of any service repository triggers common build pipeline that is stored separately from these service repos.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2024-02-actions/common-build-pipeline.png'
-    alt='Common Build Pipeline'
-     title="Common Build Pipeline"
- 	/>
-</figure>
-</p>
+<p><img src="/images/2024-02-actions/common-build-pipeline.png" alt="Common Build Pipeline"></p>
 <p>This provides a single plane of glass overview of the CI/CD process for the multi-repository project.</p>
-<h2 id="disclosure" itemprop="headline" class="heading">Disclosure <a class="anchor-link" href="#disclosure">#</a></h2>
+<h2 id="disclosure">Disclosure</h2>
 <blockquote>
 <p>I&rsquo;m employed by GitHub at the time of writing this post. All opinions are my own.</p>
 </blockquote>
 
-				
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/github-actions/">Github-Actions</a></li>
+        <li><a href="/tags/multirepo/">Multirepo</a></li>
+        <li><a href="/tags/devops/">Devops</a></li>
+    </ul>
+  </div>
 
-				
-
-			</div>
-			
-			<div class="entry__footer">
-				
-<div class="post__tag">
-			<a href="/tags/github-actions/"># Github-Actions</a>
-			<a href="/tags/multirepo/"># Multirepo</a>
-			<a href="/tags/devops/"># Devops</a>
 </div>
-				
-				
 
-			</div>
-			
-			</div>
-		</div>
-	</article>
-	<div class="wrapper">
-		
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <p>Copyright 2024. All rights reserved.</p>
 
-
-
-	</div>
-	
-
-		</main>
-		<footer class="footer">
-<div class="footer__social">
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
-			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
-			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
-			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
-
-		</a>
-</div>
-	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
-</footer>
-	</div>
-	
-
-
-
-<script type="text/javascript" src="/js/bundle.min.js" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
-<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
-<script>
-    
-    
-    
-        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
-    
-
-    
-    
-    
-    
-
-    if ('serviceWorker' in navigator) {
-        const buildDate = "4/2/24";
-        navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
-            .then(function (registration) {
-                console.log('Service Worker Registered');
-            });
-
-        navigator.serviceWorker
-            .ready
-            .then(function (registration) {
-                console.log('Service Worker Ready');
-            });
-    }
-</script>
-
+  </footer>
 </body>
-
 </html>

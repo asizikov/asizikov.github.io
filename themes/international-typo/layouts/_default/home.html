@@ -1,0 +1,23 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{- $mainSections := .Site.Params.mainSections }}
+  {{- $pages := where .Site.RegularPages "Type" "in" $mainSections }}
+  {{- $pagesByYear := $pages.GroupByDate "2006" }}
+
+  {{ range $index, $yearGroup := $pagesByYear }}
+    <h1>{{ $yearGroup.Key }}</h1>
+    {{ range $yearGroup.Pages }}
+      <div class="international__typo__post__block">
+        <div class="international__typo__post__block__left">      
+          <div class="international__typo__post__block__left__date">
+            {{ .Date.Format "2006/01/02" }}
+          </div>
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        </div>
+        <div class="international__typo__post__block__right">      
+          {{ .Summary }}
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}

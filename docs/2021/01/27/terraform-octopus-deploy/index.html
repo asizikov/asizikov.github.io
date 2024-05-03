@@ -1,130 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-us">
-
+<html lang="en-us" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1da1f2">
-	<title>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy |  Anton Sizikov </title>
-	<meta name="description"
-		content="In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy.">
-	<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/img/avatar.webp" /><meta name="twitter:title" content="Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy"/>
-<meta name="twitter:description" content="In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy."/>
-      <meta name="twitter:site" content="@return_true"/>
-
-	<meta name="twitter:site" content="@return_true" />
-	<meta itemprop="name" content="Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy">
-<meta itemprop="description" content="In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy."><meta itemprop="datePublished" content="2021-01-27T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-01-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="733"><meta itemprop="image" content="/img/avatar.webp" />
-<meta itemprop="keywords" content="devops,octopus deploy,terraform," />
-	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
-	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="/manifest.json">
-	
-	<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"WebSite",
-	"name":"Anton Sizikov",
-	"url":"\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"potentialAction": {
-		"@type": "SearchAction",
-		"target": "https://wisnuwiry.space/search?q={search_term}",
-		"query-input": "required name=search_term"
-	}
-}
-</script>
-
-<script type='application/ld+json'>
-{
-	"@context": "http://www.schema.org",
-	"@type": "person",
-	"name": "",
-	"jobTitle": "",
-	"gender": "",
-	"url": "\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"image": "\/img\/avatar.jpeg",
-	"address": {
-		"@type": "PostalAddress",
-		"streetAddress": "Mayong, Jepara",
-		"addressLocality": "Jepara",
-		"addressRegion": "Jawa Tengah",
-		"addressCountry": "Indonesia"
-	},
-	"email": "",
-	"birthDate": "2003-01-31",
-	"birthPlace": "Jepara",
-	"nationality": "Indonesian"
-}
-</script>
-
-<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"BlogPosting",
-	"mainEntityOfPage":{
-		"@type":"WebPage",
-		"@id":"\/\/2021\/01\/27\/terraform-octopus-deploy\/"
-	},
-	"headline":"Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy",
-	"datePublished":"2021-01-27T00",
-	"dateModified":"2021-01-27T00",
-	"description":"In this post, I\u0026rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that\u0026rsquo;s pretty much the same) with Octopus Deploy.",
-	"isFamilyFriendly": "true",
-	"image": ["/img/avatar.jpeg"],
-	"wordCount" : "733",
-	"keywords": ["devops","octopus deploy","terraform"],
-	"genre": ["devops","octopus deploy","terraform"],
-	"accountablePerson": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"author": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"creator": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"publisher":{
-		"@type":"Organization",
-		"name":"", 
-		"logo": {
-			"@type": "imageObject",
-			"url": "\/img\/avatar.jpeg"
-		}
-	}
-}</script>
-
-
-	<meta content="" property="fb:admins">
-	<meta content="" property="fb:app_id">
-	<meta content="index,follow" name="googlebot">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta content="index,follow" name="googlebot">
 	<meta content="follow, all" name="Googlebot-Image">
 	<meta content="follow, all" name="Scooter">
 	<meta content="follow, all" name="msnbot">
@@ -142,177 +21,73 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	
+<title>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy | Anton Sizikov</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
 </head>
-
-<body class="">
-	<div class="site-container">
-		<header class="top" id="js-header">
-	<div class="terminal">
-    <a href="/" class="terminal__link">
-        <span class="terminal__user">anton-sizikov@localhost</span>:
-        <span class="terminal__prompt">~$</span>
-        <span class="terminal__path">/home/</span>        
-    </a>
-    <span class="terminal__cursor">_</span>
-</div>
-	
-	<nav class="navbar js-navbar">
-		<ul class="navbar__menu">
-			
-			
-				
-				<li>
-					<a href="/tags" target="_self">
-						📝 Tags
-					</a>
-				</li>
-				
-				
-				<li>
-					<a href="/about" target="_self">
-						😃 About
-					</a>
-				</li>
-				
-		</ul>
-		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
-		</button>
-	</nav>
-	<div class="search">
-	<button class="search__btn btn" aria-label="Switch Theme" id="toggle-theme">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-			<path id="icon-theme"></path>
-		</svg>
-	</button>
-</div>
-</header>
-
-		<main>
-			
-<div class="wrapper big-wrapper featured__box featured__box__img">
-	
-	
-	<div class="hero__content">
-		<h1>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</h1>
-	</div>
-	 
-	<p class="property">
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg> <time itemprop="datePublished" datetime="2021-01-27T00:00:00Z">January 27, 2021</time> 
-    </span>
-    <span>·</span>
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 4 min read
-    </span>
-</p>
-	
-</div>
-	
-	<article id="article" class="post__entry single grid wrapper big-wrapper">
-		<div class="main">
-		
-		<div class="entry__toc card">
-			
-<div id="toc__box" class="toc__box">
-    <div class="toc__list collapse">
-        <h3 class="toc__title" id="toc__toggle">
-            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
-            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
-        </h3>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#tools">Tools</a>
-      <ul>
-        <li><a href="#terraform">Terraform</a></li>
-        <li><a href="#octopus-deploy">Octopus Deploy</a></li>
-        <li><a href="#azure">Azure</a></li>
-        <li><a href="#azure-function">Azure Function</a></li>
-        <li><a href="#azure-devops">Azure DevOps</a></li>
-      </ul>
-    </li>
-    <li><a href="#init">Init</a></li>
-    <li><a href="#configuration">Configuration</a></li>
-    <li><a href="#configure-environment">Configure Environment</a></li>
-    <li><a href="#deployment-target">Deployment Target</a></li>
-    <li><a href="#project">Project</a></li>
-    <li><a href="#deployment-process">Deployment process</a></li>
-    <li><a href="#release">Release</a>
-      <ul>
-        <li><a href="#create-release-stage">Create Release stage</a></li>
-        <li><a href="#deploy-release-stage">Deploy release stage</a></li>
-      </ul>
-    </li>
-    <li><a href="#import">Import</a></li>
-  </ul>
-</nav>
+<body>
+  <header>
+    <div class="international__typo__header__layout">
+    <div class="international__typo__header__layout__left">
+        <span class="international__typo__header__layout_subdomain">
+            <a class="international__typo__header__home" href="/">blog.</a></span>
     </div>
+    <div class="international__typo__header__layout__right">
+        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
+        <span class="international__typo__header__layout__right__tld">.nl</span>
+    <div>                        
 </div>
 
-		</div>
-			<div>
-			<div class="entry__content">
-				<p>In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&rsquo;m going to use Configuration-as-Code approach with a brand new <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest" target="_blank" rel="noopener">Octopus provider for Terraform</a>.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/octopus-to-the-cloud.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+
+
+  </header>
+  <main>
+    <div class="international__typo__main__layout">
+      <div class="international__typo__main__layout__left"></div>
+      <div class="international__typo__main__layout__right">
+        <div class="international__typo__main__layout__right__content">
+        
+<div class="international__typo__post__content">
+  <h1>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</h1>
+
+  
+  
+  <h2>Published on: 
+  <time datetime="2021-01-27T00:00:00&#43;00:00">January 27, 2021</time></h2>
+
+  <p>In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&rsquo;m going to use Configuration-as-Code approach with a brand new <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest">Octopus provider for Terraform</a>.</p>
+<p><img src="/images/2021-01-tf/octopus-to-the-cloud.png" alt=""></p>
 <p>Buckle up and let&rsquo;s get started&hellip;</p>
-<h2 id="tools" itemprop="headline" class="heading">Tools <a class="anchor-link" href="#tools">#</a></h2>
-<h3 id="terraform" itemprop="headline" class="heading">Terraform <a class="anchor-link" href="#terraform">#</a></h3>
+<h2 id="tools">Tools</h2>
+<h3 id="terraform">Terraform</h3>
 <p>I&rsquo;m going to need <code>terraform</code> on my machine:</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/tf.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h3 id="octopus-deploy" itemprop="headline" class="heading">Octopus Deploy <a class="anchor-link" href="#octopus-deploy">#</a></h3>
-<p>For this post, I&rsquo;ve signed up for a <a href="https://octopus.com/start/cloud" target="_blank" rel="noopener">free tier of Octopus Deploy SaaS offering</a>. Of course, the self-hosted version will work as well.</p>
+<p><img src="/images/2021-01-tf/tf.png" alt=""></p>
+<h3 id="octopus-deploy">Octopus Deploy</h3>
+<p>For this post, I&rsquo;ve signed up for a <a href="https://octopus.com/start/cloud">free tier of Octopus Deploy SaaS offering</a>. Of course, the self-hosted version will work as well.</p>
 <p>When signed up and configured my account I can generate a new API key that I&rsquo;m going to use with Terraform</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/api-key.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+<p><img src="/images/2021-01-tf/api-key.png" alt=""></p>
 <p>All configuration is going to be made against the default Space (<code>Spaces-1</code>), however, that&rsquo;s configurable too.</p>
-<h3 id="azure" itemprop="headline" class="heading">Azure <a class="anchor-link" href="#azure">#</a></h3>
+<h3 id="azure">Azure</h3>
 <p>To connect Octopus Deploy with Azure I&rsquo;m going to need a Service Principal.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># (!) make sure to follow the principle of least privilege here </span>
 </span></span><span class="line"><span class="cl"><span class="c1"># and define the role and scope</span>
 </span></span><span class="line"><span class="cl">az ad sp create-for-rbac --name sp-octopus-deploy
 </span></span></code></pre></div><p>Grap the tenant Id, application Id, password, and subscription Id values. We&rsquo;ll heed them later.</p>
-<h3 id="azure-function" itemprop="headline" class="heading">Azure Function <a class="anchor-link" href="#azure-function">#</a></h3>
+<h3 id="azure-function">Azure Function</h3>
 <p>For the demo, I&rsquo;m going to use this super simple Azure Function that replies to your GET request with a list of headers supplied.</p>
-<p>The complete source code is <a href="https://github.com/asizikov/terraform-octopus-deploy/tree/main/src/echo_api" target="_blank" rel="noopener">published here</a>.</p>
+<p>The complete source code is <a href="https://github.com/asizikov/terraform-octopus-deploy/tree/main/src/echo_api">published here</a>.</p>
 <p>the <code>.csx</code> gist is the following</p>
 <script src="https://gist.github.com/asizikov/f06f44429255c87056eed034e3b589ef.js"></script>
 
-<h3 id="azure-devops" itemprop="headline" class="heading">Azure DevOps <a class="anchor-link" href="#azure-devops">#</a></h3>
+<h3 id="azure-devops">Azure DevOps</h3>
 <p>I&rsquo;m running the CI part in Azure DevOps.</p>
-<p>Project configuration is pretty simple and it&rsquo;s terraform set up <a href="https://github.com/asizikov/terraform-octopus-deploy/tree/main/infra/azure_devops" target="_blank" rel="noopener">can be found here</a>.</p>
-<p>the pipeline itself it <a href="https://github.com/asizikov/terraform-octopus-deploy/blob/main/build/pipeline.yaml" target="_blank" rel="noopener">here</a>.</p>
+<p>Project configuration is pretty simple and it&rsquo;s terraform set up <a href="https://github.com/asizikov/terraform-octopus-deploy/tree/main/infra/azure_devops">can be found here</a>.</p>
+<p>the pipeline itself it <a href="https://github.com/asizikov/terraform-octopus-deploy/blob/main/build/pipeline.yaml">here</a>.</p>
 <p>Nothing complicated:</p>
 <ul>
 <li>Build Azure Function</li>
@@ -321,155 +96,67 @@
 <li>Create new Octopus Deploy release</li>
 <li>Trigger the deployment</li>
 </ul>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/pipeline.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h2 id="init" itemprop="headline" class="heading">Init <a class="anchor-link" href="#init">#</a></h2>
-<p>Terraform provider is no different from other providers and can be found on <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest" target="_blank" rel="noopener">Terraform Registry</a></p>
+<p><img src="/images/2021-01-tf/pipeline.png" alt=""></p>
+<h2 id="init">Init</h2>
+<p>Terraform provider is no different from other providers and can be found on <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest">Terraform Registry</a></p>
 <script src="https://gist.github.com/asizikov/de5608266e39e4bd3656ee42971f4f9e.js"></script>
 
 <p>and <code>terraform init</code> will download missing files</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/init.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h2 id="configuration" itemprop="headline" class="heading">Configuration <a class="anchor-link" href="#configuration">#</a></h2>
+<p><img src="/images/2021-01-tf/init.png" alt=""></p>
+<h2 id="configuration">Configuration</h2>
 <p>For the demo, I&rsquo;m going to have this <code>terraform.tfvars</code> file to provide configuration values to Terraform.</p>
 <script src="https://gist.github.com/asizikov/527980e58759626fc4988833cc3a07e4.js"></script>
 
-<h2 id="configure-environment" itemprop="headline" class="heading">Configure Environment <a class="anchor-link" href="#configure-environment">#</a></h2>
-<p>Now we&rsquo;re ready to start. At first, I&rsquo;m going to configure a new <a href="https://octopus.com/docs/infrastructure/environments" target="_blank" rel="noopener">Environment</a>.</p>
+<h2 id="configure-environment">Configure Environment</h2>
+<p>Now we&rsquo;re ready to start. At first, I&rsquo;m going to configure a new <a href="https://octopus.com/docs/infrastructure/environments">Environment</a>.</p>
 <blockquote>
 <p>Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.</p>
 </blockquote>
 <script src="https://gist.github.com/asizikov/a36c0c2d6ef23f5aa412b7b7199a6f27.js"></script>
 
 <p>You&rsquo;d probably have more than one, but that&rsquo;ll do for now.</p>
-<h2 id="deployment-target" itemprop="headline" class="heading">Deployment Target <a class="anchor-link" href="#deployment-target">#</a></h2>
-<p>The next crucial part is <a href="https://octopus.com/docs/infrastructure/deployment-targets" target="_blank" rel="noopener">Deployment Target</a></p>
+<h2 id="deployment-target">Deployment Target</h2>
+<p>The next crucial part is <a href="https://octopus.com/docs/infrastructure/deployment-targets">Deployment Target</a></p>
 <blockquote>
 <p>With Octopus Deploy, you can deploy software to Windows servers, Linux servers, Microsoft Azure, AWS, Kubernetes clusters, cloud regions, or an offline package drop. Regardless of where you&rsquo;re deploying your software, these machines and services are known as your deployment targets.</p>
 </blockquote>
 <script src="https://gist.github.com/asizikov/f7c46cdc117a2f4fa8aa8709971ced5b.js"></script>
 
-<p>I&rsquo;m using <code>octopusdeploy_azure_web_app_deployment_target</code>, It&rsquo;s quite specific. I could have used a more generic <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest/docs/resources/deployment_target" target="_blank" rel="noopener"><code>octopusdeploy_deployment_target</code></a> instead.</p>
+<p>I&rsquo;m using <code>octopusdeploy_azure_web_app_deployment_target</code>, It&rsquo;s quite specific. I could have used a more generic <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest/docs/resources/deployment_target"><code>octopusdeploy_deployment_target</code></a> instead.</p>
 <p>This is where I link Azure (my Service Principal) with Octopus.</p>
 <p>Now we have a nice and clean infrastructure defined in Octopus.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/environment.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h2 id="project" itemprop="headline" class="heading">Project <a class="anchor-link" href="#project">#</a></h2>
-<p>The next step is to configure our <a href="https://octopus.com/docs/projects" target="_blank" rel="noopener">Project</a>.</p>
+<p><img src="/images/2021-01-tf/environment.png" alt=""></p>
+<h2 id="project">Project</h2>
+<p>The next step is to configure our <a href="https://octopus.com/docs/projects">Project</a>.</p>
 <blockquote>
 <p>Projects let you create and manage your deployment processes, releases, and runbooks from the Octopus REST API and Octopus Web Portal.</p>
 </blockquote>
 <script src="https://gist.github.com/asizikov/3c38307ef53cff53631edad17ece29a2.js"></script>
 
-<p>I&rsquo;m setting up an <code>Echo Api</code> project here, placing it into <code>Default Project Group</code> with the default <a href="https://octopus.com/docs/releases/lifecycles" target="_blank" rel="noopener">lifecycle</a>.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/project.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h2 id="deployment-process" itemprop="headline" class="heading">Deployment process <a class="anchor-link" href="#deployment-process">#</a></h2>
+<p>I&rsquo;m setting up an <code>Echo Api</code> project here, placing it into <code>Default Project Group</code> with the default <a href="https://octopus.com/docs/releases/lifecycles">lifecycle</a>.</p>
+<p><img src="/images/2021-01-tf/project.png" alt=""></p>
+<h2 id="deployment-process">Deployment process</h2>
 <p>And now the juicy part.</p>
 <script src="https://gist.github.com/asizikov/46cf47377155fef292da378d0cb0fdca.js"></script>
 
 <p>My deployment is not complicated actually, just one step that is picking up the package from a built-in feed and pushing it to my only environment.</p>
 <p>I wish all deployments were that simple&hellip;</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/process.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h2 id="release" itemprop="headline" class="heading">Release <a class="anchor-link" href="#release">#</a></h2>
+<p><img src="/images/2021-01-tf/process.png" alt=""></p>
+<h2 id="release">Release</h2>
 <p>Release creation process is driven by Azure DevOps pipeline. The process is split into two stages. <code>Release Creation</code> and <code>Deployment</code>.</p>
-<h3 id="create-release-stage" itemprop="headline" class="heading">Create Release stage <a class="anchor-link" href="#create-release-stage">#</a></h3>
+<h3 id="create-release-stage">Create Release stage</h3>
 <script src="https://gist.github.com/asizikov/2bbbcca82c0f05ad6ea42730c3b238b5.js"></script>
 
 <p>This stage uploads the build artifact to the built-in package feed, submits metadata and creates a new release.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/new-release.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h3 id="deploy-release-stage" itemprop="headline" class="heading">Deploy release stage <a class="anchor-link" href="#deploy-release-stage">#</a></h3>
+<p><img src="/images/2021-01-tf/new-release.png" alt=""></p>
+<h3 id="deploy-release-stage">Deploy release stage</h3>
 <p><code>OctopusDeployRelease</code> task will trigger a new deployment process</p>
 <script src="https://gist.github.com/asizikov/488aa1b1d3f9b6bd8dfd5a24c820e3dd.js"></script>
 
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/deployment.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
+<p><img src="/images/2021-01-tf/deployment.png" alt=""></p>
 <p>Voilà, it&rsquo;s up and running.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/2021-01-tf/running.png'
-    alt=''
-    
- 	/>
-</figure>
-</p>
-<h2 id="import" itemprop="headline" class="heading">Import <a class="anchor-link" href="#import">#</a></h2>
+<p><img src="/images/2021-01-tf/running.png" alt=""></p>
+<h2 id="import">Import</h2>
 <p>The neat part about Octopus Deploy is its resource ID&rsquo;s system. It&rsquo;s always easy to find the id of the object which makes it super easy to import existing resources into your terraform state.</p>
 <p>Let&rsquo;s assume that I already have an environment configured and I want to adopt it so that I can manage it with Terraform.</p>
 <pre tabindex="0"><code>https://cloud-eng.octopus.app/app#/Spaces-1/infrastructure/machines?environmentIds=Environments-7
@@ -480,89 +167,25 @@
 <p>this is such a breath of fresh air comparing to long and not so easy way to get Ids in Azure :)</p>
 <p>Happy provisioning!</p>
 
-				
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/devops/">Devops</a></li>
+        <li><a href="/tags/octopus-deploy/">Octopus Deploy</a></li>
+        <li><a href="/tags/terraform/">Terraform</a></li>
+    </ul>
+  </div>
 
-				
-
-			</div>
-			
-			<div class="entry__footer">
-				
-<div class="post__tag">
-			<a href="/tags/devops/"># Devops</a>
-			<a href="/tags/octopus-deploy/"># Octopus Deploy</a>
-			<a href="/tags/terraform/"># Terraform</a>
 </div>
-				
-				
 
-			</div>
-			
-			</div>
-		</div>
-	</article>
-	<div class="wrapper">
-		
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <p>Copyright 2024. All rights reserved.</p>
 
-
-
-	</div>
-	
-
-		</main>
-		<footer class="footer">
-<div class="footer__social">
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
-			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
-			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
-			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
-
-		</a>
-</div>
-	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
-</footer>
-	</div>
-	
-
-
-
-<script type="text/javascript" src="/js/bundle.min.js" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
-<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
-<script>
-    
-    
-    
-        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
-    
-
-    
-    
-    
-    
-
-    if ('serviceWorker' in navigator) {
-        const buildDate = "4/2/24";
-        navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
-            .then(function (registration) {
-                console.log('Service Worker Registered');
-            });
-
-        navigator.serviceWorker
-            .ready
-            .then(function (registration) {
-                console.log('Service Worker Ready');
-            });
-    }
-</script>
-
+  </footer>
 </body>
-
 </html>

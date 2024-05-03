@@ -1,130 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-us">
-
+<html lang="en-us" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1da1f2">
-	<title>Write code for the reviewer, not for the compiler |  Anton Sizikov </title>
-	<meta name="description"
-		content="I&rsquo;ve been doing code reviews on a daily basis for several years for now.">
-	<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/img/avatar.webp" /><meta name="twitter:title" content="Write code for the reviewer, not for the compiler"/>
-<meta name="twitter:description" content="I&rsquo;ve been doing code reviews on a daily basis for several years for now."/>
-      <meta name="twitter:site" content="@return_true"/>
-
-	<meta name="twitter:site" content="@return_true" />
-	<meta itemprop="name" content="Write code for the reviewer, not for the compiler">
-<meta itemprop="description" content="I&rsquo;ve been doing code reviews on a daily basis for several years for now."><meta itemprop="datePublished" content="2016-09-24T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2016-09-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1349"><meta itemprop="image" content="/img/avatar.webp" />
-<meta itemprop="keywords" content="programming," />
-	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
-	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="/manifest.json">
-	
-	<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"WebSite",
-	"name":"Anton Sizikov",
-	"url":"\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"potentialAction": {
-		"@type": "SearchAction",
-		"target": "https://wisnuwiry.space/search?q={search_term}",
-		"query-input": "required name=search_term"
-	}
-}
-</script>
-
-<script type='application/ld+json'>
-{
-	"@context": "http://www.schema.org",
-	"@type": "person",
-	"name": "",
-	"jobTitle": "",
-	"gender": "",
-	"url": "\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"image": "\/img\/avatar.jpeg",
-	"address": {
-		"@type": "PostalAddress",
-		"streetAddress": "Mayong, Jepara",
-		"addressLocality": "Jepara",
-		"addressRegion": "Jawa Tengah",
-		"addressCountry": "Indonesia"
-	},
-	"email": "",
-	"birthDate": "2003-01-31",
-	"birthPlace": "Jepara",
-	"nationality": "Indonesian"
-}
-</script>
-
-<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"BlogPosting",
-	"mainEntityOfPage":{
-		"@type":"WebPage",
-		"@id":"\/\/2016\/09\/24\/code-for-reviewer\/"
-	},
-	"headline":"Write code for the reviewer, not for the compiler",
-	"datePublished":"2016-09-24T00",
-	"dateModified":"2016-09-24T00",
-	"description":"I\u0026rsquo;ve been doing code reviews on a daily basis for several years for now.",
-	"isFamilyFriendly": "true",
-	"image": ["/img/avatar.jpeg"],
-	"wordCount" : "1349",
-	"keywords": ["programming"],
-	"genre": ["programming"],
-	"accountablePerson": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"author": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"creator": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"publisher":{
-		"@type":"Organization",
-		"name":"", 
-		"logo": {
-			"@type": "imageObject",
-			"url": "\/img\/avatar.jpeg"
-		}
-	}
-}</script>
-
-
-	<meta content="" property="fb:admins">
-	<meta content="" property="fb:app_id">
-	<meta content="index,follow" name="googlebot">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta content="index,follow" name="googlebot">
 	<meta content="follow, all" name="Googlebot-Image">
 	<meta content="follow, all" name="Scooter">
 	<meta content="follow, all" name="msnbot">
@@ -142,135 +21,54 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	
+<title>Write code for the reviewer, not for the compiler | Anton Sizikov</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
 </head>
-
-<body class="">
-	<div class="site-container">
-		<header class="top" id="js-header">
-	<div class="terminal">
-    <a href="/" class="terminal__link">
-        <span class="terminal__user">anton-sizikov@localhost</span>:
-        <span class="terminal__prompt">~$</span>
-        <span class="terminal__path">/home/</span>        
-    </a>
-    <span class="terminal__cursor">_</span>
-</div>
-	
-	<nav class="navbar js-navbar">
-		<ul class="navbar__menu">
-			
-			
-				
-				<li>
-					<a href="/tags" target="_self">
-						📝 Tags
-					</a>
-				</li>
-				
-				
-				<li>
-					<a href="/about" target="_self">
-						😃 About
-					</a>
-				</li>
-				
-		</ul>
-		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
-		</button>
-	</nav>
-	<div class="search">
-	<button class="search__btn btn" aria-label="Switch Theme" id="toggle-theme">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-			<path id="icon-theme"></path>
-		</svg>
-	</button>
-</div>
-</header>
-
-		<main>
-			
-<div class="wrapper big-wrapper featured__box featured__box__img">
-	
-	
-	<div class="hero__content">
-		<h1>Write code for the reviewer, not for the compiler</h1>
-	</div>
-	 
-	<p class="property">
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg> <time itemprop="datePublished" datetime="2016-09-24T00:00:00Z">September 24, 2016</time> 
-    </span>
-    <span>·</span>
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 7 min read
-    </span>
-</p>
-	
-</div>
-	
-	<article id="article" class="post__entry single grid wrapper big-wrapper">
-		<div class="main">
-		
-		<div class="entry__toc card">
-			
-<div id="toc__box" class="toc__box">
-    <div class="toc__list collapse">
-        <h3 class="toc__title" id="toc__toggle">
-            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
-            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
-        </h3>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#problem">Problem</a></li>
-    <li><a href="#getting-simpler">Getting simpler</a>
-      <ul>
-        <li><a href="#argument-names">Argument names</a></li>
-        <li><a href="#explicit-variable-type">Explicit variable type</a></li>
-        <li><a href="#generic-parameter-type">Generic parameter type</a></li>
-        <li><a href="#this-qualifier">this qualifier</a></li>
-      </ul>
-    </li>
-    <li><a href="#final-look">Final look</a></li>
-  </ul>
-</nav>
+<body>
+  <header>
+    <div class="international__typo__header__layout">
+    <div class="international__typo__header__layout__left">
+        <span class="international__typo__header__layout_subdomain">
+            <a class="international__typo__header__home" href="/">blog.</a></span>
     </div>
+    <div class="international__typo__header__layout__right">
+        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
+        <span class="international__typo__header__layout__right__tld">.nl</span>
+    <div>                        
 </div>
 
-		</div>
-			<div>
-			<div class="entry__content">
-				<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/matrix.png'
-    alt='Code'
-     title="Code"
- 	/>
-</figure>
-</p>
+
+
+  </header>
+  <main>
+    <div class="international__typo__main__layout">
+      <div class="international__typo__main__layout__left"></div>
+      <div class="international__typo__main__layout__right">
+        <div class="international__typo__main__layout__right__content">
+        
+<div class="international__typo__post__content">
+  <h1>Write code for the reviewer, not for the compiler</h1>
+
+  
+  
+  <h2>Published on: 
+  <time datetime="2016-09-24T00:00:00&#43;00:00">September 24, 2016</time></h2>
+
+  <p><img src="/images/code-for-reviewer/matrix.png" alt="Code"></p>
 <p>I&rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.</p>
 <p>Most of the time I try to understand, debug, fix or update existing code. Less often developers write new code from scratch.  I think it&rsquo;s safe to say that we all know how to work with a code written by another human.</p>
 <p>One might want to say that if we know how to work with other people&rsquo;s code, we can be good at reading and understanding it during the code review process.</p>
 <p>Unfortunately, there is a difference. When we work with a code we have it opened in our editor or IDE. It doesn&rsquo;t matter if it&rsquo;s a modern heavy IDE or a lightweight editor. What&rsquo;s important is that this is a tool which we are familiar with.</p>
 <p>We know how to get extra information about any line code on the screen. In my case, it&rsquo;s a Visual Studio with ReSharper and several more extensions. I have color coded info, I have tooltips and I can navigate through the code.</p>
 <p>However, when reviewing a Pull Request on GitHub I have just a basic syntax highlighting in the editor.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/nancy-pr.png'
-    alt='Pull Request sample'
-     title="Pull Request sample"
- 	/>
-</figure>
-</p>
-<h2 id="problem" itemprop="headline" class="heading">Problem <a class="anchor-link" href="#problem">#</a></h2>
+<p><img src="/images/code-for-reviewer/nancy-pr.png" alt="Pull Request sample"></p>
+<h2 id="problem">Problem</h2>
 <p>Modern programming languages allow a developer to skip some symbols and take some shortcuts. It&rsquo;s different for every language, I&rsquo;ll use C# as an example in this post.</p>
 <p>Let&rsquo;s look at this snippet:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">ProcessSomething</span><span class="p">(</span><span class="n">Guid</span> <span class="n">accountId</span><span class="p">)</span>
@@ -293,36 +91,14 @@ After that the result is passed to the instance method <strong>CalculateFees</st
 </blockquote>
 <p>That&rsquo;s a lot of information, right? We know types, parameter names, we know that methods and properties are not static and so on.</p>
 <p>We still don&rsquo;t know what type <code>Yesterday</code> is, but the rest is clear. We have plenty of information about the logic of the method as well as about types and even some details about <code>GetAccountBalanceAsAtDate</code> method signature.</p>
-<h2 id="getting-simpler" itemprop="headline" class="heading">Getting simpler <a class="anchor-link" href="#getting-simpler">#</a></h2>
+<h2 id="getting-simpler">Getting simpler</h2>
 <p>When I look at this code in my IDE I see that some code is marked as redundant (grayed out):</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/redundant-code.png'
-    alt='Same Code in IDE'
-     title="Same Code in IDE"
- 	/>
-</figure>
-</p>
+<p><img src="/images/code-for-reviewer/redundant-code.png" alt="Same Code in IDE"></p>
 <p>What if I apply suggested &ldquo;Remove redundant code&rdquo; refactorings? We&rsquo;d loose some information about this method. I&rsquo;m going to be careful here.</p>
-<h3 id="argument-names" itemprop="headline" class="heading">Argument names <a class="anchor-link" href="#argument-names">#</a></h3>
+<h3 id="argument-names">Argument names</h3>
 <p>Explicit argument names here are probably the least important information. Even more, it&rsquo;s a bit misleading. Are the arguments optional or not? We don&rsquo;t know that. (Well, I do know, and they are not optional).</p>
 <p>Let&rsquo;s remove them:</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/redundant-code-no-args-names.png'
-    alt='Code in IDE, argument names omitted'
-     title="Code in IDE, argument names omitted"
- 	/>
-</figure>
-</p>
+<p><img src="/images/code-for-reviewer/redundant-code-no-args-names.png" alt="Code in IDE, argument names omitted"></p>
 <p>I&rsquo;m going to repeat our exercise one more time:</p>
 <blockquote>
 <p>This method takes an account id (GUID). First it calls the <strong>GetAccountBalanceAsAtDate</strong> generic method with <strong>Guid</strong> generic parameter. This method is an instance method of field <strong>balanceCalculator</strong>.
@@ -332,41 +108,19 @@ There are two parameters passed to that method. The first one is an account id, 
 After that the result is passed to the instance method <strong>CalculateFees</strong>.</p>
 </blockquote>
 <p>Hm, looks like we didn&rsquo;t lose much information, right?</p>
-<h3 id="explicit-variable-type" itemprop="headline" class="heading">Explicit variable type <a class="anchor-link" href="#explicit-variable-type">#</a></h3>
+<h3 id="explicit-variable-type">Explicit variable type</h3>
 <p>When reviewing this snippet we don&rsquo;t know much about <code>AccountBalance</code> type. Is it a <code>struct</code> or a <code>class</code>? What kind of data does it contain?</p>
 <p>In fact, we can just omit the type declaration here.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/redundant-code-use-var.png'
-    alt='Code in IDE, use var instead of Explicit type'
-     title="Code in IDE, use var instead of Explicit type"
- 	/>
-</figure>
-</p>
+<p><img src="/images/code-for-reviewer/redundant-code-use-var.png" alt="Code in IDE, use var instead of Explicit type"></p>
 <p>So far so good. We don&rsquo;t know the type, but we do know that the type is correct. We were able to pass it to <code>CalculateFees</code> method, and our code compiles.</p>
-<h3 id="generic-parameter-type" itemprop="headline" class="heading">Generic parameter type <a class="anchor-link" href="#generic-parameter-type">#</a></h3>
+<h3 id="generic-parameter-type">Generic parameter type</h3>
 <p>What kind of information could the reviewer gather from the explicit generic parameter type specification?</p>
 <p>Honestly, I don&rsquo;t know. Perhaps we can figure out that the method <strong>is</strong> generic. Well, good to know, but as long as the compiler can build the code, it doesn&rsquo;t matter for the reviewer.</p>
 <p>After all the reviewer is not trying to catch compilation errors, eh?</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/redundant-code-no-generic-type.png'
-    alt='Code in IDE, implicit generic parameter type'
-     title="Code in IDE, implicit generic parameter type"
- 	/>
-</figure>
-</p>
-<h3 id="this-qualifier" itemprop="headline" class="heading">this qualifier <a class="anchor-link" href="#this-qualifier">#</a></h3>
+<p><img src="/images/code-for-reviewer/redundant-code-no-generic-type.png" alt="Code in IDE, implicit generic parameter type"></p>
+<h3 id="this-qualifier">this qualifier</h3>
 <p>This is a very painful moment.</p>
-<p>There is a StyleCope rule <a href="http://stylecop.soyuz5.com/SA1101.html" target="_blank" rel="noopener">SA1101: PrefixLocalCallsWithThis</a> which originally <a href="https://blogs.msdn.microsoft.com/sourceanalysis/2008/05/25/a-brief-history-of-c-style/" target="_blank" rel="noopener">aimed against underscore prefixes</a> for instance variables.</p>
+<p>There is a StyleCope rule <a href="http://stylecop.soyuz5.com/SA1101.html">SA1101: PrefixLocalCallsWithThis</a> which originally <a href="https://blogs.msdn.microsoft.com/sourceanalysis/2008/05/25/a-brief-history-of-c-style/">aimed against underscore prefixes</a> for instance variables.</p>
 <p>First of, all we should understand, that the compiler does know that <code>CalculateFees()</code> is an instance method of the current class. It does know where <code>DateUtils</code> comes from.</p>
 <p>Honestly, how often do you need to know if <code>balanceCalculator</code> is an instance variable? That might be important when you editing the code. Not very often, but I can buy this argument.</p>
 <p>But is that important during the code review? I&rsquo;d say that it&rsquo;s not. Id doesn&rsquo;t matter for this method. The method is short enough so we can see that <code>balanceCalculator</code> is not declared inside the method.
@@ -378,35 +132,13 @@ If the method was longer, it would not be important anyway. What&rsquo;s importa
 </span></span><span class="line"><span class="cl"><span class="n">Foo</span><span class="p">(</span><span class="n">Barrr</span><span class="p">.</span><span class="n">Car</span><span class="p">);</span>
 </span></span></code></pre></div><p>Each <code>*.Car</code> could be either a property of current class instance property or a static property of another class or an enum value. <code>this.</code> qualifier will help us with the first option, but that&rsquo;s it.</p>
 <p>In your IDE you&rsquo;ll spend a second to find out, right? I&rsquo;ll use color codes:</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/color-codes.png'
-    alt='Code in IDE, no redundant code'
-     title="Code in IDE, no redundant code"
- 	/>
-</figure>
-</p>
+<p><img src="/images/code-for-reviewer/color-codes.png" alt="Code in IDE, no redundant code"></p>
 <p>You can hover or navigate to it. Doesn&rsquo;t really matter.</p>
 <p>When you read this code as a plain text you can only tell that the method <code>Foo</code> is doing something with the car. You have lost some information, and you only have a semantics of the code here.</p>
 <p>And this is just fine. You can focus on what the code does, not on how it does. The &ldquo;how&rdquo; part is checked by the compiler.</p>
 <p>It requires some courage, but I&rsquo;m going to remove all <code>this.</code> prefixes.</p>
-<h2 id="final-look" itemprop="headline" class="heading">Final look <a class="anchor-link" href="#final-look">#</a></h2>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/no-redundant.png'
-    alt='Code in IDE, no redundant code'
-     title="Code in IDE, no redundant code"
- 	/>
-</figure>
-</p>
+<h2 id="final-look">Final look</h2>
+<p><img src="/images/code-for-reviewer/no-redundant.png" alt="Code in IDE, no redundant code"></p>
 <p>So, what do we have here? As we learned, as a reviewer we need to focus on the logic, and we shouldn&rsquo;t try to chase any errors which can be caught by the compiler.</p>
 <p>Let&rsquo;s read it one more time:</p>
 <blockquote>
@@ -416,102 +148,27 @@ The result of that method call is used as a parameter for  <strong>CalculateFees
 <p>Now scroll up and compare with the first attempt. Much shorter, right?</p>
 <p>Ok, the reviewer has no information about types, about the nature of methods and properties. They do not know what <code>DayUtils</code> is. It might be an <code>enum</code>, or a static class or anything else.</p>
 <p>The only information that reviewer has is the logic of the method. And now they can focus on it because that&rsquo;s what is important here after all. The logic, not the AST structure.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/code-for-reviewer/review.png'
-    alt='Review '
-     title="Review "
- 	/>
-</figure>
-</p>
+<p><img src="/images/code-for-reviewer/review.png" alt="Review "></p>
 <p>Please, let the compiler to its job, and help the reviewer focus on what <strong>does</strong> matter here.</p>
 <p>Feel free to comment on this if you agree or disagree.</p>
 
-				
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/programming/">Programming</a></li>
+    </ul>
+  </div>
 
-				
-
-			</div>
-			
-			<div class="entry__footer">
-				
-<div class="post__tag">
-			<a href="/tags/programming/"># Programming</a>
 </div>
-				
-				
 
-			</div>
-			
-			</div>
-		</div>
-	</article>
-	<div class="wrapper">
-		
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <p>Copyright 2024. All rights reserved.</p>
 
-
-
-	</div>
-	
-
-		</main>
-		<footer class="footer">
-<div class="footer__social">
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
-			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
-			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
-			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
-
-		</a>
-</div>
-	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
-</footer>
-	</div>
-	
-
-
-
-<script type="text/javascript" src="/js/bundle.min.js" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
-<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
-<script>
-    
-    
-    
-        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
-    
-
-    
-    
-    
-    
-
-    if ('serviceWorker' in navigator) {
-        const buildDate = "4/2/24";
-        navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
-            .then(function (registration) {
-                console.log('Service Worker Registered');
-            });
-
-        navigator.serviceWorker
-            .ready
-            .then(function (registration) {
-                console.log('Service Worker Ready');
-            });
-    }
-</script>
-
+  </footer>
 </body>
-
 </html>

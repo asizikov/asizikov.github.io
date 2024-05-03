@@ -1,130 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-us">
-
+<html lang="en-us" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1da1f2">
-	<title>Sharing ReSharper settings and Live Templates |  Anton Sizikov </title>
-	<meta name="description"
-		content="In my previous post I&rsquo;ve described how to create your own Live Templates for ReSharper.">
-	<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/img/avatar.webp" /><meta name="twitter:title" content="Sharing ReSharper settings and Live Templates"/>
-<meta name="twitter:description" content="In my previous post I&rsquo;ve described how to create your own Live Templates for ReSharper."/>
-      <meta name="twitter:site" content="@return_true"/>
-
-	<meta name="twitter:site" content="@return_true" />
-	<meta itemprop="name" content="Sharing ReSharper settings and Live Templates">
-<meta itemprop="description" content="In my previous post I&rsquo;ve described how to create your own Live Templates for ReSharper."><meta itemprop="datePublished" content="2015-07-05T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2015-07-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="509"><meta itemprop="image" content="/img/avatar.webp" />
-<meta itemprop="keywords" content="resharper,programming," />
-	<link rel="stylesheet" href="/css/bundle.min.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-	<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
-	<meta name="msapplication-TileColor" content="#1da1f2">
-	<link rel="manifest" href="/manifest.json">
-	
-	<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"WebSite",
-	"name":"Anton Sizikov",
-	"url":"\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"potentialAction": {
-		"@type": "SearchAction",
-		"target": "https://wisnuwiry.space/search?q={search_term}",
-		"query-input": "required name=search_term"
-	}
-}
-</script>
-
-<script type='application/ld+json'>
-{
-	"@context": "http://www.schema.org",
-	"@type": "person",
-	"name": "",
-	"jobTitle": "",
-	"gender": "",
-	"url": "\/",
-	"sameAs":[
-		"https://twitter.com/return_true",
-		"https://gitlab.com/",
-		"https://linkedin.com/in/sizikov",
-		"https://t.me/"
-		],
-	"image": "\/img\/avatar.jpeg",
-	"address": {
-		"@type": "PostalAddress",
-		"streetAddress": "Mayong, Jepara",
-		"addressLocality": "Jepara",
-		"addressRegion": "Jawa Tengah",
-		"addressCountry": "Indonesia"
-	},
-	"email": "",
-	"birthDate": "2003-01-31",
-	"birthPlace": "Jepara",
-	"nationality": "Indonesian"
-}
-</script>
-
-<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"BlogPosting",
-	"mainEntityOfPage":{
-		"@type":"WebPage",
-		"@id":"\/\/2015\/07\/05\/sharing-resharper-settings\/"
-	},
-	"headline":"Sharing ReSharper settings and Live Templates",
-	"datePublished":"2015-07-05T00",
-	"dateModified":"2015-07-05T00",
-	"description":"In my previous post I\u0026rsquo;ve described how to create your own Live Templates for ReSharper.",
-	"isFamilyFriendly": "true",
-	"image": ["/img/avatar.jpeg"],
-	"wordCount" : "509",
-	"keywords": ["resharper","programming"],
-	"genre": ["resharper","programming"],
-	"accountablePerson": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"author": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"creator": {
-		"@type": "Person",
-		"name": "",
-		"url": ""
-	},
-	"publisher":{
-		"@type":"Organization",
-		"name":"", 
-		"logo": {
-			"@type": "imageObject",
-			"url": "\/img\/avatar.jpeg"
-		}
-	}
-}</script>
-
-
-	<meta content="" property="fb:admins">
-	<meta content="" property="fb:app_id">
-	<meta content="index,follow" name="googlebot">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta content="index,follow" name="googlebot">
 	<meta content="follow, all" name="Googlebot-Image">
 	<meta content="follow, all" name="Scooter">
 	<meta content="follow, all" name="msnbot">
@@ -142,131 +21,55 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	
+<title>Sharing ReSharper settings and Live Templates | Anton Sizikov</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
 </head>
-
-<body class="">
-	<div class="site-container">
-		<header class="top" id="js-header">
-	<div class="terminal">
-    <a href="/" class="terminal__link">
-        <span class="terminal__user">anton-sizikov@localhost</span>:
-        <span class="terminal__prompt">~$</span>
-        <span class="terminal__path">/home/</span>        
-    </a>
-    <span class="terminal__cursor">_</span>
-</div>
-	
-	<nav class="navbar js-navbar">
-		<ul class="navbar__menu">
-			
-			
-				
-				<li>
-					<a href="/tags" target="_self">
-						📝 Tags
-					</a>
-				</li>
-				
-				
-				<li>
-					<a href="/about" target="_self">
-						😃 About
-					</a>
-				</li>
-				
-		</ul>
-		<button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span>
-		</button>
-	</nav>
-	<div class="search">
-	<button class="search__btn btn" aria-label="Switch Theme" id="toggle-theme">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-			<path id="icon-theme"></path>
-		</svg>
-	</button>
-</div>
-</header>
-
-		<main>
-			
-<div class="wrapper big-wrapper featured__box featured__box__img">
-	
-	
-	<div class="hero__content">
-		<h1>Sharing ReSharper settings and Live Templates</h1>
-	</div>
-	 
-	<p class="property">
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg> <time itemprop="datePublished" datetime="2015-07-05T00:00:00Z">July 05, 2015</time> 
-    </span>
-    <span>·</span>
-    <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 3 min read
-    </span>
-</p>
-	
-</div>
-	
-	<article id="article" class="post__entry single grid wrapper big-wrapper">
-		<div class="main">
-		
-		<div class="entry__toc card">
-			
-<div id="toc__box" class="toc__box">
-    <div class="toc__list collapse">
-        <h3 class="toc__title" id="toc__toggle">
-            <span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span style="margin-left: 20px;">TABLE OF CONTENT</span></span>
-            <span class="toc__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></span>
-        </h3>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#exporting-settings">Exporting settings</a></li>
-    <li><a href="#creating-nuget-package">Creating NuGet package</a></li>
-    <li><a href="#publishing-nuget-package">Publishing NuGet package</a></li>
-    <li><a href="#using-custom-nuget-feed">Using custom NuGet feed</a></li>
-    <li><a href="#installing-the-extension">Installing the extension</a></li>
-  </ul>
-</nav>
+<body>
+  <header>
+    <div class="international__typo__header__layout">
+    <div class="international__typo__header__layout__left">
+        <span class="international__typo__header__layout_subdomain">
+            <a class="international__typo__header__home" href="/">blog.</a></span>
     </div>
+    <div class="international__typo__header__layout__right">
+        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
+        <span class="international__typo__header__layout__right__tld">.nl</span>
+    <div>                        
 </div>
 
-		</div>
-			<div>
-			<div class="entry__content">
-				<p>In my <a href="/2015/06/27/resharper-custom-live-templates">previous post</a> I&rsquo;ve described how to create your own Live Templates for ReSharper. Today I&rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.</p>
-<p>All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper <a href="https://resharper-plugins.jetbrains.com/packages" target="_blank" rel="noopener">NuGet feed</a> or to your own company&rsquo;s private feed (in case you want to keep it away from the rest of the world).</p>
-<h2 id="exporting-settings" itemprop="headline" class="heading">Exporting settings <a class="anchor-link" href="#exporting-settings">#</a></h2>
+
+
+  </header>
+  <main>
+    <div class="international__typo__main__layout">
+      <div class="international__typo__main__layout__left"></div>
+      <div class="international__typo__main__layout__right">
+        <div class="international__typo__main__layout__right__content">
+        
+<div class="international__typo__post__content">
+  <h1>Sharing ReSharper settings and Live Templates</h1>
+
+  
+  
+  <h2>Published on: 
+  <time datetime="2015-07-05T00:00:00&#43;00:00">July 5, 2015</time></h2>
+
+  <p>In my <a href="/2015/06/27/resharper-custom-live-templates">previous post</a> I&rsquo;ve described how to create your own Live Templates for ReSharper. Today I&rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.</p>
+<p>All the plug-ins for ReSharper are regular NuGet packages. That means that we can pack and publish it to the official ReSharper <a href="https://resharper-plugins.jetbrains.com/packages">NuGet feed</a> or to your own company&rsquo;s private feed (in case you want to keep it away from the rest of the world).</p>
+<h2 id="exporting-settings">Exporting settings</h2>
 <p>Go to RESHARPER-&gt;Manage Options menu.</p>
 <p>Select the settings layer, which you would like to export.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/resharper-settings-plugin/manage-options.png'
-    alt='Manage Options'
-     title="Manage Options"
- 	/>
-</figure>
-</p>
+<p><img src="/images/resharper-settings-plugin/manage-options.png" alt="Manage Options"></p>
 <p>Click Import/Export settings</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/resharper-settings-plugin/export-settings-and-templates.png'
-    alt='Export Settings'
-     title="Export Settings"
- 	/>
-</figure>
-</p>
+<p><img src="/images/resharper-settings-plugin/export-settings-and-templates.png" alt="Export Settings"></p>
 <p>In the Export To File dialog window select Code Style and Live templates tree nodes. Then choose the directory and file name for your DotSettings file.</p>
-<h2 id="creating-nuget-package" itemprop="headline" class="heading">Creating NuGet package <a class="anchor-link" href="#creating-nuget-package">#</a></h2>
+<h2 id="creating-nuget-package">Creating NuGet package</h2>
 <p>Once the settings file is exported to the Settings folder we might want to create a NuGet package.
 The .nuspec file for ReSharper 8.2 looks like the following:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
@@ -304,160 +107,52 @@ The .nuspec file for ReSharper 8.2 looks like the following:</p>
 </span></span><span class="line"><span class="cl">    <span class="na">target=</span><span class="s">&#34;DotFiles\Extensions\YourCompany.Settings\settings\&#34;</span> <span class="nt">/&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;/files&gt;</span></span></span></code></pre></div>
 <p>Where &ldquo;YourCompany.Settings&rdquo; is a NuGet package id.</p>
-<p>To build the package we need the command line tool <a href="http://docs.nuget.org/consume/installing-nuget" target="_blank" rel="noopener">NuGet.exe</a></p>
+<p>To build the package we need the command line tool <a href="http://docs.nuget.org/consume/installing-nuget">NuGet.exe</a></p>
 <p>Ok, now we&rsquo;re ready to execute the command:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nuget.exe pack nuspec-file-name.nuspec</span></span></code></pre></div></p>
 <p>If everything is set up correctly you will get the &ldquo;YourCompany.Settings.1.0.0.nupkg&rdquo; file as an output.</p>
-<h2 id="publishing-nuget-package" itemprop="headline" class="heading">Publishing NuGet package <a class="anchor-link" href="#publishing-nuget-package">#</a></h2>
+<h2 id="publishing-nuget-package">Publishing NuGet package</h2>
 <p>As I mentioned before ReSharper can consume four different NuGet feeds.</p>
 <ol>
 <li>Official plug-in feed from JetBrains</li>
-<li>Any custom in-house NuGet server (like <a href="http://inedo.com/proget/overview" target="_blank" rel="noopener">ProGet</a>)</li>
+<li>Any custom in-house NuGet server (like <a href="http://inedo.com/proget/overview">ProGet</a>)</li>
 <li>TeamCity artifacts feed</li>
 <li>Local or shared network file system directory</li>
 </ol>
 <p>Publishing the plug-in to the NuGet server is a straightforward process and typically it&rsquo;s the same as publishing the regular NuGet package to the NuGet.org web site.</p>
 <p>NB. ReSharper is not so good when it comes to NuGet feed with authentication.</p>
 <p>For the demo purpose I&rsquo;ll use the file system. Just place the .nupkg to the folder which is accessible from every team member&rsquo;s computer.</p>
-<h2 id="using-custom-nuget-feed" itemprop="headline" class="heading">Using custom NuGet feed <a class="anchor-link" href="#using-custom-nuget-feed">#</a></h2>
+<h2 id="using-custom-nuget-feed">Using custom NuGet feed</h2>
 <p>Once the package is published go to RESHARPER -&gt; Options&hellip;-&gt;Environment -&gt; Extension Manager.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/resharper-settings-plugin/options-environment.png'
-    alt='Manage Options'
-     title="Manage Options"
- 	/>
-</figure>
-</p>
+<p><img src="/images/resharper-settings-plugin/options-environment.png" alt="Manage Options"></p>
 <p>Click Add and enter any name you want for the Name and the path of the Artifacts, NuGet feed or directory for the Source.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/resharper-settings-plugin/gallery-save.png'
-    alt='Set up new feed'
-     title="Set up new feed"
- 	/>
-</figure>
-</p>
-<h2 id="installing-the-extension" itemprop="headline" class="heading">Installing the extension <a class="anchor-link" href="#installing-the-extension">#</a></h2>
+<p><img src="/images/resharper-settings-plugin/gallery-save.png" alt="Set up new feed"></p>
+<h2 id="installing-the-extension">Installing the extension</h2>
 <p>In Visual Studio go to RESHARPER -&gt; Extension Manager</p>
 <p>Search for the package name, select the package with settings and click Install.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/resharper-settings-plugin/custom-plug-in.png'
-    alt='Install the plug-in'
-     title="Install the plug-in"
- 	/>
-</figure>
-</p>
+<p><img src="/images/resharper-settings-plugin/custom-plug-in.png" alt="Install the plug-in"></p>
 <p>If we check the Manage Options dialog we&rsquo;ll find the new settings layer.</p>
-<p><figure class="post__image">
-	<img 
-	itemprop="image"
-	class="lazyload post__image" 
-    data-sizes="auto"
-    src="/img/placeholder.svg"
-    data-src='/images/resharper-settings-plugin/new-settings-layer.png'
-    alt='New settings layer'
-     title="New settings layer"
- 	/>
-</figure>
-</p>
+<p><img src="/images/resharper-settings-plugin/new-settings-layer.png" alt="New settings layer"></p>
 <p>Every team member now can use the same version of formatter settings. Since we distribute them as an extension ReSharper will automatically show a notification when a new version is available.</p>
 
-				
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/resharper/">Resharper</a></li>
+        <li><a href="/tags/programming/">Programming</a></li>
+    </ul>
+  </div>
 
-				
-
-			</div>
-			
-			<div class="entry__footer">
-				
-<div class="post__tag">
-			<a href="/tags/resharper/"># Resharper</a>
-			<a href="/tags/programming/"># Programming</a>
 </div>
-				
-				
 
-			</div>
-			
-			</div>
-		</div>
-	</article>
-	<div class="wrapper">
-		
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <p>Copyright 2024. All rights reserved.</p>
 
-
-
-	</div>
-	
-
-		</main>
-		<footer class="footer">
-<div class="footer__social">
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/return_true">
-			<svg class="social__icon" aria-label="Twitter" viewBox="0 0 24.999 20.316"><path d="M25 2.405a10.253 10.253 0 0 1-2.947.808A5.144 5.144 0 0 0 24.308.376 10.27 10.27 0 0 1 21.05 1.62a5.134 5.134 0 0 0-8.74 4.68A14.56 14.56 0 0 1 1.74.94a5.134 5.134 0 0 0 1.587 6.846 5.108 5.108 0 0 1-2.323-.642v.064a5.132 5.132 0 0 0 4.114 5.03 5.142 5.142 0 0 1-2.316.088 5.134 5.134 0 0 0 4.79 3.562 10.29 10.29 0 0 1-6.37 2.2A10.44 10.44 0 0 1 0 18.012a14.586 14.586 0 0 0 22.454-12.29q0-.333-.015-.662A10.423 10.423 0 0 0 25 2.405z" /></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sizikov">
-			<svg class="social__icon" aria-label="LinkedIn" role="img" viewBox="0 0 34.48 32"><path d="M29.632,0H2.362A2.336,2.336,0,0,0,0,2.306V29.691A2.337,2.337,0,0,0,2.362,32h27.27A2.342,2.342,0,0,0,32,29.691V2.306A2.34,2.34,0,0,0,29.632,0ZM9.491,27.268H4.744V12H9.491ZM7.119,9.909a2.752,2.752,0,1,1,2.75-2.753A2.753,2.753,0,0,1,7.119,9.909ZM27.268,27.268H22.525V19.842c0-1.772-.033-4.05-2.466-4.05-2.47,0-2.848,1.929-2.848,3.921v7.555H12.468V12h4.553v2.086h.063a4.986,4.986,0,0,1,4.491-2.467c4.806,0,5.694,3.163,5.694,7.275Z"/></svg>
-
-		</a>
-		<a itemprop="sameAs" class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/asizikov">
-			<svg class="social__icon" aria-label="Github" role="img" viewBox="0 0 25 25"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" /></svg>
-
-		</a>
-</div>
-	<div class="footer__copyright">© 2024 <a href="https://blog.cloud-eng.nl">Anton Sizikov</a> <span class="footer__copyright-credits"></span> | Created with ❤️ <a href="//gohugo.io">Hugo</a></div>
-</footer>
-	</div>
-	
-
-
-
-<script type="text/javascript" src="/js/bundle.min.js" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
-<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
-<script>
-    
-    
-    
-        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
-    
-
-    
-    
-    
-    
-
-    if ('serviceWorker' in navigator) {
-        const buildDate = "4/2/24";
-        navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
-            .then(function (registration) {
-                console.log('Service Worker Registered');
-            });
-
-        navigator.serviceWorker
-            .ready
-            .then(function (registration) {
-                console.log('Service Worker Ready');
-            });
-    }
-</script>
-
+  </footer>
 </body>
-
 </html>
