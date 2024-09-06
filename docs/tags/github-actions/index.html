@@ -56,16 +56,19 @@
   
   
     <h2><a href="/2024/04/01/github-actions-mulitrepo/">GitHub Actions: Unified Build Pipeline for Multi-Repo Application</a></h2>
-    Common Misconceptions about GitHub Actions The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.
+    <h2 id="common-misconceptions-about-github-actions">Common Misconceptions about GitHub Actions</h2>
+<p>The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.
+They expressed a concern that GitHub Actions does not work well in multi-repo setup; they were used to having build pipelines separate from the source code distributed across multiple repositories.</p>
   
     <h2><a href="/2023/01/23/ghcr-acr-traffic/">GitHub Container Registry. Keeping traffic below the spending limit.</a></h2>
-    GitHub Container Registry is a great service.
+    <p>GitHub Container Registry is a great service. It&rsquo;s free for public repositories and it&rsquo;s integrated with GitHub Actions. Unfortunately, it&rsquo;s not free for private packages. The free tier allows 1 GB of data transfer per month.
+What happens when you reach the limit depends on your payment profile. You will either be prevented from downloading your images or you&rsquo;ll be charged for the consumed traffic.</p>
   
     <h2><a href="/2023/01/22/dotnet-cli-integration-tests/">Integration tests for .NET CLI tools</a></h2>
-    I&rsquo;ve spent Saturday evening working on a small project.
+    <p>I&rsquo;ve spent Saturday evening working on a small project. I&rsquo;ve built a .NET clone of <code>tree</code> utitly. You know, the one that renders a nice tree view for a given directory.</p>
   
     <h2><a href="/2022/11/26/environment-protection-tags/">GitHub Environment Protection with Tags</a></h2>
-    A recent request from a customer caught my attention.
+    <p>A recent request from a customer caught my attention. They were trying to set up a CD pipeline that should deploy packages to production when there is a new tag pushed to the repository. At the same time, they wanted some control over the process so that not everyone can init a release by pushing a tag to the repository.</p>
   
 
         </div>
@@ -91,7 +94,7 @@
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "5/5/24";
+        const buildDate = "9/6/24";
         navigator.serviceWorker
             .register("/sw.js", { scope: '/' })
             .then(function (registration) {

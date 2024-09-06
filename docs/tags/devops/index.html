@@ -56,40 +56,45 @@
   
   
     <h2><a href="/2024/04/01/github-actions-mulitrepo/">GitHub Actions: Unified Build Pipeline for Multi-Repo Application</a></h2>
-    Common Misconceptions about GitHub Actions The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.
+    <h2 id="common-misconceptions-about-github-actions">Common Misconceptions about GitHub Actions</h2>
+<p>The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.
+They expressed a concern that GitHub Actions does not work well in multi-repo setup; they were used to having build pipelines separate from the source code distributed across multiple repositories.</p>
   
     <h2><a href="/2023/01/23/ghcr-acr-traffic/">GitHub Container Registry. Keeping traffic below the spending limit.</a></h2>
-    GitHub Container Registry is a great service.
+    <p>GitHub Container Registry is a great service. It&rsquo;s free for public repositories and it&rsquo;s integrated with GitHub Actions. Unfortunately, it&rsquo;s not free for private packages. The free tier allows 1 GB of data transfer per month.
+What happens when you reach the limit depends on your payment profile. You will either be prevented from downloading your images or you&rsquo;ll be charged for the consumed traffic.</p>
   
     <h2><a href="/2022/11/26/environment-protection-tags/">GitHub Environment Protection with Tags</a></h2>
-    A recent request from a customer caught my attention.
+    <p>A recent request from a customer caught my attention. They were trying to set up a CD pipeline that should deploy packages to production when there is a new tag pushed to the repository. At the same time, they wanted some control over the process so that not everyone can init a release by pushing a tag to the repository.</p>
   
     <h2><a href="/2022/08/22/ado-hosted-agents/">AzureDevOps and hosted agents</a></h2>
-    TLDR Today I&rsquo;m going to talk about self-hosted build agents.
+    <h2 id="tldr">TLDR</h2>
+<p>Today I&rsquo;m going to talk about self-hosted build agents.</p>
   
     <h2><a href="/2021/02/03/wsl2-limits-vmmem/">Configure WSL2 limits on Windows 10</a></h2>
-    WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.
+    <p>WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.</p>
   
     <h2><a href="/2021/01/27/terraform-octopus-deploy/">Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</a></h2>
-    In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy.
+    <p>In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&rsquo;m going to use Configuration-as-Code approach with a brand new <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest">Octopus provider for Terraform</a>.</p>
   
     <h2><a href="/2020/10/08/using-github-registry-with-k8s/">Using GitHub Container Registry with Kubernetes</a></h2>
-    GitHub Container Registry was introduced on the 1st of September 2020.
+    <p>GitHub Container Registry was introduced on the 1st of September 2020. It&rsquo;s still in the Beta stage, so it&rsquo;s rather not recommended to use it in production. However, it offers us free private storage for our Docker images, at least until the end of the Beta period.</p>
   
     <h2><a href="/2020/09/29/container-tests/">Docker image tests</a></h2>
-    Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.
+    <p>Today we&rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.</p>
   
     <h2><a href="/2020/03/21/azure-terraform-octopus/">Provision your Azure environment with Terraform and Octopus Deploy</a></h2>
-    My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.
+    <p>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.</p>
   
     <h2><a href="/2016/04/05/catlight-tool/">CatLight</a></h2>
-    It&rsquo;s hard to imagine modern development without continuous intergation and unit-tests.
+    <p>It&rsquo;s hard to imagine modern development without continuous intergation and unit-tests.</p>
   
     <h2><a href="/2016/01/10/full-stack-ci-for-free/">Fully automated Continuous Integration for your Open Source library for free</a></h2>
-    This is a long title.
+    <p><img src="/images/ci-for-free/communism.png" alt="open source is commumism">
+This is a long title. Well, the post is going to be long as well.</p>
   
     <h2><a href="/2015/11/01/github-deployments/">GitHub Deployment statuses</a></h2>
-    It’s very important to collect and track as much information as you can about your system.
+    <p>It’s very important to collect and track as much information as you can about your system. We have logging, monitoring, reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue Tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code.</p>
   
 
         </div>
@@ -115,7 +120,7 @@
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "5/5/24";
+        const buildDate = "9/6/24";
         navigator.serviceWorker
             .register("/sw.js", { scope: '/' })
             .then(function (registration) {
