@@ -1,5 +1,6 @@
 :root {
-  --primary-color: #ffeb3b; /* bright yellow */
+  /* --primary-color: #ffeb3b; /* bright yellow */
+  --primary-color: color(display-p3 1 0.784 0.2);
   --secondary-color: #000; /* black */
   --tertiary-color: #fff; /* white */
   --text-color:#333; /* dark grey */

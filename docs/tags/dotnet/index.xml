@@ -13,7 +13,7 @@
       <link>/2023/01/22/dotnet-cli-integration-tests/</link>
       <pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate>
       <guid>/2023/01/22/dotnet-cli-integration-tests/</guid>
-      <description>I&amp;rsquo;ve spent Saturday evening working on a small project.</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve spent Saturday evening working on a small project. I&amp;rsquo;ve built a .NET clone of &lt;code&gt;tree&lt;/code&gt; utitly. You know, the one that renders a nice tree view for a given directory.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -13,7 +13,7 @@
       <link>/2024/04/01/github-actions-mulitrepo/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
       <guid>/2024/04/01/github-actions-mulitrepo/</guid>
-      <description>Common Misconceptions about GitHub Actions The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.</description>
+      <description>&lt;h2 id=&#34;common-misconceptions-about-github-actions&#34;&gt;Common Misconceptions about GitHub Actions&lt;/h2&gt;&#xA;&lt;p&gt;The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.&#xA;They expressed a concern that GitHub Actions does not work well in multi-repo setup; they were used to having build pipelines separate from the source code distributed across multiple repositories.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

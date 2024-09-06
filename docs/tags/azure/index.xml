@@ -13,21 +13,21 @@
       <link>/2023/01/23/ghcr-acr-traffic/</link>
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
       <guid>/2023/01/23/ghcr-acr-traffic/</guid>
-      <description>GitHub Container Registry is a great service.</description>
+      <description>&lt;p&gt;GitHub Container Registry is a great service. It&amp;rsquo;s free for public repositories and it&amp;rsquo;s integrated with GitHub Actions. Unfortunately, it&amp;rsquo;s not free for private packages. The free tier allows 1 GB of data transfer per month.&#xA;What happens when you reach the limit depends on your payment profile. You will either be prevented from downloading your images or you&amp;rsquo;ll be charged for the consumed traffic.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fix console logs for Azure Functions running in a Docker container</title>
       <link>/2020/07/10/azure-function-docker-log/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
       <guid>/2020/07/10/azure-function-docker-log/</guid>
-      <description>Local development of C# Azure Functions on macOS is still a bit painful.</description>
+      <description>&lt;p&gt;Local development of C# Azure Functions on macOS is still a bit painful.&#xA;Even the simple-ish logging might cause issues. Let&amp;rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one &lt;code&gt;TimerTrigger&lt;/code&gt; function created.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Provision your Azure environment with Terraform and Octopus Deploy</title>
       <link>/2020/03/21/azure-terraform-octopus/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/2020/03/21/azure-terraform-octopus/</guid>
-      <description>My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.</description>
+      <description>&lt;p&gt;My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
