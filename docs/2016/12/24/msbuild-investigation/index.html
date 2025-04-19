@@ -64,8 +64,7 @@
   <p>Recently I took latest changes from git, merged <code>dev</code> to my current branch and decided to run few integration tests. You know, just to be sure.</p>
 <p>What do I see? well&hellip; this.</p>
 <blockquote>
-<p>Could not load file or assembly &lsquo;<code>Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=...</code> or one of its dependencies.</p>
-</blockquote>
+<p>Could not load file or assembly &lsquo;<code>Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=...</code> or one of its dependencies.</p></blockquote>
 <p>That doesn&rsquo;t sound right, though it&rsquo;s typically easy to fix.</p>
 <p>The first reaction is to consolidate NuGet packages in my Solution. All the installed packages have same version <code>5.7.0</code> though.</p>
 <p><img src="/images/2016-12-msbuild-investigation/installed-package-version.png" alt="Package.config sample"></p>
@@ -106,7 +105,7 @@ Once the incorrect DLL version was resolved it&rsquo;s being used for all remain
     </div>    
   </main>
   <footer>
-    <p>Copyright 2024. All rights reserved.</p>
+    <p>Copyright 2025. All rights reserved.</p>
 
   </footer>
 </body>
@@ -124,7 +123,7 @@ Once the incorrect DLL version was resolved it&rsquo;s being used for all remain
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "9/6/24";
+        const buildDate = "4/19/25";
         navigator.serviceWorker
             .register("/sw.js", { scope: '/' })
             .then(function (registration) {

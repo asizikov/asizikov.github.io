@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Teaching GitHub Copilot New SQL Dialects with Reusable Prompts</title>
+      <link>/2025/04/18/reusable-prompts-llm-docs/</link>
+      <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/2025/04/18/reusable-prompts-llm-docs/</guid>
+      <description>&lt;h1 id=&#34;teaching-github-copilot-new-sql-dialects-with-reusable-prompts&#34;&gt;Teaching GitHub Copilot New SQL Dialects with Reusable Prompts&lt;/h1&gt;&#xA;&lt;p&gt;Have you ever struggled with GenAI tools generating incorrect or unusable code for your internal SDK or API?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>GitHub Actions: Unified Build Pipeline for Multi-Repo Application</title>
       <link>/2024/04/01/github-actions-mulitrepo/</link>

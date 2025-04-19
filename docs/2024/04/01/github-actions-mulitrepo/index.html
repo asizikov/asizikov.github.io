@@ -141,7 +141,7 @@ Let&rsquo;s suppose that these services are part of one large busines applicatio
 </span></span></span><span class="line"><span class="cl"><span class="sd">            echo &#39;```&#39; &gt;&gt; $GITHUB_STEP_SUMMARY
 </span></span></span><span class="line"><span class="cl"><span class="sd">          elif [ &#34;${{ github.event_name }}&#34; == &#34;workflow_dispatch&#34; ]; then
 </span></span></span><span class="line"><span class="cl"><span class="sd">            echo &#34;Manual trigger&#34; &gt;&gt; $GITHUB_STEP_SUMMARY
-</span></span></span><span class="line"><span class="cl"><span class="sd">          fi</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          fi</span><span class="w">
 </span></span></span></code></pre></div><p>This will be rendered as following:</p>
 <p><img src="/images/2024-02-actions/who-triggered-me.png" alt="Who Triggered Me"></p>
 <h2 id="building-code-from-another-repository">Building code from another repository</h2>
@@ -210,7 +210,7 @@ This is what I&rsquo;m doing to build and test the backend code:</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          pushd application
 </span></span></span><span class="line"><span class="cl"><span class="sd">          echo &#34;Deploying application&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sd">          ls -la</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          ls -la</span><span class="w">
 </span></span></span></code></pre></div><p>This approach is quite straightforward: build and test code in parallel, upload artifacts, and then deploy everything once all jobs are completed.</p>
 <h2 id="keeping-workflows-next-to-source-code">Keeping Workflows next to source code</h2>
 <p>Let&rsquo;s make it a bit more complicated. In my <code>chain-builds/micro-service</code> repository, I have a <code>build.yml</code> workflow that defines the build pipeline for this repository.</p>
@@ -231,10 +231,10 @@ This is what I&rsquo;m doing to build and test the backend code:</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">        ls -la
 </span></span></span><span class="line"><span class="cl"><span class="sd">        python -m pip install --upgrade pip
-</span></span></span><span class="line"><span class="cl"><span class="sd">        pip install -r requirements.txt</span><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="sd">        pip install -r requirements.txt</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">🔬 Run tests</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">        python -m unittest discover tests</span><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="sd">        python -m unittest discover tests</span><span class="w">
 </span></span></span></code></pre></div><p>Nothing unusual here except the explicit repository parameter in the <code>actions/checkout</code> step. This is needed because the default value is set to <code>{{ github.repository }}</code> and when the workflow is triggered as reusable one by the <code>builds</code> repository, it would otherwise attempt to checkout the calling repository instead of the intended source code repository.</p>
 <p>The workflow could have these triggers:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># https://github.com/chain-builds/micro-service/.github/workflows/build.yml</span><span class="w">
@@ -253,8 +253,7 @@ Any change pushed to <code>main</code> branch of any service repository triggers
 <p>This provides a single plane of glass overview of the CI/CD process for the multi-repository project.</p>
 <h2 id="disclosure">Disclosure</h2>
 <blockquote>
-<p>I&rsquo;m employed by GitHub at the time of writing this post. All opinions are my own.</p>
-</blockquote>
+<p>I&rsquo;m employed by GitHub at the time of writing this post. All opinions are my own.</p></blockquote>
 
   
   <div>
@@ -273,7 +272,7 @@ Any change pushed to <code>main</code> branch of any service repository triggers
     </div>    
   </main>
   <footer>
-    <p>Copyright 2024. All rights reserved.</p>
+    <p>Copyright 2025. All rights reserved.</p>
 
   </footer>
 </body>
@@ -291,7 +290,7 @@ Any change pushed to <code>main</code> branch of any service repository triggers
     
 
     if ('serviceWorker' in navigator) {
-        const buildDate = "9/6/24";
+        const buildDate = "4/19/25";
         navigator.serviceWorker
             .register("/sw.js", { scope: '/' })
             .then(function (registration) {
