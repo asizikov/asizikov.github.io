@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
 <head>
-	<meta name="generator" content="Hugo 0.148.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.148.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="index,follow" name="googlebot">
 	<meta content="follow, all" name="Googlebot-Image">
 	<meta content="follow, all" name="Scooter">
@@ -25,6 +25,9 @@
 <title>Anton Sizikov</title>
 
     <link rel="stylesheet" href="/css/main.css">
+
+
+    <link rel="stylesheet" href="/css/custom.css">
 
 
       <script src="/js/main.js"></script>
@@ -67,8 +70,7 @@
           <h2><a href="/2025/08/12/hey-copilot/">Hey Copilot!</a></h2>
         </div>
         <div class="international__typo__post__block__right">      
-          <h1 id="hey-copilot">Hey Copilot!</h1>
-<p>So, you&rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.</p>
+          <p>So, you&rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.</p>
         </div>
       </div>
     
@@ -527,7 +529,7 @@ Yeah, I had to install python and ruby to run it.</p>
     if ('serviceWorker' in navigator) {
         const buildDate = "8/12/25";
         navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
+            .register("//:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

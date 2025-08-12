@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on Anton Sizikov</title>
-    <link>/tags/tools/</link>
+    <link>//:1313/tags/tools/</link>
     <description>Recent content in Tools on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Jan 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//:1313/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Connecting SQL Operations Studio to SQL Express server in Parallels VM</title>
-      <link>/2018/01/12/sqlops-studio-with-parallels/</link>
+      <link>//:1313/2018/01/12/sqlops-studio-with-parallels/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/2018/01/12/sqlops-studio-with-parallels/</guid>
+      <guid>//:1313/2018/01/12/sqlops-studio-with-parallels/</guid>
       <description>&lt;p&gt;In this post, I&amp;rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Investigating unexpected MSBuild behavior</title>
-      <link>/2016/12/24/msbuild-investigation/</link>
+      <link>//:1313/2016/12/24/msbuild-investigation/</link>
       <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>/2016/12/24/msbuild-investigation/</guid>
+      <guid>//:1313/2016/12/24/msbuild-investigation/</guid>
       <description>&lt;p&gt;Recently I took latest changes from git, merged &lt;code&gt;dev&lt;/code&gt; to my current branch and decided to run few integration tests. You know, just to be sure.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dev environment 2016. Windows.</title>
-      <link>/2016/06/12/dev-environment-2016-win/</link>
+      <link>//:1313/2016/06/12/dev-environment-2016-win/</link>
       <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/2016/06/12/dev-environment-2016-win/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;/images/dev-tools-2016-win/old-tools-8.png&#34; alt=&#34;tool&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.&lt;/p&gt;</description>
+      <guid>//:1313/2016/06/12/dev-environment-2016-win/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;//:1313/images/dev-tools-2016-win/old-tools-8.png&#34; alt=&#34;tool&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>CatLight</title>
-      <link>/2016/04/05/catlight-tool/</link>
+      <link>//:1313/2016/04/05/catlight-tool/</link>
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/2016/04/05/catlight-tool/</guid>
+      <guid>//:1313/2016/04/05/catlight-tool/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to convince Linus Torvalds to contribute to your project</title>
-      <link>/2015/11/03/abusing-github/</link>
+      <link>//:1313/2015/11/03/abusing-github/</link>
       <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>/2015/11/03/abusing-github/</guid>
+      <guid>//:1313/2015/11/03/abusing-github/</guid>
       <description>&lt;p&gt;Look at all those famous people committing to some random developer’s &lt;a href=&#34;https://github.com/asizikov/gang/graphs/contributors&#34;&gt;boring repository&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Avoid typing user name when committing to GitHub repository</title>
-      <link>/2015/09/05/change-origin-for-github-repo/</link>
+      <link>//:1313/2015/09/05/change-origin-for-github-repo/</link>
       <pubDate>Sat, 05 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/2015/09/05/change-origin-for-github-repo/</guid>
+      <guid>//:1313/2015/09/05/change-origin-for-github-repo/</guid>
       <description>&lt;p&gt;I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don&amp;rsquo;t have my SSH key generated for the current environment.&lt;/p&gt;</description>
     </item>
   </channel>

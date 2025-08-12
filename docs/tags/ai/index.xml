@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai on Anton Sizikov</title>
-    <link>/tags/ai/</link>
+    <link>//:1313/tags/ai/</link>
     <description>Recent content in Ai on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hey Copilot!</title>
-      <link>/2025/08/12/hey-copilot/</link>
+      <link>//:1313/2025/08/12/hey-copilot/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>/2025/08/12/hey-copilot/</guid>
+      <guid>//:1313/2025/08/12/hey-copilot/</guid>
       <description>&lt;h1 id=&#34;hey-copilot&#34;&gt;Hey Copilot!&lt;/h1&gt;&#xA;&lt;p&gt;So, you&amp;rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.&lt;/p&gt;</description>
     </item>
   </channel>
