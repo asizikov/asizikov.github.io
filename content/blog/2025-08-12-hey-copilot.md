@@ -6,8 +6,6 @@ tags: ["github copilot", "ai"]
 draft: false
 ---
 
-# Hey Copilot!
-
 So, you've got an idea of a new app or a web site, that you wish to build with GitHub Copilot.
 
 You have a design and architecture in mind, you've got some requirements ready, and now it's time to bring your vision to life. How to set yourself up for success and let Copilot do the job for you? 

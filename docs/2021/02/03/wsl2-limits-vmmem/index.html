@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="index,follow" name="googlebot">
 	<meta content="follow, all" name="Googlebot-Image">
 	<meta content="follow, all" name="Scooter">
@@ -24,6 +24,9 @@
 <title>Configure WSL2 limits on Windows 10 | Anton Sizikov</title>
 
     <link rel="stylesheet" href="/css/main.css">
+
+
+    <link rel="stylesheet" href="/css/custom.css">
 
 
       <script src="/js/main.js"></script>
@@ -111,7 +114,7 @@
     if ('serviceWorker' in navigator) {
         const buildDate = "8/12/25";
         navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
+            .register("//:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

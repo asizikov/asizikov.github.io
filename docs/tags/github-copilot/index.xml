@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github Copilot on Anton Sizikov</title>
-    <link>/tags/github-copilot/</link>
+    <link>//:1313/tags/github-copilot/</link>
     <description>Recent content in Github Copilot on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/github-copilot/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//:1313/tags/github-copilot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hey Copilot!</title>
-      <link>/2025/08/12/hey-copilot/</link>
+      <link>//:1313/2025/08/12/hey-copilot/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>/2025/08/12/hey-copilot/</guid>
+      <guid>//:1313/2025/08/12/hey-copilot/</guid>
       <description>&lt;h1 id=&#34;hey-copilot&#34;&gt;Hey Copilot!&lt;/h1&gt;&#xA;&lt;p&gt;So, you&amp;rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Teaching GitHub Copilot New SQL Dialects with Reusable Prompts</title>
-      <link>/2025/04/18/reusable-prompts-llm-docs/</link>
+      <link>//:1313/2025/04/18/reusable-prompts-llm-docs/</link>
       <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>/2025/04/18/reusable-prompts-llm-docs/</guid>
+      <guid>//:1313/2025/04/18/reusable-prompts-llm-docs/</guid>
       <description>&lt;p&gt;Have you ever struggled with GenAI tools generating incorrect or unusable code for your internal SDK or API?&lt;/p&gt;</description>
     </item>
   </channel>

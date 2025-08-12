@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="index,follow" name="googlebot">
 	<meta content="follow, all" name="Googlebot-Image">
 	<meta content="follow, all" name="Scooter">
@@ -24,6 +24,9 @@
 <title>Hey Copilot! | Anton Sizikov</title>
 
     <link rel="stylesheet" href="/css/main.css">
+
+
+    <link rel="stylesheet" href="/css/custom.css">
 
 
       <script src="/js/main.js"></script>
@@ -61,8 +64,7 @@
   <h2>Published on: 
   <time datetime="2025-08-12T00:00:00&#43;00:00">August 12, 2025</time></h2>
 
-  <h1 id="hey-copilot">Hey Copilot!</h1>
-<p>So, you&rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.</p>
+  <p>So, you&rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.</p>
 <p>You have a design and architecture in mind, you&rsquo;ve got some requirements ready, and now it&rsquo;s time to bring your vision to life. How to set yourself up for success and let Copilot do the job for you?</p>
 <p>In this post I&rsquo;ll share my approach to harnessing GitHub Copilot Agentic capabilities effectively.</p>
 <h2 id="prerequisites">Prerequisites</h2>
@@ -207,7 +209,7 @@ At this stage it doesn&rsquo;t require a lot of steering and control.</p>
     if ('serviceWorker' in navigator) {
         const buildDate = "8/12/25";
         navigator.serviceWorker
-            .register("/sw.js", { scope: '/' })
+            .register("//:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });
