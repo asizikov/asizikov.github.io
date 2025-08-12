@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta content="index,follow" name="googlebot">
+	<meta content="follow, all" name="Googlebot-Image">
+	<meta content="follow, all" name="Scooter">
+	<meta content="follow, all" name="msnbot">
+	<meta content="follow, all" name="alexabot">
+	<meta content="follow, all" name="Slurp">
+	<meta content="follow, all" name="ZyBorg">
+	<meta content="follow, all" name="Scooter">
+	<meta content="true" name="MSSmartTagsPreventParsing">
+	<meta content="ALL" name="SPIDERS">
+	<meta content="ALL" name="WEBCRAWLERS">
+	<meta
+		content="aeiwi, alexa, alltheWeb, altavista, aol netfind, anzwers, canada, directhit, euroseek, excite, overture, go, google, hotbot. infomak, kanoodle, lycos, mastersite, national directory, northern light, searchit, simplesearch, Websmostlinked, webtop, what-u-seek, aol, yahoo, webcrawler, infoseek, excite, magellan, looksmart, bing, cnet, googlebot"
+		name="search engines">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+<title>Hey Copilot! | Anton Sizikov</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
+</head>
+<body>
+  <header>
+    <div class="international__typo__header__layout">
+    <div class="international__typo__header__layout__left">
+        <span class="international__typo__header__layout_subdomain">
+            <a class="international__typo__header__home" href="/">blog.</a></span>
+    </div>
+    <div class="international__typo__header__layout__right">
+        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
+        <span class="international__typo__header__layout__right__tld">.nl</span>
+    <div>                        
+</div>
+
+
+
+  </header>
+  <main>
+    <div class="international__typo__main__layout">
+      <div class="international__typo__main__layout__left"></div>
+      <div class="international__typo__main__layout__right">
+        <div class="international__typo__main__layout__right__content">
+        
+<div class="international__typo__post__content">
+  <h1>Hey Copilot!</h1>
+
+  
+  
+  
+  <h2>Published on: 
+  <time datetime="2025-08-12T00:00:00&#43;00:00">August 12, 2025</time></h2>
+
+  <h1 id="hey-copilot">Hey Copilot!</h1>
+<p>So, you&rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.</p>
+<p>You have a design and architecture in mind, you&rsquo;ve got some requirements ready, and now it&rsquo;s time to bring your vision to life. How to set yourself up for success and let Copilot do the job for you?</p>
+<p>In this post I&rsquo;ll share my approach to harnessing GitHub Copilot Agentic capabilities effectively.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Get your VS Code Insiders ready for the best and latest experience. Get your GitHub Copilot subscription and latest updates.</p>
+<p>After that, go ahead and run <code>mkdir your-project</code>, step into it with <code>cd your-project</code>, <code>git init</code> and <code>code-insiders .</code> to get started.</p>
+<h2 id="setting-up-your-project">Setting Up Your Project</h2>
+<p>Whatever tech stack you choose, you may ask Copilot with scaffolding. For this example, I&rsquo;ll ask it to build a TypeScript, Next.js application.</p>
+<p>I expect to have some <code>npm create next-app@latest --ts</code> command to set up the project.</p>
+<h2 id="planning">Planning</h2>
+<p>At this point you can just type your prompt into a chat and ask Copilot to build you the app, but we probably want to have more control over the process.
+Here comes the planning and configuration stage.</p>
+<p>My usual approach is to create a set of md files in the <code>/docs</code> folder, that will contain requirements and instructions for the Agent to follow.</p>
+<p>I typically start with project outline, by typing my idea as a free text into Copilot Chat in Ask mode using one of the larger models (Opus 4 or GPT-5), ask it think about it, and give me clarifying questions. With a few iterations, where we collaborate and refine the requirements, I end up with a solid foundation to work from.</p>
+<p>After that I switch to Agent Mode and ask Copilot to summarize our discussion and create a detailed project overview.</p>
+<p>The next step, similar iterations but for architecture and UI guidelines.</p>
+<p>I expect to end up with the following structure:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">📁 docs
+</span></span><span class="line"><span class="cl">├── architecture.md # architecture, project structure, tech stack
+</span></span><span class="line"><span class="cl">├── overview.md # project overview, goals, and objectives
+</span></span><span class="line"><span class="cl">└── ui-guidelines.md # UI components, design patterns, color schemes
+</span></span></code></pre></div><h2 id="copilot-instructions">Copilot Instructions</h2>
+<p>Once we have our docs ready we can start configuring Copilot.</p>
+<p>If we do nothing here, our Agent would still be able to pick up patterns and make some descisions on its own, but we want to be more prescriptive and limit its creativity to a certain extent.</p>
+<p>Be it a new project or an existing one, we should always set up <code>copilot-instructions.md</code> file in the <code>.github</code> folder. This file will be attached as a context to every prompt we send to Copilot, here I typically document basic rules and information about my project.</p>
+<p>The goal is to help the model to understand how I expect it to generate code, where to find relevant information and what steps I consider important.</p>
+<p>To start off, we can use a built-in instructions generation prompt:</p>
+<p><img src="/images/2025-08-hey-copilot/01-instructions.png" alt="Generate Copilot Instructions"></p>
+<p>Copilot will scan the repo, and generate a decent set of instructions based on the project structure and documentation.</p>
+<p>Don&rsquo;t forget to add links to the files in the <code>/docs</code> folder, so the model can easily reference them during the code generation process.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gu">## Documentation
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span><span class="k">-</span> **Architecture**: <span class="sb">`docs/architecture.md`</span>
+</span></span><span class="line"><span class="cl"><span class="k">-</span> **Overview**: <span class="sb">`docs/overview.md`</span>
+</span></span><span class="line"><span class="cl"><span class="k">-</span> **UI Guidelines**: <span class="sb">`docs/ui-guidelines.md`</span>
+</span></span></code></pre></div><p>Since I&rsquo;m building a web app, I also document the build and lint process</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Always run the following commands before completing a task:
+</span></span><span class="line"><span class="cl"><span class="k">-</span> <span class="sb">`npm run build`</span> to ensure the project builds successfully.
+</span></span><span class="line"><span class="cl"><span class="k">-</span> <span class="sb">`npm run lint`</span> to ensure code quality and consistency.
+</span></span><span class="line"><span class="cl"><span class="k">-</span> <span class="sb">`npm test`</span> to ensure all tests pass.
+</span></span></code></pre></div><p>This will ensure that Copilot is not getting lazy and taking any shortcuts.</p>
+<h2 id="custom-instructions">Custom Instructions</h2>
+<p>In addition to <code>copilot-instructions.md</code>, that, as I already mentioned is attached to every prompt, I also create custom, file-specific instructions for Copilot.</p>
+<p>They are placed in <code>.github/instructions/**.instruction.md</code></p>
+<p>Custom Instruction files use this format:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">applyTo: &#34;src/**/__tests__/**,**/*.test.ts,**/*.test.tsx,**&#34; # pattern to match files to apply these instructions
+</span></span><span class="line"><span class="cl">description: &#34;Testing layout and setup&#34;                      # description of the instructions purpose
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## Base Rules
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Use Jest.
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Unit tests are placed in <span class="sb">`__tests__`</span> subdirectories.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## Examples
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- Add a unit test example, so that Copilot follows existing patterns --&gt;</span>
+</span></span></code></pre></div><p>In these files we should codify desired patterns, DOs and DON&rsquo;Ts, coding conventions, and any other relevant information that will help maintain consistency across the codebase.</p>
+<h2 id="summary">Summary</h2>
+<p>As a rule of thumb, we can treat <code>copilot-instructions.md</code> as a root file for Copilot agent.</p>
+<p>It shouldn&rsquo;t be too large, especially when your code base grows. Think about it as a tree structure, that would improve readability and maintainability.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">copilot-instructions.md # Contains basic instructions and links to use case-specific documentation
+</span></span><span class="line"><span class="cl">├── architecture.md # architecture, project structure, tech stack
+</span></span><span class="line"><span class="cl">├── overview.md # project overview, goals, and objectives
+</span></span><span class="line"><span class="cl">├── build.md # project build process
+</span></span><span class="line"><span class="cl">├── build.md # project build process
+</span></span><span class="line"><span class="cl">└── ui-guidelines.md # UI components, design patterns, color schemes
+</span></span></code></pre></div><p>I recommend keeping it up-to date (e.g., after major refactoring, adding new features, or changing existing patterns).</p>
+<p>Custom Instructions should be more granular and focused on specific files or modules. They on opposite, can be quite detailed and prescriptive.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">📁 .github
+</span></span><span class="line"><span class="cl"> └──📁 instructions      
+</span></span><span class="line"><span class="cl">    ├── typescript.instructions.md # TypeScript coding guidelines
+</span></span><span class="line"><span class="cl">    ├── tests.instructions.md # Testing frameworks, patterns
+</span></span><span class="line"><span class="cl">    ├── css.instructions.md # CSS coding guidelines
+</span></span><span class="line"><span class="cl">    ├── backend.instructions.md # Backend development guidelines
+</span></span><span class="line"><span class="cl">    ├── database.instructions.md # Database development guidelines, migration rules, cli commands
+</span></span><span class="line"><span class="cl">    └── github-actions.instructions.md # GitHub Actions workflow guidelines
+</span></span></code></pre></div><p>Pretty much every aspect of code generation can and should be codified. This way we can make our Agent generate consistent code that meets our standards and does not deviate from established patterns. You know, we want no surprises, after all.</p>
+<h2 id="automation">Automation</h2>
+<p>I know, it sounds like a lot of work, and it&rsquo;s not easy to get started. What makes a good instruction after all?</p>
+<p>Here are some tips:</p>
+<ul>
+<li>Start with something, whatever you think it important, place it there</li>
+<li>Write some code yourself, the way you want it to be written</li>
+<li>Ask Copilot to rewrite instruction files by providing it with examples, it&rsquo;ll do a good job</li>
+<li>Iterate! Did you ask Copilot to fix its code? Don&rsquo;t forget to ask it to update instructions too. They are its long-term memory!</li>
+</ul>
+<h2 id="coding-time">Coding Time</h2>
+<p>Well, now our project is ready.</p>
+<p>I usually follow Plan-Refine-Act-Review cycle.</p>
+<h3 id="plan">Plan</h3>
+<p>For planning I use larger models in Ask Mode, provide it with my feature description and requirements and ask it to generate a detailed implementation plan.</p>
+<h3 id="refine">Refine</h3>
+<p>With a brief back and forth interations, where I tell copilot to ask clarifying questions, I can shape the plan to my liking.</p>
+<h3 id="act">Act</h3>
+<p>When I&rsquo;m happy with the plan, I switch to Agent Mode, pick a model that does well with coding (today it would be Sonnet 4 or GPT-5 for large features, more light-weight models for simple tasks) and tell it to proceed with the plan.
+At this stage it doesn&rsquo;t require a lot of steering and control.</p>
+<h3 id="review">Review</h3>
+<p>This is a time for me to review the code (I look at it myself, but also ask Copilot to review changes and pay attention to the architecture, data flow, performance and best practices).</p>
+<p>And that&rsquo;s it, if I&rsquo;m satisfied with the results, I can commit and push.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Models and Agentic capabilities are pretty powerful at this point, but with the right setup and configuration we can make them do exactly what we want and force them to produce the code that meets our expectations. Having these guidelines helps us keep Copilot on track.</p>
+<p>Ever increasing complexity of agentic tools requries us to learn more about them and spend some time preparing before we can start. It&rsquo;s the current reallity. But the time invested pays off!</p>
+<p>I hope these tips will help you get started and set your new project up for success.</p>
+<p>Happy coding!</p>
+<h2 id="disclosure">Disclosure</h2>
+<blockquote>
+<p><em>I&rsquo;m employed by GitHub at the time of writing this post. All opinions are my own.</em></p></blockquote>
+
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/github-copilot/">Github Copilot</a></li>
+        <li><a href="/tags/ai/">Ai</a></li>
+    </ul>
+  </div>
+
+</div>
+
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <p>Copyright 2025. All rights reserved.</p>
+
+  </footer>
+</body>
+<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+<script>
+    
+    
+    
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
+    
+
+    
+    
+    
+    
+
+    if ('serviceWorker' in navigator) {
+        const buildDate = "8/12/25";
+        navigator.serviceWorker
+            .register("/sw.js", { scope: '/' })
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+
+        navigator.serviceWorker
+            .ready
+            .then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+    }
+</script>
+</html>
