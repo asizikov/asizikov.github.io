@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="index,follow" name="googlebot">
@@ -23,13 +23,13 @@
 	
 <title>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy | Anton Sizikov</title>
 
-      <link rel="stylesheet" href="/css/main.min.29f41c72fe1a659dc6a93d1f6e53f882e80d53885ca3e8c6e2ec62d585f71c5d.css" integrity="sha256-KfQccv4aZZ3GqT0fblP4gugNU4hco&#43;jG4uxi1YX3HF0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
 
 
     <link rel="stylesheet" href="/css/custom.css">
 
 
-      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+      <script src="/js/main.js"></script>
 
 
 </head>
@@ -61,8 +61,9 @@
   
   
   
-  <h2>Published on: 
-  <time datetime="2021-01-27T00:00:00&#43;00:00">January 27, 2021</time></h2>
+  <p class="international__typo__post__date">
+    Published on <time datetime="2021-01-27T00:00:00&#43;00:00">January 27, 2021</time>
+  </p>
 
   <p>In this post, I&rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&rsquo;m going to use Configuration-as-Code approach with a brand new <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest">Octopus provider for Terraform</a>.</p>
 <p><img src="/images/2021-01-tf/octopus-to-the-cloud.png" alt=""></p>
@@ -114,16 +115,14 @@
 <h2 id="configure-environment">Configure Environment</h2>
 <p>Now we&rsquo;re ready to start. At first, I&rsquo;m going to configure a new <a href="https://octopus.com/docs/infrastructure/environments">Environment</a>.</p>
 <blockquote>
-<p>Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.</p>
-</blockquote>
+<p>Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.</p></blockquote>
 <script src="https://gist.github.com/asizikov/a36c0c2d6ef23f5aa412b7b7199a6f27.js"></script>
 
 <p>You&rsquo;d probably have more than one, but that&rsquo;ll do for now.</p>
 <h2 id="deployment-target">Deployment Target</h2>
 <p>The next crucial part is <a href="https://octopus.com/docs/infrastructure/deployment-targets">Deployment Target</a></p>
 <blockquote>
-<p>With Octopus Deploy, you can deploy software to Windows servers, Linux servers, Microsoft Azure, AWS, Kubernetes clusters, cloud regions, or an offline package drop. Regardless of where you&rsquo;re deploying your software, these machines and services are known as your deployment targets.</p>
-</blockquote>
+<p>With Octopus Deploy, you can deploy software to Windows servers, Linux servers, Microsoft Azure, AWS, Kubernetes clusters, cloud regions, or an offline package drop. Regardless of where you&rsquo;re deploying your software, these machines and services are known as your deployment targets.</p></blockquote>
 <script src="https://gist.github.com/asizikov/f7c46cdc117a2f4fa8aa8709971ced5b.js"></script>
 
 <p>I&rsquo;m using <code>octopusdeploy_azure_web_app_deployment_target</code>, It&rsquo;s quite specific. I could have used a more generic <a href="https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest/docs/resources/deployment_target"><code>octopusdeploy_deployment_target</code></a> instead.</p>
@@ -133,8 +132,7 @@
 <h2 id="project">Project</h2>
 <p>The next step is to configure our <a href="https://octopus.com/docs/projects">Project</a>.</p>
 <blockquote>
-<p>Projects let you create and manage your deployment processes, releases, and runbooks from the Octopus REST API and Octopus Web Portal.</p>
-</blockquote>
+<p>Projects let you create and manage your deployment processes, releases, and runbooks from the Octopus REST API and Octopus Web Portal.</p></blockquote>
 <script src="https://gist.github.com/asizikov/3c38307ef53cff53631edad17ece29a2.js"></script>
 
 <p>I&rsquo;m setting up an <code>Echo Api</code> project here, placing it into <code>Default Project Group</code> with the default <a href="https://octopus.com/docs/releases/lifecycles">lifecycle</a>.</p>
@@ -208,7 +206,7 @@
     if ('serviceWorker' in navigator) {
         const buildDate = "12/10/25";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="index,follow" name="googlebot">
@@ -23,13 +23,13 @@
 	
 <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1. | Anton Sizikov</title>
 
-      <link rel="stylesheet" href="/css/main.min.29f41c72fe1a659dc6a93d1f6e53f882e80d53885ca3e8c6e2ec62d585f71c5d.css" integrity="sha256-KfQccv4aZZ3GqT0fblP4gugNU4hco&#43;jG4uxi1YX3HF0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
 
 
     <link rel="stylesheet" href="/css/custom.css">
 
 
-      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+      <script src="/js/main.js"></script>
 
 
 </head>
@@ -61,8 +61,9 @@
   
   
   
-  <h2>Published on: 
-  <time datetime="2015-07-26T00:00:00&#43;00:00">July 26, 2015</time></h2>
+  <p class="international__typo__post__date">
+    Published on <time datetime="2015-07-26T00:00:00&#43;00:00">July 26, 2015</time>
+  </p>
 
   <p>Hi,</p>
 <p>Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and  the approach in question was taken in a several applications with different modifications.</p>
@@ -276,7 +277,7 @@ In the <a href="/2015/08/14/rx-api-with-cache-two/">next blog post</a> I’m goi
     if ('serviceWorker' in navigator) {
         const buildDate = "12/10/25";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

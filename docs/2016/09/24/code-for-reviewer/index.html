@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="index,follow" name="googlebot">
@@ -23,13 +23,13 @@
 	
 <title>Write code for the reviewer, not for the compiler | Anton Sizikov</title>
 
-      <link rel="stylesheet" href="/css/main.min.29f41c72fe1a659dc6a93d1f6e53f882e80d53885ca3e8c6e2ec62d585f71c5d.css" integrity="sha256-KfQccv4aZZ3GqT0fblP4gugNU4hco&#43;jG4uxi1YX3HF0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
 
 
     <link rel="stylesheet" href="/css/custom.css">
 
 
-      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+      <script src="/js/main.js"></script>
 
 
 </head>
@@ -61,8 +61,9 @@
   
   
   
-  <h2>Published on: 
-  <time datetime="2016-09-24T00:00:00&#43;00:00">September 24, 2016</time></h2>
+  <p class="international__typo__post__date">
+    Published on <time datetime="2016-09-24T00:00:00&#43;00:00">September 24, 2016</time>
+  </p>
 
   <p><img src="/images/code-for-reviewer/matrix.png" alt="Code"></p>
 <p>I&rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.</p>
@@ -91,8 +92,7 @@
 This is a current class instance field.<br>
 There are two parameters passed to that method. The first one is an account id, the parameter name is <strong>accountId</strong>. The second parameter name is <strong>date</strong>, and we pass the value of the property called <strong>Yesterday</strong> of the current class instance property called <strong>DateUtils</strong>.</p>
 <p>The result is assigned to the local variable <strong>accountBalance</strong> of <strong>AccountBalance</strong> type.
-After that the result is passed to the instance method <strong>CalculateFees</strong>.</p>
-</blockquote>
+After that the result is passed to the instance method <strong>CalculateFees</strong>.</p></blockquote>
 <p>That&rsquo;s a lot of information, right? We know types, parameter names, we know that methods and properties are not static and so on.</p>
 <p>We still don&rsquo;t know what type <code>Yesterday</code> is, but the rest is clear. We have plenty of information about the logic of the method as well as about types and even some details about <code>GetAccountBalanceAsAtDate</code> method signature.</p>
 <h2 id="getting-simpler">Getting simpler</h2>
@@ -109,8 +109,7 @@ After that the result is passed to the instance method <strong>CalculateFees</st
 This is a current class instance field.<br>
 There are two parameters passed to that method. The first one is an account id, and as a second parameter  we pass the value of the property called <strong>Yesterday</strong> of the current class instance property called <strong>DateUtils</strong>.</p>
 <p>The result is assigned to the local variable <strong>accountBalance</strong> of <strong>AccountBalance</strong> type.
-After that the result is passed to the instance method <strong>CalculateFees</strong>.</p>
-</blockquote>
+After that the result is passed to the instance method <strong>CalculateFees</strong>.</p></blockquote>
 <p>Hm, looks like we didn&rsquo;t lose much information, right?</p>
 <h3 id="explicit-variable-type">Explicit variable type</h3>
 <p>When reviewing this snippet we don&rsquo;t know much about <code>AccountBalance</code> type. Is it a <code>struct</code> or a <code>class</code>? What kind of data does it contain?</p>
@@ -147,8 +146,7 @@ If the method was longer, it would not be important anyway. What&rsquo;s importa
 <p>Let&rsquo;s read it one more time:</p>
 <blockquote>
 <p>The method takes and account Id as an argument, calls <strong>GetAccountBalanceAsAtDate</strong> method of the <strong>balanceCalculator</strong>. <strong>accounId</strong> is passed as a first parameter, the second parameter is a value <strong>Yesterday</strong> of <strong>DateUtils</strong>.
-The result of that method call is used as a parameter for  <strong>CalculateFees</strong> method.</p>
-</blockquote>
+The result of that method call is used as a parameter for  <strong>CalculateFees</strong> method.</p></blockquote>
 <p>Now scroll up and compare with the first attempt. Much shorter, right?</p>
 <p>Ok, the reviewer has no information about types, about the nature of methods and properties. They do not know what <code>DayUtils</code> is. It might be an <code>enum</code>, or a static class or anything else.</p>
 <p>The only information that reviewer has is the logic of the method. And now they can focus on it because that&rsquo;s what is important here after all. The logic, not the AST structure.</p>
@@ -191,7 +189,7 @@ The result of that method call is used as a parameter for  <strong>CalculateFees
     if ('serviceWorker' in navigator) {
         const buildDate = "12/10/25";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

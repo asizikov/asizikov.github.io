@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="index,follow" name="googlebot">
@@ -23,13 +23,13 @@
 	
 <title>Hey Copilot! | Anton Sizikov</title>
 
-      <link rel="stylesheet" href="/css/main.min.29f41c72fe1a659dc6a93d1f6e53f882e80d53885ca3e8c6e2ec62d585f71c5d.css" integrity="sha256-KfQccv4aZZ3GqT0fblP4gugNU4hco&#43;jG4uxi1YX3HF0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
 
 
     <link rel="stylesheet" href="/css/custom.css">
 
 
-      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+      <script src="/js/main.js"></script>
 
 
 </head>
@@ -61,8 +61,9 @@
   
   
   
-  <h2>Published on: 
-  <time datetime="2025-08-12T00:00:00&#43;00:00">August 12, 2025</time></h2>
+  <p class="international__typo__post__date">
+    Published on <time datetime="2025-08-12T00:00:00&#43;00:00">August 12, 2025</time>
+  </p>
 
   <p>So, you&rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.</p>
 <p>You have a design and architecture in mind, you&rsquo;ve got some requirements ready, and now it&rsquo;s time to bring your vision to life. How to set yourself up for success and let Copilot do the job for you?</p>
@@ -120,7 +121,7 @@ Here comes the planning and configuration stage.</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="gu">## Examples
 </span></span></span><span class="line"><span class="cl"><span class="gu"></span>
-</span></span><span class="line"><span class="cl">&lt;!-- Add a unit test example, so that Copilot follows existing patterns --&gt;
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- Add a unit test example, so that Copilot follows existing patterns --&gt;</span>
 </span></span></code></pre></div><p>In these files we should codify desired patterns, DOs and DON&rsquo;Ts, coding conventions, and any other relevant information that will help maintain consistency across the codebase.</p>
 <h2 id="summary">Summary</h2>
 <p>As a rule of thumb, we can treat <code>copilot-instructions.md</code> as a root file for Copilot agent.</p>
@@ -171,8 +172,7 @@ At this stage it doesn&rsquo;t require a lot of steering and control.</p>
 <p>Happy coding!</p>
 <h2 id="disclosure">Disclosure</h2>
 <blockquote>
-<p><em>I&rsquo;m employed by GitHub at the time of writing this post. All opinions are my own.</em></p>
-</blockquote>
+<p><em>I&rsquo;m employed by GitHub at the time of writing this post. All opinions are my own.</em></p></blockquote>
 
   
   <div>
@@ -210,7 +210,7 @@ At this stage it doesn&rsquo;t require a lot of steering and control.</p>
     if ('serviceWorker' in navigator) {
         const buildDate = "12/10/25";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

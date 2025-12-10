@@ -2,263 +2,263 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Anton Sizikov</title>
-    <link>https://blog.cloud-eng.nl/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.cloud-eng.nl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Monitoring GitHub Copilot Adoption with Metrics</title>
-      <link>https://blog.cloud-eng.nl/2025/12/09/copilot-metrics/</link>
+      <link>http://localhost:1313/2025/12/09/copilot-metrics/</link>
       <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2025/12/09/copilot-metrics/</guid>
+      <guid>http://localhost:1313/2025/12/09/copilot-metrics/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Since GitHub released the &lt;a href=&#34;https://github.blog/changelog/2025-10-28-copilot-usage-metrics-dashboard-and-api-in-public-preview/&#34;&gt;Copilot usage metrics dashboard and API in public preview&lt;/a&gt; back in October, I&amp;rsquo;ve been spending a lot of time helping enterprise administrators understand Copilot&amp;rsquo;s impact using these metrics.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hey Copilot!</title>
-      <link>https://blog.cloud-eng.nl/2025/08/12/hey-copilot/</link>
+      <link>http://localhost:1313/2025/08/12/hey-copilot/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2025/08/12/hey-copilot/</guid>
+      <guid>http://localhost:1313/2025/08/12/hey-copilot/</guid>
       <description>&lt;p&gt;So, you&amp;rsquo;ve got an idea of a new app or a web site, that you wish to build with GitHub Copilot.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Teaching GitHub Copilot New SQL Dialects with Reusable Prompts</title>
-      <link>https://blog.cloud-eng.nl/2025/04/18/reusable-prompts-llm-docs/</link>
+      <link>http://localhost:1313/2025/04/18/reusable-prompts-llm-docs/</link>
       <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2025/04/18/reusable-prompts-llm-docs/</guid>
+      <guid>http://localhost:1313/2025/04/18/reusable-prompts-llm-docs/</guid>
       <description>&lt;p&gt;Have you ever struggled with GenAI tools generating incorrect or unusable code for your internal SDK or API?&lt;/p&gt;</description>
     </item>
     <item>
       <title>GitHub Actions: Unified Build Pipeline for Multi-Repo Application</title>
-      <link>https://blog.cloud-eng.nl/2024/04/01/github-actions-mulitrepo/</link>
+      <link>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2024/04/01/github-actions-mulitrepo/</guid>
+      <guid>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</guid>
       <description>&lt;h2 id=&#34;common-misconceptions-about-github-actions&#34;&gt;Common Misconceptions about GitHub Actions&lt;/h2&gt;&#xA;&lt;p&gt;The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.&#xA;They expressed a concern that GitHub Actions does not work well in multi-repo setup; they were used to having build pipelines separate from the source code distributed across multiple repositories.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Post 3</title>
-      <link>https://blog.cloud-eng.nl/posts/post-3/</link>
+      <link>http://localhost:1313/posts/post-3/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>https://blog.cloud-eng.nl/posts/post-3/</guid>
+      <guid>http://localhost:1313/posts/post-3/</guid>
       <description>&lt;p&gt;Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.&lt;/p&gt;</description>
     </item>
     <item>
       <title>GitHub Container Registry. Keeping traffic below the spending limit.</title>
-      <link>https://blog.cloud-eng.nl/2023/01/23/ghcr-acr-traffic/</link>
+      <link>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</link>
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2023/01/23/ghcr-acr-traffic/</guid>
+      <guid>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</guid>
       <description>&lt;p&gt;GitHub Container Registry is a great service. It&amp;rsquo;s free for public repositories and it&amp;rsquo;s integrated with GitHub Actions. Unfortunately, it&amp;rsquo;s not free for private packages. The free tier allows 1 GB of data transfer per month.&#xA;What happens when you reach the limit depends on your payment profile. You will either be prevented from downloading your images or you&amp;rsquo;ll be charged for the consumed traffic.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Integration tests for .NET CLI tools</title>
-      <link>https://blog.cloud-eng.nl/2023/01/22/dotnet-cli-integration-tests/</link>
+      <link>http://localhost:1313/2023/01/22/dotnet-cli-integration-tests/</link>
       <pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2023/01/22/dotnet-cli-integration-tests/</guid>
+      <guid>http://localhost:1313/2023/01/22/dotnet-cli-integration-tests/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve spent Saturday evening working on a small project. I&amp;rsquo;ve built a .NET clone of &lt;code&gt;tree&lt;/code&gt; utitly. You know, the one that renders a nice tree view for a given directory.&lt;/p&gt;</description>
     </item>
     <item>
       <title>GitHub Environment Protection with Tags</title>
-      <link>https://blog.cloud-eng.nl/2022/11/26/environment-protection-tags/</link>
+      <link>http://localhost:1313/2022/11/26/environment-protection-tags/</link>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2022/11/26/environment-protection-tags/</guid>
+      <guid>http://localhost:1313/2022/11/26/environment-protection-tags/</guid>
       <description>&lt;p&gt;A recent request from a customer caught my attention. They were trying to set up a CD pipeline that should deploy packages to production when there is a new tag pushed to the repository. At the same time, they wanted some control over the process so that not everyone can init a release by pushing a tag to the repository.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AzureDevOps and hosted agents</title>
-      <link>https://blog.cloud-eng.nl/2022/08/22/ado-hosted-agents/</link>
+      <link>http://localhost:1313/2022/08/22/ado-hosted-agents/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2022/08/22/ado-hosted-agents/</guid>
+      <guid>http://localhost:1313/2022/08/22/ado-hosted-agents/</guid>
       <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR&lt;/h2&gt;&#xA;&lt;p&gt;Today I&amp;rsquo;m going to talk about self-hosted build agents.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configure WSL2 limits on Windows 10</title>
-      <link>https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/</link>
+      <link>http://localhost:1313/2021/02/03/wsl2-limits-vmmem/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2021/02/03/wsl2-limits-vmmem/</guid>
+      <guid>http://localhost:1313/2021/02/03/wsl2-limits-vmmem/</guid>
       <description>&lt;p&gt;WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy</title>
-      <link>https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/</link>
+      <link>http://localhost:1313/2021/01/27/terraform-octopus-deploy/</link>
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2021/01/27/terraform-octopus-deploy/</guid>
+      <guid>http://localhost:1313/2021/01/27/terraform-octopus-deploy/</guid>
       <description>&lt;p&gt;In this post, I&amp;rsquo;m going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that&amp;rsquo;s pretty much the same) with Octopus Deploy. To make it a little bit interesting I&amp;rsquo;m going to use Configuration-as-Code approach with a brand new &lt;a href=&#34;https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest&#34;&gt;Octopus provider for Terraform&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Using GitHub Container Registry with Kubernetes</title>
-      <link>https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/</link>
+      <link>http://localhost:1313/2020/10/08/using-github-registry-with-k8s/</link>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/</guid>
+      <guid>http://localhost:1313/2020/10/08/using-github-registry-with-k8s/</guid>
       <description>&lt;p&gt;GitHub Container Registry was introduced on the 1st of September 2020. It&amp;rsquo;s still in the Beta stage, so it&amp;rsquo;s rather not recommended to use it in production. However, it offers us free private storage for our Docker images, at least until the end of the Beta period.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docker image tests</title>
-      <link>https://blog.cloud-eng.nl/2020/09/29/container-tests/</link>
+      <link>http://localhost:1313/2020/09/29/container-tests/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2020/09/29/container-tests/</guid>
+      <guid>http://localhost:1313/2020/09/29/container-tests/</guid>
       <description>&lt;p&gt;Today we&amp;rsquo;re going to set up a CI/CD GitHub Action with a Container Structure Test step which will help us to enforce the certain quality policies for the images which we build and ship.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fix console logs for Azure Functions running in a Docker container</title>
-      <link>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</link>
+      <link>http://localhost:1313/2020/07/10/azure-function-docker-log/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</guid>
+      <guid>http://localhost:1313/2020/07/10/azure-function-docker-log/</guid>
       <description>&lt;p&gt;Local development of C# Azure Functions on macOS is still a bit painful.&#xA;Even the simple-ish logging might cause issues. Let&amp;rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one &lt;code&gt;TimerTrigger&lt;/code&gt; function created.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Provision your Azure environment with Terraform and Octopus Deploy</title>
-      <link>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</link>
+      <link>http://localhost:1313/2020/03/21/azure-terraform-octopus/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</guid>
+      <guid>http://localhost:1313/2020/03/21/azure-terraform-octopus/</guid>
       <description>&lt;p&gt;My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Connecting SQL Operations Studio to SQL Express server in Parallels VM</title>
-      <link>https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/</link>
+      <link>http://localhost:1313/2018/01/12/sqlops-studio-with-parallels/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2018/01/12/sqlops-studio-with-parallels/</guid>
+      <guid>http://localhost:1313/2018/01/12/sqlops-studio-with-parallels/</guid>
       <description>&lt;p&gt;In this post, I&amp;rsquo;m going to show how to marry SQL Operations Studio running on macOS with MS SQL Express running on Windows VM in Parallels.&lt;/p&gt;</description>
     </item>
     <item>
       <title>You are mocking it wrong.</title>
-      <link>https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/</link>
+      <link>http://localhost:1313/2017/12/23/you-are-mocking-it-wrong/</link>
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/</guid>
+      <guid>http://localhost:1313/2017/12/23/you-are-mocking-it-wrong/</guid>
       <description>&lt;p&gt;Well, probably &lt;em&gt;you&lt;/em&gt; are not, but let me grumble a little bit anyway.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Investigating unexpected MSBuild behavior</title>
-      <link>https://blog.cloud-eng.nl/2016/12/24/msbuild-investigation/</link>
+      <link>http://localhost:1313/2016/12/24/msbuild-investigation/</link>
       <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/12/24/msbuild-investigation/</guid>
+      <guid>http://localhost:1313/2016/12/24/msbuild-investigation/</guid>
       <description>&lt;p&gt;Recently I took latest changes from git, merged &lt;code&gt;dev&lt;/code&gt; to my current branch and decided to run few integration tests. You know, just to be sure.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Write code for the reviewer, not for the compiler</title>
-      <link>https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/</link>
+      <link>http://localhost:1313/2016/09/24/code-for-reviewer/</link>
       <pubDate>Sat, 24 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://blog.cloud-eng.nl/images/code-for-reviewer/matrix.png&#34; alt=&#34;Code&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2016/09/24/code-for-reviewer/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/code-for-reviewer/matrix.png&#34; alt=&#34;Code&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dev environment 2016. Windows.</title>
-      <link>https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/</link>
+      <link>http://localhost:1313/2016/06/12/dev-environment-2016-win/</link>
       <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/06/12/dev-environment-2016-win/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://blog.cloud-eng.nl/images/dev-tools-2016-win/old-tools-8.png&#34; alt=&#34;tool&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2016/06/12/dev-environment-2016-win/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/dev-tools-2016-win/old-tools-8.png&#34; alt=&#34;tool&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Thoughts on C# 7 Local Functions</title>
-      <link>https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/</link>
+      <link>http://localhost:1313/2016/04/15/thoughts-on-local-functions/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/</guid>
+      <guid>http://localhost:1313/2016/04/15/thoughts-on-local-functions/</guid>
       <description>&lt;p&gt;Frankly when I first saw that C# 7 will come with new local functions I thought that that&amp;rsquo;s just a nice and a&#xA;compact way of defining local helpers.&#xA;In fact, it&amp;rsquo;s much more interesting and useful feature. Today I&amp;rsquo;m going to talk about it in more details.&lt;/p&gt;</description>
     </item>
     <item>
       <title>CatLight</title>
-      <link>https://blog.cloud-eng.nl/2016/04/05/catlight-tool/</link>
+      <link>http://localhost:1313/2016/04/05/catlight-tool/</link>
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/04/05/catlight-tool/</guid>
+      <guid>http://localhost:1313/2016/04/05/catlight-tool/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.&lt;/p&gt;</description>
     </item>
     <item>
       <title>C# 7 features preview</title>
-      <link>https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/</link>
+      <link>http://localhost:1313/2016/04/02/csharp-seven-preview/</link>
       <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/</guid>
+      <guid>http://localhost:1313/2016/04/02/csharp-seven-preview/</guid>
       <description>&lt;p&gt;Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference.&#xA;As it&amp;rsquo;s one of the most important events for .NET dev community MSFT prepared quite a few awesome announcements for us:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fully automated Continuous Integration for your Open Source library for free</title>
-      <link>https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/</link>
+      <link>http://localhost:1313/2016/01/10/full-stack-ci-for-free/</link>
       <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://blog.cloud-eng.nl/images/ci-for-free/communism.png&#34; alt=&#34;open source is commumism&#34;&gt;&#xA;This is a long title. Well, the post is going to be long as well.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2016/01/10/full-stack-ci-for-free/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ci-for-free/communism.png&#34; alt=&#34;open source is commumism&#34;&gt;&#xA;This is a long title. Well, the post is going to be long as well.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to convince Linus Torvalds to contribute to your project</title>
-      <link>https://blog.cloud-eng.nl/2015/11/03/abusing-github/</link>
+      <link>http://localhost:1313/2015/11/03/abusing-github/</link>
       <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/11/03/abusing-github/</guid>
+      <guid>http://localhost:1313/2015/11/03/abusing-github/</guid>
       <description>&lt;p&gt;Look at all those famous people committing to some random developer’s &lt;a href=&#34;https://github.com/asizikov/gang/graphs/contributors&#34;&gt;boring repository&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>GitHub Deployment statuses</title>
-      <link>https://blog.cloud-eng.nl/2015/11/01/github-deployments/</link>
+      <link>http://localhost:1313/2015/11/01/github-deployments/</link>
       <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/11/01/github-deployments/</guid>
+      <guid>http://localhost:1313/2015/11/01/github-deployments/</guid>
       <description>&lt;p&gt;It’s very important to collect and track as much information as you can about your system. We have logging, monitoring, reports and analytics. All the systems that we build are not just packages, which are deployed to the server/computer or device. Everything starts with Issue Tracking system and through the code goes to production. The code and the process of coding both look like an important part of the system and it makes a lot of sense to collect and store all the data about code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Avoid typing user name when committing to GitHub repository</title>
-      <link>https://blog.cloud-eng.nl/2015/09/05/change-origin-for-github-repo/</link>
+      <link>http://localhost:1313/2015/09/05/change-origin-for-github-repo/</link>
       <pubDate>Sat, 05 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/09/05/change-origin-for-github-repo/</guid>
+      <guid>http://localhost:1313/2015/09/05/change-origin-for-github-repo/</guid>
       <description>&lt;p&gt;I use different accounts and different computers to work with GitHub repositories, so sometimes I face the situation when I don&amp;rsquo;t have my SSH key generated for the current environment.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ReSharper Annotations. Can it be null?</title>
-      <link>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</link>
+      <link>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</guid>
+      <guid>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</guid>
       <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis. The special edge case I want to talk about is nullness analysis.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 2.</title>
-      <link>https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/</link>
+      <link>http://localhost:1313/2015/08/14/rx-api-with-cache-two/</link>
       <pubDate>Fri, 14 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/</guid>
-      <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/&#34;&gt;previous post&lt;/a&gt; I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2015/08/14/rx-api-with-cache-two/</guid>
+      <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;http://localhost:1313/2015/07/26/rx-api-with-cache-one/&#34;&gt;previous post&lt;/a&gt; I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AsyncSuffix ReSharper extension</title>
-      <link>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</link>
+      <link>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</link>
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</guid>
+      <guid>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</guid>
       <description>&lt;p&gt;There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1.</title>
-      <link>https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/</link>
+      <link>http://localhost:1313/2015/07/26/rx-api-with-cache-one/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/</guid>
+      <guid>http://localhost:1313/2015/07/26/rx-api-with-cache-one/</guid>
       <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and  the approach in question was taken in a several applications with different modifications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sharing ReSharper settings and Live Templates</title>
-      <link>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</link>
+      <link>http://localhost:1313/2015/07/05/sharing-resharper-settings/</link>
       <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</guid>
-      <description>&lt;p&gt;In my &lt;a href=&#34;https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates&#34;&gt;previous post&lt;/a&gt; I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2015/07/05/sharing-resharper-settings/</guid>
+      <description>&lt;p&gt;In my &lt;a href=&#34;http://localhost:1313/2015/06/27/resharper-custom-live-templates&#34;&gt;previous post&lt;/a&gt; I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Custom live templates for ReSharper</title>
-      <link>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</link>
+      <link>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</link>
       <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</guid>
+      <guid>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</guid>
       <description>&lt;p&gt;Hi!&lt;/p&gt;&#xA;&lt;p&gt;As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called &lt;a href=&#34;https://www.jetbrains.com/resharper/&#34;&gt;ReSharper&lt;/a&gt;.&#xA;It saves me time, provides me a static analysis and generates code for me.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Keeping the repository interface clean</title>
-      <link>https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/</link>
+      <link>http://localhost:1313/2015/06/22/clean-repository-interface/</link>
       <pubDate>Mon, 22 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/</guid>
+      <guid>http://localhost:1313/2015/06/22/clean-repository-interface/</guid>
       <description>&lt;p&gt;The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello World</title>
-      <link>https://blog.cloud-eng.nl/2015/06/21/hello-world/</link>
+      <link>http://localhost:1313/2015/06/21/hello-world/</link>
       <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/06/21/hello-world/</guid>
+      <guid>http://localhost:1313/2015/06/21/hello-world/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m not sure if I can be more hipster, but now I have a blog which is hosted by GitHub pages and served by jekyll.&#xA;Yeah, I had to install python and ruby to run it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hi, I&#39;m Anton.</title>
-      <link>https://blog.cloud-eng.nl/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/about/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://blog.cloud-eng.nl/images/01-about/hdr.jpeg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m an Amsterdam-based software engineer, building cool things on the .NET platform and Azure.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/01-about/hdr.jpeg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m an Amsterdam-based software engineer, building cool things on the .NET platform and Azure.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

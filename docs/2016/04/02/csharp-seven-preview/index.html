@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="index,follow" name="googlebot">
@@ -23,13 +23,13 @@
 	
 <title>C# 7 features preview | Anton Sizikov</title>
 
-      <link rel="stylesheet" href="/css/main.min.29f41c72fe1a659dc6a93d1f6e53f882e80d53885ca3e8c6e2ec62d585f71c5d.css" integrity="sha256-KfQccv4aZZ3GqT0fblP4gugNU4hco&#43;jG4uxi1YX3HF0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
 
 
     <link rel="stylesheet" href="/css/custom.css">
 
 
-      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+      <script src="/js/main.js"></script>
 
 
 </head>
@@ -61,8 +61,9 @@
   
   
   
-  <h2>Published on: 
-  <time datetime="2016-04-02T00:00:00&#43;00:00">April 2, 2016</time></h2>
+  <p class="international__typo__post__date">
+    Published on <time datetime="2016-04-02T00:00:00&#43;00:00">April 2, 2016</time>
+  </p>
 
   <p>Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference.
 As it&rsquo;s one of the most important events for .NET dev community MSFT prepared quite a few awesome announcements for us:</p>
@@ -164,8 +165,7 @@ In addition to <a href="https://msdn.microsoft.com/en-us/library/aa664672(v=vs.7
 <p>Sort of a low-level feature in my opinion. You can return reference from method.
 Erric Lippert <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/ref-returns-and-ref-locals/">thought that</a></p>
 <blockquote>
-<p>we believe that the feature does not have broad enough appeal or compelling usage cases to make it into a real supported mainstream language feature.</p>
-</blockquote>
+<p>we believe that the feature does not have broad enough appeal or compelling usage cases to make it into a real supported mainstream language feature.</p></blockquote>
 <p>Not anymore, he-he.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"> <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"> <span class="p">{</span>
@@ -182,8 +182,7 @@ Erric Lippert <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/06/23/r
 10
 </code></pre><h2 id="pattern-matching">Pattern matching</h2>
 <blockquote>
-<p>Patterns are used in the <code>is</code> operator and in a <code>switch</code>-statement to express the shape of data against which incoming data is to be compared. Patterns may be recursive so that subparts of the data may be matched against subpatterns.</p>
-</blockquote>
+<p>Patterns are used in the <code>is</code> operator and in a <code>switch</code>-statement to express the shape of data against which incoming data is to be compared. Patterns may be recursive so that subparts of the data may be matched against subpatterns.</p></blockquote>
 <p>This is huge. C# community has been waiting for it for a long time.
 Unfortunately the syntax is not final now.</p>
 <p>There are several types of patterns supported for now.</p>
@@ -312,7 +311,7 @@ Unfortunately the syntax is not final now.</p>
     if ('serviceWorker' in navigator) {
         const buildDate = "12/10/25";
         navigator.serviceWorker
-            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .register("http://localhost:1313/sw.js", { scope: '/' })
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });

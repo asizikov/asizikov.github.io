@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure on Anton Sizikov</title>
-    <link>https://blog.cloud-eng.nl/tags/azure/</link>
+    <link>http://localhost:1313/tags/azure/</link>
     <description>Recent content in Azure on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.cloud-eng.nl/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub Container Registry. Keeping traffic below the spending limit.</title>
-      <link>https://blog.cloud-eng.nl/2023/01/23/ghcr-acr-traffic/</link>
+      <link>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</link>
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2023/01/23/ghcr-acr-traffic/</guid>
+      <guid>http://localhost:1313/2023/01/23/ghcr-acr-traffic/</guid>
       <description>&lt;p&gt;GitHub Container Registry is a great service. It&amp;rsquo;s free for public repositories and it&amp;rsquo;s integrated with GitHub Actions. Unfortunately, it&amp;rsquo;s not free for private packages. The free tier allows 1 GB of data transfer per month.&#xA;What happens when you reach the limit depends on your payment profile. You will either be prevented from downloading your images or you&amp;rsquo;ll be charged for the consumed traffic.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fix console logs for Azure Functions running in a Docker container</title>
-      <link>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</link>
+      <link>http://localhost:1313/2020/07/10/azure-function-docker-log/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2020/07/10/azure-function-docker-log/</guid>
+      <guid>http://localhost:1313/2020/07/10/azure-function-docker-log/</guid>
       <description>&lt;p&gt;Local development of C# Azure Functions on macOS is still a bit painful.&#xA;Even the simple-ish logging might cause issues. Let&amp;rsquo;s assume that we have Azure Functions Core Tools installed and we have a basic function app with one &lt;code&gt;TimerTrigger&lt;/code&gt; function created.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Provision your Azure environment with Terraform and Octopus Deploy</title>
-      <link>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</link>
+      <link>http://localhost:1313/2020/03/21/azure-terraform-octopus/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2020/03/21/azure-terraform-octopus/</guid>
+      <guid>http://localhost:1313/2020/03/21/azure-terraform-octopus/</guid>
       <description>&lt;p&gt;My current project has reached the point where we have to manage our infrastructure in a more organized way rather than ad-hoc manual configurations.&lt;/p&gt;</description>
     </item>
   </channel>

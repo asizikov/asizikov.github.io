@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Anton Sizikov</title>
-    <link>https://blog.cloud-eng.nl/tags/programming/</link>
+    <link>http://localhost:1313/tags/programming/</link>
     <description>Recent content in Programming on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Dec 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.cloud-eng.nl/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>You are mocking it wrong.</title>
-      <link>https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/</link>
+      <link>http://localhost:1313/2017/12/23/you-are-mocking-it-wrong/</link>
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2017/12/23/you-are-mocking-it-wrong/</guid>
+      <guid>http://localhost:1313/2017/12/23/you-are-mocking-it-wrong/</guid>
       <description>&lt;p&gt;Well, probably &lt;em&gt;you&lt;/em&gt; are not, but let me grumble a little bit anyway.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Write code for the reviewer, not for the compiler</title>
-      <link>https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/</link>
+      <link>http://localhost:1313/2016/09/24/code-for-reviewer/</link>
       <pubDate>Sat, 24 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/09/24/code-for-reviewer/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://blog.cloud-eng.nl/images/code-for-reviewer/matrix.png&#34; alt=&#34;Code&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2016/09/24/code-for-reviewer/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/code-for-reviewer/matrix.png&#34; alt=&#34;Code&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Thoughts on C# 7 Local Functions</title>
-      <link>https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/</link>
+      <link>http://localhost:1313/2016/04/15/thoughts-on-local-functions/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/04/15/thoughts-on-local-functions/</guid>
+      <guid>http://localhost:1313/2016/04/15/thoughts-on-local-functions/</guid>
       <description>&lt;p&gt;Frankly when I first saw that C# 7 will come with new local functions I thought that that&amp;rsquo;s just a nice and a&#xA;compact way of defining local helpers.&#xA;In fact, it&amp;rsquo;s much more interesting and useful feature. Today I&amp;rsquo;m going to talk about it in more details.&lt;/p&gt;</description>
     </item>
     <item>
       <title>C# 7 features preview</title>
-      <link>https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/</link>
+      <link>http://localhost:1313/2016/04/02/csharp-seven-preview/</link>
       <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2016/04/02/csharp-seven-preview/</guid>
+      <guid>http://localhost:1313/2016/04/02/csharp-seven-preview/</guid>
       <description>&lt;p&gt;Last week my twitter feed exploded with lots of entries about Microsoft //Build 2016 conference.&#xA;As it&amp;rsquo;s one of the most important events for .NET dev community MSFT prepared quite a few awesome announcements for us:&lt;/p&gt;</description>
     </item>
     <item>
       <title>ReSharper Annotations. Can it be null?</title>
-      <link>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</link>
+      <link>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</guid>
+      <guid>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</guid>
       <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis. The special edge case I want to talk about is nullness analysis.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 2.</title>
-      <link>https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/</link>
+      <link>http://localhost:1313/2015/08/14/rx-api-with-cache-two/</link>
       <pubDate>Fri, 14 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/08/14/rx-api-with-cache-two/</guid>
-      <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/&#34;&gt;previous post&lt;/a&gt; I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2015/08/14/rx-api-with-cache-two/</guid>
+      <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;http://localhost:1313/2015/07/26/rx-api-with-cache-one/&#34;&gt;previous post&lt;/a&gt; I told you how to implement the Reactive Api client with caching. Well, to prove that our code works we might want to have some unit tests.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AsyncSuffix ReSharper extension</title>
-      <link>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</link>
+      <link>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</link>
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</guid>
+      <guid>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</guid>
       <description>&lt;p&gt;There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reactive Extensions. Api client with Cache-Aside &amp; Refresh-Ahead strategy. Part 1.</title>
-      <link>https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/</link>
+      <link>http://localhost:1313/2015/07/26/rx-api-with-cache-one/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/07/26/rx-api-with-cache-one/</guid>
+      <guid>http://localhost:1313/2015/07/26/rx-api-with-cache-one/</guid>
       <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;Today I want to talk about the development of the api client library. Let’s say it is an imaginary GitHub RESTfull Api that returns user’s rating. To make this routine more interesting we’ll add caching and mix it with Reactive Extensions. In fact the article is a summary of my Windows Phone development experience, and  the approach in question was taken in a several applications with different modifications.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sharing ReSharper settings and Live Templates</title>
-      <link>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</link>
+      <link>http://localhost:1313/2015/07/05/sharing-resharper-settings/</link>
       <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</guid>
-      <description>&lt;p&gt;In my &lt;a href=&#34;https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates&#34;&gt;previous post&lt;/a&gt; I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2015/07/05/sharing-resharper-settings/</guid>
+      <description>&lt;p&gt;In my &lt;a href=&#34;http://localhost:1313/2015/06/27/resharper-custom-live-templates&#34;&gt;previous post&lt;/a&gt; I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Custom live templates for ReSharper</title>
-      <link>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</link>
+      <link>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</link>
       <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</guid>
+      <guid>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</guid>
       <description>&lt;p&gt;Hi!&lt;/p&gt;&#xA;&lt;p&gt;As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called &lt;a href=&#34;https://www.jetbrains.com/resharper/&#34;&gt;ReSharper&lt;/a&gt;.&#xA;It saves me time, provides me a static analysis and generates code for me.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Keeping the repository interface clean</title>
-      <link>https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/</link>
+      <link>http://localhost:1313/2015/06/22/clean-repository-interface/</link>
       <pubDate>Mon, 22 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://blog.cloud-eng.nl/2015/06/22/clean-repository-interface/</guid>
+      <guid>http://localhost:1313/2015/06/22/clean-repository-interface/</guid>
       <description>&lt;p&gt;The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.&lt;/p&gt;</description>
     </item>
   </channel>
