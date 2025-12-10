@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Multirepo on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/multirepo/</link>
+    <link>https://blog.cloud-eng.nl/tags/multirepo/</link>
     <description>Recent content in Multirepo on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/multirepo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.cloud-eng.nl/tags/multirepo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub Actions: Unified Build Pipeline for Multi-Repo Application</title>
-      <link>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</link>
+      <link>https://blog.cloud-eng.nl/2024/04/01/github-actions-mulitrepo/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2024/04/01/github-actions-mulitrepo/</guid>
+      <guid>https://blog.cloud-eng.nl/2024/04/01/github-actions-mulitrepo/</guid>
       <description>&lt;h2 id=&#34;common-misconceptions-about-github-actions&#34;&gt;Common Misconceptions about GitHub Actions&lt;/h2&gt;&#xA;&lt;p&gt;The other day, I was working with a customer who was planning a migration from JetBrains TeamCity to GitHub Actions.&#xA;They expressed a concern that GitHub Actions does not work well in multi-repo setup; they were used to having build pipelines separate from the source code distributed across multiple repositories.&lt;/p&gt;</description>
     </item>
   </channel>

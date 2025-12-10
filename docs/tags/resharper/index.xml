@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Resharper on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/resharper/</link>
+    <link>https://blog.cloud-eng.nl/tags/resharper/</link>
     <description>Recent content in Resharper on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 16 Aug 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/resharper/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.cloud-eng.nl/tags/resharper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ReSharper Annotations. Can it be null?</title>
-      <link>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</link>
+      <link>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/08/16/resharper-annotations-can-it-be-null/</guid>
+      <guid>https://blog.cloud-eng.nl/2015/08/16/resharper-annotations-can-it-be-null/</guid>
       <description>&lt;p&gt;Hi,&lt;/p&gt;&#xA;&lt;p&gt;ReSharper is doing great job when it comes to semantics of your code and control flow graph analysis. The special edge case I want to talk about is nullness analysis.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AsyncSuffix ReSharper extension</title>
-      <link>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</link>
+      <link>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</link>
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/08/02/async-suffix-resharper-plugin/</guid>
+      <guid>https://blog.cloud-eng.nl/2015/08/02/async-suffix-resharper-plugin/</guid>
       <description>&lt;p&gt;There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sharing ReSharper settings and Live Templates</title>
-      <link>http://localhost:1313/2015/07/05/sharing-resharper-settings/</link>
+      <link>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</link>
       <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/07/05/sharing-resharper-settings/</guid>
-      <description>&lt;p&gt;In my &lt;a href=&#34;http://localhost:1313/2015/06/27/resharper-custom-live-templates&#34;&gt;previous post&lt;/a&gt; I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.&lt;/p&gt;</description>
+      <guid>https://blog.cloud-eng.nl/2015/07/05/sharing-resharper-settings/</guid>
+      <description>&lt;p&gt;In my &lt;a href=&#34;https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates&#34;&gt;previous post&lt;/a&gt; I&amp;rsquo;ve described how to create your own Live Templates for ReSharper. Today I&amp;rsquo;m going to tell how to share your ReSharper settings and Live Templates with your team.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Custom live templates for ReSharper</title>
-      <link>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</link>
+      <link>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</link>
       <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2015/06/27/resharper-custom-live-templates/</guid>
+      <guid>https://blog.cloud-eng.nl/2015/06/27/resharper-custom-live-templates/</guid>
       <description>&lt;p&gt;Hi!&lt;/p&gt;&#xA;&lt;p&gt;As a .NET developer I&amp;rsquo;m enjoying to use an intelligent plug-in for Visual Studio which is called &lt;a href=&#34;https://www.jetbrains.com/resharper/&#34;&gt;ReSharper&lt;/a&gt;.&#xA;It saves me time, provides me a static analysis and generates code for me.&lt;/p&gt;</description>
     </item>
   </channel>

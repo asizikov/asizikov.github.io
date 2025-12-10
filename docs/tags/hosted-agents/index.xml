@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hosted-Agents on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/hosted-agents/</link>
+    <link>https://blog.cloud-eng.nl/tags/hosted-agents/</link>
     <description>Recent content in Hosted-Agents on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hosted-agents/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.cloud-eng.nl/tags/hosted-agents/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AzureDevOps and hosted agents</title>
-      <link>http://localhost:1313/2022/08/22/ado-hosted-agents/</link>
+      <link>https://blog.cloud-eng.nl/2022/08/22/ado-hosted-agents/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2022/08/22/ado-hosted-agents/</guid>
+      <guid>https://blog.cloud-eng.nl/2022/08/22/ado-hosted-agents/</guid>
       <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR&lt;/h2&gt;&#xA;&lt;p&gt;Today I&amp;rsquo;m going to talk about self-hosted build agents.&lt;/p&gt;</description>
     </item>
   </channel>

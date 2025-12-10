@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Appveyor on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/appveyor/</link>
+    <link>https://blog.cloud-eng.nl/tags/appveyor/</link>
     <description>Recent content in Appveyor on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/appveyor/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.cloud-eng.nl/tags/appveyor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CatLight</title>
-      <link>http://localhost:1313/2016/04/05/catlight-tool/</link>
+      <link>https://blog.cloud-eng.nl/2016/04/05/catlight-tool/</link>
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2016/04/05/catlight-tool/</guid>
+      <guid>https://blog.cloud-eng.nl/2016/04/05/catlight-tool/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s hard to imagine modern development without continuous intergation and unit-tests.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fully automated Continuous Integration for your Open Source library for free</title>
-      <link>http://localhost:1313/2016/01/10/full-stack-ci-for-free/</link>
+      <link>https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/</link>
       <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2016/01/10/full-stack-ci-for-free/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ci-for-free/communism.png&#34; alt=&#34;open source is commumism&#34;&gt;&#xA;This is a long title. Well, the post is going to be long as well.&lt;/p&gt;</description>
+      <guid>https://blog.cloud-eng.nl/2016/01/10/full-stack-ci-for-free/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://blog.cloud-eng.nl/images/ci-for-free/communism.png&#34; alt=&#34;open source is commumism&#34;&gt;&#xA;This is a long title. Well, the post is going to be long as well.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

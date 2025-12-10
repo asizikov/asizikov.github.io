@@ -2,192 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Anton Sizikov</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://blog.cloud-eng.nl/tags/</link>
     <description>Recent content in Tags on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.cloud-eng.nl/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Developer-Tools</title>
-      <link>http://localhost:1313/tags/developer-tools/</link>
+      <link>https://blog.cloud-eng.nl/tags/developer-tools/</link>
       <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/developer-tools/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/developer-tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Github Copilot</title>
-      <link>http://localhost:1313/tags/github-copilot/</link>
+      <link>https://blog.cloud-eng.nl/tags/github-copilot/</link>
       <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github-copilot/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/github-copilot/</guid>
       <description></description>
     </item>
     <item>
       <title>Metrics</title>
-      <link>http://localhost:1313/tags/metrics/</link>
+      <link>https://blog.cloud-eng.nl/tags/metrics/</link>
       <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/metrics/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/metrics/</guid>
       <description></description>
     </item>
     <item>
       <title>Ai</title>
-      <link>http://localhost:1313/tags/ai/</link>
+      <link>https://blog.cloud-eng.nl/tags/ai/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Llm</title>
-      <link>http://localhost:1313/tags/llm/</link>
+      <link>https://blog.cloud-eng.nl/tags/llm/</link>
       <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>Vscode</title>
-      <link>http://localhost:1313/tags/vscode/</link>
+      <link>https://blog.cloud-eng.nl/tags/vscode/</link>
       <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vscode/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/vscode/</guid>
       <description></description>
     </item>
     <item>
       <title>Devops</title>
-      <link>http://localhost:1313/tags/devops/</link>
+      <link>https://blog.cloud-eng.nl/tags/devops/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/devops/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/devops/</guid>
       <description></description>
     </item>
     <item>
       <title>Github-Actions</title>
-      <link>http://localhost:1313/tags/github-actions/</link>
+      <link>https://blog.cloud-eng.nl/tags/github-actions/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github-actions/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/github-actions/</guid>
       <description></description>
     </item>
     <item>
       <title>Multirepo</title>
-      <link>http://localhost:1313/tags/multirepo/</link>
+      <link>https://blog.cloud-eng.nl/tags/multirepo/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/multirepo/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/multirepo/</guid>
       <description></description>
     </item>
     <item>
       <title>Blue</title>
-      <link>http://localhost:1313/tags/blue/</link>
+      <link>https://blog.cloud-eng.nl/tags/blue/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/tags/blue/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/blue/</guid>
       <description></description>
     </item>
     <item>
       <title>Green</title>
-      <link>http://localhost:1313/tags/green/</link>
+      <link>https://blog.cloud-eng.nl/tags/green/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/tags/green/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/green/</guid>
       <description></description>
     </item>
     <item>
       <title>Red</title>
-      <link>http://localhost:1313/tags/red/</link>
+      <link>https://blog.cloud-eng.nl/tags/red/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/tags/red/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/red/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
-      <link>http://localhost:1313/tags/azure/</link>
+      <link>https://blog.cloud-eng.nl/tags/azure/</link>
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/azure/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/azure/</guid>
       <description></description>
     </item>
     <item>
       <title>Dotnet</title>
-      <link>http://localhost:1313/tags/dotnet/</link>
+      <link>https://blog.cloud-eng.nl/tags/dotnet/</link>
       <pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dotnet/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/dotnet/</guid>
       <description></description>
     </item>
     <item>
       <title>Github</title>
-      <link>http://localhost:1313/tags/github/</link>
+      <link>https://blog.cloud-eng.nl/tags/github/</link>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure-Devops</title>
-      <link>http://localhost:1313/tags/azure-devops/</link>
+      <link>https://blog.cloud-eng.nl/tags/azure-devops/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/azure-devops/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/azure-devops/</guid>
       <description></description>
     </item>
     <item>
       <title>Hosted-Agents</title>
-      <link>http://localhost:1313/tags/hosted-agents/</link>
+      <link>https://blog.cloud-eng.nl/tags/hosted-agents/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hosted-agents/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/hosted-agents/</guid>
       <description></description>
     </item>
     <item>
       <title>Octopus Deploy</title>
-      <link>http://localhost:1313/tags/octopus-deploy/</link>
+      <link>https://blog.cloud-eng.nl/tags/octopus-deploy/</link>
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/octopus-deploy/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/octopus-deploy/</guid>
       <description></description>
     </item>
     <item>
       <title>Terraform</title>
-      <link>http://localhost:1313/tags/terraform/</link>
+      <link>https://blog.cloud-eng.nl/tags/terraform/</link>
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/terraform/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/terraform/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
-      <link>http://localhost:1313/tags/kubernetes/</link>
+      <link>https://blog.cloud-eng.nl/tags/kubernetes/</link>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kubernetes/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
+      <link>https://blog.cloud-eng.nl/tags/docker/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Serverless</title>
-      <link>http://localhost:1313/tags/serverless/</link>
+      <link>https://blog.cloud-eng.nl/tags/serverless/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/serverless/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/serverless/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
+      <link>https://blog.cloud-eng.nl/tags/tools/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tools/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>http://localhost:1313/tags/programming/</link>
+      <link>https://blog.cloud-eng.nl/tags/programming/</link>
       <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/programming/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Appveyor</title>
-      <link>http://localhost:1313/tags/appveyor/</link>
+      <link>https://blog.cloud-eng.nl/tags/appveyor/</link>
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/appveyor/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/appveyor/</guid>
       <description></description>
     </item>
     <item>
       <title>Resharper</title>
-      <link>http://localhost:1313/tags/resharper/</link>
+      <link>https://blog.cloud-eng.nl/tags/resharper/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/resharper/</guid>
+      <guid>https://blog.cloud-eng.nl/tags/resharper/</guid>
       <description></description>
     </item>
   </channel>
