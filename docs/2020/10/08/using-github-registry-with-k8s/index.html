@@ -72,8 +72,7 @@
 <h2 id="enable-github-container-registry">Enable GitHub Container Registry</h2>
 <p>First things first. We need to enable GitHub Container Registry for our account (Process for your organization is almost the same).</p>
 <blockquote>
-<p>Note GitHub Container Registry is in public beta state at the moment of writing, so it&rsquo;s subject to change. I recommend to follow <a href="https://docs.github.com/en/free-pro-team@latest/packages/getting-started-with-github-container-registry">the official documentation</a>, it&rsquo;s more likely to be up to date.</p>
-</blockquote>
+<p>Note GitHub Container Registry is in public beta state at the moment of writing, so it&rsquo;s subject to change. I recommend to follow <a href="https://docs.github.com/en/free-pro-team@latest/packages/getting-started-with-github-container-registry">the official documentation</a>, it&rsquo;s more likely to be up to date.</p></blockquote>
 <p><img src="/images/2020-10-ghk8s/registry.jpg" alt=""></p>
 <h2 id="create-access-tokens">Create Access Tokens</h2>
 <p>For now, Container Registry supports just one authorization option, which is Personal Access Token (PAT). I&rsquo;m going to <a href="https://github.com/settings/tokens">create two tokens here</a> (note the scopes).</p>
@@ -102,8 +101,7 @@
 <script src="https://gist.github.com/asizikov/d620e31e9cac51187ccc73ddd8189e3d.js"></script>
 
 <blockquote>
-<p>Note: base64 is not an encryption, so you should not commit this file! This is just for a demo.</p>
-</blockquote>
+<p>Note: base64 is not an encryption, so you should not commit this file! This is just for a demo.</p></blockquote>
 <p>And now we have prepared all the pieces, time to create a new secret</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl create -f dockerconfigjson.yaml
 </span></span><span class="line"><span class="cl">secret/dockerconfigjson-github-com created
