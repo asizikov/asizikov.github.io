@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on Anton Sizikov</title>
-    <link>//:1313/tags/kubernetes/</link>
+    <link>https://blog.cloud-eng.nl/tags/kubernetes/</link>
     <description>Recent content in Kubernetes on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//:1313/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.cloud-eng.nl/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using GitHub Container Registry with Kubernetes</title>
-      <link>//:1313/2020/10/08/using-github-registry-with-k8s/</link>
+      <link>https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/</link>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>//:1313/2020/10/08/using-github-registry-with-k8s/</guid>
+      <guid>https://blog.cloud-eng.nl/2020/10/08/using-github-registry-with-k8s/</guid>
       <description>&lt;p&gt;GitHub Container Registry was introduced on the 1st of September 2020. It&amp;rsquo;s still in the Beta stage, so it&amp;rsquo;s rather not recommended to use it in production. However, it offers us free private storage for our Docker images, at least until the end of the Beta period.&lt;/p&gt;</description>
     </item>
   </channel>
