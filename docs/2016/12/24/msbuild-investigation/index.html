@@ -61,14 +61,14 @@
   
   
   
-  <h2>Published on: 
-  <time datetime="2016-12-24T00:00:00&#43;00:00">December 24, 2016</time></h2>
+  <p class="international__typo__post__date">
+    Published on <time datetime="2016-12-24T00:00:00&#43;00:00">December 24, 2016</time>
+  </p>
 
   <p>Recently I took latest changes from git, merged <code>dev</code> to my current branch and decided to run few integration tests. You know, just to be sure.</p>
 <p>What do I see? well&hellip; this.</p>
 <blockquote>
-<p>Could not load file or assembly &lsquo;<code>Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=...</code> or one of its dependencies.</p>
-</blockquote>
+<p>Could not load file or assembly &lsquo;<code>Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=...</code> or one of its dependencies.</p></blockquote>
 <p>That doesn&rsquo;t sound right, though it&rsquo;s typically easy to fix.</p>
 <p>The first reaction is to consolidate NuGet packages in my Solution. All the installed packages have same version <code>5.7.0</code> though.</p>
 <p><img src="/images/2016-12-msbuild-investigation/installed-package-version.png" alt="Package.config sample"></p>

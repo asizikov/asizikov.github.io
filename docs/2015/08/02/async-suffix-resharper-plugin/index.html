@@ -61,16 +61,16 @@
   
   
   
-  <h2>Published on: 
-  <time datetime="2015-08-02T00:00:00&#43;00:00">August 2, 2015</time></h2>
+  <p class="international__typo__post__date">
+    Published on <time datetime="2015-08-02T00:00:00&#43;00:00">August 2, 2015</time>
+  </p>
 
   <p>There is a tendency in a .NET world to build asynchronous CPU bounded or IO related API. We also can see that some APIs support both asynchronous and synchronous versions for the backward compatibility reasons.</p>
 <p>That puts us in a situation where we should be able to distinguish between async and non-async versions of method. <a href="https://msdn.microsoft.com/en-us/library/hh873175.aspx">Microsoft suggests</a> us to follow the naming convention where every asynchronous method include Async suffix after the operation name.</p>
 <p>There are some questions about this guideline. What do we call an asynchronous method? Is it the one with <code>async</code> keyword?</p>
 <p>Well, <a href="http://stackoverflow.com/questions/15951774/naming-convention-for-async-methods">according to Stephen Toub</a> it’s the Task returning method in general (with a few exceptions).</p>
 <blockquote>
-<p>If a public method is Task-returning and is asynchronous in nature (as opposed to a method that is known to always execute synchronously to completion but still returns a Task for some reason), it should have an “Async” suffix. That’s the guideline. The primary goal here with the naming is to make it very obvious to a consumer of the functionality that the method being invoked will likely not complete all of its work synchronously; it of course also helps with the case where functionality is exposed with both synchronous and asynchronous methods such that you need a name difference to distinguish them. How the method achieves its asynchronous implementation is immaterial to the naming: whether async/await is used to garner the compiler’s help, or whether types and methods from System.Threading.Tasks are used directly (e.g. TaskCompletionSource) doesn’t really matter, as that doesn’t affect the method’s signature as far as a consumer of the method is concerned.</p>
-</blockquote>
+<p>If a public method is Task-returning and is asynchronous in nature (as opposed to a method that is known to always execute synchronously to completion but still returns a Task for some reason), it should have an “Async” suffix. That’s the guideline. The primary goal here with the naming is to make it very obvious to a consumer of the functionality that the method being invoked will likely not complete all of its work synchronously; it of course also helps with the case where functionality is exposed with both synchronous and asynchronous methods such that you need a name difference to distinguish them. How the method achieves its asynchronous implementation is immaterial to the naming: whether async/await is used to garner the compiler’s help, or whether types and methods from System.Threading.Tasks are used directly (e.g. TaskCompletionSource) doesn’t really matter, as that doesn’t affect the method’s signature as far as a consumer of the method is concerned.</p></blockquote>
 <p>Unfortunately developers tend to forget about this guideline as it’s not so natural. I noticed that this topic pops up quite often during the code reviews. What do lazy developers do in this situation? They automate the routine.</p>
 <p>Since we’re using ReSharper it seems to be an obvious solution to delegate this task to it.</p>
 <p>ReSharper supports <a href="https://www.jetbrains.com/resharper/help/Code_Inspection__Creating_Custom_Inspections_and_QuickFixes.html">custom code inspections</a> and <a href="http://stackoverflow.com/a/22509370/555014">we can build the new inspection</a>.</p>
