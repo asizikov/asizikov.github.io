@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Llm on Anton Sizikov</title>
-    <link>//:1313/tags/llm/</link>
+    <link>https://blog.cloud-eng.nl/tags/llm/</link>
     <description>Recent content in Llm on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.cloud-eng.nl/tags/llm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Teaching GitHub Copilot New SQL Dialects with Reusable Prompts</title>
-      <link>//:1313/2025/04/18/reusable-prompts-llm-docs/</link>
+      <link>https://blog.cloud-eng.nl/2025/04/18/reusable-prompts-llm-docs/</link>
       <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>//:1313/2025/04/18/reusable-prompts-llm-docs/</guid>
+      <guid>https://blog.cloud-eng.nl/2025/04/18/reusable-prompts-llm-docs/</guid>
       <description>&lt;p&gt;Have you ever struggled with GenAI tools generating incorrect or unusable code for your internal SDK or API?&lt;/p&gt;</description>
     </item>
   </channel>
