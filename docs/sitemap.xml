@@ -3,21 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.cloud-eng.nl/blog/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.cloud-eng.nl/tags/developer-tools/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.cloud-eng.nl/tags/github-copilot/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.cloud-eng.nl/2025/12/22/copilot-customization/</loc>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.cloud-eng.nl/tags/</loc>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.cloud-eng.nl/tags/metrics/</loc>
     <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.cloud-eng.nl/2025/12/09/copilot-metrics/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.cloud-eng.nl/tags/</loc>
     <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.cloud-eng.nl/tags/ai/</loc>
