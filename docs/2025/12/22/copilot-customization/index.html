@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="index,follow" name="googlebot">
+	<meta content="follow, all" name="Googlebot-Image">
+	<meta content="follow, all" name="Scooter">
+	<meta content="follow, all" name="msnbot">
+	<meta content="follow, all" name="alexabot">
+	<meta content="follow, all" name="Slurp">
+	<meta content="follow, all" name="ZyBorg">
+	<meta content="follow, all" name="Scooter">
+	<meta content="true" name="MSSmartTagsPreventParsing">
+	<meta content="ALL" name="SPIDERS">
+	<meta content="ALL" name="WEBCRAWLERS">
+	<meta
+		content="aeiwi, alexa, alltheWeb, altavista, aol netfind, anzwers, canada, directhit, euroseek, excite, overture, go, google, hotbot. infomak, kanoodle, lycos, mastersite, national directory, northern light, searchit, simplesearch, Websmostlinked, webtop, what-u-seek, aol, yahoo, webcrawler, infoseek, excite, magellan, looksmart, bing, cnet, googlebot"
+		name="search engines">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+<title>GitHub Copilot Customization: Instructions, Prompts, Agents and Skills | Anton Sizikov</title>
+
+      <link rel="stylesheet" href="/css/main.min.29f41c72fe1a659dc6a93d1f6e53f882e80d53885ca3e8c6e2ec62d585f71c5d.css" integrity="sha256-KfQccv4aZZ3GqT0fblP4gugNU4hco&#43;jG4uxi1YX3HF0=" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="/css/custom.css">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <div class="international__typo__header__layout">
+    <div class="international__typo__header__layout__left">
+        <span class="international__typo__header__layout_subdomain">
+            <a class="international__typo__header__home" href="/">blog.</a></span>
+    </div>
+    <div class="international__typo__header__layout__right">
+        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
+        <span class="international__typo__header__layout__right__tld">.nl</span>
+    <div>                        
+</div>
+
+
+
+  </header>
+  <main>
+    <div class="international__typo__main__layout">
+      <div class="international__typo__main__layout__left"></div>
+      <div class="international__typo__main__layout__right">
+        <div class="international__typo__main__layout__right__content">
+        
+<div class="international__typo__post__content">
+  <h1>GitHub Copilot Customization: Instructions, Prompts, Agents and Skills</h1>
+
+  
+  
+  
+  <p class="international__typo__post__date">
+    Published on <time datetime="2025-12-22T00:00:00&#43;00:00">December 22, 2025</time>
+  </p>
+
+  <p>We&rsquo;re approaching the end of 2025, this has been a year of agents, for sure.</p>
+<p>However, we&rsquo;re about to step into 2026 with the whole collection of buzz-words and approaches that may seem overwhelming. We have Instructions, Reusable Prompts, Custom Agents, Subagents and now Skills. If you&rsquo;re scratching your head trying to figure out what all these terms mean and what to use when, you&rsquo;re not alone.</p>
+<p>In this post I&rsquo;m going to summarize various ways you can customize GitHub Copilot and help you navigate through the options available.</p>
+<h2 id="instructions">Instructions</h2>
+<p>Instructions are the oldest and the easiest to explain. I hope :)</p>
+<p>We basically, have two different ways to provide information to every agent session:</p>
+<ol>
+<li><strong>Copilot Instructions</strong> - <code>copilot-instructions.md</code> file in the <code>.github</code> folder of your repository. This file is automatically attached to the context of every Copilot session in that repository.</li>
+</ol>
+<p>Treat it as an entry point to provide general context about the project, coding styles, conventions and documentation. Keep in mind the context window size and try to keep this file concise.</p>
+<ol start="2">
+<li><strong>Custom Instructions</strong> - <code>*.instructions.md</code> files in the <code>.github/instructions</code> folder of your repository. These files have a matching regex to help agent pick them up based on the pattern of the file it&rsquo;s working on.</li>
+</ol>
+<p>Custom instructions can provide more specific context for certain parts of the codebase. Think about <code>tests.instructions.md</code> that would apply to all test files in the repository (<code>**/tests/**</code>).</p>
+<p>And to make it a bit more interesting, we can define</p>
+<ol start="3">
+<li><strong>AGENTS.md</strong> - file in the root of the repository that serves the same purpose as <code>copilot-instructions.md</code>, but can be used by other agents. See <a href="https://agents.md/">Agents.md</a> for more details. This hopefully will become a standard. Looking at Anthropic here&hellip;</li>
+</ol>
+<p>To put it simply, you can follow this decision tree:</p>
+<p><img src="/images/2025-12-customization/01-instructions.png" alt="Descion tree"></p>
+<h2 id="reusable-prompts">Reusable Prompts</h2>
+<p>Reusable Prompts are pretty old too. They were introduced as a way to store and share frequently used prompts that you give to the agent.</p>
+<p>As the landscape evolved, they can now be seen as utility &ldquo;script&rdquo; or &ldquo;macros&rdquo; that you can use to invoke occasionally to perform an agentic task.</p>
+<p>For example this blog is written in VS Code where I have a <code>/new-post</code> prompt that scaffolds needed files, generates tags. There is also a <code>/spell-check</code> prompt that reviews the content of the uncommitted .md file for spelling mistakes.</p>
+<p>It can be invoked via slash command:
+<img src="/images/2025-12-customization/02-new-post-prompt.png" alt="New Post Prompt"></p>
+<p>and would run in the context of current Agent session:</p>
+<p><img src="/images/2025-12-customization/03-new-post-prompt-results.png" alt="New Post Result"></p>
+<p>Prompts that I use don&rsquo;t deserve a full orchestration as Agents and they don&rsquo;t run complex workflows.</p>
+<p>They are defined in the <code>.github/prompts</code> folder of the repository as individual <code>*prompt.md</code> files.</p>
+<p>Btw, did you know, that you can convert any Agent Session into a reusable prompt?
+Invoke the <code>/savePrompt</code> command in the context of an active Agent session and it will generalize the current discussion into a reusable prompt that can be applied in similar contexts.</p>
+<h2 id="custom-agents">Custom Agents</h2>
+<p>Custom Agents or, as they were initially called, Custom Agent Modes, have been introduced after.</p>
+<p>Custom Agents can define a specific persona and behavior for the agent. Agent definition file can customize the tools and MCPs available to the agent.</p>
+<p>Custom Agents stored in the <code>.github/agents</code> folder of the repository as individual <code>*agent.md</code> files. They can also be shared across repositories via <code>.github</code> or <code>.github-private</code> organization repositories. They are accessible via several entry points:</p>
+<ul>
+<li>IDE</li>
+<li>Copilot CLI</li>
+<li>GitHub Web UI</li>
+</ul>
+<p>In its simplest form, custom agent defines a workflow that can be run without user interaction. These agents can be run as background tasks (on your machine, via Copilot CLI, using git worktrees) or in the cloud (as GitHub Copilot Coding Agent).</p>
+<p>However, locally you can trigger custom agents for interactive sessions as well. A built-in Planning Agent is a good example: it has limited ability to execute code and modify files, but it&rsquo;s tasked to analyze the task, break it down into steps, ask the user for confirmation and then build the plan that can be handed over to another local, background or cloud agent for execution.</p>
+<p><img src="/images/2025-12-customization/04-custom-agent-tree.png" alt="Custom Agent"></p>
+<p>Local custom agents can be manually selected in the Chat UI or in the CLI via <code>/agent</code> command.</p>
+<h2 id="context-management">Context Management</h2>
+<p>While models become more capable, context window size remains a limiting factor. In the beginning of the year we had limited ways to manage the size of the session context. Pretty much we had to rely on two strategies:</p>
+<ul>
+<li>Closing off the session when it becomes too large, optionally asking the agent to prepare a summary document that could be passed to the new session.</li>
+<li>Built-in session summarization that would condense the context when it exceeds certain size.</li>
+<li>Manual selection of active tools and MCPs</li>
+</ul>
+<p>Factors contributing to the context size are (not including system and custom prompts):</p>
+<ul>
+<li>Built-in tools</li>
+<li>MCPs</li>
+<li>Files that agent decided to load into context</li>
+<li>User messages and instructions as well as responses from the agent</li>
+</ul>
+<p>With Custom Agents we can specify which tools and MCPs are available to the agent, thus reducing the context size.</p>
+<p>However, the agent may still load too many files for the subtask such as researching, looking for documentation, reading terminal outputs etc.</p>
+<p>To address this, Subagents were introduced.</p>
+<h2 id="subagents">Subagents</h2>
+<p>Subagents are context-isolated agents (or agentic sessions) that can be invoked by the main agent to perform specific tasks. These Subagents have their own context window, they can load additional information, process it and return the control to the main agent along with just the relevant results.</p>
+<p>For example, if the main agent is tasked with implementing a new feature, it may invoke a Subagent to research best practices or to analyze existing code patterns in the repository. The Subagent can load relevant files, process them, and return a concise summary or specific recommendations to the main agent.</p>
+<p>This approach helps in managing the context size effectively, as the main agent doesn&rsquo;t get overwhelmed with too much information.</p>
+<p>As a user you can ask the main agent to use a Subagent for specific tasks by hinting it to use <code>#runSubAgent</code> tool explicitly.</p>
+<p><img src="/images/2025-12-customization/05-use-subagent.png" alt="Subagent"></p>
+<p>This will kick off a new session that would pull the entire page content, process it and return just the summary to the main agent.</p>
+<p>Now, where it gets really interesting is when we invoke existing Custom Agents as Subagents too.</p>
+<p>In my repository I have created a <code>Documentation Reader</code> custom agent that knows how to pull docs from external sources and summarize them.</p>
+<p>I can explicitly select this agent or I can tell my main agent to invoke it:</p>
+<p><img src="/images/2025-12-customization/06-agent-as-subagent.png" alt="Custom Agent as Subagent"></p>
+<p>If we check the debug logs of the main agent session we&rsquo;ll see that composed a prompt for the subagent and invoked it successfully:</p>
+<p><img src="/images/2025-12-customization/07-subagent-log.png" alt="Subagent Log"></p>
+<p>The only content that the main agent received back was the summary of the documentation, while the subagent had access to the entire documentation content.</p>
+<p>If you run VS Code Insiders and you&rsquo;ve enabled currently experimental Agents as Subagents (that&rsquo;s a mouthful) feature, you can try asking Copilot about available subagents in your repository:</p>
+<p><img src="/images/2025-12-customization/08-subagent-discovery.png" alt="Subagent Discovery"></p>
+<p>As you can see, if you ask generic agent to plan a task, it can invoke Planning Agent as a Subagent.</p>
+<p>So to summarize, Subagents <strong>are not independent entities</strong>, they are the way to execute a prompt or a custom agent with the isolated context.</p>
+<h2 id="skills">Skills</h2>
+<p>Now, the latest addition to the customization family are Skills.</p>
+<p>Skills sit somewhere between Reusable Prompts and Custom Agents. And they have some similarities to MCPs as well. Yeah, it&rsquo;s that complicated :)</p>
+<p>Let&rsquo;s define a Skill first:</p>
+<p>Skill is a collection of optional scripts, assets and <code>SKILL.md</code> definition file that describes the purpose of the skill, when to call it and how to use included assets.</p>
+<p>Skills are stored in the <code>.github/skills</code> folder of the repository as individual skill folders.</p>
+<p>What makes them special is the discovery mechanism.</p>
+<p>When an agent session is started, the agent scans the repository for available skills and loads their definitions into the context along with tools and MCPs. While Skills can be somewhat large they take small amount of context space as only their definitions are loaded initially.</p>
+<p>As by the definition, skills can include scripts and assets, they are good for encapsulating reusable logic that can be invoked by the agent when needed and they combine the best of both worlds:</p>
+<ul>
+<li>LLM-powered agentic behavior</li>
+<li>Deterministic results from scripts</li>
+</ul>
+<p>For example, I have a <code>dotnet-tests</code> skill in my repository that contains instructions to run the skill whenever the agent updates .cs files and in case the user asks about test suite status. It also tasked to use included scripts that prepare the project, provide flags that I need, parse the output and summarize the results in the format that I prefer.</p>
+<h2 id="how-it-all-fits-together">How it all fits together</h2>
+<p>Let&rsquo;s look at the diagram below:</p>
+<p><img src="/images/2025-12-customization/09-the-world.png" alt="The World"></p>
+<p>The Agent is an entry point. Agents are <strong>independent entities</strong> that can be invoked directly locally, in background or in the cloud. Every agent can break down its tasks and implement them using tools, MCPs, Skills. These invocations can happen directly in the context of the current agentic session or in the isolated context of a Subagent.</p>
+<p>Subagent task can be as simple as running an in-line prompt or as complex as invoking another Custom Agent.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>As you can see, GitHub Copilot customization options have evolved significantly over the year.
+We&rsquo;re still yet to see how users will adopt these new concepts and what best practices will emerge.</p>
+<p>Happy hacking!</p>
+<h2 id="disclosure">Disclosure</h2>
+<blockquote>
+<p><em>I&rsquo;m employed by GitHub at the time of writing this post. All opinions are my own.</em></p></blockquote>
+
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/github-copilot/">Github Copilot</a></li>
+        <li><a href="/tags/developer-tools/">Developer-Tools</a></li>
+    </ul>
+  </div>
+
+</div>
+
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <p>Copyright 2025. All rights reserved.</p>
+
+  </footer>
+</body>
+<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+<script>
+    
+    
+    
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-64347270-1', 'auto'); ga('send', 'pageview');
+    
+
+    
+    
+    
+    
+
+    if ('serviceWorker' in navigator) {
+        const buildDate = "12/22/25";
+        navigator.serviceWorker
+            .register("https://blog.cloud-eng.nl/sw.js", { scope: '/' })
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+
+        navigator.serviceWorker
+            .ready
+            .then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+    }
+</script>
+</html>
