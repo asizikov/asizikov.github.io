@@ -84,7 +84,7 @@
 <li><strong>AGENTS.md</strong> - file in the root of the repository that serves the same purpose as <code>copilot-instructions.md</code>, but can be used by other agents. See <a href="https://agents.md/">Agents.md</a> for more details. This hopefully will become a standard. Looking at Anthropic here&hellip;</li>
 </ol>
 <p>To put it simply, you can follow this decision tree:</p>
-<p><img src="/images/2025-12-customization/01-instructions.png" alt="Descion tree"></p>
+<p><img src="/images/2025-12-customization/01-instructions.png" alt="Decision tree"></p>
 <h2 id="reusable-prompts">Reusable Prompts</h2>
 <p>Reusable Prompts are pretty old too. They were introduced as a way to store and share frequently used prompts that you give to the agent.</p>
 <p>As the landscape evolved, they can now be seen as utility &ldquo;script&rdquo; or &ldquo;macros&rdquo; that you can use to invoke occasionally to perform an agentic task.</p>
@@ -100,18 +100,18 @@ Invoke the <code>/savePrompt</code> command in the context of an active Agent se
 <h2 id="custom-agents">Custom Agents</h2>
 <p>Custom Agents or, as they were initially called, Custom Agent Modes, have been introduced after.</p>
 <p>Custom Agents can define a specific persona and behavior for the agent. Agent definition file can customize the tools and MCPs available to the agent.</p>
-<p>Custom Agents stored in the <code>.github/agents</code> folder of the repository as individual <code>*agent.md</code> files. They can also be shared across repositories via <code>.github</code> or <code>.github-private</code> organization repositories. They are accessible via several entry points:</p>
+<p>Custom Agents are stored in the <code>.github/agents</code> folder of the repository as individual <code>*agent.md</code> files. They can also be shared across repositories via <code>.github</code> or <code>.github-private</code> organization repositories. They are accessible via several entry points:</p>
 <ul>
 <li>IDE</li>
 <li>Copilot CLI</li>
 <li>GitHub Web UI</li>
 </ul>
-<p>In its simplest form, custom agent defines a workflow that can be run without user interaction. These agents can be run as background tasks (on your machine, via Copilot CLI, using git worktrees) or in the cloud (as GitHub Copilot Coding Agent).</p>
+<p>In its simplest form, a custom agent defines a workflow that can be run without user interaction. These agents can be run as background tasks (on your machine, via Copilot CLI, using git worktrees) or in the cloud (as GitHub Copilot Coding Agent).</p>
 <p>However, locally you can trigger custom agents for interactive sessions as well. A built-in Planning Agent is a good example: it has limited ability to execute code and modify files, but it&rsquo;s tasked to analyze the task, break it down into steps, ask the user for confirmation and then build the plan that can be handed over to another local, background or cloud agent for execution.</p>
 <p><img src="/images/2025-12-customization/04-custom-agent-tree.png" alt="Custom Agent"></p>
 <p>Local custom agents can be manually selected in the Chat UI or in the CLI via <code>/agent</code> command.</p>
 <h2 id="context-management">Context Management</h2>
-<p>While models become more capable, context window size remains a limiting factor. In the beginning of the year we had limited ways to manage the size of the session context. Pretty much we had to rely on two strategies:</p>
+<p>While models become more capable, context window size remains a limiting factor. In the beginning of the year we had limited ways to manage the size of the session context. Pretty much we had to rely on three strategies:</p>
 <ul>
 <li>Closing off the session when it becomes too large, optionally asking the agent to prepare a summary document that could be passed to the new session.</li>
 <li>Built-in session summarization that would condense the context when it exceeds certain size.</li>
@@ -138,7 +138,7 @@ Invoke the <code>/savePrompt</code> command in the context of an active Agent se
 <p>In my repository I have created a <code>Documentation Reader</code> custom agent that knows how to pull docs from external sources and summarize them.</p>
 <p>I can explicitly select this agent or I can tell my main agent to invoke it:</p>
 <p><img src="/images/2025-12-customization/06-agent-as-subagent.png" alt="Custom Agent as Subagent"></p>
-<p>If we check the debug logs of the main agent session we&rsquo;ll see that composed a prompt for the subagent and invoked it successfully:</p>
+<p>If we check the debug logs of the main agent session we&rsquo;ll see that it composed a prompt for the subagent and invoked it successfully:</p>
 <p><img src="/images/2025-12-customization/07-subagent-log.png" alt="Subagent Log"></p>
 <p>The only content that the main agent received back was the summary of the documentation, while the subagent had access to the entire documentation content.</p>
 <p>If you run VS Code Insiders and you&rsquo;ve enabled currently experimental Agents as Subagents (that&rsquo;s a mouthful) feature, you can try asking Copilot about available subagents in your repository:</p>
@@ -146,19 +146,19 @@ Invoke the <code>/savePrompt</code> command in the context of an active Agent se
 <p>As you can see, if you ask generic agent to plan a task, it can invoke Planning Agent as a Subagent.</p>
 <p>So to summarize, Subagents <strong>are not independent entities</strong>, they are the way to execute a prompt or a custom agent with the isolated context.</p>
 <h2 id="skills">Skills</h2>
-<p>Now, the latest addition to the customization family are Skills.</p>
+<p>Now, the latest addition to the customization family is Skills.</p>
 <p>Skills sit somewhere between Reusable Prompts and Custom Agents. And they have some similarities to MCPs as well. Yeah, it&rsquo;s that complicated :)</p>
 <p>Let&rsquo;s define a Skill first:</p>
 <p>Skill is a collection of optional scripts, assets and <code>SKILL.md</code> definition file that describes the purpose of the skill, when to call it and how to use included assets.</p>
 <p>Skills are stored in the <code>.github/skills</code> folder of the repository as individual skill folders.</p>
 <p>What makes them special is the discovery mechanism.</p>
-<p>When an agent session is started, the agent scans the repository for available skills and loads their definitions into the context along with tools and MCPs. While Skills can be somewhat large they take small amount of context space as only their definitions are loaded initially.</p>
-<p>As by the definition, skills can include scripts and assets, they are good for encapsulating reusable logic that can be invoked by the agent when needed and they combine the best of both worlds:</p>
+<p>When an agent session is started, the agent scans the repository for available skills and loads their definitions into the context along with tools and MCPs. While Skills can be somewhat large they take a small amount of context space as only their definitions are loaded initially.</p>
+<p>By definition, skills can include scripts and assets, they are good for encapsulating reusable logic that can be invoked by the agent when needed and they combine the best of both worlds:</p>
 <ul>
 <li>LLM-powered agentic behavior</li>
 <li>Deterministic results from scripts</li>
 </ul>
-<p>For example, I have a <code>dotnet-tests</code> skill in my repository that contains instructions to run the skill whenever the agent updates .cs files and in case the user asks about test suite status. It also tasked to use included scripts that prepare the project, provide flags that I need, parse the output and summarize the results in the format that I prefer.</p>
+<p>For example, I have a <code>dotnet-tests</code> skill in my repository that contains instructions to run the skill whenever the agent updates .cs files and in case the user asks about test suite status. It is also tasked to use included scripts that prepare the project, provide flags that I need, parse the output and summarize the results in the format that I prefer.</p>
 <h2 id="how-it-all-fits-together">How it all fits together</h2>
 <p>Let&rsquo;s look at the diagram below:</p>
 <p><img src="/images/2025-12-customization/09-the-world.png" alt="The World"></p>

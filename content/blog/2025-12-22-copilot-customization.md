@@ -32,7 +32,7 @@ And to make it a bit more interesting, we can define
 
 To put it simply, you can follow this decision tree:
 
-![Descion tree](/images/2025-12-customization/01-instructions.png)
+![Decision tree](/images/2025-12-customization/01-instructions.png)
 
 ## Reusable Prompts
 
@@ -62,13 +62,13 @@ Custom Agents or, as they were initially called, Custom Agent Modes, have been i
 
 Custom Agents can define a specific persona and behavior for the agent. Agent definition file can customize the tools and MCPs available to the agent.
 
-Custom Agents stored in the `.github/agents` folder of the repository as individual `*agent.md` files. They can also be shared across repositories via `.github` or `.github-private` organization repositories. They are accessible via several entry points:
+Custom Agents are stored in the `.github/agents` folder of the repository as individual `*agent.md` files. They can also be shared across repositories via `.github` or `.github-private` organization repositories. They are accessible via several entry points:
 
 - IDE 
 - Copilot CLI
 - GitHub Web UI
 
-In its simplest form, custom agent defines a workflow that can be run without user interaction. These agents can be run as background tasks (on your machine, via Copilot CLI, using git worktrees) or in the cloud (as GitHub Copilot Coding Agent). 
+In its simplest form, a custom agent defines a workflow that can be run without user interaction. These agents can be run as background tasks (on your machine, via Copilot CLI, using git worktrees) or in the cloud (as GitHub Copilot Coding Agent). 
 
 However, locally you can trigger custom agents for interactive sessions as well. A built-in Planning Agent is a good example: it has limited ability to execute code and modify files, but it's tasked to analyze the task, break it down into steps, ask the user for confirmation and then build the plan that can be handed over to another local, background or cloud agent for execution.
 
@@ -78,7 +78,7 @@ Local custom agents can be manually selected in the Chat UI or in the CLI via `/
 
 ## Context Management 
 
-While models become more capable, context window size remains a limiting factor. In the beginning of the year we had limited ways to manage the size of the session context. Pretty much we had to rely on two strategies:
+While models become more capable, context window size remains a limiting factor. In the beginning of the year we had limited ways to manage the size of the session context. Pretty much we had to rely on three strategies:
 
 - Closing off the session when it becomes too large, optionally asking the agent to prepare a summary document that could be passed to the new session.
 - Built-in session summarization that would condense the context when it exceeds certain size.
@@ -119,7 +119,7 @@ I can explicitly select this agent or I can tell my main agent to invoke it:
 
 ![Custom Agent as Subagent](/images/2025-12-customization/06-agent-as-subagent.png)
 
-If we check the debug logs of the main agent session we'll see that composed a prompt for the subagent and invoked it successfully:
+If we check the debug logs of the main agent session we'll see that it composed a prompt for the subagent and invoked it successfully:
 
 ![Subagent Log](/images/2025-12-customization/07-subagent-log.png)
 
@@ -135,7 +135,7 @@ So to summarize, Subagents **are not independent entities**, they are the way to
 
 ## Skills
 
-Now, the latest addition to the customization family are Skills.
+Now, the latest addition to the customization family is Skills.
 
 Skills sit somewhere between Reusable Prompts and Custom Agents. And they have some similarities to MCPs as well. Yeah, it's that complicated :)
 
@@ -147,14 +147,14 @@ Skills are stored in the `.github/skills` folder of the repository as individual
 
 What makes them special is the discovery mechanism. 
 
-When an agent session is started, the agent scans the repository for available skills and loads their definitions into the context along with tools and MCPs. While Skills can be somewhat large they take small amount of context space as only their definitions are loaded initially.
+When an agent session is started, the agent scans the repository for available skills and loads their definitions into the context along with tools and MCPs. While Skills can be somewhat large they take a small amount of context space as only their definitions are loaded initially.
 
-As by the definition, skills can include scripts and assets, they are good for encapsulating reusable logic that can be invoked by the agent when needed and they combine the best of both worlds:
+By definition, skills can include scripts and assets, they are good for encapsulating reusable logic that can be invoked by the agent when needed and they combine the best of both worlds:
 
 - LLM-powered agentic behavior
 - Deterministic results from scripts
 
-For example, I have a `dotnet-tests` skill in my repository that contains instructions to run the skill whenever the agent updates .cs files and in case the user asks about test suite status. It also tasked to use included scripts that prepare the project, provide flags that I need, parse the output and summarize the results in the format that I prefer. 
+For example, I have a `dotnet-tests` skill in my repository that contains instructions to run the skill whenever the agent updates .cs files and in case the user asks about test suite status. It is also tasked to use included scripts that prepare the project, provide flags that I need, parse the output and summarize the results in the format that I prefer. 
 
 ## How it all fits together
 
