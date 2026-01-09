@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on Anton Sizikov</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.cloud-eng.nl/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My GitHub Copilot-Powered Development Workflow</title>
+      <link>https://blog.cloud-eng.nl/2026/01/09/my-github-copilot-powered-development-workflow/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://blog.cloud-eng.nl/2026/01/09/my-github-copilot-powered-development-workflow/</guid>
+      <description>&lt;p&gt;Throughout 2025, I&amp;rsquo;ve been experimenting with various ways to organize my development workflow with coding agents, trying to maximize the satisfaction of shipping a product while minimizing the human effort required to get things done.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>GitHub Copilot Customization: Instructions, Prompts, Agents and Skills</title>
       <link>https://blog.cloud-eng.nl/2025/12/22/copilot-customization/</link>
