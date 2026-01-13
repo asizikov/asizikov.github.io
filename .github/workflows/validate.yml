@@ -1,0 +1,32 @@
+name: Validate Links
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.139.4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Build with Hugo
+        run: hugo --minify
+
+      - name: Test HTML with htmltest
+        uses: wjdp/htmltest-action@master
+        with:
+          path: public
+          config: .htmltest.yml
