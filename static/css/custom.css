@@ -2,10 +2,11 @@
 
 /* === Desktop fixes === */
 
-/* #2: Widen post content for better readability */
+/* #2: Keep post content wide, but not wall-to-wall on large screens */
 .international__typo__post__content {
-  width: 90%;
-  max-width: 85ch;
+  width: 100%;
+  /* Cap line length on large screens (roughly “long title” width) */
+  max-width: 75rem;
 }
 
 /* #3: Widen post list items for better scannability */
@@ -41,26 +42,30 @@ body::after {
   /* Make header responsive */
   .international__typo__header__layout {
     flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.15em;
     font-size: var(--header-font-size);
-    padding: 0;
+    padding: 10px 12px;
     flex-wrap: nowrap;
     width: 100%;
   }
 
   .international__typo__header__layout__left {
-    width: 20%;
-    min-width: 60px;
-    justify-content: flex-end;
-    padding: 10px;
+    width: auto;
+    min-width: 0;
+    justify-content: flex-start;
+    padding: 0.15em 0.35em;
     background-color: var(--secondary-color);
     flex-shrink: 0;
   }
 
   .international__typo__header__layout__right {
-    width: 80%;
+    width: auto;
+    min-width: 0;
     justify-content: flex-start;
-    padding: 10px 0 10px 10px;
-    background-color: var(--primary-color);
+    padding: 0;
+    background-color: transparent;
     flex-shrink: 0;
   }
 
@@ -76,8 +81,17 @@ body::after {
   }
 
   .international__typo__header__layout__right__tld {
-    border: 2px dotted var(--secondary-color);
+    border: 1px dotted var(--secondary-color);
     font-weight: bold;
+    padding: 0 0.15em;
+    line-height: 1;
+  }
+
+  /* Undo the global mobile link sizing for the header only (prevents huge blocks) */
+  .international__typo__header__layout a {
+    min-height: unset;
+    display: inline;
+    padding: 0;
   }
 
   /* Fix main layout for mobile */
@@ -182,7 +196,7 @@ body::after {
   }
 
   .international__typo__post__content {
-    width: 80%;
+    width: 100%;
   }
 }
 

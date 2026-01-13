@@ -88,13 +88,13 @@ weight = 4
 
 # Web App Manifest removed - not supported by international-typo theme
 
-[outputs]
-  home                        = ["HTML", "RSS"]
-
 enableRobotsTXT               = true
 
 # Pagination
 Paginate                      = 15
+
+[outputs]
+  home                        = ["HTML", "RSS"]
  
 
 # Code
