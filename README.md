@@ -2,7 +2,7 @@
 
 Personal blog
 
-[![pages-build-deployment](https://github.com/asizikov/asizikov.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/asizikov/asizikov.github.io/actions/workflows/pages/pages-build-deployment)
+[![Deploy Hugo site to Pages](https://github.com/asizikov/asizikov.github.io/actions/workflows/hugo.yml/badge.svg)](https://github.com/asizikov/asizikov.github.io/actions/workflows/hugo.yml)
 
 Currently deployed at [blog.cloud-eng.nl](https://blog.cloud-eng.nl)
 
