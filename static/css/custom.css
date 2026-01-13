@@ -2,10 +2,11 @@
 
 /* === Desktop fixes === */
 
-/* #2: Widen post content for better readability */
+/* #2: Keep post content wide, but not wall-to-wall on large screens */
 .international__typo__post__content {
-  width: 90%;
-  max-width: 85ch;
+  width: 100%;
+  /* Cap line length on large screens (roughly “long title” width) */
+  max-width: 75rem;
 }
 
 /* #3: Widen post list items for better scannability */
@@ -182,7 +183,7 @@ body::after {
   }
 
   .international__typo__post__content {
-    width: 80%;
+    width: 100%;
   }
 }
 
