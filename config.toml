@@ -86,29 +86,10 @@ weight = 4
   github                      = "asizikov"
 
 
-# Web App Manifest settings
-# https://www.w3.org/TR/appmanifest/
-# https://developers.google.com/web/fundamentals/web-app-manifest/
-[Params.Manifest]
-  name                        = "Anton Sizikov"
-  shortName                   = "Anton Sizikov"
-  display                     = "standalone"
-  startUrl                    = "/?utm_source=homescreen"
-  backgroundColor             = "#8dc153"
-  themeColor                  = "#1da1f2"
-  description                 = "Personal Site By Anton Sizikov"
-  orientation                 = "portrait"
-  scope                       = "/"
-
-[outputFormats]
-  [outputFormats.MANIFEST]
-    mediaType                 = "application/json"
-    baseName                  = "manifest"
-    isPlainText               = true
-    notAlternative            = true
+# Web App Manifest removed - not supported by international-typo theme
 
 [outputs]
-  home                        = ["HTML", "RSS", "MANIFEST"]
+  home                        = ["HTML", "RSS"]
 
 enableRobotsTXT               = true
 
