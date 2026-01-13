@@ -1,0 +1,13 @@
+DirectoryPath: "public"
+CheckDoctype: false
+CheckExternal: false
+IgnoreDirectoryMissingTrailingSlash: true
+IgnoreAltMissing: true
+IgnoreURLs:
+  # Analytics and tracking
+  - "^https://www.google-analytics.com"
+  - "^https://pagead2.googlesyndication.com"
+  # Social media links (don't need validation)
+  - "^https://twitter.com"
+  - "^https://linkedin.com"
+  - "^https://github.com"
