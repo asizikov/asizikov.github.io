@@ -44,7 +44,7 @@ What we did so far:
 - Implemented contextual sub-task into our agent behavior
 - Used Progressive Loading pattern to keep the main instructions file small and focused
 
-But what if we want to go further? Adding "good bye" banner, or teaching our agent to use our internal SDK or Design System?
+But what if we want to go further? Adding "goodbye" banner, or teaching our agent to use our internal SDK or Design System?
 This would require us to keep adding prompts to instructions file: if this, read that, do this, etc.
 
 Agent Skills are a way to package such behaviors into reusable modules that are natively supported by pretty much all AI agents out there, including GitHub Copilot.
