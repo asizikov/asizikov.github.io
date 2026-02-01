@@ -9,6 +9,7 @@ draft: false
 Let's talk about Agent Skills. 
 
 Using them is fun, but how to chose or even better, write a good one? Well, let's find out!
+In this post we'll build a simple Agent Skill from scratch, and along the way we'll learn some important rules of writing good Agent Skills.
 
 ### Understand the Purpose
 
@@ -52,7 +53,7 @@ Let's create our first Agent Skill: we'll place `SKILL.md` file into `.github/sk
 
 Every Agent Skill must have `SKILL.md` file with a frontmatter that describes the skill:
 
-```markdown---
+```markdown
 ---
 name: ascii-greeter
 description: Produces a nice greeting message. Use this skill whenever the user says hi, hello or greets you in any other way in any language
@@ -108,7 +109,11 @@ Then check the skill complexity. If it's a simple skill, it's probably fine. If 
 
 Skills can be as simple or as complex as you need them to be, that's totally fine, as long as the two rules are followed.
 
-I'm going to add a link to a Skill that is wery well crafted in my opinion: [opentui-skill](https://github.com/msmps/opentui-skill/). Check it out! It's a pretty complex one, that teaches the agent to use OpenTUI Design System, APIs, troubleshooting and best practices guides, while keeping the SKILL.md file relatively small and focused.
+I'm going to add a link to a Skill that is wery well crafted in my opinion: 
+
+[msmps/opentui-skill](https://github.com/msmps/opentui-skill/). 
+
+Check it out! It's a pretty complex one, that teaches the agent to use OpenTUI Design System, APIs, troubleshooting and best practices guides, while keeping the SKILL.md file relatively small and focused.
 
 ## Disclosure
 
