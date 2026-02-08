@@ -109,7 +109,7 @@ After all the reviewer is not trying to catch compilation errors, eh?
 
 This is a very painful moment. 
 
-There is a StyleCope rule [SA1101: PrefixLocalCallsWithThis](http://stylecop.soyuz5.com/SA1101.html) which originally [aimed against underscore prefixes](https://blogs.msdn.microsoft.com/sourceanalysis/2008/05/25/a-brief-history-of-c-style/) for instance variables.
+There is a StyleCop rule [SA1101: PrefixLocalCallsWithThis](http://stylecop.soyuz5.com/SA1101.html) which originally [aimed against underscore prefixes](https://blogs.msdn.microsoft.com/sourceanalysis/2008/05/25/a-brief-history-of-c-style/) for instance variables.
 
 First of, all we should understand, that the compiler does know that `CalculateFees()` is an instance method of the current class. It does know where `DateUtils` comes from. 
 
@@ -150,7 +150,7 @@ So, what do we have here? As we learned, as a reviewer we need to focus on the l
 
 Let's read it one more time: 
 
-> The method takes and account Id as an argument, calls **GetAccountBalanceAsAtDate** method of the **balanceCalculator**. **accounId** is passed as a first parameter, the second parameter is a value **Yesterday** of **DateUtils**.
+> The method takes an account Id as an argument, calls **GetAccountBalanceAsAtDate** method of the **balanceCalculator**. **accounId** is passed as a first parameter, the second parameter is a value **Yesterday** of **DateUtils**.
 > The result of that method call is used as a parameter for  **CalculateFees** method.
 
 Now scroll up and compare with the first attempt. Much shorter, right?

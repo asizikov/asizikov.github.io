@@ -10,7 +10,7 @@ slug: environment-protection-tags
 
 A recent request from a customer caught my attention. They were trying to set up a CD pipeline that should deploy packages to production when there is a new tag pushed to the repository. At the same time, they wanted some control over the process so that not everyone can init a release by pushing a tag to the repository.
 
-In a more standard scenario, you would use a branch protection rule to prevent pushing to `main` branch, together with environment protection rule that prevents deployments to production from any other branch but `main`. However, in this case, they are using tags to trigger the deployment. So, we need to protect the tags. Currently, it's not obvious that you can restring environments to specific tags or tag patterns. Let's see how we can do that.
+In a more standard scenario, you would use a branch protection rule to prevent pushing to `main` branch, together with environment protection rule that prevents deployments to production from any other branch but `main`. However, in this case, they are using tags to trigger the deployment. So, we need to protect the tags. Currently, it's not obvious that you can restrict environments to specific tags or tag patterns. Let's see how we can do that.
 
 ## Protecting tags
 

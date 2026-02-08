@@ -15,7 +15,7 @@ It's not unexpected. While these tools can provide good results when given enoug
 
 Recently, a customer approached me with exactly this issue. They distribute their SDK as a binary package with detailed documentation, yet existing GenAI have zero knowledge of their SDK, leading to poor developer experiences. A customer was looking for a way to improve the situation, and it sounded like a fun challenge.
 
-I decided to tackle this problem head-on by creating a practical prototype using DuckDB, a database engine that is new and rare enough, so that existing LLMs have little if not now knowledge about it.
+I decided to tackle this problem head-on by creating a practical prototype using DuckDB, a database engine that is new and rare enough, so that existing LLMs have little if not no knowledge about it.
 I chose DuckDB for this experiment, because it has a so-called "Friendly SQL" syntax, which is a syntactic sugar on top of the standard PostgreSQL.
 
 My goal was simple: help GitHub Copilot generate accurate DuckDB-compatible SQL queries using reusable prompts and LLM-friendly documentation.
@@ -31,7 +31,7 @@ CREATE TABLE my_table (...);
 
 ![No Docs](/images/2025-04-prompts/no-docs.png)
 
-As you can see, despite me asking to use Friendly SQL syntaxtx Copilot generated a vanilla SQL query. Something that I expected ofcourse.
+As you can see, despite me asking to use Friendly SQL syntax Copilot generated a vanilla SQL query. Something that I expected of course.
 
 DuckDB provides a more convenient syntax:
 
@@ -55,15 +55,15 @@ Here's how I did it:
 
 ## Deep Dive: LLM-Friendly Documentation
 
-LLM-tools cannot only rely on the training data set, there is always something new or proprietary that is not included in the training data. Some folks are proposing to provide `/llm` links with the AI-agent reable docummentation in simple plain text format.
+LLM-tools cannot only rely on the training data set, there is always something new or proprietary that is not included in the training data. Some folks are proposing to provide `/llm` links with the AI-agent readable documentation in simple plain text format.
 
 More on this proposal on the [llmstxt.org](https://llmstxt.org/) site.
 
-Some sites are already attepmting to build a catatloge of LLM-TXT docs. For example [llmstxt.site](https://llmstxt.site/) hosts such collection.
+Some sites are already attempting to build a catalogue of LLM-TXT docs. For example [llmstxt.site](https://llmstxt.site/) hosts such collection.
 
 I extracted the DuckDB SQL dialect documentation from [DuckDB Docs](https://duckdb.org/duckdb-docs.md) and saved it locally for future processing.
 
-However, the full reference is too extensive (over 50k lines) to use directly as a prompt. Instead, I cleaned it up by copying only the SQL reference to the local file. This gavme me ~750 linef of documentation, which is probably still too long to be included in evry prompt.
+However, the full reference is too extensive (over 50k lines) to use directly as a prompt. Instead, I cleaned it up by copying only the SQL reference to the local file. This gave me ~750 lines of documentation, which is probably still too long to be included in every prompt.
 
 ## Deep Dive: Compressing Documentation
 

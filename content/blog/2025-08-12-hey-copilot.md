@@ -50,7 +50,7 @@ I expect to end up with the following structure:
 
 Once we have our docs ready we can start configuring Copilot.
 
-If we do nothing here, our Agent would still be able to pick up patterns and make some descisions on its own, but we want to be more prescriptive and limit its creativity to a certain extent.
+If we do nothing here, our Agent would still be able to pick up patterns and make some decisions on its own, but we want to be more prescriptive and limit its creativity to a certain extent.
 
 Be it a new project or an existing one, we should always set up `copilot-instructions.md` file in the `.github` folder. This file will be attached as a context to every prompt we send to Copilot, here I typically document basic rules and information about my project. 
 
@@ -179,7 +179,7 @@ And that's it, if I'm satisfied with the results, I can commit and push.
 
 Models and Agentic capabilities are pretty powerful at this point, but with the right setup and configuration we can make them do exactly what we want and force them to produce the code that meets our expectations. Having these guidelines helps us keep Copilot on track. 
 
-Ever increasing complexity of agentic tools requries us to learn more about them and spend some time preparing before we can start. It's the current reallity. But the time invested pays off!
+Ever increasing complexity of agentic tools requires us to learn more about them and spend some time preparing before we can start. It's the current reality. But the time invested pays off!
 
 I hope these tips will help you get started and set your new project up for success.
 

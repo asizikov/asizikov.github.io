@@ -7,7 +7,7 @@ tags:
 slug: dotnet-cli-integration-tests
 ---
 
-I've spent Saturday evening working on a small project. I've built a .NET clone of `tree` utitly. You know, the one that renders a nice tree view for a given directory.
+I've spent Saturday evening working on a small project. I've built a .NET clone of `tree` utility. You know, the one that renders a nice tree view for a given directory.
 
 The project is available on GitHub under the [dtree](https://github.com/asizikov/dtree) name. It's a .NET global tool that you can install with the following command:
 

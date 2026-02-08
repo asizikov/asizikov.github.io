@@ -23,7 +23,7 @@ It's common to run different steps of your build and deployment on different mac
 * Lifecycles
 * Location (geolocation, network isolation)
 
-AzureDevOps and GitHub support two differet types of build agents:
+AzureDevOps and GitHub support two different types of build agents:
 
 * GitHub Hosted (Microsoft Hosted)
 * Selfhosted
@@ -67,7 +67,7 @@ However it's important to understand the limitations
 * macOS agents run in US and Europe only, so you may have issues with data sovereignty 
 * No way to join machines directly to your corporate network
 * No way to pre-install custom software (other than through tool installer tasks)
-* No control over software upgrades, cannot use legacy SDK's ect
+* No control over software upgrades, cannot use legacy SDKs etc
 * No control over the waiting time (it depends on the load)
 
 To address these issues Microsoft (and other vendors) allow us to use self-hosted agents.
@@ -134,10 +134,10 @@ And verify if it's running on my PC
 
 ![](/images/2022-08-hosted-agents/output.png)
 
-As you can se we have our pipeline running on my computer. This means I can use my own hardware such as GPU or devices connected to my laptop. Also I have acces to internal network, printers and whatnot.
+As you can see we have our pipeline running on my computer. This means I can use my own hardware such as GPU or devices connected to my laptop. Also I have access to internal network, printers and whatnot.
 
-In reallity you would probably run the self-hosted agent on VM or a dedicated phisical machine.
+In reality you would probably run the self-hosted agent on VM or a dedicated physical machine.
 
 ## Important notes
 
-It is a **bad practice to configure your self-hosted agents for public repositories**. Keep in mind that anyone can create a fork of your repository, modify a pipileine and execute code on you machine. It's ok for a test, it's ok to configure it for private repo, but please be careful, and don't forget to shut down the agent when you don't need it anymore.
+It is a **bad practice to configure your self-hosted agents for public repositories**. Keep in mind that anyone can create a fork of your repository, modify a pipeline and execute code on your machine. It's ok for a test, it's ok to configure it for private repo, but please be careful, and don't forget to shut down the agent when you don't need it anymore.

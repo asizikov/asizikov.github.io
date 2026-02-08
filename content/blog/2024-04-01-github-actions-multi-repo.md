@@ -42,14 +42,14 @@ This organization has the following repositories:
 - [chain-builds/source-code-frontend](https://github.com/chain-builds/source-code-frontend): This repository contains the frontend code, a Node.js application.
 - [chain-builds/micro-service](https://github.com/chain-builds/micro-service): This repository is for a Python service, complete with tests.
 
-For the purposes of this post, the specific functionalities of these applications are not important; they are just templates that I quicky scafolded for this post.
-Let's suppose that these services are part of one large busines application, requiring collective build, testing, and deployment processes.
+For the purposes of this post, the specific functionalities of these applications are not important; they are just templates that I quickly scaffolded for this post.
+Let's suppose that these services are part of one large business application, requiring collective build, testing, and deployment processes.
 
 ## Triggers
 
 Since our main build pipeline defined in the `chain-builds/builds` repository, we need to be able to trigger in from every dependent repository.
 
-This is quite easy to achieve with GitHub Actions, specifically by emmiting the the [`repository_dispatch` event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch).
+This is quite easy to achieve with GitHub Actions, specifically by emitting the [`repository_dispatch` event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch).
 
 ```yaml
 #https://github.com/chain-builds/builds/.github/workflows/build.yml
@@ -132,7 +132,7 @@ This will be rendered as following:
 
 Now that we have a way to trigger the build pipeline from the source code repositories, we need to be able to checkout the code from these repositories.
 
-For a simple scenario, where there is no need to store pipelines in the srouce code repo, we can keep the entire build logic in our `builds` repository.
+For a simple scenario, where there is no need to store pipelines in the source code repo, we can keep the entire build logic in our `builds` repository.
 
 ```yaml
 #https://github.com/chain-builds/builds/.github/workflows/build.yml

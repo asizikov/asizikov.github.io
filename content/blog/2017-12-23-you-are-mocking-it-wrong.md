@@ -82,7 +82,7 @@ Here is the paradox, we introduced mocking so that we can test our class in isol
 
 We can improve that test, tune it, but the only way we can make it fail is to repeat the `Greeter` logic in our mock set up. But wait a minute, if we have the same implementation, why don't we reuse the existing code? 
 
-The more complex your mocked object is the more complex your mock setup becomes. If that's not the case, most probably you're testing just the interaction with your dumb mock, i.e. you're not testing anything. Just like the `ClientTest` above. The only positive outcome is the extra 20c which your company pays to Amazon for that CPU time you waisted on the build server.
+The more complex your mocked object is the more complex your mock setup becomes. If that's not the case, most probably you're testing just the interaction with your dumb mock, i.e. you're not testing anything. Just like the `ClientTest` above. The only positive outcome is the extra 20c which your company pays to Amazon for that CPU time you wasted on the build server.
 
 It's not rare to have more than one dependency. I can imagine that our `Client` could use some `IHmlRenderer` which would consume the `IGreeter` result. You would mock that one too, right? 
 

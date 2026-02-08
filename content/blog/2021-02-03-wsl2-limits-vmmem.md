@@ -6,7 +6,7 @@ tags:
 slug: wsl2-limits-vmmem 
 ---
 
-WSL2 on Windows 10 has some issues, but I still prefere it to run my docker containers locally.
+WSL2 on Windows 10 has some issues, but I still prefer it to run my docker containers locally.
 
 One of the problems which used to bug me a lot was the memory consumption by `Vmmem` process.
 

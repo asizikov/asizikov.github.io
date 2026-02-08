@@ -64,7 +64,7 @@ I'm a .NET web developer, so nothing special here:
     * [ReSharper](https://www.jetbrains.com/resharper/). A developer productiviy tool.
     * [OzCode](http://www.oz-code.com/). A debugging addon for VS. Makes my life much easier.
     * [SpecFlow](https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6). A port of Cucumber.  
-* ReSharper goes with a handfull of [extensions](https://resharper-plugins.jetbrains.com) as well
+* ReSharper goes with a handful of [extensions](https://resharper-plugins.jetbrains.com) as well
     * [ConfigureAwaitChecker](https://resharper-plugins.jetbrains.com/packages/ConfigureAwaitChecker.v9/)
     * [ReSpeller](https://resharper-plugins.jetbrains.com/packages/EtherealCode.ReSpeller/)
     * [Mnemonics Live Templates](https://resharper-plugins.jetbrains.com/packages/JetBrains.Mnemonics/)

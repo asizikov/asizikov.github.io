@@ -117,12 +117,12 @@ public static class ClientFetchPaths
     static ClientFetchPaths()
     {
         Orders = new FetchPaths<Client>(client => client.Orders);
-        Adresses = new FetchPaths<Client>(client => client.Adresses);
-        OrdersAndAddresses = Adresses.Concat(Orders);
+        Addresses = new FetchPaths<Client>(client => client.Addresses);
+        OrdersAndAddresses = Addresses.Concat(Orders);
     }
 
     public static FetchPaths<Client> Orders { get; private set; }
-    public static FetchPaths<Client> Adresses { get; private set; }
+    public static FetchPaths<Client> Addresses { get; private set; }
     public static FetchPaths<Client> OrdersAndAddresses { get; private set; }
 }
 {{< / highlight >}}

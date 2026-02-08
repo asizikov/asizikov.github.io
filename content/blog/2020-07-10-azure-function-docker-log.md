@@ -34,7 +34,7 @@ Let's update function code accordingly: will make is non-static, and use constru
 
 {{< gist asizikov 3528207d6fba89f70257278c68fe6ade >}}
 
-In order to register this external dependency and use a propper .NET Core-style DI we need to install `Microsoft.Azure.Functions.Extensions` NuGet package and create a `Startup` class like this one: 
+In order to register this external dependency and use a proper .NET Core-style DI we need to install `Microsoft.Azure.Functions.Extensions` NuGet package and create a `Startup` class like this one: 
 
 {{< gist asizikov 4ca721ce2e96ba1663f2c63fcbc50e0a >}}
 
