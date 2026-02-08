@@ -1,6 +1,6 @@
 ---
 date: "2020-07-10T00:00:00Z"
-image: /images/2020-07-func-logs/initial-state.png
+image: /images/2020/07-func-logs/initial-state.png
 title: Fix console logs for Azure Functions running in a Docker container
 tags: 
  - azure
@@ -12,15 +12,15 @@ slug: azure-function-docker-log
 Local development of C# Azure Functions on macOS is still a bit painful. 
 Even the simple-ish logging might cause issues. Let's assume that we have Azure Functions Core Tools installed and we have a basic function app with one `TimerTrigger` function created.
 
-![Azure Functions app in Rider](/images/2020-07-func-logs/initial-state.png)
+![Azure Functions app in Rider](/images/2020/07-func-logs/initial-state.png)
 
 With the default Run/Debug configuration
 
-![Run configuration](/images/2020-07-func-logs/default-config.png)
+![Run configuration](/images/2020/07-func-logs/default-config.png)
 
 We can compile and run our function
 
-![Azure Functions Log](/images/2020-07-func-logs/log-console.png)
+![Azure Functions Log](/images/2020/07-func-logs/log-console.png)
 
 Our function will start and log to console as expected.
 
@@ -42,7 +42,7 @@ You would expect it to work, right?
 
 I wish...
 
-![Just the main app is logging](/images/2020-07-func-logs/func-logs.png)
+![Just the main app is logging](/images/2020/07-func-logs/func-logs.png)
 
 As you can see it still just logs from the function.
 
@@ -56,7 +56,7 @@ I want to run this function in docker, so let's create a `Dockerfile`.
 
 Note that I'm setting `AzureFunctionsJobHost__Logging__Console__IsEnabled` environment variable here.
 
-![Just the main app is logging](/images/2020-07-func-logs/docker-log.png)
+![Just the main app is logging](/images/2020/07-func-logs/docker-log.png)
 
 The missing link here is the `hosts.json` logging configuration.
 
@@ -69,7 +69,7 @@ The missing link here is the `hosts.json` logging configuration.
 
 And voilà, we've got logs in our container: 
 
-![Logs in a docker container](/images/2020-07-func-logs/docker-fixed.png)
+![Logs in a docker container](/images/2020/07-func-logs/docker-fixed.png)
 
 I hope that would save you some time. Happy logging!
 

@@ -27,12 +27,12 @@ public Bar Foo()
 
 The ```Foo()``` returns ```null``` with a probability of 10%. However, ReSharper doesn't warn us when we forget the null-check.
 
-![screenshot](/images/resharper-annotations-can-it-be-null/no-canbenull-in-action.png)
+![screenshot](/images/2015/08-resharper-annotations-can-it-be-null/no-canbenull-in-action.png)
 _<font color="gray">without annotation</font>_
 
 A developer can mark the code with ```[CanBeNull]``` attribute in order to give a hint to ReSharper.
 
-![screenshot](/images/resharper-annotations-can-it-be-null/canbenull-in-action.png)
+![screenshot](/images/2015/08-resharper-annotations-can-it-be-null/canbenull-in-action.png)
 _<font color="gray">with annotation</font>_
 
 Unfortunately, this trick doesn't work with asynchronous code. 
@@ -50,18 +50,18 @@ public async Task<Bar> FooAsync()
 {{< / highlight >}}
 
 Despite the fact that we return ```null``` here, the actual return type is ```Task<Bar>```. Which is not null, by the way. So the annotation is wrong as well as the warning given to us by R#.
-![screenshot](/images/resharper-annotations-can-it-be-null/no-canbenull-async.png)
+![screenshot](/images/2015/08-resharper-annotations-can-it-be-null/no-canbenull-async.png)
 _<font color="gray">attribute applied to Task, but not to Bar</font>_
 
 I was always missing the ability to express that it's not the ```Task<T>``` which can be ```null```, but the ```Task<T>.Result```.
 There was even an [issue created back in 2013](https://youtrack.jetbrains.com/issue/RSRP-376091) and finally, in ReSharper 9.2 we have support for brand new ```[ItemCanBeNull]``` and ```[ItemNotNull]``` attributes.
 
-![ItemCanBeNull in action](/images/resharper-annotations-can-it-be-null/canbenull-async.png)
+![ItemCanBeNull in action](/images/2015/08-resharper-annotations-can-it-be-null/canbenull-async.png)
 _<font color="gray">ItemCanBeNull in action</font>_
 
 Both attributes can be applied to ```IEnumerable<T>```, ```Lazy<T>```, and ```Task<T>```
 
-![ItemCanBeNull applied to Lazy](/images/resharper-annotations-can-it-be-null/lazy-itemcanbenull.png)
+![ItemCanBeNull applied to Lazy](/images/2015/08-resharper-annotations-can-it-be-null/lazy-itemcanbenull.png)
 _<font color="gray">ItemCanBeNull applied to Lazy</font>_
 
 Happy annotating!

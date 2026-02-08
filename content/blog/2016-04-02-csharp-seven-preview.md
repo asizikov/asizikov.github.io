@@ -29,7 +29,7 @@ By default VS15 is using C# 6, so we need to add conditional compilation symbols
 `__DEMO__`.
 
 To do that you should go to Properties > Build > Conditional compilation symbols
-![conditional compilation symbols dialog](/images/csharp-7-preview/conditional-demo.png)
+![conditional compilation symbols dialog](/images/2016/04-csharp-7-preview/conditional-demo.png)
 
 Once we're done with that VS15 will pick up changes automatically.
 
@@ -64,7 +64,7 @@ class LiteralsDemo
 
 Simple and works as expected.
 
-![binary literals output](/images/csharp-7-preview/binary-literals.png)
+![binary literals output](/images/2016/04-csharp-7-preview/binary-literals.png)
 
 Same about digit separators. Similar feature exists [in Java](https://www.oreilly.com/learning/java7-features) since version 7. 
 
@@ -294,7 +294,7 @@ Pattern matching is really neat. I spent some time with it and I like it.
 
 {{< gist asizikov cbee9628d38db448622cd98ff1fee1a6 >}}
 
-![console installer output](/images/csharp-7-preview/console-installer.png)
+![console installer output](/images/2016/04-csharp-7-preview/console-installer.png)
 
 ## Links
  

@@ -1,6 +1,6 @@
 ---
 date: "2020-03-21T00:00:00Z"
-image: /images/2020-03-terraform-octopus/result.JPG
+image: /images/2020/03-terraform-octopus/result.JPG
 title: Provision your Azure environment with Terraform and Octopus Deploy
 tags: 
  - devops
@@ -18,7 +18,7 @@ We use a pretty standard setup for a .NET web application.
 
 We keep our code in one monorepo hosted in internal GitLab. We use TeamCity to build our code and we use Octopus Deploy to run our deployments to Azure.
 
-![Current setup](/images/2020-03-terraform-octopus/current-setup.JPG)
+![Current setup](/images/2020/03-terraform-octopus/current-setup.JPG)
 
 We have several environments (let's call them `feature`, `test`, and `prod`) and they all are different. Each one has a different configuration, different accounts, different topology, different numbers of replicas and shards, you name it.
 
@@ -136,13 +136,13 @@ With this variable we can prepare a zipped artifacts file:
 
 that would produce a file `Terraform.1.123.9-feature-AB-123` which will later be uploaded to Octopus.
 
-![TeamCity pipeline](/images/2020-03-terraform-octopus/team-city-pipeline.JPG)
+![TeamCity pipeline](/images/2020/03-terraform-octopus/team-city-pipeline.JPG)
 
 ### Octopus Setup
 
 Let's create a new Step in Octopus project:
 
-![Octopus Step](/images/2020-03-terraform-octopus/octopus-step.png)
+![Octopus Step](/images/2020/03-terraform-octopus/octopus-step.png)
 
 We currently use an official [Apply a Terraform template](https://octopus.com/docs/deployment-examples/terraform-deployments/apply-terraform). 
 
@@ -154,14 +154,14 @@ Then you need to provide a path to your custom `terraform.exe` executable. To do
 
 As you remember the release package contains a `terraform.tfvars` file with templates in it. So don't forget to tick this box:
 
-![Octopus Step](/images/2020-03-terraform-octopus/octopus-replace.png)
+![Octopus Step](/images/2020/03-terraform-octopus/octopus-replace.png)
 
 And of course, you will have to define your variables for each environment:
 
-![Octopus Step](/images/2020-03-terraform-octopus/octopus-variables.png)
+![Octopus Step](/images/2020/03-terraform-octopus/octopus-variables.png)
 
 note the variable name format. It should be the same as the variable names in your `terraform.tfvars` file. Here we can have different values for each environment. Also, we store passwords encrypted.
 
 And now we have a new player in our CI/CD pipeline: 
 
-![Octopus Step](/images/2020-03-terraform-octopus/result.JPG)
+![Octopus Step](/images/2020/03-terraform-octopus/result.JPG)

@@ -96,7 +96,7 @@ This test could have been split into two parts, to follow the best practices (to
 
 Ok, now we have a green bar.
 
-![tests passed](/images/rx-api-with-cache-two/tests-passed.png)
+![tests passed](/images/2015/08-rx-api-with-cache-two/tests-passed.png)
 
 ## Source code
 

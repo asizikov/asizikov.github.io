@@ -12,7 +12,7 @@ Aside from the day-to-day work I do as a Solutions Engineer at GitHub, I've been
 
 Looking at my contributions graph for the past year, you can clearly see when agents enabled me to ship more:
 
-![GitHub contributions graph](/images/2026-01-workflow/00-year-gh.png)
+![GitHub contributions graph](/images/2026/01-workflow/00-year-gh.png)
 
 While I have been working as a developer professionally for over a decade and have been coding since I was a kid, I now have (almost) completely stopped writing code manually. 
 
@@ -39,7 +39,7 @@ This term has its fans and haters. However, I'm at a place where I write almost 
 
 Looking at the past 28-day telemetry:
 
-![Statistics](/images/2026-01-workflow/01-statistics.png)
+![Statistics](/images/2026/01-workflow/01-statistics.png)
 
 We can see that in this period, using Agent Mode I added 11k lines of code and deleted 1.4k loc with the net total of 9.5k lines of code contributed to the projects I work on. While the Completions show only 385 lines of code added. Those are mostly configs, comments, docs and small tweaks that don't warrant an agentic session. Oh, and I don't use Chat mode at all. Chat requires manual context management, while Agent Mode is more autonomous, I can just ask a question and let it find the relevant information online or in the repo itself.
 
@@ -57,7 +57,7 @@ That means that the life of my codebase is more dynamic. We start with the initi
 
 Another signal for me to refactor is... AI-powered: Copilot Code Quality analysis does provide good feedback on the code health, and when I see that the score is dropping, it's time to do some refactoring.
 
-![Code Quality report](/images/2026-01-workflow/04-quality-findings.png)
+![Code Quality report](/images/2026/01-workflow/04-quality-findings.png)
 
 So, it is a loop now: 
 
@@ -83,7 +83,7 @@ These will be (not exhaustive list):
 - **Non-coding tasks**: Docs, codebase analysis.
 - **Features in the familiar codebase**: If I keep the project in my head fully, and I have the implementation plan ready, I can just point CLI to the files that need to be updated and describe a feature to be added.
 
-![CLI session example](/images/2026-01-workflow/02-agent-session.png)
+![CLI session example](/images/2026/01-workflow/02-agent-session.png)
 
 Finally, tasks that require me to be fully hands-on, I do in IDE.
 
@@ -120,7 +120,7 @@ Another tool that I've never thought I'd use for coding is GitHub Mobile app. I 
 
 And suddenly, I have an option to pick up the idea when I'm away from my computer (tell me I'm not the only one who gets "wait a minute, that sounds like a good feature" thoughts just before falling asleep) and assign Coding Agent to implement it. I'll check the results next day, there is no rush.
 
-![GitHub Mobile screenshot](/images/2026-01-workflow/03-mobile.png)
+![GitHub Mobile screenshot](/images/2026/01-workflow/03-mobile.png)
 
 ## What I never expected
 

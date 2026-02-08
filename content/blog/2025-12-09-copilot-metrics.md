@@ -37,7 +37,7 @@ The entire application was built end-to-end with GitHub Copilot, from the initia
 
 The dashboard gives you an **opinionated** overview of how your organization is adopting Copilot:
 
-![Overview Dashboard](/images/2025-12-metrics/01-overview.png)
+![Overview Dashboard](/images/2025/12-metrics/01-overview.png)
 
 ### Agent Mode & Chat Insights
 
@@ -47,7 +47,7 @@ Understanding how developers use different Copilot modes is crucial:
 - **Daily Chat Requests**: Volume analysis across different interaction types.
 - **Agent Mode Heatmap**: Visualize intensity of agent mode usage across days, including estimated service value calculations.
 
-![Adoption Funnel](/images/2025-12-metrics/02-adoption-funnel.png)
+![Adoption Funnel](/images/2025/12-metrics/02-adoption-funnel.png)
 
 ### Copilot Impact Analysis
 
@@ -55,13 +55,13 @@ One of the most requested features—measuring actual Copilot impact on your cod
 
 - **Lines of Code Impact**: Track LOC added and deleted through different Copilot features.
 
-![Impact Analysis](/images/2025-12-metrics/03-copilot-impact.png)
+![Impact Analysis](/images/2025/12-metrics/03-copilot-impact.png)
 
 ### Premium Request Unit (PRU) Analysis
 
 With premium models in Copilot, understanding consumption patterns is essential:
 
-![PRU Usage](/images/2025-12-metrics/04-pru.png)
+![PRU Usage](/images/2025/12-metrics/04-pru.png)
 
 ### Plugin Version Tracking
 
@@ -73,7 +73,7 @@ This project provides an overview of plugin versions in use across your organiza
 - **Outdated Plugin Detection**: Identify users with outdated extensions that may be missing features or have incomplete telemetry.
 - **Upgrade Recommendations**: Actionable insights to drive plugin updates across your organization.
 
-![Plugin Versions](/images/2025-12-metrics/05-plugin-versions.png)
+![Plugin Versions](/images/2025/12-metrics/05-plugin-versions.png)
 
 ### Individual User Deep Dives
 

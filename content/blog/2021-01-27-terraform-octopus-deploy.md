@@ -1,6 +1,6 @@
 ---
 date: "2021-01-27T00:00:00Z"
-image: /images/2021-01-tf/octopus-to-the-cloud.jpg
+image: /images/2021/01-tf/octopus-to-the-cloud.jpg
 title: Configure CD for Azure WebApp with Terraform Provider for Octopus Deploy
 tags: 
  - devops
@@ -11,7 +11,7 @@ slug: terraform-octopus-deploy
 
 In this post, I'm going to configure the continuous delivery process for Azure WebApp (Azure Function in this case, but that's pretty much the same) with Octopus Deploy. To make it a little bit interesting I'm going to use Configuration-as-Code approach with a brand new [Octopus provider for Terraform](https://registry.terraform.io/providers/OctopusDeployLabs/octopusdeploy/latest).
 
-![](/images/2021-01-tf/octopus-to-the-cloud.png)
+![](/images/2021/01-tf/octopus-to-the-cloud.png)
 
 Buckle up and let's get started...
 
@@ -21,7 +21,7 @@ Buckle up and let's get started...
 
 I'm going to need `terraform` on my machine:
 
-![](/images/2021-01-tf/tf.png)
+![](/images/2021/01-tf/tf.png)
 
 ### Octopus Deploy
 
@@ -29,7 +29,7 @@ For this post, I've signed up for a [free tier of Octopus Deploy SaaS offering](
 
 When signed up and configured my account I can generate a new API key that I'm going to use with Terraform
 
-![](/images/2021-01-tf/api-key.png)
+![](/images/2021/01-tf/api-key.png)
 
 All configuration is going to be made against the default Space (`Spaces-1`), however, that's configurable too.
 
@@ -70,7 +70,7 @@ Nothing complicated:
  * Create new Octopus Deploy release
  * Trigger the deployment
 
- ![](/images/2021-01-tf/pipeline.png)
+ ![](/images/2021/01-tf/pipeline.png)
 
 ## Init
 
@@ -81,7 +81,7 @@ Terraform provider is no different from other providers and can be found on [Ter
 
 and `terraform init` will download missing files
 
-![](/images/2021-01-tf/init.png)
+![](/images/2021/01-tf/init.png)
 
 ## Configuration
 
@@ -114,7 +114,7 @@ This is where I link Azure (my Service Principal) with Octopus.
 
 Now we have a nice and clean infrastructure defined in Octopus.
 
-![](/images/2021-01-tf/environment.png)
+![](/images/2021/01-tf/environment.png)
 
 ## Project
 
@@ -126,7 +126,7 @@ The next step is to configure our [Project](https://octopus.com/docs/projects).
 
 I'm setting up an `Echo Api` project here, placing it into `Default Project Group` with the default [lifecycle](https://octopus.com/docs/releases/lifecycles).
 
-![](/images/2021-01-tf/project.png)
+![](/images/2021/01-tf/project.png)
 
 ## Deployment process 
 
@@ -138,7 +138,7 @@ My deployment is not complicated actually, just one step that is picking up the 
 
 I wish all deployments were that simple...
 
-![](/images/2021-01-tf/process.png)
+![](/images/2021/01-tf/process.png)
 
 
 ## Release
@@ -151,7 +151,7 @@ Release creation process is driven by Azure DevOps pipeline. The process is spli
 
 This stage uploads the build artifact to the built-in package feed, submits metadata and creates a new release.
 
-![](/images/2021-01-tf/new-release.png)
+![](/images/2021/01-tf/new-release.png)
 
 ### Deploy release stage
 
@@ -160,11 +160,11 @@ This stage uploads the build artifact to the built-in package feed, submits meta
 {{< gist asizikov 488aa1b1d3f9b6bd8dfd5a24c820e3dd >}}
 
 
-![](/images/2021-01-tf/deployment.png)
+![](/images/2021/01-tf/deployment.png)
 
 Voilà, it's up and running.
 
-![](/images/2021-01-tf/running.png)
+![](/images/2021/01-tf/running.png)
 
 ## Import
 

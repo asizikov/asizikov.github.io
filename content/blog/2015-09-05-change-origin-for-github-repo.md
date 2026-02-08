@@ -11,7 +11,7 @@ I use different accounts and different computers to work with GitHub repositorie
 
 I can still work with my command line tool, however, I have to type credentials every time I want to pull or push to the remote.
 
-![credentials required](/images/github-origin/password-required.png)
+![credentials required](/images/2015/09-github-origin/password-required.png)
 
 Actually, I'm fine with typing the password, but not the user name. So what can I do (besides generating new SSH key and adding it to my Git/GitHub account) is to update the remote to have my user name in it. 
 
@@ -36,4 +36,4 @@ Your user name, repository owner, and repository name will be different.
 
 And the user name is not needed any more.
 
-![credentials not required](/images/github-origin/no-password.png)
+![credentials not required](/images/2015/09-github-origin/no-password.png)

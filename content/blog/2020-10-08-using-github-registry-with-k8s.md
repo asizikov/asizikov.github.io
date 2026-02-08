@@ -1,6 +1,6 @@
 ---
 date: "2020-10-08T00:00:00Z"
-image: /images/2020-10-ghk8s/helmsman2.jpg
+image: /images/2020/10-ghk8s/helmsman2.jpg
 title: Using GitHub Container Registry with Kubernetes
 tags: 
     - devops
@@ -15,7 +15,7 @@ Private storage, free and unlimited download... looks like a good enough option 
 
 In this post, I'm going to configure my local Kubernetes cluster to pull images from my GitHub Container Registry.
 
-![Arthur John Trevor Briscoe, Helmsman](/images/2020-10-ghk8s/helmsman2.jpg)
+![Arthur John Trevor Briscoe, Helmsman](/images/2020/10-ghk8s/helmsman2.jpg)
 
 ## Enable GitHub Container Registry
 
@@ -23,14 +23,14 @@ First things first. We need to enable GitHub Container Registry for our account 
 
 > Note GitHub Container Registry is in public beta state at the moment of writing, so it's subject to change. I recommend to follow [the official documentation](https://docs.github.com/en/free-pro-team@latest/packages/getting-started-with-github-container-registry), it's more likely to be up to date.
 
-![](/images/2020-10-ghk8s/registry.jpg)
+![](/images/2020/10-ghk8s/registry.jpg)
 
 ## Create Access Tokens
 
 
 For now, Container Registry supports just one authorization option, which is Personal Access Token (PAT). I'm going to [create two tokens here](https://github.com/settings/tokens) (note the scopes).
 
-![](/images/2020-10-ghk8s/pat-tokens.png)
+![](/images/2020/10-ghk8s/pat-tokens.png)
 
 One token with `read:packages` scope will be used for my local Kubernetes cluster to perform pull actions. And another token I'll use to manage images in my registry (remember Authentication step from GitHub Packages configuration page?).
 
@@ -88,7 +88,7 @@ Which can be used later on when we schedule our pods:
 
 And the final step is to check Pod Events (I'm using [Lens Kubernetes IDE here](https://k8slens.dev/)).
 
-![](/images/2020-10-ghk8s/image-pulled.png)
+![](/images/2020/10-ghk8s/image-pulled.png)
 
 
 Have fun, and enjoy it while it's free!

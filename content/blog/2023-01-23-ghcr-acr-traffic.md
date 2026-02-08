@@ -25,13 +25,13 @@ A typical use case would be the pull of custom base images or an image that you 
 
 On the other hand, if you pull an image from outside of GitHub (e.g. from your Kubernetes cluster), the traffic is counted.
 
-![Free Pull vs Metered](/images/2023-01-ghcr-acr/free-pull-vs-metered.png)
+![Free Pull vs Metered](/images/2023/01-ghcr-acr/free-pull-vs-metered.png)
 
 In the diagram above green pulls are free while the red ones are metered.
 
 At the same time if you use an external registry (e.g. Azure Container Registry) your cluster will be able to pull images without any traffic limits. Of course, if your cluster is located in the same region as your ACR. But at the same time, if you pull images as a part of your CI/CD pipeline, you'll be charged for egress traffic. See the diagram below.
 
-![Free Pull vs Metered 02](/images/2023-01-ghcr-acr/free-pull-vs-metered-02.png)
+![Free Pull vs Metered 02](/images/2023/01-ghcr-acr/free-pull-vs-metered-02.png)
 
 So, that seems that either way you'll be charged. But there is a way to avoid it.
 
@@ -49,7 +49,7 @@ Our Kubernetes manifests should reference the images stored in the ACR. This way
 
 The final architecture will look like this:
 
-![Architecture](/images/2023-01-ghcr-acr/architecture-02.png)
+![Architecture](/images/2023/01-ghcr-acr/architecture-02.png)
 
 ## Conclusion
 

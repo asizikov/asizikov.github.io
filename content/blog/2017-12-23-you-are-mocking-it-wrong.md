@@ -1,6 +1,6 @@
 ---
 date: "2017-12-23T00:00:00Z"
-image: /images/2017-12-mocking/mockingbird.jpg
+image: /images/2017/12-mocking/mockingbird.jpg
 title: You are mocking it wrong.
 tags: 
   - programming
@@ -9,7 +9,7 @@ slug: you-are-mocking-it-wrong
 
 Well, probably *you* are not, but let me grumble a little bit anyway.
 
-![Mockingbird picture](/images/2017-12-mocking/mockingbird.jpg)
+![Mockingbird picture](/images/2017/12-mocking/mockingbird.jpg)
 _Mockingbird knows how to mock._
 
 I've been working with various code bases throughout of my career, and there is one pattern which I see rather often. As you may have already guessed it's the unit-tests and mocking I'm going to talk about here. To give it a nice catchy start, I'd claim here, that mocks should be used when you *have to*, but not when you *can*. 
@@ -76,7 +76,7 @@ IGreeter{
 
 Not really, remember the `Client` class? Now it's incorrect, we still pass the title and the name in the old order, even though our test claims that everything is fine.
 
-![This is fine](/images/2017-12-mocking/fine.jpg)
+![This is fine](/images/2017/12-mocking/fine.jpg)
 
 Here is the paradox, we introduced mocking so that we can test our class in isolation, but we had to put some code to make that mock return something. It's still the logic, isn't it? Now `IGreeter` has at least two implementations. Most probably in your codebase, you have tens of implementations for the mocked class. Just because it's a very much reused dependency, and you have to mock it all over again. 
 

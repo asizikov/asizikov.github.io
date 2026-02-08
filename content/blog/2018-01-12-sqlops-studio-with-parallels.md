@@ -1,6 +1,6 @@
 ---
 date: "2018-01-12T00:00:00Z"
-image: /images/2018-01-sqlops/connected.png
+image: /images/2018/01-sqlops/connected.png
 title: Connecting SQL Operations Studio to SQL Express server in Parallels VM
 tags: 
  - tools
@@ -34,25 +34,25 @@ To set up SQL Express we need SQL Server Configuration Manager.
 
 I'm running SQL Express 2014 so need to type `SQLServerManager12.msc`.
 
-![Starting SQL Server Network Configuration Manager](/images/2018-01-sqlops/sql-manager.png)
+![Starting SQL Server Network Configuration Manager](/images/2018/01-sqlops/sql-manager.png)
 
 Go to SQL Server Network Configuration -> Protocols for SQLEXPRESS -> TCP/IP
 
-![SQL Server Network Configuration screenshot](/images/2018-01-sqlops/sql-manager-protocols.png)
+![SQL Server Network Configuration screenshot](/images/2018/01-sqlops/sql-manager-protocols.png)
 
 Right click and select *Enable*: 
 
-![Enable TCP/IP protocol](/images/2018-01-sqlops/sql-manager-tcp-enable.png)
+![Enable TCP/IP protocol](/images/2018/01-sqlops/sql-manager-tcp-enable.png)
 
 Set up port number as on the picture (you're free to use any value, I'm using 5171 here)
 
-![Set up tcp/ip port](/images/2018-01-sqlops/tcp-ip-port.png)
+![Set up tcp/ip port](/images/2018/01-sqlops/tcp-ip-port.png)
 
 ### Configure Windows Firewall
 
 We must allow `sqlserver.exe` to accept inbound connections: 
 
-![Windows Firewall, create new rule](/images/2018-01-sqlops/windows-firewall-rule.png)
+![Windows Firewall, create new rule](/images/2018/01-sqlops/windows-firewall-rule.png)
 
 ### Kerberos
 
@@ -64,7 +64,7 @@ Connection string should look like this one:
 
 In case your SQL EXPRESS instance is set up to use Windows Authentication most probably you would see an error like that: 
 
-![Kerberos Error message](/images/2018-01-sqlops/kerberos-error.png)
+![Kerberos Error message](/images/2018/01-sqlops/kerberos-error.png)
 
 There is a good article with step-by-step instructions. [Please refer to it](https://docs.microsoft.com/en-us/sql/sql-operations-studio/enable-kerberos).
 
@@ -73,4 +73,4 @@ You can always [switch to Mixed Authentication Mode](https://docs.microsoft.com/
 
 That's all folks!
 
-![Connected](/images/2018-01-sqlops/connected.png)
+![Connected](/images/2018/01-sqlops/connected.png)

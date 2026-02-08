@@ -51,7 +51,7 @@ Assuming that we’re building the mobile app, and taking into account that our 
 5. Render the new data or report the error;
 
 Let me illustrate it with a sequence diagram. I hope I still remember how to draw them :)
-![sequence diagram](/images/rx-api-with-cache-one/diagram.png)
+![sequence diagram](/images/2015/07-rx-api-with-cache-one/diagram.png)
 There are different local cache strategies. The one I’m going to follow is a 
 [Cache-Aside](https://msdn.microsoft.com/en-us/library/dn589799.aspx) one.
 

@@ -18,7 +18,7 @@ Building custom agents isn't as straightforward as it might seem. Here are the p
 
 **Cloud testing takes forever.** Round-tripping to the cloud for every test run kills your momentum. When you're fine-tuning prompts, you need speed.
 
-![Process of testing custom agents](/images/2026-02-testing-agents/00-process.png)
+![Process of testing custom agents](/images/2026/02-testing-agents/00-process.png)
 
 ## The Solution: Build and Test Locally
 
@@ -49,7 +49,7 @@ Instead of writing the agent from scratch, let's ask Copilot CLI to generate it 
 
 `/agent` command has a built-in agent generator.
 
-![Create Agent in CLI](/images/2026-02-testing-agents/01-create-agent-cli.png)
+![Create Agent in CLI](/images/2026/02-testing-agents/01-create-agent-cli.png)
 
 ```
 Prompt: "Create a custom agent (Release Notes Writer) that uses GitHub MCP and checks the current GitHub milestone, 
@@ -65,7 +65,7 @@ Copilot will scaffold the agent structure, including the system prompt, tools it
 
 Now you can test the agent manually by invoking it directly in VS Code or via the CLI. This is already much faster than deploying Copilot Coding Agent and waiting for the cloud session to run.
 
-![Invoke Agent in VS Code](/images/2026-02-testing-agents/02-invoke-agent-vscode.png)
+![Invoke Agent in VS Code](/images/2026/02-testing-agents/02-invoke-agent-vscode.png)
 
 Run a few test iterations:
 - Does it find the right milestone?
@@ -99,7 +99,7 @@ models prerform as expected
 
 The session log would look something like this:
 
-![Session log](/images/2026-02-testing-agents/03-session-log.png)
+![Session log](/images/2026/02-testing-agents/03-session-log.png)
 
 Sub-agentic tasks launched by the orchestrator, errors detected, and the orchestrator can start the iteration loop right there. 
 My favorite part is that sub-agentic tasks are not billed; we only spend Premium Requests for the orchestrator session. Sweet, isn't it?
@@ -110,17 +110,17 @@ While this process is going to work in vanilla Copilot CLI, we can also leverage
 This will instruct CLI to use the `sql` tool to coordinate the sessions and store the results in a local SQLite database, as well as enable better communication between subagents and the orchestrator.
 
 
-![Enable Fleet in CLI](/images/2026-02-testing-agents/04-fleet.png)
+![Enable Fleet in CLI](/images/2026/02-testing-agents/04-fleet.png)
 
 ### Testing Results
 
 After a few iterations of testing and refining the prompt, we got to the point where all three models are performing well and generating the release notes as expected.
 
-![Test Session Results](/images/2026-02-testing-agents/05-testing-results.png)
+![Test Session Results](/images/2026/02-testing-agents/05-testing-results.png)
 
 We can visualize the flow as below: 
 
-![Testing Flow](/images/2026-02-testing-agents/06-flow.png)
+![Testing Flow](/images/2026/02-testing-agents/06-flow.png)
 
 
 ## Why This Matters
@@ -145,7 +145,7 @@ This is agents testing agents. It's meta-automation, and it's entirely possible 
 
 So, what I did was prompt the CLI agent to build an "Agent Tester" based on the successful testing session: 
 
-![Agent Tester Created](/images/2026-02-testing-agents/07-meta-agent.png)
+![Agent Tester Created](/images/2026/02-testing-agents/07-meta-agent.png)
 
 ## What's Next?
 

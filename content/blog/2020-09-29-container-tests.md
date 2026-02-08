@@ -1,6 +1,6 @@
 ---
 date: "2020-09-29T00:00:00Z"
-image: /images/2020-09-container-tests/dive.png
+image: /images/2020/09-container-tests/dive.png
 title: Docker image tests
 tags: 
   - docker
@@ -22,7 +22,7 @@ We also should take care of the content of our images because we don't need to p
 
 And last, but not least everyone who can pull our can inspect them (tools like [dive](https://github.com/wagoodman/dive) can make this process easy as pie).
 
-![Dive PNG screenshot](/images/2020-09-container-tests/dive.png)
+![Dive PNG screenshot](/images/2020/09-container-tests/dive.png)
 
 So it makes sense to reject images with sensitive data/information baked in the layer.
 
@@ -101,7 +101,7 @@ container-structure-test test \
         --config container-structure-tests.yaml 
 ```
 
-![The first test failed](/images/2020-09-container-tests/git-test.png)
+![The first test failed](/images/2020/09-container-tests/git-test.png)
 
 This is something that can be fixed with a good `.dockerignore` file:
 
@@ -189,7 +189,7 @@ metadataTest:
 
 As soon as we have a successful tests run locally 
 
-![Green tests locally](/images/2020-09-container-tests/green-tests-local.png)
+![Green tests locally](/images/2020/09-container-tests/green-tests-local.png)
 
 it's time to put things together and update our GitHub Actions workflow file.
 
@@ -213,6 +213,6 @@ and the fixed Dockerfile is [here](https://github.com/asizikov/asp-net-container
 
 What could be better than a green CI pipeline?
 
-![CI is green](/images/2020-09-container-tests/ci-green.png)
+![CI is green](/images/2020/09-container-tests/ci-green.png)
 
 PS: while fixing our tests we also reduced the size of our image. Now its size is just 208Mb. A nice side benefit, eh?

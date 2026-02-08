@@ -1,13 +1,13 @@
 ---
 date: "2016-09-24T00:00:00Z"
-image: /images/code-for-reviewer/matrix.png
+image: /images/2016/09-code-for-reviewer/matrix.png
 title: Write code for the reviewer, not for the compiler
 tags:
   - programming
 slug: code-for-reviewer
 ---
 
-![Code](/images/code-for-reviewer/matrix.png)
+![Code](/images/2016/09-code-for-reviewer/matrix.png)
 
 I've been doing code reviews on a daily basis for several years for now. This activity is very different from what I do as a developer.
 
@@ -21,7 +21,7 @@ We know how to get extra information about any line code on the screen. In my ca
 
 However, when reviewing a Pull Request on GitHub I have just a basic syntax highlighting in the editor.    
 
-![Pull Request sample](/images/code-for-reviewer/nancy-pr.png)
+![Pull Request sample](/images/2016/09-code-for-reviewer/nancy-pr.png)
 
 ## Problem
 
@@ -62,7 +62,7 @@ We still don't know what type `Yesterday` is, but the rest is clear. We have ple
 
 When I look at this code in my IDE I see that some code is marked as redundant (grayed out): 
 
-![Same Code in IDE](/images/code-for-reviewer/redundant-code.png)
+![Same Code in IDE](/images/2016/09-code-for-reviewer/redundant-code.png)
 
 What if I apply suggested "Remove redundant code" refactorings? We'd loose some information about this method. I'm going to be careful here.
 
@@ -72,7 +72,7 @@ Explicit argument names here are probably the least important information. Even 
 
 Let's remove them: 
 
-![Code in IDE, argument names omitted](/images/code-for-reviewer/redundant-code-no-args-names.png)
+![Code in IDE, argument names omitted](/images/2016/09-code-for-reviewer/redundant-code-no-args-names.png)
 
 I'm going to repeat our exercise one more time: 
 
@@ -91,7 +91,7 @@ When reviewing this snippet we don't know much about `AccountBalance` type. Is i
 
 In fact, we can just omit the type declaration here. 
 
-![Code in IDE, use var instead of Explicit type](/images/code-for-reviewer/redundant-code-use-var.png)
+![Code in IDE, use var instead of Explicit type](/images/2016/09-code-for-reviewer/redundant-code-use-var.png)
 
 So far so good. We don't know the type, but we do know that the type is correct. We were able to pass it to `CalculateFees` method, and our code compiles. 
 
@@ -103,7 +103,7 @@ Honestly, I don't know. Perhaps we can figure out that the method **is** generic
 
 After all the reviewer is not trying to catch compilation errors, eh?
 
-![Code in IDE, implicit generic parameter type](/images/code-for-reviewer/redundant-code-no-generic-type.png)
+![Code in IDE, implicit generic parameter type](/images/2016/09-code-for-reviewer/redundant-code-no-generic-type.png)
 
 ### this qualifier
 
@@ -132,7 +132,7 @@ Each `*.Car` could be either a property of current class instance property or a 
 
 In your IDE you'll spend a second to find out, right? I'll use color codes: 
 
-![Code in IDE, no redundant code](/images/code-for-reviewer/color-codes.png)
+![Code in IDE, no redundant code](/images/2016/09-code-for-reviewer/color-codes.png)
 
 You can hover or navigate to it. Doesn't really matter.
 
@@ -144,7 +144,7 @@ It requires some courage, but I'm going to remove all `this.` prefixes.
 
 ## Final look 
 
-![Code in IDE, no redundant code](/images/code-for-reviewer/no-redundant.png)
+![Code in IDE, no redundant code](/images/2016/09-code-for-reviewer/no-redundant.png)
 
 So, what do we have here? As we learned, as a reviewer we need to focus on the logic, and we shouldn't try to chase any errors which can be caught by the compiler.
 
@@ -159,7 +159,7 @@ Ok, the reviewer has no information about types, about the nature of methods and
 
 The only information that reviewer has is the logic of the method. And now they can focus on it because that's what is important here after all. The logic, not the AST structure.
 
-![Review ](/images/code-for-reviewer/review.png)
+![Review ](/images/2016/09-code-for-reviewer/review.png)
 
 
 Please, let the compiler to its job, and help the reviewer focus on what **does** matter here.

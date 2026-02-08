@@ -9,7 +9,7 @@ slug: abusing-github
 
 Look at all those famous people committing to some random developer’s [boring repository](https://github.com/asizikov/gang/graphs/contributors). 
 
-![gang](/images/github-author/gang.png)
+![gang](/images/2015/11-github-author/gang.png)
 
 Why would they do that? In fact, they don’t. 
 
@@ -17,7 +17,7 @@ In general, git is just a tool that allows you to create [patches](https://git-s
 
 When you create a commit, it will be signed with your name and email. Look at the author part here:
 
-![committer](/images/github-author/committer.png)
+![committer](/images/2015/11-github-author/committer.png)
 
 You have your name listed twice for every commit. You are both the author and the committer. Technically, the author is the one who created the patch, and the committer is the person who applied the patch.
 

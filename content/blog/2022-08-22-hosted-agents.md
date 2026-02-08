@@ -42,7 +42,7 @@ Managed agents have these advantages:
 
 The agent choice is generic and broad enough to cover most of the common use cases.
 
-![](/images/2022-08-hosted-agents/tools.png)
+![](/images/2022/08-hosted-agents/tools.png)
 
 ### Hardware
 
@@ -85,7 +85,7 @@ Self-hosted agents are the agents which you set up and manage on your own.
 
 ### Overview
 
-![](/images/2022-08-hosted-agents/firewall.png)
+![](/images/2022/08-hosted-agents/firewall.png)
 
 Managed agents will run in a cloud, and won't have access to your private network, however self-hosted agents can be deployed into your VNet, behind the corporate firewall.
 
@@ -101,15 +101,15 @@ There are several steps which I need to complete in order to set up a build agen
 
 and create a PAT with these scopes
 
-![](/images/2022-08-hosted-agents/pat.png)
+![](/images/2022/08-hosted-agents/pat.png)
 
 create a new pool
 
-![](/images/2022-08-hosted-agents/new-pool.png)
+![](/images/2022/08-hosted-agents/new-pool.png)
 
 create a new agent
 
-![](/images/2022-08-hosted-agents/new-agent.png)
+![](/images/2022/08-hosted-agents/new-agent.png)
 
 Download the agent and configure it
 
@@ -118,21 +118,21 @@ PS C:\> mkdir agent ; cd agent
 PS C:\agent> Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$HOME\Downloads\vsts-agent-win-x64-2.179.0.zip", "$PWD")
 ```
 
-![](/images/2022-08-hosted-agents/configure.png)
+![](/images/2022/08-hosted-agents/configure.png)
 
 If everything is good, you should be able to see your new agent: 
 
-![](/images/2022-08-hosted-agents/running.png)
+![](/images/2022/08-hosted-agents/running.png)
 
 ## Verify
 
 We can create simple pipeline
 
-![](/images/2022-08-hosted-agents/build.png)
+![](/images/2022/08-hosted-agents/build.png)
 
 And verify if it's running on my PC
 
-![](/images/2022-08-hosted-agents/output.png)
+![](/images/2022/08-hosted-agents/output.png)
 
 As you can see we have our pipeline running on my computer. This means I can use my own hardware such as GPU or devices connected to my laptop. Also I have access to internal network, printers and whatnot.
 
