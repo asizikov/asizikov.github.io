@@ -18,7 +18,7 @@ What they had in mind was a business application that consisted of multiple serv
 
 Something like this:
 
-![Multi-Repo Pipeline](/images/2024-02-actions/multi-repo-pipeline.png)
+![Multi-Repo Pipeline](/images/2024/02-actions/multi-repo-pipeline.png)
 
 My customer had some misconceptions about GitHub Actions, such as:
 
@@ -33,7 +33,7 @@ In this post, I'll demonstrate a simplified version of such a setup.
 
 I'll use [chain-builds](https://github.com/chain-builds) organization as an example.
 
-![Chain Builds](/images/2024-02-actions/chain-builds-organization.png)
+![Chain Builds](/images/2024/02-actions/chain-builds-organization.png)
 
 This organization has the following repositories:
 
@@ -89,7 +89,7 @@ Because I'm calling an external workflow, I need to provide a Personal Access To
 
 I can have this PAT on the organization level, so it can be [shared with repositories that require it](https://docs.github.com/en/actions/using-workflows/sharing-workflows-secrets-and-runners-with-your-organization#sharing-secrets-and-variables-within-an-organization).
 
-![PAT Organization](/images/2024-02-actions/pat-org-settings.png)
+![PAT Organization](/images/2024/02-actions/pat-org-settings.png)
 
 this will submit a `repository_dispatch` event to the `builds` repository with the following payload:
 
@@ -126,7 +126,7 @@ jobs:
 
 This will be rendered as following:
 
-![Who Triggered Me](/images/2024-02-actions/who-triggered-me.png)
+![Who Triggered Me](/images/2024/02-actions/who-triggered-me.png)
 
 ## Building code from another repository
 
@@ -259,7 +259,7 @@ The push to any feature branch will run this workflow independently of the Commo
 In this post, I demonstate how GitHub Actions can orchestrate complex build pipelines across multiple repositories. 
 Any change pushed to `main` branch of any service repository triggers common build pipeline that is stored separately from these service repos.
 
-![Common Build Pipeline](/images/2024-02-actions/common-build-pipeline.png)
+![Common Build Pipeline](/images/2024/02-actions/common-build-pipeline.png)
 
 This provides a single plane of glass overview of the CI/CD process for the multi-repository project.
 

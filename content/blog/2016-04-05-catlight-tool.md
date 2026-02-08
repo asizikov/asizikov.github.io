@@ -22,23 +22,23 @@ Works for both Windows and OSX.
 
 Setup is very straightforward: provide your AppVeyor API key
 
-![screenshot](/images/catlight-tool/api-key.png)
+![screenshot](/images/2016/04-catlight-tool/api-key.png)
 
 Select all the projects you want to be notified about
 
-![screenshot](/images/catlight-tool/select-projects.png)
+![screenshot](/images/2016/04-catlight-tool/select-projects.png)
 
 Select all the events you want to be aware of
 
-![screenshot](/images/catlight-tool/settings.png)
+![screenshot](/images/2016/04-catlight-tool/settings.png)
 
 Trigger the build
 
-![screenshot](/images/catlight-tool/build-started.png)
+![screenshot](/images/2016/04-catlight-tool/build-started.png)
 
 and wait for the green light.
 
-![screenshot](/images/catlight-tool/build-finished.png)
+![screenshot](/images/2016/04-catlight-tool/build-finished.png)
 
 
 

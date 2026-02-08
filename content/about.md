@@ -3,14 +3,14 @@ layout: page
 title: Hi, I'm Anton.
 permalink: about
 header: 
-  image: /images/01-about/hdr.jpeg
+  image: /images/2015/01-about/hdr.jpeg
 seo: 
   type: Person
 toc: false
 page: true
 ---
 
-![img](/images/01-about/hdr.jpeg)
+![img](/images/2015/01-about/hdr.jpeg)
 
 I'm an Amsterdam-based engineer. I build software, help companies to adopt DevOps practices and modern software development approaches. I love open source and contributing to the community.
 

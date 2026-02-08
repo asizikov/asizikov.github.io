@@ -58,7 +58,7 @@ The goal is to help the model to understand how I expect it to generate code, wh
 
 To start off, we can use a built-in instructions generation prompt:
 
-![Generate Copilot Instructions](/images/2025-08-hey-copilot/01-instructions.png)
+![Generate Copilot Instructions](/images/2025/08-hey-copilot/01-instructions.png)
 
 Copilot will scan the repo, and generate a decent set of instructions based on the project structure and documentation.
 

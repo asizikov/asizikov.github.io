@@ -26,7 +26,7 @@ ReSharper supports [custom code inspections](https://www.jetbrains.com/resharper
 
 This is a good solution, but it has a few disadvantages. First of all, it highlights the whole method with all the expressions in it, and it is very annoying when you work with legacy code and can’t change the method name. 
 
-![Custom inspection in action](/images/async-suffix-plugin/custom-inspection-in-action.png)
+![Custom inspection in action](/images/2015/08-async-suffix-plugin/custom-inspection-in-action.png)
 
 Also, it's not easy to skip override methods from analysis. 
 
@@ -34,7 +34,7 @@ So I’ve built an extension for ReSharper and named it AsyncSuffix. You can gra
 
 This extension analyses the task-returning method declarations, and suggests the Rename refactoring when it detects that the ‘Async’ suffix is missing. It also has an option to exclude test methods from the analysis. By test methods I mean the methods with the ```[Test]```, ```[Fact]``` or ```[TestMethod]``` annotations. So, as you see, it supports only NUnit, MSTest, and xUnit.Net frameworks. This feature is turned on by default, but you can turn it off if you'd like.
 
-![extension in action](/images/async-suffix-plugin/in-action.gif)
+![extension in action](/images/2015/08-async-suffix-plugin/in-action.gif)
 
 
 The extension code can be found on [GitHub](https://github.com/asizikov/AsyncSuffix

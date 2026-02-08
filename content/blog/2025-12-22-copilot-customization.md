@@ -32,7 +32,7 @@ And to make it a bit more interesting, we can define
 
 To put it simply, you can follow this decision tree:
 
-![Decision tree](/images/2025-12-customization/01-instructions.png)
+![Decision tree](/images/2025/12-customization/01-instructions.png)
 
 ## Reusable Prompts
 
@@ -43,11 +43,11 @@ As the landscape evolved, they can now be seen as utility "script" or "macros" t
 For example this blog is written in VS Code where I have a `/new-post` prompt that scaffolds needed files, generates tags. There is also a `/spell-check` prompt that reviews the content of the uncommitted .md file for spelling mistakes.
 
 It can be invoked via slash command:
-![New Post Prompt](/images/2025-12-customization/02-new-post-prompt.png)
+![New Post Prompt](/images/2025/12-customization/02-new-post-prompt.png)
 
 and would run in the context of current Agent session: 
 
-![New Post Result](/images/2025-12-customization/03-new-post-prompt-results.png)
+![New Post Result](/images/2025/12-customization/03-new-post-prompt-results.png)
 
 Prompts that I use don't deserve a full orchestration as Agents and they don't run complex workflows. 
 
@@ -72,7 +72,7 @@ In its simplest form, a custom agent defines a workflow that can be run without 
 
 However, locally you can trigger custom agents for interactive sessions as well. A built-in Planning Agent is a good example: it has limited ability to execute code and modify files, but it's tasked to analyze the task, break it down into steps, ask the user for confirmation and then build the plan that can be handed over to another local, background or cloud agent for execution.
 
-![Custom Agent](/images/2025-12-customization/04-custom-agent-tree.png)
+![Custom Agent](/images/2025/12-customization/04-custom-agent-tree.png)
 
 Local custom agents can be manually selected in the Chat UI or in the CLI via `/agent` command.
 
@@ -107,7 +107,7 @@ This approach helps in managing the context size effectively, as the main agent 
 
 As a user you can ask the main agent to use a Subagent for specific tasks by hinting it to use `#runSubAgent` tool explicitly.
 
-![Subagent](/images/2025-12-customization/05-use-subagent.png)
+![Subagent](/images/2025/12-customization/05-use-subagent.png)
 
 This will kick off a new session that would pull the entire page content, process it and return just the summary to the main agent.
 
@@ -117,17 +117,17 @@ In my repository I have created a `Documentation Reader` custom agent that knows
 
 I can explicitly select this agent or I can tell my main agent to invoke it:
 
-![Custom Agent as Subagent](/images/2025-12-customization/06-agent-as-subagent.png)
+![Custom Agent as Subagent](/images/2025/12-customization/06-agent-as-subagent.png)
 
 If we check the debug logs of the main agent session we'll see that it composed a prompt for the subagent and invoked it successfully:
 
-![Subagent Log](/images/2025-12-customization/07-subagent-log.png)
+![Subagent Log](/images/2025/12-customization/07-subagent-log.png)
 
 The only content that the main agent received back was the summary of the documentation, while the subagent had access to the entire documentation content.
 
 If you run VS Code Insiders and you've enabled currently experimental Agents as Subagents (that's a mouthful) feature, you can try asking Copilot about available subagents in your repository:
 
-![Subagent Discovery](/images/2025-12-customization/08-subagent-discovery.png)
+![Subagent Discovery](/images/2025/12-customization/08-subagent-discovery.png)
 
 As you can see, if you ask generic agent to plan a task, it can invoke Planning Agent as a Subagent. 
 
@@ -160,7 +160,7 @@ For example, I have a `dotnet-tests` skill in my repository that contains instru
 
 Let's look at the diagram below:
 
-![The World](/images/2025-12-customization/09-the-world.png)
+![The World](/images/2025/12-customization/09-the-world.png)
 
 The Agent is an entry point. Agents are **independent entities** that can be invoked directly locally, in background or in the cloud. Every agent can break down its tasks and implement them using tools, MCPs, Skills. These invocations can happen directly in the context of the current agentic session or in the isolated context of a Subagent. 
 

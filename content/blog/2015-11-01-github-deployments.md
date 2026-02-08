@@ -16,17 +16,17 @@ GitHub provides you with an extra level of storing information about your code. 
 
 The feature, which is well known is the [GitHub Statuses API](https://stackoverflow.com/questions/18318097/delete-a-closed-pull-request-from-github).
 
-![Statuses in action](/images/github-deployments/statuses.png)
+![Statuses in action](/images/2015/11-github-deployments/statuses.png)
 
 Statuses are most often sent by CI server. However CI is not the only possible source of this information. Anyway, statuses are linked to the commit and you can use them in your process. For example, with the combination of [protected branches](https://help.github.com/articles/about-protected-branches/) and statuses you can prevent you from merging code that cannot be built into master branch.
 
 The other feature of GitHub, which I discovered not so long ago, is Deployment Statuses. It’s quite simple at the moment. The only thing it does is link the branch/commit or tag with the event of deployment and sends notifications around.
 
-![Deployment created](/images/github-deployments/deployment.png)
+![Deployment created](/images/2015/11-github-deployments/deployment.png)
 
 Successful deployment on the test environment is just another confirmation for your teammates that your changes are fine and it’s time to merge your code.
 
-![Deployments in action](/images/github-deployments/deployments.png)
+![Deployments in action](/images/2015/11-github-deployments/deployments.png)
 
 That’s how it looks like. Well, except the fact that I don’t usually talk to myself.
 

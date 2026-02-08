@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS my_table;
 CREATE TABLE my_table (...);
 ```
 
-![No Docs](/images/2025-04-prompts/no-docs.png)
+![No Docs](/images/2025/04-prompts/no-docs.png)
 
 As you can see, despite me asking to use Friendly SQL syntax Copilot generated a vanilla SQL query. Something that I expected of course.
 
@@ -102,7 +102,7 @@ Some debugging notes and warnings are included for clarity, though they are not 
 
 Reusable prompts can be attached to any conversation as context.
 
-![Reusable prompt](/images/2025-04-prompts/attaching-prompt.png)
+![Reusable prompt](/images/2025/04-prompts/attaching-prompt.png)
 
 While it's now possible to append the compressed SQL reference to the local copilot-instructions, I prefer to keep it separate, as it allows me to skip it for generic, non-DuckDB SQL related requests.
 
@@ -122,7 +122,7 @@ Even the GPT-4o Basic model, when provided with our reusable prompt, started gen
 
 Here's an example of the improved output:
 
-![DuckDB SQL](/images/2025-04-prompts/result.png)
+![DuckDB SQL](/images/2025/04-prompts/result.png)
 
 Happy coding!
 

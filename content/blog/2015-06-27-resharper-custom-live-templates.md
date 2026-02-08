@@ -18,7 +18,7 @@ In fact, code completion and code generation are a very crucial part of this pro
 
 Go to RESHARPER -> Templates Explorer.
 
-![Template Explorer](/images/resharper-custom-live-templates/templates-explorer.PNG)
+![Template Explorer](/images/2015/06-resharper-custom-live-templates/templates-explorer.PNG)
 
 Select the C# scope and press the New Template button. 
 
@@ -42,11 +42,11 @@ Live templates allow us to define the scope where the template will be available
 To do so, click the Availability link on the right side and select the option "In C# where type member declaration is allowed". This will prevent the template from being activated in unexpected places (like inside the method). After that, set the minimum C# version to 5.0.
 
 
-![availability](/images/resharper-custom-live-templates/availability.PNG)
+![availability](/images/2015/06-resharper-custom-live-templates/availability.PNG)
 
 Now the template should look like the following:
 
-![Result](/images/resharper-custom-live-templates/overview.png)
+![Result](/images/2015/06-resharper-custom-live-templates/overview.png)
 
 I've declared the shortcut 'am' for the template.
 
@@ -54,4 +54,4 @@ I've declared the shortcut 'am' for the template.
 
 Let's type 'am' in the code, and here we go: our brand new template is activated.
 
-![Template in action](/images/resharper-custom-live-templates/in-action.PNG)
+![Template in action](/images/2015/06-resharper-custom-live-templates/in-action.PNG)

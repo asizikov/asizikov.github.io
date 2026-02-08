@@ -1,6 +1,6 @@
 ---
 date: "2016-12-24T00:00:00Z"
-image: /images/2016-12-msbuild-investigation/msbuild-log-dll-resolved-overview.png
+image: /images/2016/12-msbuild-investigation/msbuild-log-dll-resolved-overview.png
 title: Investigating unexpected MSBuild behavior
 tags:
     - tools
@@ -17,7 +17,7 @@ That doesn't sound right, though it's typically easy to fix.
 
 The first reaction is to consolidate NuGet packages in my Solution. All the installed packages have same version `5.7.0` though.
 
-![Package.config sample](/images/2016-12-msbuild-investigation/installed-package-version.png)
+![Package.config sample](/images/2016/12-msbuild-investigation/installed-package-version.png)
 
 Well, that happens when a merge conflict was poorly resolved. Perhaps one of the project files has a reference to an old version. 
 
@@ -35,7 +35,7 @@ Let's run a verbose build and look at the log. The log is very detailed, however
 
 And here we go: `Microsoft.Data.Edm` is initially taken from local `packages` folder and after that suddenly overwritten by the wrong version from my `.NETFramework` folder.
 
-![MSBuild log](/images/2016-12-msbuild-investigation/msbuild-log-double-writes.png)
+![MSBuild log](/images/2016/12-msbuild-investigation/msbuild-log-double-writes.png)
 
 Still not clear why.
 
@@ -43,17 +43,17 @@ Luckily we can search through the logs. We're interested in resolve messages her
 
 `Resolved file path is "C:\Program Files (x86)\Microsoft WCF Data Services\`
 
-![Search](/images/2016-12-msbuild-investigation/msbuild-log-dll-resolved-overview.png)
+![Search](/images/2016/12-msbuild-investigation/msbuild-log-dll-resolved-overview.png)
 
 This is our "Ahaaa" moment! As you can see on a screenshot above while building project 1 (see the red number, eh?) ResolveAssemblyReferences target picks up a wrong version of that DLL which is required by project 2.
 
 Project 1 has a reference to project 2, and indeed has no references to `Microsoft.Data.Edm` dll. 
 
-![VS Project References](/images/2016-12-msbuild-investigation/project-references.png)
+![VS Project References](/images/2016/12-msbuild-investigation/project-references.png)
 
 And now it's somewhat clear what's going on. On the screenshot below we can see a part of the build log, where unimportant log entries were omitted. First occurrences of project 1 and project 2 are marked on the screenshot.
 
-![MSbuild log. Overview](/images/2016-12-msbuild-investigation/msbuild-log-build-order.png)
+![MSbuild log. Overview](/images/2016/12-msbuild-investigation/msbuild-log-build-order.png)
 
 It seems that MSBuild failed to resolve a path to `Microsoft.Data.Edm` while preparing project 2, and that's why an old version was used for project 1. However, project 2 has all the references configured correctly. 
 Once the incorrect DLL version was resolved it's being used for all remain projects.

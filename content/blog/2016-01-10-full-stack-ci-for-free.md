@@ -8,7 +8,7 @@ title: Fully automated Continuous Integration for your Open Source library for f
 slug: full-stack-ci-for-free
 ---
 
-![open source is communism](/images/ci-for-free/communism.png)
+![open source is communism](/images/2016/01-ci-for-free/communism.png)
 This is a long title. Well, the post is going to be long as well.
 
 I want to show how you can set up the CI pipeline using free services and tools.
@@ -119,7 +119,7 @@ build:
 Now it's time to create NuGet package. 
 AppVeyor has a feature to create packages automatically: 
 
-![CreatePackage](/images/ci-for-free/package-projects.png)
+![CreatePackage](/images/2016/01-ci-for-free/package-projects.png)
 
 Doesn't work for me though. At the moment it [ignores the content](http://help.appveyor.com/discussions/problems/2698-when-using-publish_nuget-true-my-nuspec-is-ignored-and-it-is-packaging-the-csproj-instead) of `.nuspec` file, 
 and performs `nuget pack` command on the `csproj` file. 
@@ -151,7 +151,7 @@ The final step is different for every branch configuration:
 If `APPVEYOR_PULL_REQUEST_NUMBER` environment variable is defined that means that we're currently performing a synthetic build of merge commit from Pull Request.
 The `ApiKey` will be transparently decrypted and the package will be published:
 
-![Success](/images/ci-for-free/pushing-package.png)
+![Success](/images/2016/01-ci-for-free/pushing-package.png)
 
 
 P.S. You can definitely do more than publishing packages. You can [execute tests](https://www.appveyor.com/docs/running-tests), custom build scripts (PowerShell, [FAKE](http://fsharp.github.io/FAKE/)) or even [deploy](https://www.appveyor.com/docs/deployment) your application.

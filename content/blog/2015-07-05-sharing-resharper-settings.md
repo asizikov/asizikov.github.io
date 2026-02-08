@@ -17,11 +17,11 @@ Go to RESHARPER->Manage Options menu.
 
 Select the settings layer, which you would like to export.
 
-![Manage Options](/images/resharper-settings-plugin/manage-options.png)
+![Manage Options](/images/2015/07-resharper-settings-plugin/manage-options.png)
 
 Click Import/Export settings.
 
-![Export Settings](/images/resharper-settings-plugin/export-settings-and-templates.png)
+![Export Settings](/images/2015/07-resharper-settings-plugin/export-settings-and-templates.png)
 
 In the Export To File dialog window, select Code Style and Live templates tree nodes. Then choose the directory and file name for your DotSettings file.
 
@@ -105,11 +105,11 @@ For demo purposes, I'll use the file system. Just place the .nupkg in the folder
 
 Once the package is published, go to RESHARPER -> Options...->Environment -> Extension Manager.
 
-![Manage Options](/images/resharper-settings-plugin/options-environment.png)
+![Manage Options](/images/2015/07-resharper-settings-plugin/options-environment.png)
 
 Click Add and enter any name you want for the Name and the path of the Artifacts, NuGet feed, or directory for the Source.
 
-![Set up new feed](/images/resharper-settings-plugin/gallery-save.png)
+![Set up new feed](/images/2015/07-resharper-settings-plugin/gallery-save.png)
 
 ## Installing the extension
 
@@ -117,11 +117,11 @@ In Visual Studio, go to RESHARPER -> Extension Manager.
 
 Search for the package name, select the package with settings and click Install.
 
-![Install the plug-in](/images/resharper-settings-plugin/custom-plug-in.png)
+![Install the plug-in](/images/2015/07-resharper-settings-plugin/custom-plug-in.png)
 
 If we check the Manage Options dialog, we'll find the new settings layer.
 
-![New settings layer](/images/resharper-settings-plugin/new-settings-layer.png)
+![New settings layer](/images/2015/07-resharper-settings-plugin/new-settings-layer.png)
 
 
 Every team member now can use the same version of formatter settings. Since we distribute them as an extension, ReSharper will automatically show a notification when a new version is available. 

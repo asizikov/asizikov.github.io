@@ -17,20 +17,20 @@ We'll start with the classics: "Hello World". I like the aesthetics of ASCII art
 
 We have multiple ways to alter the behavior of an AI agent. The simplest one is to prompt it with what we want.
 
-![Prompting Hello World](/images/2026-02-skills/00-prompt.png)
+![Prompting Hello World](/images/2026/02-skills/00-prompt.png)
 
 Of course, that only works if I remember to add these instructions to my prompt every time. Not very practical.
 
 No big deal, we can save that behavior in `AGENTS.md` (or `.github/copilot-instructions.md`) file and the agent will always respond to our greetings the way I like.
 
-![AGENTS.md Hello World](/images/2026-02-skills/01-agents-md.png)
+![AGENTS.md Hello World](/images/2026/02-skills/01-agents-md.png)
 
 Note that `AGENTS.md` file is added to the context.
 In fact, what happens is that the full content of `AGENTS.md` is prepended to every prompt we send to the agent.
 
 We can see that in Copilot Debug Logs:
 
-![Debug Logs Hello World](/images/2026-02-skills/02-agents-md-in-context.png)
+![Debug Logs Hello World](/images/2026/02-skills/02-agents-md-in-context.png)
 
 In many cases, this is exactly what we need. However, this ASCII art greeting only makes sense when **I greet the agent**. If I ask it to do something else, this banner will be just noise that eats up my context window, burns tokens, and may even confuse the agent.
 
@@ -62,7 +62,7 @@ description: Produces a nice greeting message. Use this skill whenever the user 
 
 If we run a new Copilot Session and check Debug Logs, we'll see that Skills descriptions are automatically loaded into the context:
 
-![Debug Logs Skills Loaded](/images/2026-02-skills/03-skills-in-context.png)
+![Debug Logs Skills Loaded](/images/2026/02-skills/03-skills-in-context.png)
 
 There is an important moment here: no agent should load the entire `SKILL.md` content, they only load the front matter with name and description.
 
@@ -70,23 +70,23 @@ Naturally, we just learned **the first important rule** of writing good Agent Sk
 
 In our case we did everything right, and we can follow the reasoning progress in the logs:
 
-![Debug Logs Using Skill](/images/2026-02-skills/04-agent-reasoning.png)
+![Debug Logs Using Skill](/images/2026/02-skills/04-agent-reasoning.png)
 
 ## More Complex Skills
 
 Once the skill is selected, the agent loads the full `SKILL.md` file into the context. This works fine for small skills, but what if we want to add complex logic? First, let's see how the agent reacts when I greet it in Russian:
 
-![Debug Logs Russian Greeting](/images/2026-02-skills/05-greeting-ru.png)
+![Debug Logs Russian Greeting](/images/2026/02-skills/05-greeting-ru.png)
 
 We told the agent to load this skill whenever the user greets it in any language, so the output is as expected. I can add different banners for different languages.
 
 Let's give it a try:
 
-![Localized Banners](/images/2026-02-skills/06-l8n.png)
+![Localized Banners](/images/2026/02-skills/06-l8n.png)
 
 And then test it with Russian and Spanish greetings:
 
-![Agent Session Localized](/images/2026-02-skills/07-localized-flow.png)
+![Agent Session Localized](/images/2026/02-skills/07-localized-flow.png)
 
 Exactly as expected!
 
@@ -96,7 +96,7 @@ Can we do better? Sure! Our Skill is growing, and now whenever the agent loads i
 
 Once we refactor our Skill and make it modular, the memory footprint goes down significantly, only the decision flow is loaded into the context and the agent can decide which banner to load based on the user's greeting language.
 
-![Modular Skills](/images/2026-02-skills/08-modular-skill.png)
+![Modular Skills](/images/2026/02-skills/08-modular-skill.png)
 
 We just learned **the second important rule** of writing good Agent Skills - complex skills should be modular, with only the core logic in the main `SKILL.md` file and other assets (templates, code snippets, examples, etc.) stored in separate files and folders. The Skill description should guide the agent on when and how to load these assets.
 

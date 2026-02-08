@@ -1,13 +1,13 @@
 ---
 date: "2016-06-12T00:00:00Z"
-image: /images/dev-tools-2016-win/old-tools-8.png
+image: /images/2016/06-dev-tools-2016-win/old-tools-8.png
 title: Dev environment 2016. Windows.
 tags:
     - tools
 slug: dev-environment-2016-win
 ---
 
-![tool](/images/dev-tools-2016-win/old-tools-8.png)
+![tool](/images/2016/06-dev-tools-2016-win/old-tools-8.png)
 
 I've changed a job last month and had to build up my dev environment from scratch again. While doing that I decided to write down some thoughts about it. 
 
@@ -56,7 +56,7 @@ I'm a .NET web developer, so nothing special here:
 
 ### IDE and editors
 
-![vscode](/images/dev-tools-2016-win/vscode.png)
+![vscode](/images/2016/06-dev-tools-2016-win/vscode.png)
 
 * VS 2015 with a set of extensions
     * [NoGit](https://visualstudiogallery.msdn.microsoft.com/146b404a-3c91-46ff-932a-fb0f8b826f94).
@@ -81,7 +81,7 @@ I'm a .NET web developer, so nothing special here:
 
 ### File Managers and command line shell
 
-![choco](/images/dev-tools-2016-win/choco.png)
+![choco](/images/2016/06-dev-tools-2016-win/choco.png)
 
 * [Far manager](http://www.farmanager.com/index.php?l=en). An old school two panels file manager.
 * [ConEmu](https://conemu.github.io/). A powerful and advanced console window.
@@ -89,7 +89,7 @@ I'm a .NET web developer, so nothing special here:
 
 ### Source control
 
-![GitKraken](/images/dev-tools-2016-win/gitkraken.png)
+![GitKraken](/images/2016/06-dev-tools-2016-win/gitkraken.png)
 
 * [GitBash](https://git-scm.com/downloads)
 * [GitKraken](https://www.gitkraken.com/) A cross-platform UI tool for Git.
@@ -100,7 +100,7 @@ I do most of the git related operations in git bash, though.
 
 ## Debugging and profiling
 
-![linqpad](/images/dev-tools-2016-win/linqpad.png)
+![linqpad](/images/2016/06-dev-tools-2016-win/linqpad.png)
 
 * [DotPeek](https://www.jetbrains.com/decompiler/). A free .NET decompiler.
 * [DotMemory](https://www.jetbrains.com/dotmemory) .NET memory profiler.
@@ -155,7 +155,7 @@ I prefer to have all the tools grouped into `.config` files:
 
 and they could be installed all together.
 
-![choco-install](/images/dev-tools-2016-win/choco-install-config.png)
+![choco-install](/images/2016/06-dev-tools-2016-win/choco-install-config.png)
 
 ## A call to action
 

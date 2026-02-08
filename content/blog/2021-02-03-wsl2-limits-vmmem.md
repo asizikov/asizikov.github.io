@@ -10,7 +10,7 @@ WSL2 on Windows 10 has some issues, but I still prefer it to run my docker conta
 
 One of the problems which used to bug me a lot was the memory consumption by `Vmmem` process.
 
-![](/images/2021-02-vmmem/vmmem.png)
+![](/images/2021/02-vmmem/vmmem.png)
 
 The memory consumption goes though the roof. Even on 32GB machine you may run out of memory.
 
@@ -32,4 +32,4 @@ More details on what options to configure can be found [in documentation](https:
 
 After WSL and Docker Engine restart things look much better now.
 
-![](/images/2021-02-vmmem/fixed.png)
+![](/images/2021/02-vmmem/fixed.png)

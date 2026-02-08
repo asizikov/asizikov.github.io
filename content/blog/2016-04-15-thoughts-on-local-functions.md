@@ -38,7 +38,7 @@ That's a clean and simple solution. It has few issues, though.
 `AsPrintable` might have no sense outside of `Foo` method, but it's accessible for every other method inside the class.
 It will be taken into account by IntelliSense.
 
-![Private method discoverable via IntelliSense](/images/thoughts-on-local-functions/private-method-discoverable.png)
+![Private method discoverable via IntelliSense](/images/2016/04-thoughts-on-local-functions/private-method-discoverable.png)
 
 
 ### Func and Action
@@ -65,11 +65,11 @@ The call is unnecessary expensive: it will produce [a couple of allocations](htt
 
 There is no elegant way to define recursive lambda: 
 
-![Lambda can not be recursive](/images/thoughts-on-local-functions/func-factorial-not-compilable.png)
+![Lambda can not be recursive](/images/2016/04-thoughts-on-local-functions/func-factorial-not-compilable.png)
 
 We have to use an ugly trick:  
 
-![Lambda can not be recursive](/images/thoughts-on-local-functions/func-factorial-ugly.png)
+![Lambda can not be recursive](/images/2016/04-thoughts-on-local-functions/func-factorial-ugly.png)
 
 And the last, but not least is the fact that lambdas are very limited. You cannot use  
  `out`, `ref`,`params` and optional parameters. They cannot be generic. 
@@ -82,7 +82,7 @@ Local functions can be defined in the body of any method, constructor or propert
 
 Since it will be transformed by compiler to regular private static method: 
 
-![Local function decompiled](/images/thoughts-on-local-functions/local-function-decompiled.png)
+![Local function decompiled](/images/2016/04-thoughts-on-local-functions/local-function-decompiled.png)
 
 there will be no overhead of calling it and it can have all the properties which regular method declaration can have: 
 it can be asynchronous, it can be generic, it can be dynamic. 
@@ -146,7 +146,7 @@ Local functions support [Caller Info Attributes](https://msdn.microsoft.com/en-u
 Fun fact. You can declare a local function with the same name as an existing private method and local function will hide it. 
 Same as for lambdas, though.
 
-![Local function has priority over private method](/images/thoughts-on-local-functions/local-function-priority-over-private-method.png)
+![Local function has priority over private method](/images/2016/04-thoughts-on-local-functions/local-function-priority-over-private-method.png)
 
 ## Links
 
