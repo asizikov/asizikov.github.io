@@ -12,7 +12,7 @@ Hi!
 As a .NET developer I'm enjoying using an intelligent plug-in for Visual Studio which is called [ReSharper](https://www.jetbrains.com/resharper/).
 It saves me time, provides me with static analysis and generates code for me.
 
-In fact, code completion and code generation are a very crucial part of this product. By default ReSharper comes with more than 20 [Live Templates](https://www.jetbrains.com/resharper/features/code_templates.html). The good fact is that it's easy to customize, and you can introduce your own templates.
+In fact, code completion and code generation are a very crucial part of this product. By default, ReSharper comes with more than 20 [Live Templates](https://www.jetbrains.com/resharper/features/code_templates.html). The good fact is that it's easy to customize, and you can introduce your own templates.
 
 ## Creating the Live Template
 
@@ -37,7 +37,7 @@ $END$ - marks the point where the text caret is placed when the template is inse
 
 ## Availability
 
-Live templates allow us to define the scope where the template will be available. In our case async keyword is valid in the context of C# 5.0 and higher versions.
+Live templates allow us to define the scope where the template will be available. In our case, the async keyword is valid in the context of C# 5.0 and higher versions.
 
 To do so, click the Availability link on the right side and select the option "In C# where type member declaration is allowed". This will prevent the template from being activated in unexpected places (like inside the method). After that, set the minimum C# version to 5.0.
 
