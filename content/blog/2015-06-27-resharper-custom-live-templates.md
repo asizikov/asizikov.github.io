@@ -9,14 +9,14 @@ slug: resharper-custom-live-templates
 
 Hi!
 
-As a .NET developer I'm enjoying to use an intelligent plug-in for Visual Studio which is called [ReSharper](https://www.jetbrains.com/resharper/).
-It saves me time, provides me a static analysis and generates code for me.
+As a .NET developer I'm enjoying using an intelligent plug-in for Visual Studio which is called [ReSharper](https://www.jetbrains.com/resharper/).
+It saves me time, provides me with static analysis and generates code for me.
 
-In fact code completion and code generation is a very crucial part of this product. By default ReSharper goes with more than 20 [Live Templates](https://www.jetbrains.com/resharper/features/code_templates.html). The good fact is that it's easy to customize, and you can introduce your own templates.
+In fact, code completion and code generation are a very crucial part of this product. By default ReSharper comes with more than 20 [Live Templates](https://www.jetbrains.com/resharper/features/code_templates.html). The good fact is that it's easy to customize, and you can introduce your own templates.
 
 ## Creating the Live Template
 
-Go to RESHARPER -> Templates Explorer 
+Go to RESHARPER -> Templates Explorer.
 
 ![Template Explorer](/images/resharper-custom-live-templates/templates-explorer.PNG)
 
@@ -37,9 +37,9 @@ $END$ - marks the point where the text caret is placed when the template is inse
 
 ## Availability
 
-Live templates allows us to define the scope where the template will be available. In our case async keyword is valid in the context of C# 5.0 and higher versions.
+Live templates allow us to define the scope where the template will be available. In our case async keyword is valid in the context of C# 5.0 and higher versions.
 
-To do so click the Availability link on the right side and select the option "In C# where type member declaration is allowed". This will prevent the template to be activated in unexpected places (like inside the method). After that set the minimum C# version to 5.0.
+To do so, click the Availability link on the right side and select the option "In C# where type member declaration is allowed". This will prevent the template from being activated in unexpected places (like inside the method). After that, set the minimum C# version to 5.0.
 
 
 ![availability](/images/resharper-custom-live-templates/availability.PNG)
@@ -48,10 +48,10 @@ Now the template should look like the following:
 
 ![Result](/images/resharper-custom-live-templates/overview.png)
 
-I've declared the shortcat 'am' for the template.
+I've declared the shortcut 'am' for the template.
 
 ## In action
 
-Let's type 'am' in the code and here we go: our brand new template is activated.
+Let's type 'am' in the code, and here we go: our brand new template is activated.
 
 ![Template in action](/images/resharper-custom-live-templates/in-action.PNG)

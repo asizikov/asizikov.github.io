@@ -8,7 +8,7 @@ slug: clean-repository-interface
 
 The repository pattern is being blamed quite often. The most popular reason for that is an uncontrolled growth of the interface.
 
-In the simple scenario we have an interface like this one:
+In the simple scenario, we have an interface like this one:
 
 {{< highlight csharp >}}
  public interface IClientRepository
@@ -18,11 +18,11 @@ In the simple scenario we have an interface like this one:
  }
 {{< / highlight >}}
 
-However models are never that simple and every client might have orders, addresses, contact details, and other nested properties.
+However, models are never that simple, and every client might have orders, addresses, contact details, and other nested properties.
 
 We don't want to load our database with unnecessary joins and [Entity Framework has a nice tool for that](https://msdn.microsoft.com/en-us/data/jj574232.aspx).
 
-When we need to retrieve only client's orders we can include it into the query:
+When we need to retrieve only client's orders, we can include it into the query:
 
 {{< highlight csharp >}}
 context.Clients.Where(client => client.Id == id)
@@ -44,7 +44,7 @@ context.Clients.Where(client => client.Id == id)
 	 .Include(client => client.Addresses);
 {{< / highlight >}}
 
-However the IClientRepository grows exponentially and quickly becomes an ugly monster:
+However, the IClientRepository grows exponentially and quickly becomes an ugly monster:
 
 {{< highlight csharp >}}
  public interface IClientRepository
@@ -57,11 +57,11 @@ However the IClientRepository grows exponentially and quickly becomes an ugly mo
  }
 {{< / highlight >}}
 
-It's not a nice solution for sure: lot's of code duplication and very unclear interface.
+It's not a nice solution, for sure: lots of code duplication and very unclear interface.
 
 A typical way to avoid it is to use [CQRS](https://martinfowler.com/bliki/CQRS.html) pattern and encapsulate the logic into the Query object.
 
-At my current project we're building microservices, and a CQRS looks like an overkill. It doesn't stop us from borrowing some ideas, though. 
+At my current project, we're building microservices, and a CQRS looks like overkill. It doesn't stop us from borrowing some ideas, though. 
 Let's remove all these GetXXXX methods and add one more parameter to the Get method.
 
 {{< highlight csharp >}}
@@ -72,7 +72,7 @@ Let's remove all these GetXXXX methods and add one more parameter to the Get met
  }
  {{< / highlight >}}
 
-The FetchPath is a simple generinc class which holds the collection of expressions that we're going to use to build our chain of Include statements.
+The FetchPaths is a simple generic class which holds the collection of expressions that we're going to use to build our chain of Include statements.
 
  {{< highlight csharp >}}
 public sealed class FetchPaths<T>
@@ -133,7 +133,7 @@ So that we can get the clients including all the necessary child objects.
    var clients = ClientRepository.Get(id, ClientFetchPaths.OrdersAndAddresses);
 {{< / highlight >}}
 
-I want to mention that so far we don't have any EntityFramework dependency here. Than means that we can keep this code (interface, models and FetchPathes) in the same assembly and reference it from the unit test project.
+I want to mention that so far we don't have any Entity Framework dependency here. That means that we can keep this code (interface, models, and FetchPaths) in the same assembly and reference it from the unit test project.
 
 Now the repository implementation will be clean as well:
 
