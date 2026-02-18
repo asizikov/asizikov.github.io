@@ -58,7 +58,7 @@ Invoke the `/savePrompt` command in the context of an active Agent session and i
 
 ## Custom Agents
 
-Custom Agents or, as they were initially called, Custom Agent Modes, have been introduced after. 
+Custom Agents or, as they were initially called, Custom Chat Modes, have been introduced after. 
 
 Custom Agents can define a specific persona and behavior for the agent. Agent definition file can customize the tools and MCPs available to the agent.
 
