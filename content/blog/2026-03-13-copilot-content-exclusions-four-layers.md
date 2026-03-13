@@ -6,7 +6,7 @@ tags: ["github copilot", "developer-tools"]
 draft: false
 ---
 
-So you've set up [content exclusion](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot) rules for your GitHub Copilot deployment. Sensitive files — billing data, credentials, proprietary algorithms — are blocked from completions, chat, and code review. Great, you're done, right?
+So you've set up [content exclusion](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot) rules for your GitHub Copilot. Sensitive files — billing data, credentials, proprietary algorithms — are blocked from completions, chat, and code review. Great, you're done, right?
 
 Not quite.
 
