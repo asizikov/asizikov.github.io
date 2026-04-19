@@ -31,6 +31,61 @@ body::after {
   font-weight: 500;
 }
 
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  height: auto;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+main {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.international__typo__main__layout {
+  flex: 1 0 auto;
+  min-height: 100%;
+}
+
+.international__typo__main__layout__left {
+  min-height: 100%;
+}
+
+.international__typo__main__layout__right {
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.international__typo__main__layout__right__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  height: auto;
+  min-height: 0;
+}
+
+.international__typo__post__content {
+  flex: 1 0 auto;
+  height: auto;
+  min-height: 0;
+}
+
+.international__typo__site__footer {
+  margin-top: auto;
+  width: fit-content;
+  align-self: center;
+  padding-top: 1rem;
+}
+
+.international__typo__site__footer p {
+  margin: 0;
+}
+
 /* Mobile viewport meta fixes */
 @media screen and (max-width: 768px) {
   /* Reduce header font size significantly for mobile */
@@ -209,9 +264,9 @@ body::after {
   }
 
   /* Better footer spacing on mobile */
-  footer {
-    margin: 2rem 0 1rem 0;
-    padding: 1rem 20px;
+  .international__typo__site__footer {
+    margin: 2rem auto 1rem;
+    padding: 1rem 20px 0;
   }
 
   /* Ensure text doesn't get too close to screen edges */
