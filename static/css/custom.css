@@ -89,12 +89,36 @@ header {
 .international__typo__header__home:hover { color: var(--tertiary-color); text-decoration: none; }
 
 .international__typo__header__layout__right {
-  width: auto;
+  flex: 1; /* fill remaining width so header is always full-width */
   display: inline-flex;
   align-items: center;
-  padding: 0 0.7em 0 0; /* zero left gap so blog. butts against cloud-eng */
+  gap: 0.5em;
+  padding: 0 0.7em 0 0;
   white-space: nowrap;
   background: transparent;
+}
+
+/* nav links pushed to the far right */
+.header__nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+}
+.header__nav__link {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--secondary-color);
+  letter-spacing: 0;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s;
+}
+.header__nav__link:hover,
+.header__nav__link.active {
+  text-decoration: none;
+  border-bottom-color: var(--secondary-color);
 }
 
 .international__typo__header__layout__right__domain { color: var(--secondary-color); }
