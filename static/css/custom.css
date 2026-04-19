@@ -63,6 +63,7 @@ header {
   background: var(--primary-color);
   background: var(--primary-fallback);
   border-bottom: 2px solid var(--secondary-color);
+  overflow: hidden; /* prevent black box bleeding below */
 }
 
 .international__typo__header__layout {
@@ -79,7 +80,7 @@ header {
   width: auto;
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  padding: 0.45em 0.7em;
+  padding: 0.45em 0.5em 0.45em 0.7em; /* no right padding — domain reads flush */
   display: inline-flex;
   align-items: center;
 }
@@ -91,7 +92,7 @@ header {
   width: auto;
   display: inline-flex;
   align-items: center;
-  padding: 0 0.7em;
+  padding: 0 0.7em 0 0.15em; /* minimal left gap so domain reads as one unit */
   white-space: nowrap;
   background: transparent;
 }
