@@ -1,0 +1,67 @@
+{{ define "main" }}
+{{ if eq .Kind "taxonomy" }}
+  {{/* /tags/ — list of all tags */}}
+  <section class="taxonomy">
+    <header class="taxonomy__header">
+      <p class="taxonomy__eyebrow">Browse by tag</p>
+      <h1 class="taxonomy__title">{{ .Title }}</h1>
+      <p class="taxonomy__sub">{{ len .Pages }} tags &middot; click any to see related posts.</p>
+    </header>
+
+    {{ $terms := .Data.Terms.ByCount }}
+    <ul class="tagcloud">
+      {{ range $terms }}
+        <li>
+          <a class="tagcloud__item" href="{{ .Page.RelPermalink }}">
+            <span class="tagcloud__name">{{ .Page.LinkTitle | lower }}</span>
+            <span class="tagcloud__count">{{ .Count }}</span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ else if eq .Kind "term" }}
+  {{/* /tags/foo/ — single tag's posts */}}
+  <section class="term">
+    <header class="term__header">
+      <p class="term__eyebrow"><a href="/tags/">All tags</a> &nbsp;/&nbsp; tag</p>
+      <h1 class="term__title">#{{ .Title | lower }}</h1>
+      <p class="term__sub">{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }} tagged with <strong>{{ .Title | lower }}</strong>.</p>
+    </header>
+
+    {{- $byYear := .Pages.GroupByDate "2006" }}
+    {{ range $byYear }}
+      <div class="year">
+        <div class="year__label">{{ .Key }}</div>
+        <ol class="year__list">
+          {{ range .Pages }}
+            <li class="entry">
+              <a class="entry__link" href="{{ .RelPermalink }}">
+                <div class="entry__header">
+                  <time class="entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+                  {{ with .Params.tags }}
+                    <ul class="entry__tags">
+                      {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
+                    </ul>
+                  {{ end }}
+                </div>
+                <h3 class="entry__title">{{ .Title }}</h3>
+                <p class="entry__summary">{{ .Summary | plainify | truncate 160 }}</p>
+              </a>
+            </li>
+          {{ end }}
+        </ol>
+      </div>
+    {{ end }}
+  </section>
+{{ else }}
+  {{/* generic list fallback */}}
+  <section class="taxonomy">
+    <h1 class="taxonomy__title">{{ .Title }}</h1>
+    {{ .Content }}
+    {{ range .Pages }}
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ end }}
+  </section>
+{{ end }}
+{{ end }}
