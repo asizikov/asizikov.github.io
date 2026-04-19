@@ -9,7 +9,7 @@
         <span class="international__typo__header__layout__right__tld">.nl</span>
         <nav class="header__nav">
             {{ range site.Menus.main }}
-            <a class="header__nav__link" href="{{ .URL }}">{{ .Name }}</a>
+            <a class="header__nav__link" href="{{ .URL }}">{{ or .Name .Identifier }}</a>
             {{ end }}
         </nav>
     </div>
