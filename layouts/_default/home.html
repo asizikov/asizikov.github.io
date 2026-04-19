@@ -63,14 +63,16 @@
         {{ range .Pages }}
           <li class="entry">
             <a class="entry__link" href="{{ .RelPermalink }}">
-              <time class="entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+              <div class="entry__header">
+                <time class="entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+                {{ with .Params.tags }}
+                  <ul class="entry__tags">
+                    {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
+                  </ul>
+                {{ end }}
+              </div>
               <h3 class="entry__title">{{ .Title }}</h3>
               <p class="entry__summary">{{ .Summary | plainify | truncate 160 }}</p>
-              {{ with .Params.tags }}
-                <ul class="entry__tags">
-                  {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
-                </ul>
-              {{ end }}
             </a>
           </li>
         {{ end }}
