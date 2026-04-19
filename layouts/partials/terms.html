@@ -1,0 +1,13 @@
+{{- $page := .page }}
+{{- $taxonomy := .taxonomy }}
+
+{{- with $page.GetTerms $taxonomy }}
+  <div class="post__terms">
+    <span class="post__terms__label">Tagged</span>
+    <ul class="post__terms__list">
+      {{- range . }}
+        <li><a href="{{ .RelPermalink }}">#{{ .LinkTitle | lower }}</a></li>
+      {{- end }}
+    </ul>
+  </div>
+{{- end }}
