@@ -80,7 +80,7 @@ header {
   width: auto;
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  padding: 0.45em 0.5em 0.45em 0.7em; /* no right padding — domain reads flush */
+  padding: 0.45em 0 0.45em 0.7em; /* zero right padding — domain reads flush */
   display: inline-flex;
   align-items: center;
 }
@@ -92,7 +92,7 @@ header {
   width: auto;
   display: inline-flex;
   align-items: center;
-  padding: 0 0.7em 0 0.15em; /* minimal left gap so domain reads as one unit */
+  padding: 0 0.7em 0 0; /* zero left gap so blog. butts against cloud-eng */
   white-space: nowrap;
   background: transparent;
 }
