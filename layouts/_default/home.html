@@ -1,0 +1,82 @@
+{{ define "main" }}
+{{- $mainSections := .Site.Params.mainSections }}
+{{- $pages := where .Site.RegularPages "Type" "in" $mainSections }}
+{{- $featured := index $pages 0 }}
+{{- $rest := after 1 $pages }}
+{{- $heroTitle := .Site.Params.Hero.title | default .Site.Title }}
+
+<section class="hero">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">Notes from the field &mdash; cloud, GitHub, AI agents</p>
+    <h1 class="hero__title">
+      Hi, I&rsquo;m <span class="hero__name">{{ $heroTitle }}</span>.
+      <span class="hero__line">I write about shipping software</span>
+      <span class="hero__line hero__line--accent">in the age of AI.</span>
+    </h1>
+    <div class="hero__meta">
+      <a class="hero__cta" href="#latest">Read the latest &darr;</a>
+      <span class="hero__count">{{ len $pages }} posts &middot; updated {{ (index $pages 0).Date.Format "Jan 2006" }}</span>
+    </div>
+  </div>
+</section>
+
+{{ with .Content }}
+<section class="intro">
+  <div class="intro__inner">{{ . }}</div>
+</section>
+{{ end }}
+
+{{ with $featured }}
+<section class="featured" id="latest">
+  <div class="featured__label">
+    <span class="featured__tag">Latest</span>
+    <span class="featured__rule" aria-hidden="true"></span>
+  </div>
+  <a class="featured__card" href="{{ .RelPermalink }}">
+    <p class="featured__date">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.tags }}
+        <span class="featured__tags">
+          {{ range first 3 . }}<span class="featured__chip">{{ . }}</span>{{ end }}
+        </span>
+      {{ end }}
+    </p>
+    <h2 class="featured__title">{{ .Title }}</h2>
+    <p class="featured__summary">{{ .Summary | plainify | truncate 240 }}</p>
+    <span class="featured__more">Read post <span aria-hidden="true">&rarr;</span></span>
+  </a>
+</section>
+{{ end }}
+
+{{ with $rest }}
+<section class="archive">
+  <header class="archive__header">
+    <h2 class="archive__heading">The archive</h2>
+    <p class="archive__sub">Everything else, newest first.</p>
+  </header>
+
+  {{- $byYear := .GroupByDate "2006" }}
+  {{ range $byYear }}
+    <div class="year">
+      <div class="year__label">{{ .Key }}</div>
+      <ol class="year__list">
+        {{ range .Pages }}
+          <li class="entry">
+            <a class="entry__link" href="{{ .RelPermalink }}">
+              <time class="entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+              <h3 class="entry__title">{{ .Title }}</h3>
+              <p class="entry__summary">{{ .Summary | plainify | truncate 160 }}</p>
+              {{ with .Params.tags }}
+                <ul class="entry__tags">
+                  {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
+                </ul>
+              {{ end }}
+            </a>
+          </li>
+        {{ end }}
+      </ol>
+    </div>
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}
