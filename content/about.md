@@ -20,6 +20,6 @@ Since that time, I've been working with various technologies: mobile, desktop, w
 
 ## What am I up to these days?
 
-I currently work as a Senior Solutions Engineer at [GitHub](https://github.com).
+I currently work as a Strategic Solutions Engineer at [GitHub](https://github.com).
 
 I know a thing or two about GitHub, CI/CD, AI, SDLC, Cloud, and programming.
