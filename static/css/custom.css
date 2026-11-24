@@ -108,8 +108,8 @@ img, video { height: auto; }
 .archive-year > h3 { grid-column: span 2; font: 600 45px/1 var(--display); color: var(--steel); }
 .archive-year > h3 span { color: var(--orange); }
 .archive-list { grid-column: 3 / -1; list-style: none; margin: 0; padding: 0; }
-.archive-entry { display: grid; grid-template-columns: 65px 1fr 30px; gap: 25px; border-bottom: 1px solid var(--rule); padding: 0 0 22px; margin-bottom: 24px; }
-.archive-entry time { color: var(--muted); padding-top: 5px; font: 11px/1.5 var(--mono); }
+.archive-entry { display: grid; grid-template-columns: max-content minmax(0, 1fr) 30px; gap: 25px; border-bottom: 1px solid var(--rule); padding: 0 0 22px; margin-bottom: 24px; }
+.archive-entry time { color: var(--muted); width: 12ch; white-space: nowrap; padding-top: 5px; font: 11px/1.5 var(--mono); }
 .archive-entry h4 { font: 600 29px/1.1 var(--display); }
 .archive-entry p { display: flex; flex-wrap: wrap; gap: 15px; color: var(--muted); margin-top: 10px; font: 10px/1.5 var(--mono); text-transform: uppercase; }
 .entry-arrow { color: var(--orange); font-size: 25px; }
@@ -124,14 +124,14 @@ img, video { height: auto; }
 .post-header h1 { max-width: 22ch; font: 700 clamp(45px, 6.7vw, 96px)/.97 var(--display); text-transform: uppercase; letter-spacing: -.025em; padding: 32px 0 35px; text-wrap: balance; overflow-wrap: anywhere; }
 .post-meta { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid #969d99; padding-top: 17px; font: 11px/1.5 var(--mono); }
 .post-layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); }
-.post-sidebar { grid-column: span 3; padding: 32px 26px 32px 0; font-size: 13px; color: var(--muted); }
-.contents { position: sticky; top: 25px; }
+.post-sidebar { grid-column: span 3; position: sticky; top: 25px; align-self: start; height: calc(100dvh - 50px); display: flex; flex-direction: column; padding: 32px 26px 32px 0; font-size: 13px; color: var(--muted); }
+.contents { min-height: 0; overflow-y: auto; }
 .contents summary, .sidebar-title { font: 12px/1.5 var(--mono); color: var(--white); text-transform: uppercase; }
 .contents summary { cursor: pointer; border-bottom: 1px solid var(--rule); padding-bottom: 15px; }
 #TableOfContents ul { list-style: none; padding: 0; }
 #TableOfContents ul ul { padding-left: 14px; border-left: 1px solid var(--rule); }
 #TableOfContents li { margin-block: 13px; line-height: 1.35; }
-.sidebar-bottom { margin-top: 55px; display: grid; gap: 18px; font: 10px/1.5 var(--mono); }
+.sidebar-bottom { margin-top: auto; padding-top: 32px; flex-shrink: 0; display: grid; gap: 18px; font: 10px/1.5 var(--mono); }
 .sidebar-bottom .barcode { color: var(--steel); width: 100%; height: 35px; }
 .post-paper { grid-column: 4 / -1; background: var(--paper); color: var(--ink); padding: 42px clamp(28px, 4vw, 64px) 55px; min-width: 0; color-scheme: light; }
 .prose { max-width: 70ch; margin-inline: auto; font-size: 19px; line-height: 1.75; overflow-wrap: anywhere; }
@@ -210,7 +210,7 @@ img, video { height: auto; }
   .archive-year { grid-template-columns: 1fr; gap: 20px; padding-top: 25px; }
   .archive-year > h3 { grid-column: 1; font-size: 34px; }
   .archive-list { grid-column: 1; }
-  .archive-entry { grid-template-columns: 42px minmax(0, 1fr) 18px; gap: 12px; margin-bottom: 20px; padding-bottom: 20px; }
+  .archive-entry { grid-template-columns: max-content minmax(0, 1fr) 18px; gap: 12px; margin-bottom: 20px; padding-bottom: 20px; }
   .archive-entry time { font-size: 9px; }
   .archive-entry h4 { font-size: 25px; }
   .archive-entry p { font-size: 8px; gap: 10px; }
@@ -226,7 +226,7 @@ img, video { height: auto; }
   .post-header h1 { font-size: 47px; padding: 25px 0 28px; }
   .post-meta { flex-direction: column; gap: 6px; font-size: 9px; padding-top: 12px; }
   .post-layout { grid-template-columns: 1fr; }
-  .post-sidebar { grid-column: 1; padding: 0; }
+  .post-sidebar { grid-column: 1; position: static; height: auto; display: block; padding: 0; }
   .contents { position: static; padding: 17px 0; }
   .contents summary { font-size: 10px; padding-block: 5px; border: 0; }
   #TableOfContents { font-size: 12px; }
