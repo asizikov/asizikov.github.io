@@ -10,6 +10,7 @@
   </header>
   <div class="post-layout">
     <aside class="post-sidebar">
+      <div class="sidebar-main">
       {{ if and (eq .Section "blog") (gt (len .Fragments.Headings) 0) }}
       <details class="contents" open>
         <summary>In this field note</summary>
@@ -19,6 +20,7 @@
       <p class="sidebar-title">Anton Sizikov</p>
       <p>Notes from the field.<br>blog.cloud-eng.nl</p>
       {{ end }}
+      </div>
       <div class="sidebar-bottom"><span class="barcode" aria-hidden="true"></span><a href="/index.xml">Subscribe via RSS &#8599;</a></div>
     </aside>
     <div class="post-paper">
