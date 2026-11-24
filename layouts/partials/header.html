@@ -1,16 +1,8 @@
-<div class="international__typo__header__layout">
-    <div class="international__typo__header__layout__left">
-        <span class="international__typo__header__layout_subdomain">
-            <a class="international__typo__header__home" href="/">blog.</a>
-        </span>
-    </div>
-    <div class="international__typo__header__layout__right">
-        <span class="international__typo__header__layout__right__domain">cloud-eng</span>
-        <span class="international__typo__header__layout__right__tld">.nl</span>
-        <nav class="header__nav">
-            {{ range site.Menus.main }}
-            <a class="header__nav__link" href="{{ .URL }}">{{ or .Name .Identifier }}</a>
-            {{ end }}
-        </nav>
-    </div>
-</div>
+<a class="brand" href="/" aria-label="blog.cloud-eng.nl home">blog.cloud-eng<span>.nl</span><span class="brand-mark" aria-hidden="true">+</span></a>
+<span class="header-caption">Anton Sizikov / Field notes</span>
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/blog/"{{ if eq .Section "blog" }} aria-current="page"{{ end }}>Archive <span aria-hidden="true">&#8599;</span></a>
+  {{ range site.Menus.main }}
+  <a href="{{ .URL }}"{{ if eq $.RelPermalink (.URL | printf "%s/") }} aria-current="page"{{ end }}>{{ or .Name .Identifier }} <span aria-hidden="true">&#8599;</span></a>
+  {{ end }}
+</nav>

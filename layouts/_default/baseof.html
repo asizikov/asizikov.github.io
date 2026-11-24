@@ -4,23 +4,23 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header frame">
     {{ partial "header.html" . }}
   </header>
-  <main>
-    <div class="international__typo__main__layout">
-      <div class="international__typo__main__layout__left"></div>
-      <div class="international__typo__main__layout__right">
-        <div class="international__typo__main__layout__right__content">
-          {{ block "main" . }}{{ end }}
-        </div>
-        <footer class="international__typo__site__footer">
-          {{ partial "footer.html" . }}
-        </footer>
-      </div>
-    </div>
+  <main id="main" class="frame">
+    {{ block "main" . }}{{ end }}
   </main>
-</body>
+  <footer class="site-footer frame">
+    {{ partial "footer.html" . }}
+  </footer>
+<script>
+  if (window.matchMedia('(max-width: 640px)').matches) {
+    document.querySelectorAll('.contents[open]').forEach(function (contents) {
+      contents.removeAttribute('open');
+    });
+  }
+</script>
 <script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
 <script>
     {{ $date := now.Format "2006-01-02" }}
@@ -51,4 +51,5 @@
             });
     }
 </script>
+</body>
 </html>
