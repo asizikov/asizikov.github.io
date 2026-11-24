@@ -10,7 +10,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.139.4
+      HUGO_VERSION: 0.170.1
     steps:
       - name: Checkout
         uses: actions/checkout@v4

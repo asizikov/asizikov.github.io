@@ -1,0 +1,6 @@
+scripts:
+  - name: Run
+    command: hugo serve
+
+server_ready_pattern: 'Web Server is available at (https?://\S+)'
+auto_open_in_browser: true
