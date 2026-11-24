@@ -132,8 +132,8 @@ img, video { height: auto; }
 #TableOfContents ul { list-style: none; padding: 0; }
 #TableOfContents ul ul { padding-left: 14px; border-left: 1px solid var(--rule); }
 #TableOfContents li { margin-block: 13px; line-height: 1.35; }
-.sidebar-bottom { position: sticky; bottom: 25px; padding-top: 32px; flex-shrink: 0; background: var(--graphite); display: grid; gap: 18px; font: 10px/1.5 var(--mono); }
-.sidebar-bottom .barcode { color: var(--steel); width: 100%; height: 35px; }
+.sidebar-bottom { margin-top: auto; padding-top: 32px; flex-shrink: 0; display: grid; gap: 18px; font: 10px/1.5 var(--mono); }
+.sidebar-bottom .barcode { position: fixed; z-index: 5; left: max(48px, calc((100vw - 1328px) / 2)); bottom: 26px; color: var(--steel); width: min(332px, calc((100vw - 96px) / 4)); height: 35px; }
 .post-paper { grid-column: 4 / -1; background: var(--paper); color: var(--ink); padding: 42px clamp(28px, 4vw, 64px) 55px; min-width: 0; color-scheme: light; }
 .prose { max-width: 70ch; margin-inline: auto; font-size: 19px; line-height: 1.75; overflow-wrap: anywhere; }
 .prose > * + * { margin-top: 1.3em; }
@@ -171,6 +171,7 @@ img, video { height: auto; }
 .empty-state { padding: 40px 0; }
 @media (max-width: 1000px) {
   .frame { width: calc(100% - 56px); }
+  .sidebar-bottom .barcode { left: 28px; width: calc((100vw - 56px) / 4); }
   .header-caption { display: none; }
   .site-nav { margin-left: auto; gap: 22px; }
   .masthead { column-gap: 20px; }
