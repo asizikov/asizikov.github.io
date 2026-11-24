@@ -1,16 +1,36 @@
 {{ define "main" }}
-<div class="international__typo__post__content">
-  <h1>{{ .Title }}</h1>
-
-  {{ if not .Params.page }}
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <p class="international__typo__post__date">
-      Published on <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-    </p>
-  {{ end }}
-
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-</div>
+<article class="post">
+  <header class="post-header">
+    <div class="register"><a href="/blog/">&#8592; Back to archive</a><span>{{ if eq .Section "blog" }}Field note / {{ .Date.Format "2006.01.02" }}{{ else }}Profile / Anton Sizikov{{ end }}</span></div>
+    <h1>{{ .Title }}</h1>
+    <div class="post-meta">
+      <span>{{ if eq .Section "blog" }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time> / {{ .ReadingTime }} min read{{ else }}Cloud engineering / Software / AI{{ end }}</span>
+      <span>By Anton Sizikov</span>
+    </div>
+  </header>
+  <div class="post-layout">
+    <aside class="post-sidebar">
+      {{ if and (eq .Section "blog") (gt (len .Fragments.Headings) 0) }}
+      <details class="contents" open>
+        <summary>In this field note</summary>
+        {{ .TableOfContents }}
+      </details>
+      {{ else }}
+      <p class="sidebar-title">Anton Sizikov</p>
+      <p>Notes from the field.<br>blog.cloud-eng.nl</p>
+      {{ end }}
+      <div class="sidebar-bottom"><span class="barcode" aria-hidden="true"></span><a href="/index.xml">Subscribe via RSS &#8599;</a></div>
+    </aside>
+    <div class="post-paper">
+      <div class="prose">{{ .Content }}</div>
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      {{ if eq .Section "blog" }}
+      <nav class="post-pagination" aria-label="Adjacent posts">
+        {{ with .PrevInSection }}<a href="{{ .RelPermalink }}"><span>&#8592; Previous field note</span>{{ .Title }}</a>{{ end }}
+        {{ with .NextInSection }}<a href="{{ .RelPermalink }}"><span>Next field note &#8594;</span>{{ .Title }}</a>{{ end }}
+      </nav>
+      {{ end }}
+    </div>
+  </div>
+</article>
 {{ end }}
