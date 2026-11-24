@@ -5,7 +5,7 @@
     {{ range .Pages }}
     <li>
       <a class="archive-entry" href="{{ .RelPermalink }}">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01.02" }}</time>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 January" }}</time>
         <div><h4>{{ .Title }}</h4><p>{{ range first 2 (.GetTerms "tags") }}<span>{{ .LinkTitle }}</span>{{ end }}</p></div>
         <span class="entry-arrow" aria-hidden="true">&#8599;</span>
       </a>
