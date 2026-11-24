@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section class="catalog">
+  <header class="catalog-header">
+    <div class="register"><span>All field notes</span><span>Newest first</span></div>
+    <h1>{{ if eq .Section "blog" }}The archive{{ else }}{{ .Title }}{{ end }}</h1>
+    <p>{{ len .Pages }} entries / cloud engineering, GitHub &amp; AI</p>
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  {{ partial "archive.html" .Pages }}
+</section>
+{{ end }}

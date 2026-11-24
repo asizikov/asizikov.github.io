@@ -1,83 +1,116 @@
 {{ define "main" }}
-{{- $mainSections := .Site.Params.mainSections }}
-{{- $pages := where .Site.RegularPages "Type" "in" $mainSections }}
-{{- $featured := index $pages 0 }}
-{{- $rest := after 1 $pages }}
-{{- $heroTitle := .Site.Params.Hero.title | default .Site.Title }}
-
-<section class="hero">
-  <div class="hero__inner">
-    <p class="hero__eyebrow">Notes from the field &mdash; cloud, GitHub, AI agents</p>
-    <h1 class="hero__title">
-      Hi, I&rsquo;m <span class="hero__name">{{ $heroTitle }}</span>.
-      <span class="hero__line">I write about shipping software</span>
-      <span class="hero__line hero__line--accent">in the age of AI.</span>
-    </h1>
-    <div class="hero__meta">
-      <a class="hero__cta" href="#latest">Read the latest &darr;</a>
-      <span class="hero__count">{{ len $pages }} posts &middot; updated {{ (index $pages 0).Date.Format "Jan 2006" }}</span>
-    </div>
+{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+<!-- THESIS: An engineering field journal with the physical mass of an industrial catalog.
+OWN-WORLD: Graphite, steel, concrete, safety orange; condensed type, routing rules and inventory plates.
+STORY: Explore software engineering in the era of AI, continue to the latest field note, then explore the archive.
+FIRST VIEWPORT: An editorial headline meets an orange archive label above the subject band.
+FORM: Brief-pinned SL24 industrial catalog, translated into an original twelve-column editorial system. -->
+<section class="masthead" aria-labelledby="home-title">
+  <div class="register"><span>Independent engineering journal</span></div>
+  <div class="masthead-type">
+    <h1 id="home-title"><span>Software</span><span>Engineering</span><span class="headline-era">in the Era of AI</span></h1>
+    <p class="masthead-bottom">Notes on building, shipping, and working with intelligent machines.</p>
   </div>
-</section>
-
-{{ with .Content }}
-<section class="intro">
-  <div class="intro__inner">{{ . }}</div>
-</section>
-{{ end }}
-
-{{ with $featured }}
-<section class="featured" id="latest">
-  <div class="featured__label">
-    <span class="featured__tag">Latest</span>
-    <span class="featured__rule" aria-hidden="true"></span>
-  </div>
-  <a class="featured__card" href="{{ .RelPermalink }}">
-    <p class="featured__date">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-      {{ with .Params.tags }}
-        <span class="featured__tags">
-          {{ range first 3 . }}<span class="featured__chip">{{ . }}</span>{{ end }}
-        </span>
-      {{ end }}
-    </p>
-    <h2 class="featured__title">{{ .Title }}</h2>
-    <p class="featured__summary">{{ .Summary | plainify | truncate 240 }}</p>
-    <span class="featured__more">Read post <span aria-hidden="true">&rarr;</span></span>
-  </a>
-</section>
-{{ end }}
-
-{{ with $rest }}
-<section class="archive">
-  <header class="archive__header">
-    <h2 class="archive__heading">The archive</h2>
-  </header>
-
-  {{- $byYear := .GroupByDate "2006" }}
-  {{ range $byYear }}
-    <div class="year">
-      <div class="year__label">{{ .Key }}</div>
-      <ol class="year__list">
-        {{ range .Pages }}
-          <li class="entry">
-            <a class="entry__link" href="{{ .RelPermalink }}">
-              <div class="entry__header">
-                <time class="entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
-                {{ with .Params.tags }}
-                  <ul class="entry__tags">
-                    {{ range first 3 . }}<li>{{ . }}</li>{{ end }}
-                  </ul>
-                {{ end }}
-              </div>
-              <h3 class="entry__title">{{ .Title }}</h3>
-              <p class="entry__summary">{{ .Summary | plainify | truncate 160 }}</p>
-            </a>
-          </li>
-        {{ end }}
-      </ol>
-    </div>
+  {{ $topics := dict }}
+  {{ range $pages }}
+    {{ range .GetTerms "tags" }}
+      {{ $topics = merge $topics (dict .RelPermalink true) }}
+    {{ end }}
   {{ end }}
+  <section class="archive-card" aria-labelledby="archive-card-title">
+    <h2 class="archive-card-title" id="archive-card-title">Archive / publication record</h2>
+    <p class="archive-card-number">{{ len $pages }}<small>Posts</small></p>
+    {{ if $pages }}
+      {{ $ordered := $pages.ByDate }}
+      {{ $firstYear := int ((index $ordered 0).Date.Format "2006") }}
+      {{ $lastYear := int ((index $ordered (sub (len $ordered) 1)).Date.Format "2006") }}
+      {{ $counts := dict }}
+      {{ $maxCount := 0 }}
+      {{ range $pages.GroupByDate "2006" }}
+        {{ $count := len .Pages }}
+        {{ $counts = merge $counts (dict .Key $count) }}
+        {{ $maxCount = math.Max $maxCount $count }}
+      {{ end }}
+      {{ $yearStats := slice }}
+      {{ $running := 0 }}
+      {{ range seq $firstYear $lastYear }}
+        {{ $count := default 0 (index $counts (printf "%d" .)) }}
+        {{ $running = add $running $count }}
+        {{ $yearStats = $yearStats | append (dict "year" . "count" $count "running" $running) }}
+      {{ end }}
+      {{ $steps := sub (len $yearStats) 1 }}
+      {{ $tickStep := int (math.Max 1 (math.Ceil (div (float $steps) 3.0))) }}
+      {{ $scale := math.Max 2 (mul 2 (math.Ceil (div (float $maxCount) 2.0))) }}
+      {{ $yearPoints := slice }}
+      {{ $totalPoints := slice }}
+      {{ range $i, $stat := $yearStats }}
+        {{ $x := 120.0 }}
+        {{ if gt $steps 0 }}{{ $x = div (mul (float $i) 240.0) (float $steps) }}{{ end }}
+        {{ $y := mul 100.0 (sub 1.0 (div (float $stat.count) (float $scale))) }}
+        {{ $totalY := mul 100.0 (sub 1.0 (div (float $stat.running) (float (len $pages)))) }}
+        {{ $yearPoints = $yearPoints | append (printf "%.2f,%.2f" $x $y) }}
+        {{ $totalPoints = $totalPoints | append (printf "%.2f,%.2f" $x $totalY) }}
+      {{ end }}
+      <div class="archive-card-strip"><span>Grid: 12/12</span><span>Topics: {{ len $topics }}</span><span>Span: {{ $firstYear }}–{{ $lastYear }}</span></div>
+      <div class="archive-card-chart">
+        <div class="archive-card-axis" aria-hidden="true"><span>{{ printf "%.0f" $scale }}</span><span>{{ printf "%.0f" (div $scale 2.0) }}</span><span>0</span></div>
+        <div class="archive-card-plot">
+          <svg viewBox="0 0 240 100" preserveAspectRatio="none" role="img" aria-labelledby="archive-chart-title archive-chart-description">
+            <title id="archive-chart-title">Posts per year and running total</title>
+            <desc id="archive-chart-description">Posts by year: {{ range $yearStats }}{{ .year }}: {{ .count }}; {{ end }}running total: {{ len $pages }}.</desc>
+            <g class="archive-card-grid" aria-hidden="true">
+              <line x1="0" y1="25" x2="240" y2="25"/><line x1="0" y1="50" x2="240" y2="50"/><line x1="0" y1="75" x2="240" y2="75"/>
+              {{ range $i, $stat := $yearStats }}
+                {{ if and (gt $i 0) (lt $i $steps) (eq (mod $i $tickStep) 0) }}
+                  {{ $x := div (mul (float $i) 240.0) (float $steps) }}
+                  <line x1="{{ $x }}" y1="0" x2="{{ $x }}" y2="100"/>
+                {{ end }}
+              {{ end }}
+            </g>
+            <polyline class="archive-card-running" points="{{ delimit $totalPoints " " }}"/>
+            <polyline class="archive-card-year" points="{{ delimit $yearPoints " " }}"/>
+            {{ if eq $steps 0 }}<circle class="archive-card-point" cx="120" cy="{{ mul 100.0 (sub 1.0 (div (float $maxCount) (float $scale))) }}" r="2"/>{{ end }}
+          </svg>
+        </div>
+        <div class="archive-card-axis archive-card-axis-right" aria-hidden="true"><span>{{ len $pages }}</span><span>{{ div (float (len $pages)) 2.0 }}</span><span>0</span></div>
+        <div class="archive-card-years" aria-hidden="true">
+          {{ range $i, $stat := $yearStats }}
+            {{ if or (eq $i 0) (eq $i $steps) (eq (mod $i $tickStep) 0) }}
+              {{ $position := 50.0 }}
+              {{ if gt $steps 0 }}{{ $position = div (mul (float $i) 100.0) (float $steps) }}{{ end }}
+              <span class="{{ if eq $steps 0 }}single{{ else if eq $i 0 }}first{{ else if eq $i $steps }}last{{ end }}" style="left:{{ printf "%.2f%%" $position | safeCSS }}">{{ $stat.year }}</span>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="archive-card-legend"><span><i></i>Posts / year</span><span><i class="dashed"></i>Running total</span></div>
+    {{ else }}
+      <p class="archive-card-empty">No posts yet.</p>
+    {{ end }}
+    <div class="archive-card-foot"><a href="{{ "/blog/" | relURL }}">Archive<span aria-hidden="true">&#8599;</span></a></div>
+  </section>
+</section>
+<div class="subject-band"><span>Cloud / GitHub / AI agents</span><span aria-hidden="true">&#8599;</span></div>
+<section class="journal-intro">
+  <div class="journal-copy">{{ .Content }}</div>
+  <a class="text-link" href="/about/">About Anton <span aria-hidden="true">&#8599;</span></a>
+</section>
+{{ with index $pages 0 }}
+<section class="latest" id="latest" aria-labelledby="latest-title">
+  <div class="section-bar"><span>Latest field note</span><span>{{ .Date.Format "2006.01.02" }}</span></div>
+  <div class="latest-layout">
+    <div class="latest-index" aria-hidden="true"><span>READ<br>FILE</span><strong>{{ printf "%03d" (len $pages) }}</strong><div class="barcode"></div></div>
+    <div class="latest-story">
+      <div class="tagline">{{ range first 3 (.GetTerms "tags") }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</div>
+      <h2 id="latest-title"><a href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">&#8599;</span></a></h2>
+      <p>{{ .Summary | plainify | truncate 235 }}</p>
+      <a class="read-link" href="{{ .RelPermalink }}">Read field note <span>{{ .ReadingTime }} min <span aria-hidden="true">&#8594;</span></span></a>
+    </div>
+  </div>
 </section>
 {{ end }}
+<section class="archive-section" aria-labelledby="archive-title">
+  <div class="section-bar"><h2 id="archive-title">The archive</h2><span>{{ len $pages }} entries / newest first</span></div>
+  {{ partial "archive.html" (after 1 $pages) }}
+</section>
 {{ end }}
