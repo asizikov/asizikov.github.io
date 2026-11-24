@@ -6,7 +6,6 @@ tags: ["agentic workflows", "harness engineering", "github copilot"]
 draft: false
 ---
 
-<!-- TODO: hook. Something like: "Same model, same agent, wildly different results between two teams. The difference is rarely the model. It's everything around it." -->
 Ever noticed how, despite all of us using the same models and the same agents, we all get different results? Some teams are successful and ship at unprecedented speed, while others struggle to make agents work. What's the difference? 
 
 Software Engineering as a discipline is in the middle of a massive transformation process. A lot of new capabilities are unlocked, but many new (tricky and exciting) challenges stand in our way.
