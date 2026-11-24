@@ -1,5 +1,5 @@
 baseURL                       = "https://blog.cloud-eng.nl/"
-languageCode                  = "en-us"
+locale                        = "en-us"
 title                         = "Anton Sizikov"
 theme                         = "international-typo"
 summaryLength                 = 5
