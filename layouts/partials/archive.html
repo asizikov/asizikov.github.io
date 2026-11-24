@@ -1,0 +1,18 @@
+{{ range .GroupByDate "2006" }}
+<div class="archive-year">
+  <h3>{{ .Key }}<span aria-hidden="true"> /</span></h3>
+  <ol class="archive-list">
+    {{ range .Pages }}
+    <li>
+      <a class="archive-entry" href="{{ .RelPermalink }}">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01.02" }}</time>
+        <div><h4>{{ .Title }}</h4><p>{{ range first 2 (.GetTerms "tags") }}<span>{{ .LinkTitle }}</span>{{ end }}</p></div>
+        <span class="entry-arrow" aria-hidden="true">&#8599;</span>
+      </a>
+    </li>
+    {{ end }}
+  </ol>
+</div>
+{{ else }}
+<p class="empty-state">No field notes here yet. <a href="/blog/">Browse the archive instead.</a></p>
+{{ end }}
