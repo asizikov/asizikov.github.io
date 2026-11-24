@@ -5,7 +5,6 @@
     <h1>{{ .Title }}</h1>
     <div class="post-meta">
       <span>{{ if eq .Section "blog" }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time> / {{ .ReadingTime }} min read{{ else }}Cloud engineering / Software / AI{{ end }}</span>
-      <span>By Anton Sizikov</span>
     </div>
   </header>
   <div class="post-layout">
