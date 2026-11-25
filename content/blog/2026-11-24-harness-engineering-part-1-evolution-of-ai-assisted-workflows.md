@@ -175,7 +175,7 @@ Skip a layer and the next one falls over. Our goal, as engineers, is to build th
 
 In the next posts in the series, we'll walk through the entire journey all the way towards Agentic Factories, getting a closer look at solutions to the challenges outlined in this episode. What tools do we have to battle them? How do they stack on top of each other? 
 
-Stay tuned.
+Continue with [Part 2: The human is the loop](/2026/11/25/harness-engineering-part-2-the-human-is-the-loop/).
 
 ## Disclosure
 
